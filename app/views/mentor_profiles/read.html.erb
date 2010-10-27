@@ -1,0 +1,102 @@
+<h1>View Mentor Profile</h1>
+<ul class="tabs">  
+	<li id="tab1button">General Information</li>  
+	<li id="tab2button">Software Experience</li>  
+	<li id="tab3button">Interests</li>  
+</ul>  
+<div id="tab1content" class="tabcontent">
+<style type="text/css">
+.tabcontent td {
+padding:7px 0px;
+}
+.tabcontent li {
+padding-left: 0px; 
+}
+.tabcontent ul {
+padding-left: 0px; 
+}
+</style>
+<table style="">
+<tr><td>Gender:</td><td>Male</td>
+<td rowspan="4">
+<table>
+<tr><td colspan="2"><strong>Education</strong></td></tr>
+<tr><td>School:</td><td>Rose Hulman</td></tr>
+<tr><td>Major:</td><td>Software Engineer</td></tr>
+</table>
+</td></tr>
+<tr><td>Location:</td><td>Cincinnati</td></tr>
+<tr><td>Preferred Contact Method:</td><td>E-mail</td></tr>
+<tr><td>Current Position:</td><td>Software Engineer</td></tr>
+<tr><td>Past Positions:</td><td><ul><li>Software Engineer</li><li>IT Intern</li></ul></td><td rowspan="4">
+	<table>
+	<tr><td>Past Mentorship Experiences:</td><td>I mentored a junior Computer Science student at the University of Cincinnati, communicating via email and occasional lunches. He completed a personal artificial intelligence project for a chess game, written in C. <br />
+	I also mentored an adult systems engineer who wished to enter the software field, via face-to-face meetings. I shared resources and helped him learn Ruby. He is now contemplating a career change. 
+	</td></tr>
+	<tr><td>Mentorship Vision Statement:
+	</td><td>I hope to develop aspiring software engineers, especially those with interests similar to mine. I hope to see passion and interest in my mentees; the skill will come. I like to work locally through a combination of email and face-to-face meetings. I can help with personal projects and provide learning direction.</td></tr>
+	</table>
+    
+	</td></tr>
+    
+    
+<tr><td>Research:</td><td><ul><li>Swarm Artificial Intelligence</li></ul></tr>
+<tr><td>Recent Projects</td><td><ul><li>LLBean Onlice Catalog</li><li>Jet Blue Automatic Baggage Handler</li></ul></td></tr>
+
+
+
+</table>
+
+</div>  
+<div id="tab2content">
+<table>
+<tr><td>Total Years Experience: </td><td>5</td></tr>
+<tr><td>Why you became a software engineer?</td><td>I like toitles.</td></tr>
+<tr><td colspan="2">
+	<table>
+	<tr><td>Technology</td><td>Years Experience</td><td>Comfort Level</td></tr>
+	<tr><td>Ruby</td><td>3</td><td>High</td></tr>
+	<tr><td>C</td><td>5</td><td>High</td></tr>
+	</table>
+</td></tr>
+<tr><td>Favorite books, blogs, sites, projects:</td><td>The Pragmatic Programmer, The Daily WTF, thoughtworks.com, xkcd.com</td>
+<tr><td>Personal blogs, sites, projects</td><td>blog.johnsmith.com, johnsmith.com</td></tr>
+<tr><td>Acomplishments: </td><td>The Ben Bernacke award for excellence in the research ofArtificial Intelligience 2008</td></tr>
+<tr><td>Favorite Part of Software Development</td><td>Coding</td></tr>
+</table>
+</div>  
+
+<div id="tab3content">
+<table>
+<tr><td>Specialties/Accomplishments:</td><td>Third degree black belt in karate</td></tr>
+<tr><td>Activities/Interests:</td><td>Karate, spelunking, golf </td></tr>
+<tr><td>Books:</td><td>The Art of War, Watchmen, A Mathematician Reads the Newspaper</td></tr>
+<tr><td>TV Shows:</td><td>Men of a Certain Age, Family Guy, Mythbusters, The Office</td></tr>
+<tr><td>Music Interests:</td><td>ALternative Rock, Hinder, Red Hot Chili Peppers</td></tr>
+<tr><td>Movies:</td><td>The Boondock Saints, Citizen Kane </td></tr>
+</table>
+</div>  
+
+    
+	<script type="text/javascript">
+	$('tab2content').hide();
+	$('tab3content').hide();
+	$('tab1button').observe('click', function(event) {
+		$('tab1content').show();
+		$('tab2content').hide();
+		$('tab3content').hide();
+	});
+	Event.observe('tab2button', 'click', function(event) {
+		$('tab2content').show();
+		$('tab1content').hide();
+		$('tab3content').hide();
+	});
+	Event.observe('tab3button', 'click', function(event) {
+		$('tab3content').show();
+		$('tab1content').hide();
+		$('tab2content').hide();
+	});
+	</script>
+
+
+

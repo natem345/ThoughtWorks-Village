@@ -1,0 +1,17 @@
+<h1>Login</h1><form action="" method="post">
+
+<table style="width: 300px">
+	<tr>
+		<td>Email:</td>
+		<td><input name="Text1" type="text"></td>
+	</tr>
+	<tr>
+		<td><label id="Label1">Password: </label></td>
+		<td><input name="Text2" type="text"></td>
+	</tr>
+</table>
+<p><input name="login_button" type="button" value="Login"></p>
+<p><a href="/accounts/forgot">Forgot Password</a> <a href="/accounts/register">Register</a></p>
+</form>
+
+

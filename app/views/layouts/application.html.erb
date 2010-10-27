@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
+   "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>My Web Application</title>
+    <%= javascript_include_tag :defaults %>
+    <%= stylesheet_link_tag "main" %>
+</head>
+<body>
+<div id="MainBody">
+<div class="navbar">
+<a href="/"><img id="navbarLogo" src="/images/corporate_logo.png" /></a>
+<ul>
+<li><a href="/">Home</a></li>
+<li><a href="/mentor_profiles/search">Browse All</a></li>
+<li><a href="/mentor_profiles/read">My Profile</a></li>
+<li><a href="/mentor_profiles/update_general">Edit Profile</a></li>
+<li><a href="/mentor_profiles/update_availability">Update Availability</a></li>
+</ul>
+<form>
+<div style="position:absolute; right:50px; top:30px;">
+<input type="text" name="search"/>
+<input type="button" name="search_button" value="Search" />
+</div>
+</form> 
+</div>
+    <%= yield %>
+</div>
+</body>
+</html>

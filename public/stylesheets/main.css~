@@ -1,0 +1,61 @@
+body {
+background-image: url("/images/home-page-background.jpg");
+background-color: black;
+background-position: center top;
+background-repeat: no-repeat;
+color: white;
+font:arial,helvetica,clean,sans-serif;
+}
+#MainBody {
+	width: 960px;
+	left:50%;
+	margin-left:-480px;
+	position:absolute;
+}
+.navbar{
+color: #D5E14D;
+background-color: rgba(255,255,255, 0.25);
+padding:13px;
+margin:20px;
+border-radius: 25px;
+-moz-border-radius: 25px;
+}
+
+a {
+color: #D5E14D;/*yellowish*/
+}
+img {
+border: 0;
+}
+.navbar ul {
+margin: 0;
+margin-top: 10px;
+padding: 0;
+}
+#navbarLogo {
+	margin: 0px 0px -5px 20px;
+}
+.navbar li {
+list-style-type: none;
+display: inline;
+margin: 20px;
+}
+.navbar a {
+color: white;
+}
+
+
+.tabs ul {
+margin:5px;
+
+}
+
+.tabs li {
+padding: 10px;
+list-style-type: none;
+display: inline;
+background-color: rgba(255,255,255, 0.25);
+border: 2px white solid;
+}
+
+

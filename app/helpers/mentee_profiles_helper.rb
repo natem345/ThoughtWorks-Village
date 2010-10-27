@@ -1,0 +1,2 @@
+module MenteeProfilesHelper
+end

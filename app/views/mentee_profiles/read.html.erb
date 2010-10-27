@@ -1,0 +1,82 @@
+<h1>View John Smith's Profile</h1>
+<ul class="tabs">  
+    <li id="tab1button">General Information</li>  
+    <li id="tab2button">Software Experience</li>  
+    <li id="tab3button">Interests</li>  
+</ul>  
+<div id="tab1content" class="tabcontent">
+<style type="text/css">
+.tabcontent td {
+padding:7px 0px;
+}
+.tabcontent li {
+padding-left: 0px; 
+}
+.tabcontent ul {
+padding-left: 0px; 
+}
+</style>
+<table style="">
+<tr><td>Name:</td><td>John Smith</td>
+<td rowspan="4">
+<table>
+<tr><td colspan="2"><Strong>Education</strong></td></tr>
+<tr><td>School:</td><td>Rose Hulman</td></tr>
+<tr><td>Major:</td><td>Software Engineer</td></tr>
+</table>
+</td></tr>
+<tr><td>Location:</td><td>Cincinnati</td></tr>
+<tr><td>Preferred Contact Method:</td><td>E-mail</td></tr>
+<tr><td>Current Position:</td><td>Student</td></tr>
+<tr><td>Recent Projects</td><td><ul><li>Medical Billing Databases Project</li><li>Sliding Blocks Solution Generator</li></ul></td></tr>
+</table>
+
+</div>  
+<div id="tab2content">
+<table>
+<tr><td>Total Years Experience: </td><td>5</td></tr>
+<tr><td>Why you became/are interested in becoming a software engineer?</td><td>Computer science classes in highschool, interested in robotics</td></tr>
+<tr><td colspan="2">
+    <table>
+    <tr><td>Technology</td><td>Years Experience</td><td>Comfort Level</td></tr>
+    <tr><td>Ruby</td><td>1</td><td>Low</td></tr>
+    <tr><td>Java</td><td>2</td><td>Moderate</td></tr>
+    </table>
+</td></tr>
+<tr><td>Favorite books, blogs, sites, projects:</td><td>The Pragmatic Programmer, The Daily WTF, thoughtworks.com, xkcd.com</td>
+<tr><td>Personal blogs, sites, projects</td><td>blog.johnsmith.com, johnsmith.com</td></tr>
+<tr><td>Acomplishments: </td><td>1st place in state highschool botball competition</td></tr>
+</table>
+</div>  
+
+<div id="tab3content">
+<table>
+
+<tr><td>Specialties/Accomplishments:</td><td>Third degree black belt in karate</td></tr>
+<tr><td>Activities/Interests:</td><td>Karate, spelunking, golf </td></tr>
+</table>
+</div>  
+
+    
+    <script type="text/javascript">
+    $('tab2content').hide();
+    $('tab3content').hide();
+    $('tab1button').observe('click', function(event) {
+        $('tab1content').show();
+        $('tab2content').hide();
+        $('tab3content').hide();
+    });
+    Event.observe('tab2button', 'click', function(event) {
+        $('tab2content').show();
+        $('tab1content').hide();
+        $('tab3content').hide();
+    });
+    Event.observe('tab3button', 'click', function(event) {
+        $('tab3content').show();
+        $('tab1content').hide();
+        $('tab2content').hide();
+    });
+    </script>
+
+
+

@@ -1,0 +1,32 @@
+<h1>Update John Smith's Profile</h1>
+ 
+<div id="tab1content" class="tabcontent">
+<style type="text/css">
+.tabcontent td {
+padding:7px 0px;
+}
+.tabcontent li {
+padding-left: 0px; 
+}
+.tabcontent ul {
+padding-left: 0px; 
+}
+</style>
+<form>
+<table style="width:700px;">
+<tr><td>Name:</td><td><input type="text" value="John Smith" /></td>
+<td rowspan="4">
+<table>
+<tr><td colspan="2"><Strong>Education</strong></td></tr>
+<tr><td>School:</td><td><input type="text" value="Rose Hulman" /></td></tr>
+<tr><td>Major:</td><td><input type="text" value="Software Engineer" /></td></tr>
+</table>
+</td></tr>
+<tr><td>Location:</td><td><input type="text" value="Cincinnati" /></td></tr>
+<tr><td>Preferred Contact Method:</td><td><input type="text" value="E-mail" /></td></tr>
+<tr><td>Current Position:</td><td><input type="text" value="Student" /></td></tr>
+<tr><td>Recent Projects (One per line)</td><td><textarea style="width: 300px">Medical Billing Databases  
+Sliding Blocks Solution Generator</textarea></td></tr>
+</table>
+<input type="button" name="next_button" value="Next"></input>
+</div>  
