@@ -1,5 +1,10 @@
 <h1>Update John Smith's Profile</h1>
-
+<ul class="tabs">  
+	<li id="tab1button">General Information</li>  
+	<li id="tab2button">Software Experience</li>  
+	<li id="tab3button">Interests</li>  
+</ul> 
+<form>
 <div id="tab1content" class="tabcontent">
 <style type="text/css">
 .tabcontent td {
@@ -15,7 +20,7 @@ padding-left: 0px;
 width: 300px
 }
 </style>
-<form>
+
 <table style="width:700px;">
 <tr>
 <tr><td>Gender:</td><td><input type="radio" name="gender" id="male" /><label for="male">Male</label> <input type="radio" name="gender" id="female" /><label for="female">Female</label> </td>
@@ -50,8 +55,80 @@ Intelligence</textarea></tr>
 <tr><td>Recent Projects</td><td><textarea>LLBean Onlice Catalog
 Jet Blue Automatic Baggage Handler</textarea></td></tr>
 </table>
-<input type="button" value="next" />
-<input type="button" value="previous" />
-</form>
+</div> 
 
-</div>  
+<div id="tab2content">
+<table>
+<tr><td>Total Years Experience: </td><td><input type="text" value="5"/></td></tr>
+<tr><td>Why you became a software engineer?</td><td><textarea>I like toitles.</textarea></td></tr>
+<tr><td colspan="2">
+    <table>
+    <tr><td>Technology</td><td>Years Experience</td><td>Comfort Level</td></tr>
+    <tr><td><input type="text" value="Ruby"/></td><td><input type="text" value="3"/></td><td><input type="text" value="High"/></td></tr>
+    <tr><td><input type="text" value="C"/></td><td><input type="text" value="5"/></td><td><input type="text" value="High"/></td></tr>
+    <tr><td><input type="button" value="Add Technology" /></td></tr>
+    </table>
+    
+</td></tr>
+<tr><td>Favorite books, blogs, sites, projects:</td><td><textarea>The Pragmatic Programmer
+The Daily WTF
+ thoughtworks.com
+  xkcd.com
+  </textarea>
+ </td>
+<tr><td>Personal blogs, sites, projects</td><td><textarea>blog.johnsmith.com
+ johnsmith.com</textarea></td></tr>
+<tr><td>Acomplishments: </td><td><textarea>The Ben Bernacke award for excellence in the research ofArtificial Intelligience 2008</textarea></td></tr>
+<tr><td>Favorite Part of Software Development</td><td><input type="text" value="Coding" /></td></tr>
+</table>
+</div>
+
+<div id="tab3content">
+<table>
+<tr><td>Specialties/Accomplishments:</td><td><textarea>Third degree black belt in karate</textarea></td></tr>
+<tr><td>Activities/Interests:</td><td><textarea>Karate
+spelunking
+golf
+</textarea>
+ </td></tr>
+<tr><td>Books:</td><td><textarea>
+The Art of War
+Watchmen
+A Mathematician Reads the Newspaper</textarea></td></tr>
+<tr><td>TV Shows:</td><td><textarea>
+Men of a Certain Age
+Family Guy
+Mythbusters
+The Office</textarea></td></tr>
+<tr><td>Music Interests:</td><td><textarea>Alternative Rock
+Hinder
+Red Hot Chili Peppers</textarea></td></tr>
+<tr><td>Movies:</td><td><textarea>
+The Boondock Saints
+Citizen Kane</textarea></td></tr>
+</table>
+</div>
+
+	<script type="text/javascript">
+	$('tab2content').hide();
+	$('tab3content').hide();
+	$('tab1button').observe('click', function(event) {
+		$('tab1content').show();
+		$('tab2content').hide();
+		$('tab3content').hide();
+	});
+	Event.observe('tab2button', 'click', function(event) {
+		$('tab2content').show();
+		$('tab1content').hide();
+		$('tab3content').hide();
+	});
+	Event.observe('tab3button', 'click', function(event) {
+		$('tab3content').show();
+		$('tab1content').hide();
+		$('tab2content').hide();
+	});
+	</script>
+<p></p>
+<input type="button" value="Submit Changes" />
+
+</form> 
