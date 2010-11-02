@@ -1,5 +1,10 @@
 <h1>Update John Smith's Profile</h1>
- 
+<ul class="tabs">  
+    <li id="tab1button">General Information</li>  
+    <li id="tab2button">Software Experience</li>  
+    <li id="tab3button">Interests</li>  
+</ul>  
+<form>
 <div id="tab1content" class="tabcontent">
 <style type="text/css">
 .tabcontent td {
@@ -12,7 +17,6 @@ padding-left: 0px;
 padding-left: 0px; 
 }
 </style>
-<form>
 <table style="width:700px;">
 <tr><td>Name:</td><td><input type="text" value="John Smith" /></td>
 <td rowspan="4">
@@ -28,5 +32,65 @@ padding-left: 0px;
 <tr><td>Recent Projects (One per line)</td><td><textarea style="width: 300px">Medical Billing Databases  
 Sliding Blocks Solution Generator</textarea></td></tr>
 </table>
-<input type="button" name="next_button" value="Next"></input>
-</div>  
+</div>
+
+<div id="tab2content">
+<table>
+<tr><td>Total Years Experience: </td><td><input type="text" value="5"/></td></tr>
+<tr><td>Why you became/want to become a software engineer?</td><td><textarea>I like toitles.</textarea></td></tr>
+<tr><td colspan="2">
+    <table>
+    <tr><td>Technology</td><td>Years Experience</td><td>Comfort Level</td></tr>
+    <tr><td><input type="text" value="Ruby"/></td><td><input type="text" value="3"/></td><td><input type="text" value="High"/></td></tr>
+    <tr><td><input type="text" value="C"/></td><td><input type="text" value="5"/></td><td><input type="text" value="High"/></td></tr>
+    <tr><td><input type="button" value="Add Technology" /></td></tr>
+    </table>
+    
+</td></tr>
+<tr><td>Favorite books, blogs, sites, projects:</td><td><textarea>The Pragmatic Programmer
+The Daily WTF
+ thoughtworks.com
+  xkcd.com
+  </textarea>
+ </td>
+<tr><td>Personal blogs, sites, projects</td><td><textarea>blog.johnsmith.com
+ johnsmith.com</textarea></td></tr>
+<tr><td>Acomplishments: </td><td><textarea>The Ben Bernacke award for excellence in the research ofArtificial Intelligience 2008</textarea></td></tr>
+
+</table>
+</div>
+
+<div id="tab3content">
+<table>
+<tr><td>Specialties/Accomplishments:</td><td><textarea>Third degree black belt in karate</textarea></td></tr>
+<tr><td>Activities/Interests:</td><td><textarea>Karate
+spelunking
+golf
+</textarea>
+ </td></tr>
+</table>
+</div>
+
+	<script type="text/javascript">
+    $('tab2content').hide();
+    $('tab3content').hide();
+    $('tab1button').observe('click', function(event) {
+        $('tab1content').show();
+        $('tab2content').hide();
+        $('tab3content').hide();
+    });
+    Event.observe('tab2button', 'click', function(event) {
+        $('tab2content').show();
+        $('tab1content').hide();
+        $('tab3content').hide();
+    });
+    Event.observe('tab3button', 'click', function(event) {
+        $('tab3content').show();
+        $('tab1content').hide();
+        $('tab2content').hide();
+    });
+    </script>
+<p></p>
+<input type="button" value="Submit Changes" />
+
+</form>
