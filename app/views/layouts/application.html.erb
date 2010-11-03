@@ -14,16 +14,33 @@
 <ul>
 <li><a href="/">Home</a></li>
 <li><a href="/mentor_profiles/search">Browse All</a></li>
-<li><a href="/mentor_profiles/read">My Profile</a></li>
-<li><a href="/mentor_profiles/update_general">Edit Profile</a></li>
-<li><a href="/mentor_profiles/update_availability">Update Availability</a></li>
+
+<% if ! session[:usertype] %>
+<li><a href="/accounts/register">Register</a></li>
+<li><a href="/accounts/login">Login</a></li>
+<% else %>
+  <% if session[:usertype] == :mentor %>
+  <li><a href="/mentor_profiles/read">My Profile</a></li>
+  <li><a href="/mentor_profiles/update_general">Edit Profile</a></li>
+  <li><a href="/mentor_profiles/update_availability">Update Availability</a></li>
+  <% end %>
+  <% if session[:usertype] == :mentee %>
+  <li><a href="/mentee_profiles/read">My Profile</a></li>
+  <li><a href="/mentee_profiles/update_general">Edit Profile</a></li>
+  <% end %>
+  <li><a href="/accounts/logout">Logout</a></li>
+  <% end %>
 </ul>
-<form>
+
+
 <div style="position:absolute; right:50px; top:30px;">
-<input type="text" name="search"/>
-<input type="button" name="search_button" value="Search" />
+<% form_tag "/mentor_profiles/search", :method => "get" do %>
+  <%= label_tag(:q, "Search:") %>
+  <%= text_field_tag(:q) %>
+  <%= submit_tag("Search") %>
+<% end %>
 </div>
-</form> 
+
 </div>
     <%= yield %>
 </div>

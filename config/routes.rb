@@ -4,7 +4,7 @@ ActionController::Routing::Routes.draw do |map|
   # Sample of regular route:
   #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
   map.connect '/about', :controller => 'home', :action => 'about'
-  
+  #map.resources :mentor_profiles
   # Keep in mind you can assign values other than :controller and :action
 
   # Sample of named route:
@@ -36,10 +36,12 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => "home", :action => "index"
 
   # See how all your routes lay out with "rake routes"
-
+  
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing or commenting them out if you're using named routes and resources.
+  #map.connect ':controller/:action/'
   map.connect ':controller/:action/:id'
+
   #map.connect ':controller/:action/:id.:format'
 end

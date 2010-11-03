@@ -1,16 +1,18 @@
-<h1>Login</h1><form action="" method="post">
-
+<h1>Login</h1>
+<form action="/accounts/login" method="post">
+<% form_for :user, :url => {:action => 'login'} do |f| %>
 <table style="width: 300px">
 	<tr>
-		<td>Email:</td>
-		<td><input name="Text1" type="text"></td>
+		<td><%= f.label :name, "E-mail:" %></td>
+		<td><%= f.text_field :email %></td>
 	</tr>
 	<tr>
 		<td><label id="Label1">Password: </label></td>
-		<td><input name="Text2" type="text"></td>
+		<td><%= f.text_field :pass %></td>
 	</tr>
 </table>
-<p><input name="login_button" type="button" value="Login"></p>
+<p><%= submit_tag "Login" %></p>
+<% end %>
 <p><a href="/accounts/register">Register</a> <a href="/accounts/forgot">Forgot Password</a></p>
 </form>
 
