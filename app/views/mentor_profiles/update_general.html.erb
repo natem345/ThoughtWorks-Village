@@ -1,10 +1,19 @@
-<h1>Update John Smith's Profile</h1>
+<h1><%
+  if request.referer.include? "register"
+    %>Create <%
+  else
+    %>Update <%
+  end
+  %>  John Smith's Profile</h1>
+<div style="color:red;">
+  <%= flash[:status] %>
+</div>
 <ul class="tabs">  
 	<li id="tab1button">General Information</li>  
 	<li id="tab2button">Software Experience</li>  
 	<li id="tab3button">Interests</li>  
 </ul> 
-<form>
+<% form_for :mentor, :url => {:action => 'update_general'} do |f| %>
 <div id="tab1content" class="tabcontent">
 <style type="text/css">
 .tabcontent td {
@@ -28,7 +37,7 @@ width: 300px
 
 <table>
 <tr><td colspan="2"><strong>Education</strong></td></tr>
-<tr><td>School:</td><td><input type="text" value="Rose Hulman" /></td></tr>
+<tr><td>School:</td><td><%= f.text_field :school %></td>
 <tr><td>Major:</td><td><input type="text" value="Software Engineer" /></td></tr>
 </table>
 </td>
@@ -129,6 +138,7 @@ Citizen Kane</textarea></td></tr>
 	});
 	</script>
 <p></p>
-<input type="button" value="Submit Changes" />
+<%= submit_tag("Submit Changes") %>
 
-</form> 
+<% end %> 
+<p><a href="/mentor_profiles/delete">Delete Profile</a></p>

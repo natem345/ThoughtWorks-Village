@@ -1,7 +1,11 @@
 <h1>Register</h1>
-<form>
+<% form_for :user, :url => {:action => 'register'} do |f| %>
 <table>
 <tr><td>Name:</td><td><input type="text" id="pass" /></td></tr>
+<tr>
+<td><%= f.label :email, "E-mail:" %></td>
+<td><%= f.text_field :email %></td>
+</tr>
 <tr><td>Email address:</td><td><input type="text" id="email" /></td></tr>
 <tr><td>Password:</td><td><input type="text" id="pass" /></td></tr>
 <tr><td>Confirm Password:</td><td><input type="text" id="pass" /></td></tr>
@@ -9,5 +13,5 @@
 <p>I agree with the  
 <a href="/Accounts/Terms">terms and conditions</a>
 <input name="agree_tac" type="checkbox" /></p>
-<p><input name="register_button" type="button" value="Register" /></p>
-</form>
+<p><%= submit_tag "Register" %></p>
+<% end%>

@@ -4709,3 +4709,1175 @@ Processing MentorProfilesController#update_availability (for 127.0.0.1 at 2010-1
 Rendering template within layouts/application
 Rendering mentor_profiles/update_availability
 Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_availability]
+
+
+Processing MentorProfilesController#search (for 127.0.0.1 at 2010-11-03 17:12:30) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/search
+Completed in 157ms (View: 155, DB: 0) | 200 OK [http://localhost/mentor_profiles/search]
+
+
+Processing MentorProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:12:38) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/update_general
+Completed in 55ms (View: 53, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_general]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-11-03 17:13:33) [GET]
+
+ActionController::RoutingError (No route matches "/mente_profiles/update_general" with {:method=>:get}):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:13:36) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 16ms (View: 15, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:15:00) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:15:57) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 64ms (View: 13, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:16:00) [POST]
+  Parameters: {"commit"=>"Submit Changes", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY="}
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:16:01) [POST]
+  Parameters: {"commit"=>"Submit Changes", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY="}
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 18ms (View: 16, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:16:03) [POST]
+  Parameters: {"commit"=>"Submit Changes", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY="}
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:16:06) [POST]
+  Parameters: {"commit"=>"Submit Changes", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY="}
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MentorProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:16:13) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/update_general
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_general]
+
+
+Processing MentorProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:20:50) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/update_general
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_general]
+
+
+Processing MentorProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:22:31) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/update_general
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:22:34) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 23ms (View: 21, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:22:35) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:22:37) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:22:38) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 11ms (View: 10, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:22:39) [POST]
+  Parameters: {"commit"=>"Submit Changes", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY="}
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:22:41) [POST]
+  Parameters: {"commit"=>"Submit Changes", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY="}
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 56ms (View: 54, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:22:42) [POST]
+  Parameters: {"commit"=>"Submit Changes", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY="}
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:22:42) [POST]
+  Parameters: {"commit"=>"Submit Changes", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY="}
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 18ms (View: 17, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_genera (for 127.0.0.1 at 2010-11-03 17:23:05) [GET]
+
+ActionController::UnknownAction (No action responded to update_genera. Actions: delete, read, update_general, update_nonsw, and update_sw):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:23:07) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:23:12) [POST]
+  Parameters: {"commit"=>"Submit Changes", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY="}
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:23:14) [POST]
+  Parameters: {"commit"=>"Submit Changes", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY="}
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:24:01) [POST]
+  Parameters: {"commit"=>"Submit Changes", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY="}
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:24:07) [POST]
+  Parameters: {"commit"=>"Submit Changes", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY=", "mentee"=>{"name"=>""}}
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:24:11) [POST]
+  Parameters: {"commit"=>"Submit Changes", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY=", "mentee"=>{"name"=>"adsf"}}
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:32:33) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MentorProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:32:38) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/update_general
+Completed in 13ms (View: 12, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_general]
+
+
+Processing MentorProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:32:40) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/update_general
+Completed in 16ms (View: 14, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_general]
+
+
+Processing MentorProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:32:42) [POST]
+  Parameters: {"commit"=>"Submit Changes", "mentor"=>{"school"=>""}, "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY="}
+Rendering template within layouts/application
+Rendering mentor_profiles/update_general
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:32:46) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:32:49) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-03 17:32:52) [POST]
+  Parameters: {"commit"=>"Submit Changes", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY=", "mentee"=>{"name"=>""}}
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 16ms (View: 4, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-04 10:50:31) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 84ms (View: 82, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-04 10:52:06) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AccountsController#register (for 127.0.0.1 at 2010-11-04 10:52:09) [GET]
+Redirected to http://localhost:3000/
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/accounts/register]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-04 10:52:09) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AccountsController#register (for 127.0.0.1 at 2010-11-04 10:52:13) [GET]
+Redirected to http://localhost:3000/
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/accounts/register]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-04 10:52:13) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AccountsController#register (for 127.0.0.1 at 2010-11-04 10:53:18) [GET]
+Redirected to http://localhost:3000/
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/accounts/register]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-04 10:53:18) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AccountsController#register (for 127.0.0.1 at 2010-11-04 10:56:42) [GET]
+Rendering template within layouts/application
+Rendering accounts/register
+Completed in 38ms (View: 36, DB: 0) | 200 OK [http://localhost/accounts/register]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-04 11:12:05) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-11-04 11:12:26) [GET]
+Rendering template within layouts/application
+Rendering accounts/login
+Completed in 72ms (View: 69, DB: 0) | 200 OK [http://localhost/accounts/login]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-11-04 11:12:31) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY=", "user"=>{"pass"=>"", "email"=>"jsmith@thoughtworks.com"}}
+Redirected to http://localhost:3000/requests/view
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/accounts/login]
+
+
+Processing RequestsController#view (for 127.0.0.1 at 2010-11-04 11:12:31) [GET]
+Rendering template within layouts/application
+Rendering requests/view
+Completed in 13ms (View: 11, DB: 0) | 200 OK [http://localhost/requests/view]
+
+
+Processing MentorProfilesController#search (for 127.0.0.1 at 2010-11-04 11:12:45) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/search
+Completed in 30ms (View: 29, DB: 0) | 200 OK [http://localhost/mentor_profiles/search]
+
+
+Processing MentorProfilesController#update_availability (for 127.0.0.1 at 2010-11-04 11:12:48) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/update_availability
+Completed in 32ms (View: 30, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_availability]
+
+
+Processing MentorProfilesController#read (for 127.0.0.1 at 2010-11-04 11:12:49) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/read
+Completed in 26ms (View: 25, DB: 0) | 200 OK [http://localhost/mentor_profiles/read]
+
+
+Processing MentorProfilesController#update_general (for 127.0.0.1 at 2010-11-04 11:12:50) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/update_general
+Completed in 20ms (View: 19, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_general]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-04 11:13:40) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AccountsController#logout (for 127.0.0.1 at 2010-11-04 11:13:42) [GET]
+Rendering template within layouts/application
+Rendering accounts/logout
+Completed in 22ms (View: 20, DB: 0) | 200 OK [http://localhost/accounts/logout]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-11-04 11:14:17) [GET]
+Rendering template within layouts/application
+Rendering accounts/login
+Completed in 20ms (View: 4, DB: 0) | 200 OK [http://localhost/accounts/login]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-11-04 11:15:34) [GET]
+Rendering template within layouts/application
+Rendering accounts/login
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/login]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-11-04 11:15:38) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY=", "user"=>{"pass"=>"", "email"=>"jdoe@aol.com"}}
+Redirected to http://localhost:3000/mentor_profiles/read
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/accounts/login]
+
+
+Processing MentorProfilesController#read (for 127.0.0.1 at 2010-11-04 11:15:39) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/read
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/mentor_profiles/read]
+
+
+Processing AccountsController#logout (for 127.0.0.1 at 2010-11-04 11:15:44) [GET]
+Rendering template within layouts/application
+Rendering accounts/logout
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/accounts/logout]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-11-04 11:15:45) [GET]
+Rendering template within layouts/application
+Rendering accounts/login
+Completed in 13ms (View: 12, DB: 0) | 200 OK [http://localhost/accounts/login]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-11-04 11:15:50) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY=", "user"=>{"pass"=>"", "email"=>"jsmith@thoughtworks.com"}}
+Redirected to http://localhost:3000/requests/view
+Completed in 3ms (DB: 0) | 302 Found [http://localhost/accounts/login]
+
+
+Processing RequestsController#view (for 127.0.0.1 at 2010-11-04 11:15:50) [GET]
+Rendering template within layouts/application
+Rendering requests/view
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/requests/view]
+
+
+Processing AccountsController#logout (for 127.0.0.1 at 2010-11-04 11:16:02) [GET]
+Rendering template within layouts/application
+Rendering accounts/logout
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/accounts/logout]
+
+
+Processing AccountsController#register (for 127.0.0.1 at 2010-11-04 11:16:05) [GET]
+Rendering template within layouts/application
+Rendering accounts/register
+Completed in 90ms (View: 89, DB: 0) | 200 OK [http://localhost/accounts/register]
+
+
+Processing AccountsController#register (for 127.0.0.1 at 2010-11-04 11:16:52) [GET]
+Rendering template within layouts/application
+Rendering accounts/register
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/accounts/register]
+
+
+Processing AccountsController#register (for 127.0.0.1 at 2010-11-04 11:18:23) [GET]
+Rendering template within layouts/application
+Rendering accounts/register
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/accounts/register]
+
+
+Processing AccountsController#register (for 127.0.0.1 at 2010-11-04 11:18:26) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY=", "user"=>{"email"=>"jsmith@thoughtworks.com"}}
+Redirected to http://localhost:3000/mentor_profiles/update_general
+Completed in 9ms (DB: 0) | 302 Found [http://localhost/accounts/register]
+
+
+Processing MentorProfilesController#update_general (for 127.0.0.1 at 2010-11-04 11:18:26) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/update_general
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_general]
+
+
+Processing AccountsController#register (for 127.0.0.1 at 2010-11-04 11:18:41) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY=", "user"=>{"email"=>"jdoe@aol.com"}}
+Redirected to http://localhost:3000/mentee_profiles/update_general
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/accounts/register]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-04 11:18:41) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 40ms (View: 36, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing AccountsController#register (for 127.0.0.1 at 2010-11-04 11:18:58) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY=", "user"=>{"email"=>"jsmith@thoughtworks.com"}}
+Redirected to http://localhost:3000/mentor_profiles/update_general
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/accounts/register]
+
+
+Processing MentorProfilesController#update_general (for 127.0.0.1 at 2010-11-04 11:18:58) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/update_general
+Completed in 14ms (View: 13, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_general]
+
+
+Processing AccountsController#logout (for 127.0.0.1 at 2010-11-04 11:19:30) [GET]
+Rendering template within layouts/application
+Rendering accounts/logout
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/logout]
+
+
+Processing AccountsController#logout (for 127.0.0.1 at 2010-11-04 11:21:09) [GET]
+Redirected to http://localhost:3000/
+Completed in 3ms (DB: 0) | 302 Found [http://localhost/accounts/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-04 11:21:10) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-11-04 11:21:12) [GET]
+Rendering template within layouts/application
+Rendering accounts/login
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/login]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-11-04 11:21:15) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY=", "user"=>{"pass"=>"", "email"=>"jsmith@thoughtworks.com"}}
+Redirected to http://localhost:3000/requests/view
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/accounts/login]
+
+
+Processing RequestsController#view (for 127.0.0.1 at 2010-11-04 11:21:15) [GET]
+Rendering template within layouts/application
+Rendering requests/view
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/requests/view]
+
+
+Processing AccountsController#logout (for 127.0.0.1 at 2010-11-04 11:21:17) [GET]
+Redirected to http://localhost:3000/
+Completed in 4ms (DB: 0) | 302 Found [http://localhost/accounts/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-04 11:21:17) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AccountsController#register (for 127.0.0.1 at 2010-11-04 11:22:00) [GET]
+Rendering template within layouts/application
+Rendering accounts/register
+Completed in 15ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/register]
+
+
+Processing AccountsController#register (for 127.0.0.1 at 2010-11-04 11:22:12) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY=", "user"=>{"email"=>"jdoe@aol.com"}}
+Redirected to http://localhost:3000/mentee_profiles/update_general
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/accounts/register]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-04 11:22:12) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing AccountsController#register (for 127.0.0.1 at 2010-11-04 11:33:34) [GET]
+Rendering template within layouts/application
+Rendering accounts/register
+Completed in 131ms (View: 126, DB: 0) | 200 OK [http://localhost/accounts/register]
+
+
+Processing AccountsController#register (for 127.0.0.1 at 2010-11-04 11:33:51) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY=", "user"=>{"email"=>"jsmith@thoughtworks.com"}}
+Redirected to http://localhost:3000/mentor_profiles/update_general
+Completed in 4ms (DB: 0) | 302 Found [http://localhost/accounts/register]
+
+
+Processing MentorProfilesController#update_general (for 127.0.0.1 at 2010-11-04 11:33:51) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/update_general
+Completed in 99ms (View: 97, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_general]
+
+
+Processing AccountsController#logout (for 127.0.0.1 at 2010-11-04 11:34:00) [GET]
+Redirected to http://localhost:3000/
+Completed in 10ms (DB: 0) | 302 Found [http://localhost/accounts/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-04 11:34:00) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 31ms (View: 30, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-11-04 11:34:01) [GET]
+Rendering template within layouts/application
+Rendering accounts/login
+Completed in 40ms (View: 38, DB: 0) | 200 OK [http://localhost/accounts/login]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-11-04 11:34:05) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY=", "user"=>{"pass"=>"", "email"=>"jdoe@aol.com"}}
+Redirected to http://localhost:3000/mentor_profiles/read
+Completed in 3ms (DB: 0) | 302 Found [http://localhost/accounts/login]
+
+
+Processing MentorProfilesController#read (for 127.0.0.1 at 2010-11-04 11:34:05) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/read
+Completed in 16ms (View: 14, DB: 0) | 200 OK [http://localhost/mentor_profiles/read]
+
+
+Processing AccountsController#logout (for 127.0.0.1 at 2010-11-04 11:34:08) [GET]
+Redirected to http://localhost:3000/
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/accounts/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-04 11:34:08) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 13ms (View: 12, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AccountsController#register (for 127.0.0.1 at 2010-11-04 11:34:09) [GET]
+Rendering template within layouts/application
+Rendering accounts/register
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/register]
+
+
+Processing AccountsController#register (for 127.0.0.1 at 2010-11-04 11:34:13) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY=", "user"=>{"email"=>"jdoe@aol.com"}}
+Redirected to http://localhost:3000/mentee_profiles/update_general
+Completed in 3ms (DB: 0) | 302 Found [http://localhost/accounts/register]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-04 11:34:13) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 43ms (View: 41, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing AccountsController#register (for 127.0.0.1 at 2010-11-04 11:39:52) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY=", "user"=>{"email"=>"j"}}
+Rendering template within layouts/application
+Rendering accounts/register
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://localhost/accounts/register]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-04 11:39:57) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 14ms (View: 12, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-04 11:41:53) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 22ms (View: 19, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-04 11:42:55) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 12ms (View: 11, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-04 11:42:57) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-04 11:43:34) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 20ms (View: 18, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-04 11:43:37) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing AccountsController#logout (for 127.0.0.1 at 2010-11-04 11:45:02) [GET]
+Redirected to http://localhost:3000/
+Completed in 4ms (DB: 0) | 302 Found [http://localhost/accounts/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-04 11:45:02) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AccountsController#register (for 127.0.0.1 at 2010-11-04 11:45:04) [GET]
+Rendering template within layouts/application
+Rendering accounts/register
+Completed in 8ms (View: 7, DB: 0) | 200 OK [http://localhost/accounts/register]
+
+
+Processing AccountsController#register (for 127.0.0.1 at 2010-11-04 11:45:15) [POST]
+  Parameters: {"commit"=>"Register", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY=", "user"=>{"email"=>"jsmith@thoughtworks.com"}}
+Redirected to http://localhost:3000/mentor_profiles/update_general
+Completed in 3ms (DB: 0) | 302 Found [http://localhost/accounts/register]
+
+
+Processing MentorProfilesController#update_general (for 127.0.0.1 at 2010-11-04 11:45:15) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/update_general
+Completed in 14ms (View: 13, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_general]
+
+
+Processing SurveysController#complete (for 127.0.0.1 at 2010-11-04 11:46:39) [GET]
+Rendering template within layouts/application
+Rendering surveys/complete
+Completed in 15ms (View: 13, DB: 0) | 200 OK [http://localhost/surveys/complete]
+
+
+Processing SurveysController#complete (for 127.0.0.1 at 2010-11-04 11:50:51) [GET]
+Rendering template within layouts/application
+Rendering surveys/complete
+Completed in 24ms (View: 11, DB: 0) | 200 OK [http://localhost/surveys/complete]
+
+
+Processing SurveysController#complete (for 127.0.0.1 at 2010-11-04 11:50:52) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY="}
+Rendering template within layouts/application
+Rendering surveys/complete
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/surveys/complete]
+
+
+Processing SurveysController#complete (for 127.0.0.1 at 2010-11-04 11:53:16) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY="}
+Rendering template within layouts/application
+Rendering surveys/complete
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/surveys/complete]
+
+
+Processing SurveysController#complete (for 127.0.0.1 at 2010-11-04 11:53:19) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY="}
+Rendering template within layouts/application
+Rendering surveys/complete
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/surveys/complete]
+
+
+Processing SurveysController#complete (for 127.0.0.1 at 2010-11-04 11:53:22) [GET]
+Rendering template within layouts/application
+Rendering surveys/complete
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/surveys/complete]
+
+
+Processing SurveysController#complete (for 127.0.0.1 at 2010-11-04 11:53:26) [GET]
+Rendering template within layouts/application
+Rendering surveys/complete
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/surveys/complete]
+
+
+Processing SurveysController#complete (for 127.0.0.1 at 2010-11-04 11:53:29) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY="}
+Rendering template within layouts/application
+Rendering surveys/complete
+Completed in 10ms (View: 9, DB: 0) | 200 OK [http://localhost/surveys/complete]
+
+
+Processing SurveysController#complete (for 127.0.0.1 at 2010-11-04 11:56:16) [GET]
+Rendering template within layouts/application
+Rendering surveys/complete
+Completed in 13ms (View: 12, DB: 0) | 200 OK [http://localhost/surveys/complete]
+
+
+Processing SurveysController#complete (for 127.0.0.1 at 2010-11-04 11:56:19) [POST]
+  Parameters: {"commit"=>"Submit", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY=", "survey"=>{"comments"=>""}}
+Redirected to http://localhost:3000/requests/view
+Completed in 3ms (DB: 0) | 302 Found [http://localhost/surveys/complete]
+
+
+Processing RequestsController#view (for 127.0.0.1 at 2010-11-04 11:56:19) [GET]
+Rendering template within layouts/application
+Rendering requests/view
+Completed in 30ms (View: 28, DB: 0) | 200 OK [http://localhost/requests/view]
+
+
+Processing MentorProfilesController#read (for 127.0.0.1 at 2010-11-04 11:57:08) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/read
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/mentor_profiles/read]
+
+
+Processing MentorProfilesController#read (for 127.0.0.1 at 2010-11-04 12:01:21) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/read
+Completed in 13ms (View: 12, DB: 0) | 200 OK [http://localhost/mentor_profiles/read]
+
+
+Processing AccountsController#logout (for 127.0.0.1 at 2010-11-04 12:01:24) [GET]
+Redirected to http://localhost:3000/
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/accounts/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-04 12:01:24) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-11-04 12:01:25) [GET]
+Rendering template within layouts/application
+Rendering accounts/login
+Completed in 13ms (View: 11, DB: 0) | 200 OK [http://localhost/accounts/login]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-11-04 12:01:28) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY=", "user"=>{"pass"=>"", "email"=>"jdoe@aol.com"}}
+Redirected to http://localhost:3000/mentor_profiles/read
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/accounts/login]
+
+
+Processing MentorProfilesController#read (for 127.0.0.1 at 2010-11-04 12:01:28) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/read
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/mentor_profiles/read]
+
+
+Processing RequestsController#make (for 127.0.0.1 at 2010-11-04 12:01:39) [GET]
+Rendering template within layouts/application
+Rendering requests/make
+Completed in 24ms (View: 20, DB: 0) | 200 OK [http://localhost/requests/make]
+
+
+Processing AccountsController#logout (for 127.0.0.1 at 2010-11-04 12:02:06) [GET]
+Redirected to http://localhost:3000/
+Completed in 3ms (DB: 0) | 302 Found [http://localhost/accounts/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-04 12:02:06) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 8ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-11-04 12:02:07) [GET]
+Rendering template within layouts/application
+Rendering accounts/login
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/accounts/login]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-11-04 12:02:10) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY=", "user"=>{"pass"=>"", "email"=>"jdoe@aol.com"}}
+Redirected to http://localhost:3000/mentor_profiles/search
+Completed in 3ms (DB: 0) | 302 Found [http://localhost/accounts/login]
+
+
+Processing MentorProfilesController#search (for 127.0.0.1 at 2010-11-04 12:02:10) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/search
+Completed in 22ms (View: 20, DB: 0) | 200 OK [http://localhost/mentor_profiles/search]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-04 12:02:18) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-04 12:09:05) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AccountsController#logout (for 127.0.0.1 at 2010-11-04 12:09:17) [GET]
+Redirected to http://localhost:3000/
+Completed in 3ms (DB: 0) | 302 Found [http://localhost/accounts/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-04 12:09:17) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 7ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-11-04 12:09:18) [GET]
+Rendering template within layouts/application
+Rendering accounts/login
+Completed in 9ms (View: 8, DB: 0) | 200 OK [http://localhost/accounts/login]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-11-04 12:09:21) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"IF61Is3kyecQkm7dG4U/+47pvYJCz9DHf+LSPv+qrLY=", "user"=>{"pass"=>"", "email"=>"jsmith@thoughtworks.com"}}
+Redirected to http://localhost:3000/requests/view
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/accounts/login]
+
+
+Processing ApplicationController#view (for 127.0.0.1 at 2010-11-04 12:09:21) [GET]
+
+SyntaxError (/home/gouser/Documents/ThoughtWorks-Village/app/controllers/requests_controller.rb:13: syntax error, unexpected $end, expecting kEND):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (30.5ms)
+Rendered rescues/_request_and_response (1.8ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#view (for 127.0.0.1 at 2010-11-04 12:09:42) [GET]
+
+SyntaxError (/home/gouser/Documents/ThoughtWorks-Village/app/controllers/requests_controller.rb:13: syntax error, unexpected $end, expecting kEND):
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (26.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing RequestsController#view (for 127.0.0.1 at 2010-11-04 12:10:04) [GET]
+Rendering template within layouts/application
+Rendering requests/view
+Completed in 10ms (View: 9, DB: 0) | 200 OK [http://localhost/requests/view]
+
+
+Processing RequestsController#view (for 127.0.0.1 at 2010-11-04 12:10:13) [GET]
+Rendering template within layouts/application
+Rendering requests/view
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/requests/view]
+
+
+Processing RequestsController#view (for 127.0.0.1 at 2010-11-04 12:10:53) [GET]
+Rendering template within layouts/application
+Rendering requests/view
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/requests/view]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-04 12:10:56) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 8ms (View: 6, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing MentorProfilesController#update_general (for 127.0.0.1 at 2010-11-04 12:11:24) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/update_general
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_general]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-04 15:22:17) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 84ms (View: 77, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-11-04 15:22:25) [GET]
+Rendering template within layouts/application
+Rendering accounts/login
+Completed in 97ms (View: 95, DB: 0) | 200 OK [http://localhost/accounts/login]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-11-04 15:22:28) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"RmpT2rQA5uxUOqknV42bHc/Jn7V2WsI2FHMN7EYlQvU=", "user"=>{"pass"=>"", "email"=>"jsmith@thoughtworks.com"}}
+Redirected to http://localhost:3000/requests/view
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/accounts/login]
+
+
+Processing RequestsController#view (for 127.0.0.1 at 2010-11-04 15:22:28) [GET]
+Rendering template within layouts/application
+Rendering requests/view
+Completed in 38ms (View: 36, DB: 0) | 200 OK [http://localhost/requests/view]
+
+
+Processing MentorProfilesController#update_general (for 127.0.0.1 at 2010-11-04 15:22:31) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/update_general
+Completed in 15ms (View: 13, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_general]
+
+
+Processing MentorProfilesController#delete (for 127.0.0.1 at 2010-11-04 15:22:33) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/delete
+Completed in 69ms (View: 67, DB: 0) | 200 OK [http://localhost/mentor_profiles/delete]
+
+
+Processing MentorProfilesController#delete (for 127.0.0.1 at 2010-11-04 15:22:37) [POST]
+  Parameters: {"commit"=>"Delete", "authenticity_token"=>"RmpT2rQA5uxUOqknV42bHc/Jn7V2WsI2FHMN7EYlQvU="}
+Rendering template within layouts/application
+Rendering mentor_profiles/delete
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/mentor_profiles/delete]
+
+
+Processing MentorProfilesController#delete (for 127.0.0.1 at 2010-11-04 15:22:39) [POST]
+  Parameters: {"commit"=>"Delete", "authenticity_token"=>"RmpT2rQA5uxUOqknV42bHc/Jn7V2WsI2FHMN7EYlQvU="}
+Rendering template within layouts/application
+Rendering mentor_profiles/delete
+Completed in 15ms (View: 14, DB: 0) | 200 OK [http://localhost/mentor_profiles/delete]
+
+
+Processing MentorProfilesController#delete (for 127.0.0.1 at 2010-11-04 15:23:31) [POST]
+  Parameters: {"commit"=>"Delete", "authenticity_token"=>"RmpT2rQA5uxUOqknV42bHc/Jn7V2WsI2FHMN7EYlQvU="}
+Rendering template within layouts/application
+Rendering mentor_profiles/delete
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/mentor_profiles/delete]
+
+
+Processing MentorProfilesController#delete (for 127.0.0.1 at 2010-11-04 15:23:40) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/delete
+Completed in 9ms (View: 5, DB: 0) | 200 OK [http://localhost/mentor_profiles/delete]
+
+
+Processing MentorProfilesController#delete (for 127.0.0.1 at 2010-11-04 15:27:32) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/delete
+Completed in 28ms (View: 19, DB: 0) | 200 OK [http://localhost/mentor_profiles/delete]
+
+
+Processing MentorProfilesController#delete (for 127.0.0.1 at 2010-11-04 15:27:33) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/delete
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/mentor_profiles/delete]
+
+
+Processing MentorProfilesController#delete (for 127.0.0.1 at 2010-11-04 15:27:35) [POST]
+  Parameters: {"commit"=>"delete", "authenticity_token"=>"RmpT2rQA5uxUOqknV42bHc/Jn7V2WsI2FHMN7EYlQvU="}
+Rendering template within layouts/application
+Rendering mentor_profiles/delete
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/mentor_profiles/delete]
+
+
+Processing MentorProfilesController#delete (for 127.0.0.1 at 2010-11-04 15:27:35) [POST]
+  Parameters: {"commit"=>"delete", "authenticity_token"=>"RmpT2rQA5uxUOqknV42bHc/Jn7V2WsI2FHMN7EYlQvU="}
+Rendering template within layouts/application
+Rendering mentor_profiles/delete
+Completed in 17ms (View: 4, DB: 0) | 200 OK [http://localhost/mentor_profiles/delete]
+
+
+Processing MentorProfilesController#delete (for 127.0.0.1 at 2010-11-04 15:29:59) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/delete
+Completed in 16ms (View: 14, DB: 0) | 200 OK [http://localhost/mentor_profiles/delete]
+
+
+Processing MentorProfilesController#delete (for 127.0.0.1 at 2010-11-04 15:30:20) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/delete
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/mentor_profiles/delete]
+
+
+Processing MentorProfilesController#delete (for 127.0.0.1 at 2010-11-04 15:30:25) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/delete
+Completed in 10ms (View: 9, DB: 0) | 200 OK [http://localhost/mentor_profiles/delete]
+
+
+Processing MentorProfilesController#delete (for 127.0.0.1 at 2010-11-04 15:30:31) [POST]
+  Parameters: {"commit"=>"Delete", "delete"=>{"yes"=>"1"}, "authenticity_token"=>"RmpT2rQA5uxUOqknV42bHc/Jn7V2WsI2FHMN7EYlQvU="}
+Redirected to http://localhost:3000/
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/mentor_profiles/delete]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-04 15:30:31) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing MentorProfilesController#read (for 127.0.0.1 at 2010-11-04 15:32:23) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/read
+Completed in 10ms (View: 9, DB: 0) | 200 OK [http://localhost/mentor_profiles/read]
+
+
+Processing MentorProfilesController#update_general (for 127.0.0.1 at 2010-11-04 15:32:30) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/update_general
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_general]
+
+
+Processing MentorProfilesController#delete (for 127.0.0.1 at 2010-11-04 15:32:32) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/delete
+Completed in 10ms (View: 9, DB: 0) | 200 OK [http://localhost/mentor_profiles/delete]
+
+
+Processing MentorProfilesController#delete (for 127.0.0.1 at 2010-11-04 15:32:36) [POST]
+  Parameters: {"commit"=>"Delete", "delete"=>{"yes"=>"1"}, "authenticity_token"=>"RmpT2rQA5uxUOqknV42bHc/Jn7V2WsI2FHMN7EYlQvU="}
+Redirected to http://localhost:3000/
+Completed in 10ms (DB: 0) | 302 Found [http://localhost/mentor_profiles/delete]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-04 15:32:36) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing MenteeProfilesController#delete (for 127.0.0.1 at 2010-11-04 15:34:13) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/delete
+Completed in 12ms (View: 11, DB: 0) | 200 OK [http://localhost/mentee_profiles/delete]
+
+
+Processing MenteeProfilesController#delete (for 127.0.0.1 at 2010-11-04 15:34:26) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/delete
+Completed in 12ms (View: 11, DB: 0) | 200 OK [http://localhost/mentee_profiles/delete]
+
+
+Processing MenteeProfilesController#delete (for 127.0.0.1 at 2010-11-04 15:34:33) [POST]
+  Parameters: {"commit"=>"Delete", "delete"=>{"yes"=>"1"}, "authenticity_token"=>"RmpT2rQA5uxUOqknV42bHc/Jn7V2WsI2FHMN7EYlQvU="}
+Redirected to http://localhost:3000/
+Completed in 17ms (DB: 0) | 302 Found [http://localhost/mentee_profiles/delete]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-04 15:34:33) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing MentorProfilesController#update_availability (for 127.0.0.1 at 2010-11-04 15:35:02) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/update_availability
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_availability]
+
+
+Processing MentorProfilesController#update_availability (for 127.0.0.1 at 2010-11-04 15:36:54) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/update_availability
+Completed in 5ms (View: 4, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_availability]
+
+
+Processing MentorProfilesController#update_availability (for 127.0.0.1 at 2010-11-04 15:36:57) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/update_availability
+Completed in 17ms (View: 3, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_availability]
+
+
+Processing MentorProfilesController#update_availability (for 127.0.0.1 at 2010-11-04 15:36:58) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/update_availability
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_availability]
+
+
+Processing MentorProfilesController#update_availability (for 127.0.0.1 at 2010-11-04 15:36:59) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/update_availability
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_availability]
+
+
+Processing MentorProfilesController#update_general (for 127.0.0.1 at 2010-11-04 15:37:00) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/update_general
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_general]
+
+
+Processing MentorProfilesController#update_availability (for 127.0.0.1 at 2010-11-04 15:37:02) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/update_availability
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_availability]
+
+
+Processing MentorProfilesController#update_availability (for 127.0.0.1 at 2010-11-04 15:37:03) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/update_availability
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_availability]
+
+
+Processing MentorProfilesController#update_availability (for 127.0.0.1 at 2010-11-04 15:37:27) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/update_availability
+Completed in 14ms (View: 13, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_availability]
+
+
+Processing RequestsController#view (for 127.0.0.1 at 2010-11-04 15:37:29) [GET]
+Rendering template within layouts/application
+Rendering requests/view
+Completed in 19ms (View: 18, DB: 0) | 200 OK [http://localhost/requests/view]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-04 15:37:31) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-04 15:37:33) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/]

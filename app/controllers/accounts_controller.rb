@@ -3,18 +3,33 @@ class AccountsController < ApplicationController
     if params[:user]
       if params[:user][:email]=="jsmith@thoughtworks.com"
         session[:usertype]=:mentor
+        redirect_to "/requests/view"
+        
       end
-      
+      if params[:user][:email]=="jdoe@aol.com"
+        session[:usertype]=:mentee
+        redirect_to "/mentor_profiles/search"
+      end      
     end
   end
 
   def register
-    redirect_to "google.com"
+    if params[:user]
+      if params[:user][:email]=="jsmith@thoughtworks.com"
+        session[:usertype]=:mentor
+        redirect_to "/mentor_profiles/update_general"
+      end
+      if params[:user][:email]=="jdoe@aol.com"
+        session[:usertype]=:mentee
+        redirect_to "/mentee_profiles/update_general"
+      end
+    end
   end
 
   def forgot
   end
   def logout
     session[:usertype]=nil
+    redirect_to "/"
   end
 end

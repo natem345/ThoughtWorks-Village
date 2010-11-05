@@ -1,7 +1,7 @@
 
 
 <h1>Complete Survey</h1>
-<form>
+<% form_for :survey, :url => {:action => 'complete'} do |f| %>
 <table summary="" >
 <tr><td>What topics are you covering in the mentorship?</td><td><textarea></textarea></td></tr>
 <tr><td>How are you communicating with you Mentor/Mentee</td><td>
@@ -28,7 +28,7 @@
 <label for="rec1"><input id="succ1" type="radio" name="succ"></input>Yes</label>
 <label for="rec2"><input id="succ2" type="radio" name="succ"></input>No</label>
 </td></tr>
-<tr><td>Any other comments?</td><td><textarea></textarea></td></tr>
+<tr><td>Any other comments?</td><td><%= f.text_area :comments %></td></tr>
 </table>
-<input type="button" name="submit" value="Submit" />
-</form>
+<p><%= submit_tag "Submit" %></p>
+<%end%>

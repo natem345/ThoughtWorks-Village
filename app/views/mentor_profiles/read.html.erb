@@ -76,7 +76,9 @@ padding-left: 0px;
 <tr><td>Movies:</td><td>The Boondock Saints, Citizen Kane </td></tr>
 </table>
 </div>  
-
+<% if session[:usertype]==:mentee %>
+<p><a href="/requests/make">Request Mentorship</a></p>
+<% end %>
     
 	<script type="text/javascript">
 	$('tab2content').hide();
