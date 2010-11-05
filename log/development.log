@@ -5881,3 +5881,219 @@ Processing HomeController#index (for 127.0.0.1 at 2010-11-04 15:37:33) [GET]
 Rendering template within layouts/application
 Rendering home/index
 Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-05 09:54:13) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 226ms (View: 222, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing MentorProfilesController#search (for 127.0.0.1 at 2010-11-05 09:54:17) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/search
+Completed in 21ms (View: 19, DB: 0) | 200 OK [http://localhost/mentor_profiles/search]
+
+
+Processing MentorProfilesController#read (for 127.0.0.1 at 2010-11-05 09:54:28) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/read
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/mentor_profiles/read]
+
+
+Processing MentorProfilesController#search (for 127.0.0.1 at 2010-11-05 09:55:59) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/search
+Completed in 10ms (View: 9, DB: 0) | 200 OK [http://localhost/mentor_profiles/search]
+
+
+Processing MentorProfilesController#read (for 127.0.0.1 at 2010-11-05 09:56:07) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/read
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/mentor_profiles/read]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-05 09:59:26) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.include?) on line #3 of app/views/mentee_profiles/update_general.html.erb:
+1: <h1>
+2:   <%
+3:   if request.referer.include? "register"
+4:     %>Create <%
+5:   else
+6:     %>Update <%
+
+    app/views/mentee_profiles/update_general.html.erb:3
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (35.5ms)
+Rendered rescues/_request_and_response (1.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MentorProfilesController#read (for 127.0.0.1 at 2010-11-05 10:03:04) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/read
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/mentor_profiles/read]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-11-05 10:03:07) [GET]
+Rendering template within layouts/application
+Rendering accounts/login
+Completed in 79ms (View: 76, DB: 0) | 200 OK [http://localhost/accounts/login]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-05 10:03:09) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 18ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-11-05 10:03:15) [GET]
+Rendering template within layouts/application
+Rendering accounts/login
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/login]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-11-05 10:03:26) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"YcUEVjsqdl1qB/cXS2rOJ+6N8YBlJk2z/vaefjwO60k=", "user"=>{"pass"=>"", "email"=>"jdoe@aol.com"}}
+Redirected to http://localhost:3000/mentor_profiles/search
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/accounts/login]
+
+
+Processing MentorProfilesController#search (for 127.0.0.1 at 2010-11-05 10:03:26) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/search
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/mentor_profiles/search]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-05 10:03:27) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 13ms (View: 12, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing MenteeProfilesController#update_general (for 127.0.0.1 at 2010-11-05 10:03:38) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/update_general
+Completed in 13ms (View: 11, DB: 0) | 200 OK [http://localhost/mentee_profiles/update_general]
+
+
+Processing AccountsController#logout (for 127.0.0.1 at 2010-11-05 10:04:33) [GET]
+Redirected to http://localhost:3000/
+Completed in 2ms (DB: 0) | 302 Found [http://localhost/accounts/logout]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-05 10:04:33) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 7ms (View: 4, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-11-05 10:04:35) [GET]
+Rendering template within layouts/application
+Rendering accounts/login
+Completed in 6ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/login]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-11-05 10:04:40) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"YcUEVjsqdl1qB/cXS2rOJ+6N8YBlJk2z/vaefjwO60k=", "user"=>{"pass"=>"", "email"=>"jsmith@thoughtworks.com"}}
+Redirected to http://localhost:3000/requests/view
+Completed in 3ms (DB: 0) | 302 Found [http://localhost/accounts/login]
+
+
+Processing RequestsController#view (for 127.0.0.1 at 2010-11-05 10:04:40) [GET]
+Rendering template within layouts/application
+Rendering requests/view
+Completed in 13ms (View: 12, DB: 0) | 200 OK [http://localhost/requests/view]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-05 10:04:45) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 13ms (View: 11, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing RequestsController#view (for 127.0.0.1 at 2010-11-05 10:05:32) [GET]
+Rendering template within layouts/application
+Rendering requests/view
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/requests/view]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-05 10:05:33) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 18ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-05 10:05:36) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-05 10:05:37) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing RequestsController#view (for 127.0.0.1 at 2010-11-05 10:06:11) [GET]
+Rendering template within layouts/application
+Rendering requests/view
+Completed in 9ms (View: 7, DB: 0) | 200 OK [http://localhost/requests/view]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-05 10:06:13) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 6ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-05 10:06:14) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 17ms (View: 15, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing RequestsController#view (for 127.0.0.1 at 2010-11-05 10:07:54) [GET]
+Rendering template within layouts/application
+Rendering requests/view
+Completed in 10ms (View: 8, DB: 0) | 200 OK [http://localhost/requests/view]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-05 10:07:56) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 5ms (View: 3, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-05 10:07:58) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 18ms (View: 17, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-05 10:08:00) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 18ms (View: 16, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-11-05 10:08:03) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 6ms (View: 4, DB: 0) | 200 OK [http://localhost/]

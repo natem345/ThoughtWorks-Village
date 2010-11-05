@@ -5,6 +5,7 @@ class MentorProfilesController < ApplicationController
   def delete
     if params[:delete]
       redirect_to "/"
+      session[:usertype]=nil
     end
   end
 
