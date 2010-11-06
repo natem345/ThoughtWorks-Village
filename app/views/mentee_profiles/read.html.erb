@@ -1,13 +1,12 @@
 <h1>View John Smith's Profile</h1>
-<ul class="tabs">  
-    <li id="tab1button">General Information</li>  
-    <li id="tab2button">Software Experience</li>  
-    <li id="tab3button">Interests</li>  
-</ul>  
-<div id="tab1content" class="tabcontent">
 <style type="text/css">
+.tabcontent {
+  border: gray 2px solid;
+  margin:0px;
+  margin-top:-6px;
+}
 .tabcontent td {
-padding:7px 0px;
+padding:7px 3px;
 }
 .tabcontent li {
 padding-left: 0px; 
@@ -16,6 +15,13 @@ padding-left: 0px;
 padding-left: 0px; 
 }
 </style>
+
+<ul class="tabs">  
+    <li id="tab1button" class="tabselected">General Information</li>  
+    <li id="tab2button">Software Experience</li>  
+    <li id="tab3button">Interests</li>  
+</ul>  
+<div id="tab1content" class="tabcontent">
 <table style="">
 <tr><td>Name:</td><td>John Smith</td>
 <td rowspan="4">
@@ -32,7 +38,7 @@ padding-left: 0px;
 </table>
 
 </div>  
-<div id="tab2content">
+<div id="tab2content" class="tabcontent">
 <table>
 <tr><td>Total Years Experience: </td><td>5</td></tr>
 <tr><td>Why you became/are interested in becoming a software engineer?</td><td>Computer science classes in highschool, interested in robotics</td></tr>
@@ -49,7 +55,7 @@ padding-left: 0px;
 </table>
 </div>  
 
-<div id="tab3content">
+<div id="tab3content" class="tabcontent">
 <table>
 
 <tr><td>Specialties/Accomplishments:</td><td>Third degree black belt in karate</td></tr>
@@ -59,19 +65,30 @@ padding-left: 0px;
 
     
     <script type="text/javascript">
+    function removeSelections() {
+      $('tab1button').removeClassName('tabselected');
+      $('tab2button').removeClassName('tabselected');
+      $('tab3button').removeClassName('tabselected');
+    }
     $('tab2content').hide();
     $('tab3content').hide();
     $('tab1button').observe('click', function(event) {
+        removeSelections();
+        $('tab1button').addClassName('tabselected');
         $('tab1content').show();
         $('tab2content').hide();
         $('tab3content').hide();
     });
     Event.observe('tab2button', 'click', function(event) {
+        removeSelections();
+        $('tab2button').addClassName('tabselected');
         $('tab2content').show();
         $('tab1content').hide();
         $('tab3content').hide();
     });
     Event.observe('tab3button', 'click', function(event) {
+        removeSelections();
+        $('tab3button').addClassName('tabselected');
         $('tab3content').show();
         $('tab1content').hide();
         $('tab2content').hide();

@@ -47,15 +47,22 @@ color: white;
 
 .tabs ul {
 margin:5px;
-
+margin-bottom:0px !important;
+padding: 0px;
 }
 
 .tabs li {
 padding: 10px;
+cursor: pointer !important;
 list-style-type: none;
 display: inline;
 background-color: rgba(255,255,255, 0.25);
 border: 2px white solid;
 }
 
+.tabselected {
+background-color: rgba(255,255,255, 0.75) !important;
+color:black;
+border-bottom: none !important;
+}
 
