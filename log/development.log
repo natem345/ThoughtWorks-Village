@@ -6229,3 +6229,114 @@ Processing MentorProfilesController#update_availability (for 127.0.0.1 at 2010-1
 Rendering template within layouts/application
 Rendering mentor_profiles/update_availability
 Completed in 20ms (View: 19, DB: 0) | 200 OK [http://localhost/mentor_profiles/update_availability]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-12-01 19:38:03) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 114ms (View: 113, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-12-01 19:38:12) [GET]
+Rendering template within layouts/application
+Rendering accounts/login
+Completed in 18ms (View: 15, DB: 0) | 200 OK [http://localhost/accounts/login]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-12-01 19:38:15) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"GVWg5z/BxOOnxyUS3F8UaPKSl7suNiTEn6gw4vkE81s=", "user"=>{"pass"=>"", "email"=>""}}
+Rendering template within layouts/application
+Rendering accounts/login
+Completed in 7ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/login]
+
+
+Processing AccountsController#login (for 127.0.0.1 at 2010-12-01 19:38:26) [POST]
+  Parameters: {"commit"=>"Login", "authenticity_token"=>"GVWg5z/BxOOnxyUS3F8UaPKSl7suNiTEn6gw4vkE81s=", "user"=>{"pass"=>"me", "email"=>"mentee"}}
+Rendering template within layouts/application
+Rendering accounts/login
+Completed in 67ms (View: 5, DB: 0) | 200 OK [http://localhost/accounts/login]
+
+
+Processing AccountsController#register (for 127.0.0.1 at 2010-12-01 19:38:30) [GET]
+Rendering template within layouts/application
+Rendering accounts/register
+Completed in 14ms (View: 13, DB: 0) | 200 OK [http://localhost/accounts/register]
+
+
+Processing AccountsController#register (for 127.0.0.1 at 2010-12-01 19:38:34) [POST]
+  Parameters: {"commit"=>"Register", "agree_tac"=>"on", "authenticity_token"=>"GVWg5z/BxOOnxyUS3F8UaPKSl7suNiTEn6gw4vkE81s=", "user"=>{"email"=>""}}
+Rendering template within layouts/application
+Rendering accounts/register
+Completed in 11ms (View: 10, DB: 0) | 200 OK [http://localhost/accounts/register]
+
+
+Processing HomeController#index (for 127.0.0.1 at 2010-12-01 19:38:52) [GET]
+Rendering template within layouts/application
+Rendering home/index
+Completed in 10ms (View: 5, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing MentorProfilesController#search (for 127.0.0.1 at 2010-12-01 19:39:07) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/search
+Completed in 17ms (View: 16, DB: 0) | 200 OK [http://localhost/mentor_profiles/search]
+
+
+Processing MentorProfilesController#read (for 127.0.0.1 at 2010-12-01 19:39:09) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/read
+Completed in 12ms (View: 11, DB: 0) | 200 OK [http://localhost/mentor_profiles/read]
+
+
+Processing MenteeProfilesController#read (for 127.0.0.1 at 2010-12-01 19:39:17) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/read
+Completed in 20ms (View: 10, DB: 0) | 200 OK [http://localhost/mentee_profiles/read]
+
+
+Processing MentorProfilesController#search (for 127.0.0.1 at 2010-12-01 19:40:52) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/search
+Completed in 9ms (View: 4, DB: 0) | 200 OK [http://localhost/mentor_profiles/search]
+
+
+Processing MentorProfilesController#read (for 127.0.0.1 at 2010-12-01 19:40:54) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/read
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/mentor_profiles/read]
+
+
+Processing MentorProfilesController#search (for 127.0.0.1 at 2010-12-01 19:41:23) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/search
+Completed in 5ms (View: 2, DB: 0) | 200 OK [http://localhost/mentor_profiles/search]
+
+
+Processing MentorProfilesController#read (for 127.0.0.1 at 2010-12-01 19:41:25) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/read
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/mentor_profiles/read]
+
+
+Processing MentorProfilesController#search (for 127.0.0.1 at 2010-12-01 19:41:32) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/search
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/mentor_profiles/search]
+
+
+Processing MentorProfilesController#read (for 127.0.0.1 at 2010-12-01 19:41:34) [GET]
+Rendering template within layouts/application
+Rendering mentor_profiles/read
+Completed in 11ms (View: 3, DB: 0) | 200 OK [http://localhost/mentor_profiles/read]
+
+
+Processing MenteeProfilesController#read (for 127.0.0.1 at 2010-12-01 19:42:12) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/read
+Completed in 15ms (View: 3, DB: 0) | 200 OK [http://localhost/mentee_profiles/read]
+
+
+Processing MenteeProfilesController#read (for 127.0.0.1 at 2010-12-01 19:44:07) [GET]
+Rendering template within layouts/application
+Rendering mentee_profiles/read
+Completed in 23ms (View: 21, DB: 0) | 200 OK [http://localhost/mentee_profiles/read]
