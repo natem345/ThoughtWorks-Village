@@ -6932,3 +6932,25 @@ Rendering template within layouts/application
 Rendering mentor_profiles/read
 Completed in 10ms (View: 9, DB: 0) | 200 OK [http://localhost/mentor_profiles/read]
 >>>>>>> c0bab8497fa1f8402750926e6bc65d011b815fc1
+  [4;36;1mSQL (5.6ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMentors (20101209002733)
+Migrating to AddTotalYearsExperienceToMentors (20101209004101)
+Migrating to AddCredentialsToMentors (20101209005345)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (5.3ms)[0m   [0mALTER TABLE "mentors" ADD "email" varchar(255)[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mALTER TABLE "mentors" ADD "password" varchar(255)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20101209005345')[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("mentors")[0m
