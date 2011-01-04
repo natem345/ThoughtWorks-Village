@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  location: MyString
+  current_position: MyString
+  school: MyString
+  major: MyString
+  total_years_experience: 
+
+two:
+  name: MyString
+  location: MyString
+  current_position: MyString
+  school: MyString
+  major: MyString
+  total_years_experience: 
