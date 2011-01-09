@@ -2,22 +2,15 @@
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Location</th>
-    <th>Current position</th>
-    <th>School</th>
-    <th>Major</th>
-    <th>Total years experience</th>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
   </tr>
 
 <% @mentors.each do |mentor| %>
   <tr>
-    <td><%=h mentor.name %></td>
-    <td><%=h mentor.location %></td>
-    <td><%=h mentor.current_position %></td>
-    <td><%=h mentor.school %></td>
-    <td><%=h mentor.major %></td>
-    <td><%=h mentor.total_years_experience %></td>
+    <td><%= mentor.user %></td>
     <td><%= link_to 'Show', mentor %></td>
     <td><%= link_to 'Edit', edit_mentor_path(mentor) %></td>
     <td><%= link_to 'Destroy', mentor, :confirm => 'Are you sure?', :method => :delete %></td>
@@ -27,4 +20,4 @@
 
 <br />
 
-<%= link_to 'New mentor', new_mentor_path %>
+<%= link_to 'New Mentor', new_mentor_path %>

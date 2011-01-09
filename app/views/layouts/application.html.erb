@@ -35,7 +35,7 @@
 
 
 <div style="position:absolute; right:50px; top:30px;">
-<% form_tag "/mentor_profiles/search", :method => "get" do %>
+<%= form_tag "/mentor_profiles/search", :method => "get" do %>
   <%= label_tag(:q, "Search:") %>
   <%= text_field_tag(:q) %>
   <%= submit_tag("Search") %>

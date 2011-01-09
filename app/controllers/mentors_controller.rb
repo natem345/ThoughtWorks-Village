@@ -80,21 +80,4 @@ class MentorsController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
-  def login
-    @mentor = Mentor.new
-    if params[:email]
-      @mentor = Mentor.find_by_email(params[:email])
-    
-      if @mentor != nil
-        if @mentor.password == params[:password]
-          session[:email] = params[:email]
-          session[:usertype] = :mentor
-          redirect_to "/"
-        else
-          # add error message late
-        end
-      end
-    end
-  end
 end

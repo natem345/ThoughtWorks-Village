@@ -1,88 +1,742 @@
-DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
-DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (30.4ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (9.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to CreateUsers (20110107060307)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "location" varchar(255), "current_position" varchar(255), "school" varchar(255), "major" varchar(255), "total_years_experience" integer, "email" varchar(255), "password" varchar(255), "phone" integer, "interests" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110107060307')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
 
 
-Started GET "/mentee_profiles/update_general" for 127.0.0.1 at Tue Jan 04 05:59:35 -1000 2011
-
-ActionController::RoutingError (No route matches "/mentee_profiles/update_general"):
-  actionpack (3.0.3) lib/action_dispatch/middleware/show_exceptions.rb:53:in `call'
-  railties (3.0.3) lib/rails/rack/logger.rb:13:in `call'
-  rack (1.2.1) lib/rack/runtime.rb:17:in `call'
-  activesupport (3.0.3) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
-  rack (1.2.1) lib/rack/lock.rb:11:in `call'
-  rack (1.2.1) lib/rack/lock.rb:11:in `synchronize'
-  rack (1.2.1) lib/rack/lock.rb:11:in `call'
-  actionpack (3.0.3) lib/action_dispatch/middleware/static.rb:30:in `call'
-  railties (3.0.3) lib/rails/application.rb:168:in `call'
-  railties (3.0.3) lib/rails/application.rb:77:in `send'
-  railties (3.0.3) lib/rails/application.rb:77:in `method_missing'
-  railties (3.0.3) lib/rails/rack/log_tailer.rb:14:in `call'
-  rack (1.2.1) lib/rack/content_length.rb:13:in `call'
-  rack (1.2.1) lib/rack/handler/webrick.rb:52:in `service'
-  /usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
-  /usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
-  /usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
-  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
-  /usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
-  /usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
-  /usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
-  /usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
-  /usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
-  /usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
-  rack (1.2.1) lib/rack/handler/webrick.rb:13:in `run'
-  rack (1.2.1) lib/rack/server.rb:213:in `start'
-  railties (3.0.3) lib/rails/commands/server.rb:65:in `start'
-  railties (3.0.3) lib/rails/commands.rb:30
-  railties (3.0.3) lib/rails/commands.rb:27:in `tap'
-  railties (3.0.3) lib/rails/commands.rb:27
-  script/rails:6:in `require'
-  script/rails:6
-
-Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
-DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+Started GET "/users" for 127.0.0.1 at Thu Jan 06 20:06:35 -1000 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 43ms (Views: 8.3ms | ActiveRecord: 1.0ms)
 
 
-Started GET "/mentee_profiles/update_general" for 127.0.0.1 at Tue Jan 04 06:01:30 -1000 2011
-  Processing by MenteeProfilesController#update_general as HTML
-DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_mentee_profiles_update_general_html_erb__631040592__616806238_0 at /home/gouser/Documents/ThoughtWorks-Village/app/views/mentee_profiles/update_general.html.erb:28)
-DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___633313767__616807508_0 at /home/gouser/Documents/ThoughtWorks-Village/app/views/layouts/application.html.erb:38)
-Rendered mentee_profiles/update_general.html.erb within layouts/application (4.8ms)
-Completed 200 OK in 12ms (Views: 11.4ms | ActiveRecord: 0.0ms)
+Started GET "/users/new" for 127.0.0.1 at Thu Jan 06 20:06:38 -1000 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (110.8ms)
+Rendered users/new.html.erb within layouts/application (115.2ms)
+Completed 200 OK in 170ms (Views: 152.0ms | ActiveRecord: 0.0ms)
 
 
-Started GET "/home" for 127.0.0.1 at Tue Jan 04 06:01:37 -1000 2011
+Started POST "/users" for 127.0.0.1 at Thu Jan 06 20:07:16 -1000 2011
+  Processing by UsersController#create as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"Oii6ZPC2iTBIlPLZkDI4fnThQUahNC/7MxLeHAZSq5A=", "utf8"=>"✓", "user"=>{"interests"=>"The Beatles", "school"=>"Rose-Hulman Institute of Technology", "name"=>"Darren Haffner", "location"=>"Terre Haute, IN", "current_position"=>"Student", "major"=>"Software Engineering", "phone"=>"8125555555", "total_years_experience"=>"5", "password"=>"[FILTERED]", "email"=>"haffnedm@rose-hulman.edu"}}
+  [1m[35mSQL (0.6ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'haffnedm@rose-hulman.edu') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."phone" = 8125555555) LIMIT 1
+  [1m[36mAREL (1.2ms)[0m  [1mINSERT INTO "users" ("email", "interests", "current_position", "name", "phone", "created_at", "location", "password", "major", "school", "total_years_experience", "updated_at") VALUES ('haffnedm@rose-hulman.edu', 'The Beatles', 'Student', 'Darren Haffner', 8125555555, '2011-01-07 06:07:17.115724', 'Terre Haute, IN', 'quiteunsafe', 'Software Engineering', 'Rose-Hulman Institute of Technology', 5, '2011-01-07 06:07:17.115724')[0m
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 112ms
+
+
+Started GET "/users/1" for 127.0.0.1 at Thu Jan 06 20:07:17 -1000 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered users/show.html.erb within layouts/application (28.6ms)
+Completed 200 OK in 75ms (Views: 41.7ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at Thu Jan 06 20:07:20 -1000 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (96.8ms)
+Completed 200 OK in 135ms (Views: 104.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Thu Jan 06 20:07:24 -1000 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (21.5ms)
+Rendered users/new.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 58ms (Views: 37.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at Thu Jan 06 20:07:29 -1000 2011
+  Processing by UsersController#create as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"Oii6ZPC2iTBIlPLZkDI4fnThQUahNC/7MxLeHAZSq5A=", "utf8"=>"✓", "user"=>{"interests"=>"", "school"=>"", "name"=>"", "location"=>"", "current_position"=>"", "major"=>"", "phone"=>"", "total_years_experience"=>"", "password"=>"[FILTERED]", "email"=>""}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = '') LIMIT 1
+Rendered users/_form.html.erb (29.4ms)
+Rendered users/new.html.erb within layouts/application (121.1ms)
+Completed 200 OK in 214ms (Views: 128.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at Thu Jan 06 20:07:40 -1000 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (7.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 50ms (Views: 25.0ms | ActiveRecord: 7.1ms)
+  [1m[36mSQL (1.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20110107060307)
+Migrating to CreateMentees (20110107061007)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20110107060307)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.7ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20110107060307'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (1.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20110107060307)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.6ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "location" varchar(255), "current_position" varchar(255), "school" varchar(255), "major" varchar(255), "total_years_experience" integer, "email" varchar(255), "password" varchar(255), "phone" integer, "interests" text, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110107060307')
+Migrating to CreateMentors (20110107061652)
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE TABLE "mentors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110107061652')
+Migrating to CreateMentees (20110107061706)
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE TABLE "mentees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110107061706')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("mentees")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("mentors")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (1.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20110107060307)
+Migrating to CreateMentors (20110107061652)
+Migrating to CreateMentees (20110107061706)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("mentees")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("mentors")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+
+
+Started GET "/users" for 127.0.0.1 at Thu Jan 06 20:20:57 -1000 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 45ms (Views: 8.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Thu Jan 06 20:20:59 -1000 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (40.9ms)
+Rendered users/new.html.erb within layouts/application (56.2ms)
+Completed 200 OK in 96ms (Views: 69.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at Thu Jan 06 20:21:03 -1000 2011
+  Processing by UsersController#create as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"Oii6ZPC2iTBIlPLZkDI4fnThQUahNC/7MxLeHAZSq5A=", "utf8"=>"✓", "user"=>{"interests"=>"", "school"=>"", "name"=>"", "location"=>"", "current_position"=>"", "major"=>"", "phone"=>"", "total_years_experience"=>"", "password"=>"[FILTERED]", "email"=>""}}
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (8.4ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = '') LIMIT 1[0m
+Rendered users/_form.html.erb (21.7ms)
+Rendered users/new.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 98ms (Views: 32.6ms | ActiveRecord: 8.7ms)
+
+
+Started POST "/users" for 127.0.0.1 at Thu Jan 06 20:22:48 -1000 2011
+  Processing by UsersController#create as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"Oii6ZPC2iTBIlPLZkDI4fnThQUahNC/7MxLeHAZSq5A=", "utf8"=>"✓", "user"=>{"interests"=>"The Beatles\r\nEric Clapton\r\nFleet Foxes\r\nRush\r\n", "school"=>"Rose-Hulman Institute of Technology", "name"=>"Darren Haffner", "location"=>"Terre Haute, IN", "current_position"=>"Student", "major"=>"Software Engineering", "phone"=>"8125555555", "total_years_experience"=>"5", "password"=>"[FILTERED]", "email"=>"haffnedm@rose-hulman.edu"}}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'haffnedm@rose-hulman.edu') LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."phone" = 8125555555) LIMIT 1[0m
+  [1m[35mAREL (0.6ms)[0m  INSERT INTO "users" ("current_position", "interests", "total_years_experience", "password", "created_at", "major", "phone", "updated_at", "location", "email", "school", "name") VALUES ('Student', 'The Beatles
+Eric Clapton
+Fleet Foxes
+Rush
+', 5, 'quiteunsafe', '2011-01-07 06:22:49.028648', 'Software Engineering', 8125555555, '2011-01-07 06:22:49.028648', 'Terre Haute, IN', 'haffnedm@rose-hulman.edu', 'Rose-Hulman Institute of Technology', 'Darren Haffner')
+Redirected to http://localhost:3000/users/1
+Completed 302 Found in 65ms
+
+
+Started GET "/users/1" for 127.0.0.1 at Thu Jan 06 20:22:49 -1000 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 125ms (Views: 19.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at Thu Jan 06 20:22:53 -1000 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 70ms (Views: 29.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Thu Jan 06 20:23:11 -1000 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mMentor Load (1.1ms)[0m  [1mSELECT "mentors".* FROM "mentors"[0m
+Rendered mentors/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 78ms (Views: 28.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/mentors/new" for 127.0.0.1 at Thu Jan 06 20:23:13 -1000 2011
+  Processing by MentorsController#new as HTML
+Rendered mentors/_form.html.erb (15.7ms)
+Rendered mentors/new.html.erb within layouts/application (20.6ms)
+Completed 200 OK in 68ms (Views: 38.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/mentors" for 127.0.0.1 at Thu Jan 06 20:23:17 -1000 2011
+  Processing by MentorsController#create as HTML
+  Parameters: {"commit"=>"Create Mentor", "mentor"=>{"user"=>"1"}, "authenticity_token"=>"Oii6ZPC2iTBIlPLZkDI4fnThQUahNC/7MxLeHAZSq5A=", "utf8"=>"✓"}
+Completed   in 44ms
+
+ActiveRecord::AssociationTypeMismatch (User(#-617072818) expected, got String(#-608062978)):
+  app/controllers/mentors_controller.rb:43:in `new'
+  app/controllers/mentors_controller.rb:43:in `create'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.2ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Thu Jan 06 20:23:43 -1000 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (0.6ms)[0m  SELECT "mentors".* FROM "mentors"
+Rendered mentors/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 56ms (Views: 25.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at Thu Jan 06 20:37:48 -1000 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (11.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (47.1ms)
+Completed 200 OK in 181ms (Views: 66.0ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Thu Jan 06 20:37:53 -1000 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (13.0ms)
+Completed 200 OK in 41ms (Views: 18.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Thu Jan 06 20:38:04 -1000 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (25.1ms)
+Completed 200 OK in 51ms (Views: 30.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Thu Jan 06 20:38:50 -1000 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (70.3ms)
+Rendered users/new.html.erb within layouts/application (83.6ms)
+Completed 200 OK in 100ms (Views: 89.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at Thu Jan 06 20:41:47 -1000 2011
+  Processing by UsersController#create as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"Oii6ZPC2iTBIlPLZkDI4fnThQUahNC/7MxLeHAZSq5A=", "utf8"=>"✓", "user"=>{"interests"=>"Zen meditation, lightcycle racing, programming", "school"=>"Caltech", "name"=>"Kevin Flynn", "location"=>"The Grid", "current_position"=>"User in Exile", "major"=>"Computer Science", "phone"=>"5122561024", "total_years_experience"=>"25", "password"=>"[FILTERED]", "email"=>"j.bridges@tron.net"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'j.bridges@tron.net') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."phone" = 5122561024) LIMIT 1
+Rendered users/_form.html.erb (9.8ms)
+Rendered users/new.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 71ms (Views: 26.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at Thu Jan 06 20:42:01 -1000 2011
+  Processing by UsersController#create as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"Oii6ZPC2iTBIlPLZkDI4fnThQUahNC/7MxLeHAZSq5A=", "utf8"=>"✓", "user"=>{"interests"=>"Zen meditation, lightcycle racing, programming", "school"=>"Caltech", "name"=>"Kevin Flynn", "location"=>"The Grid", "current_position"=>"User in Exile", "major"=>"Computer Science", "phone"=>"5122561024", "total_years_experience"=>"25", "password"=>"[FILTERED]", "email"=>"j.bridges@tron.net"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'j.bridges@tron.net') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."phone" = 5122561024) LIMIT 1
+Rendered users/_form.html.erb (59.5ms)
+Rendered users/new.html.erb within layouts/application (91.6ms)
+Completed 200 OK in 220ms (Views: 120.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at Thu Jan 06 20:42:34 -1000 2011
+  Processing by UsersController#create as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"Oii6ZPC2iTBIlPLZkDI4fnThQUahNC/7MxLeHAZSq5A=", "utf8"=>"✓", "user"=>{"interests"=>"Zen meditation, lightcycle racing, programming", "school"=>"Caltech", "name"=>"Kevin Flynn", "location"=>"The Grid", "current_position"=>"User in Exile", "major"=>"Computer Science", "phone"=>"5122561024", "total_years_experience"=>"25", "password"=>"[FILTERED]", "email"=>"j.bridges@tron.net"}}
+Completed   in 3ms
+
+SyntaxError (/home/gouser/Documents/ThoughtWorksVillage/app/models/user.rb:10: syntax error, unexpected ':', expecting kEND):
+  app/controllers/users_controller.rb:43:in `create'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (29.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at Thu Jan 06 20:43:46 -1000 2011
+  Processing by UsersController#create as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"Oii6ZPC2iTBIlPLZkDI4fnThQUahNC/7MxLeHAZSq5A=", "utf8"=>"✓", "user"=>{"interests"=>"Zen meditation, lightcycle racing, programming", "school"=>"Caltech", "name"=>"Kevin Flynn", "location"=>"The Grid", "current_position"=>"User in Exile", "major"=>"Computer Science", "phone"=>"5122561024", "total_years_experience"=>"25", "password"=>"[FILTERED]", "email"=>"j.bridges@tron.net"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'j.bridges@tron.net') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."phone" = 5122561024) LIMIT 1
+  [1m[36mAREL (0.8ms)[0m  [1mINSERT INTO "users" ("phone", "location", "created_at", "interests", "updated_at", "major", "school", "total_years_experience", "email", "password", "name", "current_position") VALUES (5122561024, 'The Grid', '2011-01-07 06:43:46.697669', 'Zen meditation, lightcycle racing, programming', '2011-01-07 06:43:46.697669', 'Computer Science', 'Caltech', 25, 'j.bridges@tron.net', 'zenthing', 'Kevin Flynn', 'User in Exile')[0m
+Redirected to http://localhost:3000/users/2
+Completed 302 Found in 80ms
+
+
+Started GET "/users/2" for 127.0.0.1 at Thu Jan 06 20:43:46 -1000 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+Rendered users/show.html.erb within layouts/application (59.0ms)
+Completed 200 OK in 83ms (Views: 64.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at Thu Jan 06 20:43:51 -1000 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 51ms (Views: 33.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Thu Jan 06 20:43:59 -1000 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (21.8ms)
+Rendered users/new.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 54ms (Views: 31.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Jan 06 20:54:50 -1000 2011
   Processing by HomeController#index as HTML
-DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___633313767__617078648_0 at /home/gouser/Documents/ThoughtWorks-Village/app/views/layouts/application.html.erb:38)
-Rendered home/index.html.erb within layouts/application (17.8ms)
-Completed 200 OK in 24ms (Views: 23.2ms | ActiveRecord: 0.0ms)
+Rendered home/index.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 20ms (Views: 19.6ms | ActiveRecord: 0.0ms)
 
 
-Started GET "/mentor_profiles/search" for 127.0.0.1 at Tue Jan 04 06:01:39 -1000 2011
-  Processing by MentorProfilesController#search as HTML
-DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___633313767__616449968_0 at /home/gouser/Documents/ThoughtWorks-Village/app/views/layouts/application.html.erb:38)
-Rendered mentor_profiles/search.html.erb within layouts/application (3.2ms)
-Completed 200 OK in 15ms (Views: 14.4ms | ActiveRecord: 0.0ms)
+Started GET "/images/down.png" for 127.0.0.1 at Thu Jan 06 20:54:51 -1000 2011
+
+ActionController::RoutingError (No route matches "/images/down.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
 
 
-Started GET "/accounts/register" for 127.0.0.1 at Tue Jan 04 06:01:40 -1000 2011
-  Processing by AccountsController#register as HTML
-DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_accounts_register_html_erb___735913079__616736828_0 at /home/gouser/Documents/ThoughtWorks-Village/app/views/accounts/register.html.erb:2)
-DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___633313767__616738088_0 at /home/gouser/Documents/ThoughtWorks-Village/app/views/layouts/application.html.erb:38)
-Rendered accounts/register.html.erb within layouts/application (3.7ms)
-Completed 200 OK in 23ms (Views: 15.0ms | ActiveRecord: 0.0ms)
+Started GET "/images/down.png" for 127.0.0.1 at Thu Jan 06 20:54:51 -1000 2011
+
+ActionController::RoutingError (No route matches "/images/down.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
 
 
-Started GET "/accounts/login" for 127.0.0.1 at Tue Jan 04 06:01:42 -1000 2011
-  Processing by AccountsController#login as HTML
-DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_accounts_login_html_erb__891256372__617019558_0 at /home/gouser/Documents/ThoughtWorks-Village/app/views/accounts/login.html.erb:3)
-DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___633313767__617020828_0 at /home/gouser/Documents/ThoughtWorks-Village/app/views/layouts/application.html.erb:38)
-Rendered accounts/login.html.erb within layouts/application (14.1ms)
-Completed 200 OK in 26ms (Views: 25.1ms | ActiveRecord: 0.0ms)
-
-
-Started GET "/" for 127.0.0.1 at Tue Jan 04 06:02:22 -1000 2011
+Started GET "/home/index" for 127.0.0.1 at Thu Jan 06 20:55:03 -1000 2011
   Processing by HomeController#index as HTML
-DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___633313767__616635258_0 at /home/gouser/Documents/ThoughtWorks-Village/app/views/layouts/application.html.erb:38)
 Rendered home/index.html.erb within layouts/application (2.7ms)
-Completed 200 OK in 22ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+Completed 200 OK in 31ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/down.png" for 127.0.0.1 at Thu Jan 06 20:55:03 -1000 2011
+
+ActionController::RoutingError (No route matches "/images/down.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/images/down.png" for 127.0.0.1 at Thu Jan 06 20:55:03 -1000 2011
+
+ActionController::RoutingError (No route matches "/images/down.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at Thu Jan 06 20:57:26 -1000 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/down.png" for 127.0.0.1 at Thu Jan 06 20:57:27 -1000 2011
+
+ActionController::RoutingError (No route matches "/images/down.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/images/down.png" for 127.0.0.1 at Thu Jan 06 20:57:27 -1000 2011
+
+ActionController::RoutingError (No route matches "/images/down.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at Thu Jan 06 20:57:28 -1000 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 18ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/down.png" for 127.0.0.1 at Thu Jan 06 20:57:28 -1000 2011
+
+ActionController::RoutingError (No route matches "/images/down.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/images/down.png" for 127.0.0.1 at Thu Jan 06 20:57:28 -1000 2011
+
+ActionController::RoutingError (No route matches "/images/down.png"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at Thu Jan 06 21:01:01 -1000 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 25ms (Views: 24.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at Thu Jan 06 21:01:02 -1000 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 35ms (Views: 34.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at Thu Jan 06 21:02:38 -1000 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 26ms (Views: 25.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/h" for 127.0.0.1 at Thu Jan 06 21:02:46 -1000 2011
+
+ActionController::RoutingError (No route matches "/h"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Jan 06 21:02:50 -1000 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 25ms (Views: 24.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at Thu Jan 06 21:03:14 -1000 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 8ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at Thu Jan 06 21:08:52 -1000 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 16ms (Views: 15.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at Thu Jan 06 21:09:31 -1000 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 23ms (Views: 22.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at Thu Jan 06 21:13:18 -1000 2011
+  Processing by HomeController#index as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___497799851__616420348_0 at /home/gouser/Documents/ThoughtWorksVillage/app/views/layouts/application.html.erb:38)
+Rendered home/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 15ms (Views: 15.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/about" for 127.0.0.1 at Thu Jan 06 21:14:06 -1000 2011
+  Processing by HomeController#about as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_layouts_application_html_erb___497799851__616740908_0 at /home/gouser/Documents/ThoughtWorksVillage/app/views/layouts/application.html.erb:38)
+Rendered home/about.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 40ms (Views: 39.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/about" for 127.0.0.1 at Thu Jan 06 21:16:00 -1000 2011
+  Processing by HomeController#about as HTML
+Rendered home/about.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 24ms (Views: 22.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/index" for 127.0.0.1 at Thu Jan 06 21:16:06 -1000 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 24ms (Views: 23.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Thu Jan 06 21:16:21 -1000 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 134ms (Views: 34.2ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Thu Jan 06 21:16:33 -1000 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (1.2ms)[0m  SELECT "mentors".* FROM "mentors"
+Rendered mentors/index.html.erb within layouts/mentors (1.7ms)
+Completed 200 OK in 20ms (Views: 6.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Jan 06 21:18:09 -1000 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 29ms (Views: 29.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/login" for 127.0.0.1 at Thu Jan 06 21:18:11 -1000 2011
+
+ActionController::RoutingError (No route matches "/accounts/login"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/accounts/register" for 127.0.0.1 at Thu Jan 06 21:18:20 -1000 2011
+
+ActionController::RoutingError (No route matches "/accounts/register"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/mentor_profiles/search" for 127.0.0.1 at Thu Jan 06 21:18:22 -1000 2011
+
+ActionController::RoutingError (No route matches "/mentor_profiles/search"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Jan 07 05:52:31 -1000 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 56ms (Views: 55.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Jan 07 05:52:38 -1000 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (21.1ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (29.4ms)
+Completed 200 OK in 212ms (Views: 66.1ms | ActiveRecord: 21.1ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Fri Jan 07 05:52:53 -1000 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (132.4ms)
+Rendered users/new.html.erb within layouts/application (150.8ms)
+Completed 200 OK in 211ms (Views: 192.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Fri Jan 07 05:54:26 -1000 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (28.5ms)
+Rendered users/new.html.erb within layouts/application (37.7ms)
+Completed 200 OK in 86ms (Views: 43.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at Fri Jan 07 05:57:59 -1000 2011
+  Processing by UsersController#create as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"h7Qb8/uxl3SUc77WtdB6FGvWNIXpe7mn7/gS7TjQ07A=", "utf8"=>"✓", "user"=>{"interests"=>"teaching\r\nzenthings\r\ncars\r\nall students\r\ndesign", "school"=>"RHIT", "name"=>"Steve", "location"=>"My office", "current_position"=>"teaching 374", "major"=>"Computer Science", "phone"=>"5122561024", "total_years_experience"=>"35", "password"=>"[FILTERED]", "email"=>"yes@email.com"}}
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'yes@email.com') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."phone" = 5122561024) LIMIT 1
+Rendered users/_form.html.erb (14.4ms)
+Rendered users/new.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 111ms (Views: 33.9ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/users" for 127.0.0.1 at Fri Jan 07 05:58:31 -1000 2011
+  Processing by UsersController#create as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"h7Qb8/uxl3SUc77WtdB6FGvWNIXpe7mn7/gS7TjQ07A=", "utf8"=>"✓", "user"=>{"interests"=>"teaching\r\nzenthings\r\ncars\r\nall students\r\ndesign", "school"=>"RHIT", "name"=>"Steve", "location"=>"My office", "current_position"=>"teaching 374", "major"=>"Computer Science", "phone"=>"5122561025", "total_years_experience"=>"35", "password"=>"[FILTERED]", "email"=>"yes@email.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'yes@email.com') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."phone" = 5122561025) LIMIT 1
+  [1m[36mAREL (0.7ms)[0m  [1mINSERT INTO "users" ("updated_at", "name", "interests", "current_position", "school", "major", "password", "phone", "total_years_experience", "email", "location", "created_at") VALUES ('2011-01-07 15:58:31.214124', 'Steve', 'teaching
+zenthings
+cars
+all students
+design', 'teaching 374', 'RHIT', 'Computer Science', 'zenthing', 5122561025, 35, 'yes@email.com', 'My office', '2011-01-07 15:58:31.214124')[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 69ms
+
+
+Started GET "/users/3" for 127.0.0.1 at Fri Jan 07 05:58:31 -1000 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+Rendered users/show.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 59ms (Views: 38.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at Fri Jan 07 05:59:56 -1000 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 56ms (Views: 34.7ms | ActiveRecord: 0.7ms)
 DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+
+
+Started GET "/users" for 127.0.0.1 at Sun Jan 09 10:48:52 -1000 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (16.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (25.3ms)
+Completed 200 OK in 101ms (Views: 30.6ms | ActiveRecord: 16.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Sun Jan 09 10:49:34 -1000 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 31ms (Views: 30.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentor_profiles/search" for 127.0.0.1 at Sun Jan 09 10:49:36 -1000 2011
+  Processing by MentorProfilesController#search as HTML
+Rendered mentor_profiles/search.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 27ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/register" for 127.0.0.1 at Sun Jan 09 10:49:39 -1000 2011
+  Processing by AccountsController#register as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_accounts_register_html_erb___735913079__616867138_0 at /home/gouser/Documents/ThoughtWorks-Village/app/views/accounts/register.html.erb:2)
+Rendered accounts/register.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 29ms (Views: 28.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/accounts/login" for 127.0.0.1 at Sun Jan 09 10:49:41 -1000 2011
+  Processing by AccountsController#login as HTML
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_accounts_login_html_erb__891256372__616366528_0 at /home/gouser/Documents/ThoughtWorks-Village/app/views/accounts/login.html.erb:3)
+Rendered accounts/login.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 13ms (Views: 12.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Sun Jan 09 10:50:01 -1000 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (1.3ms)[0m  SELECT "mentors".* FROM "mentors"
+Rendered mentors/index.html.erb within layouts/mentors (1.5ms)
+Completed 200 OK in 109ms (Views: 9.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Sun Jan 09 10:50:06 -1000 2011
+  Processing by MenteesController#index as HTML
+  [1m[36mMentee Load (0.5ms)[0m  [1mSELECT "mentees".* FROM "mentees"[0m
+Rendered mentees/index.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 62ms (Views: 41.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Sun Jan 09 10:50:10 -1000 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (3.2ms)[0m  SELECT "mentors".* FROM "mentors"
+Rendered mentors/index.html.erb within layouts/mentors (1.8ms)
+Completed 200 OK in 32ms (Views: 16.8ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/mentees/new" for 127.0.0.1 at Sun Jan 09 10:50:17 -1000 2011
+  Processing by MenteesController#new as HTML
+Rendered mentees/_form.html.erb (74.4ms)
+Rendered mentees/new.html.erb within layouts/application (87.1ms)
+Completed 200 OK in 121ms (Views: 94.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Sun Jan 09 10:50:19 -1000 2011
+  Processing by MenteesController#index as HTML
+  [1m[36mMentee Load (0.6ms)[0m  [1mSELECT "mentees".* FROM "mentees"[0m
+Rendered mentees/index.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 32ms (Views: 15.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Sun Jan 09 10:50:25 -1000 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (0.5ms)[0m  SELECT "mentors".* FROM "mentors"
+Rendered mentors/index.html.erb within layouts/mentors (2.3ms)
+Completed 200 OK in 33ms (Views: 21.7ms | ActiveRecord: 0.5ms)

@@ -1,6 +1,10 @@
 require 'test_helper'
 
 class MentorsControllerTest < ActionController::TestCase
+  setup do
+    @mentor = mentors(:one)
+  end
+
   test "should get index" do
     get :index
     assert_response :success
@@ -14,30 +18,30 @@ class MentorsControllerTest < ActionController::TestCase
 
   test "should create mentor" do
     assert_difference('Mentor.count') do
-      post :create, :mentor => { }
+      post :create, :mentor => @mentor.attributes
     end
 
     assert_redirected_to mentor_path(assigns(:mentor))
   end
 
   test "should show mentor" do
-    get :show, :id => mentors(:one).to_param
+    get :show, :id => @mentor.to_param
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, :id => mentors(:one).to_param
+    get :edit, :id => @mentor.to_param
     assert_response :success
   end
 
   test "should update mentor" do
-    put :update, :id => mentors(:one).to_param, :mentor => { }
+    put :update, :id => @mentor.to_param, :mentor => @mentor.attributes
     assert_redirected_to mentor_path(assigns(:mentor))
   end
 
   test "should destroy mentor" do
     assert_difference('Mentor.count', -1) do
-      delete :destroy, :id => mentors(:one).to_param
+      delete :destroy, :id => @mentor.to_param
     end
 
     assert_redirected_to mentors_path

@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-ThoughtWorksVillage::Application.config.secret_token = 'f21623793289f3659337066c04b19b343aba00365f1cd2f78aef3a0dc5a6f53a1a2bc290091ac7f12d70aa857e14399036061983c2f9f0d321e479f5ee04b429'
+ThoughtWorksVillage::Application.config.secret_token = '9a3c2b59f6a4e44d9fa3d2e0dcdda881190c626a7a77e2363d64e6bd496464d672cc2ee91cca1ea66deafe35f4858cab9a83f5de6d081869177760a7b7a130f5'
