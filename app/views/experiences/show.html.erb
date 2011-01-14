@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Type:</b>
+  <%= @experience.type %>
+</p>
+
+<p>
+  <b>Lengthinyears:</b>
+  <%= @experience.lengthInYears %>
+</p>
+
+<p>
+  <b>Comfortlevel:</b>
+  <%= @experience.comfortLevel %>
+</p>
+
+
+<%= link_to 'Edit', edit_experience_path(@experience) %> |
+<%= link_to 'Back', experiences_path %>

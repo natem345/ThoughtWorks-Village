@@ -10,16 +10,62 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110107061706) do
+ActiveRecord::Schema.define(:version => 20110114051403) do
+
+  create_table "availability_calendars", :force => true do |t|
+    t.integer  "availabilityQuotient"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "availability_days", :force => true do |t|
+    t.date     "availabilityDay"
+    t.string   "availability"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "experiences", :force => true do |t|
+    t.string   "type"
+    t.integer  "lengthInYears"
+    t.integer  "comfortLevel"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "mentees", :force => true do |t|
-    t.integer  "user_id"
+    t.integer  "menteeID"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "mentors", :force => true do |t|
-    t.integer  "user_id"
+    t.integer  "mentorID"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "questions", :force => true do |t|
+    t.string   "questionText"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "requests", :force => true do |t|
+    t.string   "reason"
+    t.string   "estimatedLength"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "responses", :force => true do |t|
+    t.string   "responseText"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "surveys", :force => true do |t|
+    t.string   "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

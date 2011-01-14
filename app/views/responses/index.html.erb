@@ -1,0 +1,23 @@
+<h1>Listing responses</h1>
+
+<table>
+  <tr>
+    <th>Responsetext</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @responses.each do |response| %>
+  <tr>
+    <td><%= response.responseText %></td>
+    <td><%= link_to 'Show', response %></td>
+    <td><%= link_to 'Edit', edit_response_path(response) %></td>
+    <td><%= link_to 'Destroy', response, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Response', new_response_path %>

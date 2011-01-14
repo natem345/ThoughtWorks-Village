@@ -1,0 +1,23 @@
+<h1>Listing availability_calendars</h1>
+
+<table>
+  <tr>
+    <th>Availabilityquotient</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @availability_calendars.each do |availability_calendar| %>
+  <tr>
+    <td><%= availability_calendar.availabilityQuotient %></td>
+    <td><%= link_to 'Show', availability_calendar %></td>
+    <td><%= link_to 'Edit', edit_availability_calendar_path(availability_calendar) %></td>
+    <td><%= link_to 'Destroy', availability_calendar, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Availability calendar', new_availability_calendar_path %>

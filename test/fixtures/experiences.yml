@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  type: MyString
+  lengthInYears: 1
+  comfortLevel: 1
+
+two:
+  type: MyString
+  lengthInYears: 1
+  comfortLevel: 1

@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  availabilityDay: 2011-01-13
+  availability: MyString
+
+two:
+  availabilityDay: 2011-01-13
+  availability: MyString
