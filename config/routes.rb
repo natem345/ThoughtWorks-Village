@@ -1,4 +1,6 @@
 ThoughtWorksVillage::Application.routes.draw do
+  resources :mentorships
+
   resources :availability_days
 
   resources :availability_calendars

@@ -11,6 +11,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :password
       t.integer :phone
       t.text :interests
+      t.references :accountable, :polymorphic => true
 
       t.timestamps
     end

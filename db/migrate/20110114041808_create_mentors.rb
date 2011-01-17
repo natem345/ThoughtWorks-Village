@@ -1,7 +1,7 @@
 class CreateMentors < ActiveRecord::Migration
   def self.up
     create_table :mentors do |t|
-      t.integer :mentorID
+      t.integer :user_id
 
       t.timestamps
     end

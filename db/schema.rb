@@ -10,10 +10,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110114051403) do
+ActiveRecord::Schema.define(:version => 20110117015007) do
 
   create_table "availability_calendars", :force => true do |t|
     t.integer  "availabilityQuotient"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -21,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20110114051403) do
   create_table "availability_days", :force => true do |t|
     t.date     "availabilityDay"
     t.string   "availability"
+    t.integer  "availability_calendar_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -29,24 +31,33 @@ ActiveRecord::Schema.define(:version => 20110114051403) do
     t.string   "type"
     t.integer  "lengthInYears"
     t.integer  "comfortLevel"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "mentees", :force => true do |t|
-    t.integer  "menteeID"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "mentors", :force => true do |t|
-    t.integer  "mentorID"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "mentorships", :force => true do |t|
+    t.integer  "mentee_id"
+    t.integer  "mentor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "questions", :force => true do |t|
     t.string   "questionText"
+    t.integer  "survey_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -54,12 +65,15 @@ ActiveRecord::Schema.define(:version => 20110114051403) do
   create_table "requests", :force => true do |t|
     t.string   "reason"
     t.string   "estimatedLength"
+    t.integer  "mentee_id"
+    t.integer  "mentor_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "responses", :force => true do |t|
     t.string   "responseText"
+    t.integer  "question_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -81,6 +95,8 @@ ActiveRecord::Schema.define(:version => 20110114051403) do
     t.string   "password"
     t.integer  "phone"
     t.text     "interests"
+    t.integer  "accountable_id"
+    t.string   "accountable_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

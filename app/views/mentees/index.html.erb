@@ -2,7 +2,8 @@
 
 <table>
   <tr>
-    <th>Menteeid</th>
+    <th>ID</th>
+    <th>User ID</th>
     <th></th>
     <th></th>
     <th></th>
@@ -10,7 +11,8 @@
 
 <% @mentees.each do |mentee| %>
   <tr>
-    <td><%= mentee.menteeID %></td>
+    <td><%= mentee.id %></td>
+    <td><%= mentee.user_id %></td>
     <td><%= link_to 'Show', mentee %></td>
     <td><%= link_to 'Edit', edit_mentee_path(mentee) %></td>
     <td><%= link_to 'Destroy', mentee, :confirm => 'Are you sure?', :method => :delete %></td>

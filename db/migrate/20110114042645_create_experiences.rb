@@ -4,6 +4,7 @@ class CreateExperiences < ActiveRecord::Migration
       t.string :type
       t.integer :lengthInYears
       t.integer :comfortLevel
+      t.integer :user_id
 
       t.timestamps
     end

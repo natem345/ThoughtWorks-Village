@@ -1,3 +1,0 @@
-class Mentor < ActiveRecord::Base
-  validates :
-end

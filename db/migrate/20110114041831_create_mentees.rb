@@ -1,7 +1,7 @@
 class CreateMentees < ActiveRecord::Migration
   def self.up
     create_table :mentees do |t|
-      t.integer :menteeID
+      t.integer :user_id
 
       t.timestamps
     end

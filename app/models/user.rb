@@ -6,4 +6,7 @@ class User < ActiveRecord::Base
   validates_presence_of :password
   validates_numericality_of :phone, :only_integer => true, :greater_than => 0
   validates_uniqueness_of :phone, :allow_blank => true
+
+  belongs_to :accountable, :polymorphic => true
+  has_many :experiences
 end
