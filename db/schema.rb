@@ -10,17 +10,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110117015007) do
+ActiveRecord::Schema.define(:version => 20110118000237) do
 
   create_table "availability_calendars", :force => true do |t|
-    t.integer  "availabilityQuotient"
+    t.integer  "availability_quotient"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "availability_days", :force => true do |t|
-    t.date     "availabilityDay"
+    t.date     "availability_day"
     t.string   "availability"
     t.integer  "availability_calendar_id"
     t.datetime "created_at"
@@ -29,34 +29,32 @@ ActiveRecord::Schema.define(:version => 20110117015007) do
 
   create_table "experiences", :force => true do |t|
     t.string   "type"
-    t.integer  "lengthInYears"
-    t.integer  "comfortLevel"
+    t.integer  "length_in_years"
+    t.integer  "comfort_level"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "mentees", :force => true do |t|
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "mentors", :force => true do |t|
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "mentorships", :force => true do |t|
-    t.integer  "mentee_id"
     t.integer  "mentor_id"
+    t.integer  "mentee_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "questions", :force => true do |t|
-    t.string   "questionText"
+    t.string   "question_text"
     t.integer  "survey_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -64,15 +62,15 @@ ActiveRecord::Schema.define(:version => 20110117015007) do
 
   create_table "requests", :force => true do |t|
     t.string   "reason"
-    t.string   "estimatedLength"
-    t.integer  "mentee_id"
+    t.string   "estimated_length"
     t.integer  "mentor_id"
+    t.integer  "mentee_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "responses", :force => true do |t|
-    t.string   "responseText"
+    t.text     "response_text"
     t.integer  "question_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -80,6 +78,7 @@ ActiveRecord::Schema.define(:version => 20110117015007) do
 
   create_table "surveys", :force => true do |t|
     t.string   "description"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

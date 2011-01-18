@@ -2,12 +2,13 @@
 
 <table>
   <tr>
+    <th>ID</th>
     <th>Name</th>
     <th>Location</th>
-    <th>Current position</th>
+    <th>Current Position</th>
     <th>School</th>
     <th>Major</th>
-    <th>Total years experience</th>
+    <th>Total Years of Experience</th>
     <th>Email</th>
     <!--<th>Password</th>-->
     <th>Phone</th>
@@ -19,6 +20,7 @@
 
 <% @users.each do |user| %>
   <tr>
+    <td><%= user.id %></td>
     <td><%= user.name %></td>
     <td><%= user.location %></td>
     <td><%= user.current_position %></td>

@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th>User ID</th>
+    <th>ID</th>
     <th></th>
     <th></th>
     <th></th>
@@ -10,7 +10,7 @@
 
 <% @mentors.each do |mentor| %>
   <tr>
-    <td><%= mentor.user_id %></td>
+    <td><%= mentor.id %></td>
     <td><%= link_to 'Show', mentor %></td>
     <td><%= link_to 'Edit', edit_mentor_path(mentor) %></td>
     <td><%= link_to 'Destroy', mentor, :confirm => 'Are you sure?', :method => :delete %></td>

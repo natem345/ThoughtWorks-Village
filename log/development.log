@@ -4402,3 +4402,1242 @@ Started GET "/mentees" for 127.0.0.1 at Sun Jan 16 21:17:10 -1000 2011
   [1m[36mMentee Load (1.1ms)[0m  [1mSELECT "mentees".* FROM "mentees"[0m
 Rendered mentees/index.html.erb within layouts/application (7.9ms)
 Completed 200 OK in 32ms (Views: 14.5ms | ActiveRecord: 1.1ms)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+
+
+Started GET "/users" for 127.0.0.1 at Mon Jan 17 12:55:28 -1000 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (35.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (44.8ms)
+Completed 200 OK in 274ms (Views: 85.4ms | ActiveRecord: 35.3ms)
+
+
+Started POST "/users/4" for 127.0.0.1 at Mon Jan 17 12:55:34 -1000 2011
+  Processing by UsersController#destroy as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mSQL (13.8ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 4) LIMIT 1[0m
+  [1m[35mAREL (6.6ms)[0m  DELETE FROM "users" WHERE ("users"."id" = 4)
+Redirected to http://localhost:3000/users
+Completed 302 Found in 103ms
+
+
+Started GET "/users" for 127.0.0.1 at Mon Jan 17 12:55:35 -1000 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (7.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (65.1ms)
+Completed 200 OK in 149ms (Views: 87.1ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Mon Jan 17 12:55:43 -1000 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (112.7ms)
+Rendered users/new.html.erb within layouts/application (118.9ms)
+Completed 200 OK in 218ms (Views: 204.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/images/corporate_favicon.ico" for 127.0.0.1 at Mon Jan 17 12:55:46 -1000 2011
+
+ActionController::RoutingError (No route matches "/users/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started POST "/users" for 127.0.0.1 at Mon Jan 17 12:57:04 -1000 2011
+  Processing by UsersController#create as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"FiU/MR9m+whPUSFjPN8rVWFOI1G7WRurstJFaSnj604=", "utf8"=>"✓", "user"=>{"interests"=>"Absolutely none", "school"=>"Technological Institute of America", "name"=>"John Smith", "location"=>"Anywhere, USA", "current_position"=>"Software Developer", "major"=>"Software Engineering", "phone"=>"9125556922", "total_years_experience"=>"10", "password"=>"[FILTERED]", "email"=>"j.smith@anywhere.com"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" = 'j.smith@anywhere.com') LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."phone" = 9125556922) LIMIT 1[0m
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "users" ("created_at", "school", "major", "interests", "accountable_id", "name", "password", "accountable_type", "updated_at", "location", "total_years_experience", "current_position", "phone", "email") VALUES ('2011-01-17 22:57:04.759208', 'Technological Institute of America', 'Software Engineering', 'Absolutely none', NULL, 'John Smith', 'defaulted', NULL, '2011-01-17 22:57:04.759208', 'Anywhere, USA', 10, 'Software Developer', 9125556922, 'j.smith@anywhere.com')
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 145ms
+
+
+Started GET "/users/5" for 127.0.0.1 at Mon Jan 17 12:57:04 -1000 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 5) LIMIT 1[0m
+Rendered users/show.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 134ms (Views: 27.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at Mon Jan 17 12:57:07 -1000 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (1.9ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (26.8ms)
+Completed 200 OK in 51ms (Views: 32.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Mon Jan 17 12:57:12 -1000 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (23.2ms)
+Rendered users/new.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 59ms (Views: 37.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at Mon Jan 17 12:59:21 -1000 2011
+  Processing by UsersController#create as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"FiU/MR9m+whPUSFjPN8rVWFOI1G7WRurstJFaSnj604=", "utf8"=>"✓", "user"=>{"interests"=>"Entering test data", "school"=>"South Montgomery High School", "name"=>"Sam McMentee", "location"=>"Nowhere Near", "current_position"=>"Student", "major"=>"None", "phone"=>"7665551248", "total_years_experience"=>"2", "password"=>"[FILTERED]", "email"=>"mcmentee@southhigh.k12.in.us"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."email" = 'mcmentee@southhigh.k12.in.us') LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."phone" = 7665551248) LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "users" ("email", "accountable_id", "accountable_type", "location", "created_at", "school", "phone", "name", "major", "updated_at", "total_years_experience", "interests", "password", "current_position") VALUES ('mcmentee@southhigh.k12.in.us', NULL, NULL, 'Nowhere Near', '2011-01-17 22:59:21.294363', 'South Montgomery High School', 7665551248, 'Sam McMentee', 'None', '2011-01-17 22:59:21.294363', 2, 'Entering test data', 'teachmeplease', 'Student')[0m
+Redirected to http://localhost:3000/users/6
+Completed 302 Found in 66ms
+
+
+Started GET "/users/6" for 127.0.0.1 at Mon Jan 17 12:59:21 -1000 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 6) LIMIT 1
+Rendered users/show.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 127ms (Views: 31.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Mon Jan 17 12:59:24 -1000 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (23.7ms)
+Completed 200 OK in 55ms (Views: 29.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Jan 17 12:59:40 -1000 2011
+  Processing by MenteesController#index as HTML
+  [1m[35mMentee Load (0.7ms)[0m  SELECT "mentees".* FROM "mentees"
+Rendered mentees/index.html.erb within layouts/application (11.5ms)
+Completed 200 OK in 81ms (Views: 17.8ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/mentees/1" for 127.0.0.1 at Mon Jan 17 12:59:44 -1000 2011
+  Processing by MenteesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMentee Load (0.2ms)[0m  [1mSELECT "mentees".* FROM "mentees" WHERE ("mentees"."id" = 1) LIMIT 1[0m
+  [1m[35mAREL (0.7ms)[0m  DELETE FROM "mentees" WHERE ("mentees"."id" = 1)
+Redirected to http://localhost:3000/mentees
+Completed 302 Found in 60ms
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Jan 17 12:59:45 -1000 2011
+  Processing by MenteesController#index as HTML
+  [1m[36mMentee Load (0.7ms)[0m  [1mSELECT "mentees".* FROM "mentees"[0m
+Rendered mentees/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 84ms (Views: 31.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/mentees/2" for 127.0.0.1 at Mon Jan 17 12:59:47 -1000 2011
+  Processing by MenteesController#destroy as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mMentee Load (0.2ms)[0m  SELECT "mentees".* FROM "mentees" WHERE ("mentees"."id" = 2) LIMIT 1
+  [1m[36mAREL (0.5ms)[0m  [1mDELETE FROM "mentees" WHERE ("mentees"."id" = 2)[0m
+Redirected to http://localhost:3000/mentees
+Completed 302 Found in 43ms
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Jan 17 12:59:48 -1000 2011
+  Processing by MenteesController#index as HTML
+  [1m[35mMentee Load (9.4ms)[0m  SELECT "mentees".* FROM "mentees"
+Rendered mentees/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 248ms (Views: 217.1ms | ActiveRecord: 10.2ms)
+
+
+Started GET "/mentees/new" for 127.0.0.1 at Mon Jan 17 12:59:51 -1000 2011
+  Processing by MenteesController#new as HTML
+Rendered mentees/_form.html.erb (12.2ms)
+Rendered mentees/new.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 51ms (Views: 31.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentees/images/corporate_favicon.ico" for 127.0.0.1 at Mon Jan 17 12:59:54 -1000 2011
+
+ActionController::RoutingError (No route matches "/mentees/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started POST "/mentees" for 127.0.0.1 at Mon Jan 17 13:00:02 -1000 2011
+  Processing by MenteesController#create as HTML
+  Parameters: {"commit"=>"Create Mentee", "authenticity_token"=>"FiU/MR9m+whPUSFjPN8rVWFOI1G7WRurstJFaSnj604=", "utf8"=>"✓", "mentee"=>{"user_id"=>"1"}}
+  [1m[36mAREL (4.7ms)[0m  [1mINSERT INTO "mentees" ("updated_at", "user_id", "created_at") VALUES ('2011-01-17 23:00:03.076074', 1, '2011-01-17 23:00:03.076074')[0m
+Redirected to http://localhost:3000/mentees/5
+Completed 302 Found in 52ms
+
+
+Started GET "/mentees/5" for 127.0.0.1 at Mon Jan 17 13:00:03 -1000 2011
+  Processing by MenteesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mMentee Load (0.2ms)[0m  SELECT "mentees".* FROM "mentees" WHERE ("mentees"."id" = 5) LIMIT 1
+Rendered mentees/show.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 32ms (Views: 19.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Jan 17 13:00:07 -1000 2011
+  Processing by MenteesController#index as HTML
+  [1m[36mMentee Load (1.2ms)[0m  [1mSELECT "mentees".* FROM "mentees"[0m
+Rendered mentees/index.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 126ms (Views: 16.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/mentees/new" for 127.0.0.1 at Mon Jan 17 13:00:22 -1000 2011
+  Processing by MenteesController#new as HTML
+Rendered mentees/_form.html.erb (7.1ms)
+Rendered mentees/new.html.erb within layouts/application (30.9ms)
+Completed 200 OK in 99ms (Views: 38.6ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/users" for 127.0.0.1 at Mon Jan 17 13:01:24 -1000 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (24.2ms)
+Completed 200 OK in 69ms (Views: 51.2ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/mentees" for 127.0.0.1 at Mon Jan 17 13:02:06 -1000 2011
+  Processing by MenteesController#create as HTML
+  Parameters: {"commit"=>"Create Mentee", "authenticity_token"=>"FiU/MR9m+whPUSFjPN8rVWFOI1G7WRurstJFaSnj604=", "utf8"=>"✓", "mentee"=>{"user_id"=>"6"}}
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "mentees" ("created_at", "user_id", "updated_at") VALUES ('2011-01-17 23:02:06.143036', 6, '2011-01-17 23:02:06.143036')[0m
+Redirected to http://localhost:3000/mentees/6
+Completed 302 Found in 39ms
+
+
+Started GET "/mentees/6" for 127.0.0.1 at Mon Jan 17 13:02:06 -1000 2011
+  Processing by MenteesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mMentee Load (0.2ms)[0m  SELECT "mentees".* FROM "mentees" WHERE ("mentees"."id" = 6) LIMIT 1
+Rendered mentees/show.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 116ms (Views: 17.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Jan 17 13:02:09 -1000 2011
+  Processing by MenteesController#index as HTML
+  [1m[36mMentee Load (0.6ms)[0m  [1mSELECT "mentees".* FROM "mentees"[0m
+Rendered mentees/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 42ms (Views: 24.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Jan 17 13:02:15 -1000 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (0.7ms)[0m  SELECT "mentors".* FROM "mentors"
+Rendered mentors/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 80ms (Views: 37.4ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/mentors/1" for 127.0.0.1 at Mon Jan 17 13:02:19 -1000 2011
+  Processing by MentorsController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMentor Load (0.2ms)[0m  [1mSELECT "mentors".* FROM "mentors" WHERE ("mentors"."id" = 1) LIMIT 1[0m
+  [1m[35mAREL (0.5ms)[0m  DELETE FROM "mentors" WHERE ("mentors"."id" = 1)
+Redirected to http://localhost:3000/mentors
+Completed 302 Found in 70ms
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Jan 17 13:02:19 -1000 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mMentor Load (1.5ms)[0m  [1mSELECT "mentors".* FROM "mentors"[0m
+Rendered mentors/index.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 48ms (Views: 15.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/mentors/new" for 127.0.0.1 at Mon Jan 17 13:02:21 -1000 2011
+  Processing by MentorsController#new as HTML
+Rendered mentors/_form.html.erb (15.9ms)
+Rendered mentors/new.html.erb within layouts/application (39.9ms)
+Completed 200 OK in 83ms (Views: 60.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentors/images/corporate_favicon.ico" for 127.0.0.1 at Mon Jan 17 13:02:23 -1000 2011
+
+ActionController::RoutingError (No route matches "/mentors/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/mentors" for 127.0.0.1 at Mon Jan 17 13:02:29 -1000 2011
+  Processing by MentorsController#create as HTML
+  Parameters: {"commit"=>"Create Mentor", "mentor"=>{"user_id"=>"2"}, "authenticity_token"=>"FiU/MR9m+whPUSFjPN8rVWFOI1G7WRurstJFaSnj604=", "utf8"=>"✓"}
+  [1m[35mAREL (0.4ms)[0m  INSERT INTO "mentors" ("updated_at", "created_at", "user_id") VALUES ('2011-01-17 23:02:29.588802', '2011-01-17 23:02:29.588802', 2)
+Redirected to http://localhost:3000/mentors/2
+Completed 302 Found in 55ms
+
+
+Started GET "/mentors/2" for 127.0.0.1 at Mon Jan 17 13:02:29 -1000 2011
+  Processing by MentorsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMentor Load (0.2ms)[0m  [1mSELECT "mentors".* FROM "mentors" WHERE ("mentors"."id" = 2) LIMIT 1[0m
+Rendered mentors/show.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 85ms (Views: 58.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Jan 17 13:02:31 -1000 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (1.5ms)[0m  SELECT "mentors".* FROM "mentors"
+Rendered mentors/index.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 42ms (Views: 20.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/mentors/new" for 127.0.0.1 at Mon Jan 17 13:02:33 -1000 2011
+  Processing by MentorsController#new as HTML
+Rendered mentors/_form.html.erb (5.0ms)
+Rendered mentors/new.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 43ms (Views: 22.6ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/mentors" for 127.0.0.1 at Mon Jan 17 13:02:36 -1000 2011
+  Processing by MentorsController#create as HTML
+  Parameters: {"commit"=>"Create Mentor", "mentor"=>{"user_id"=>"3"}, "authenticity_token"=>"FiU/MR9m+whPUSFjPN8rVWFOI1G7WRurstJFaSnj604=", "utf8"=>"✓"}
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "mentors" ("updated_at", "user_id", "created_at") VALUES ('2011-01-17 23:02:36.677720', 3, '2011-01-17 23:02:36.677720')[0m
+Redirected to http://localhost:3000/mentors/3
+Completed 302 Found in 48ms
+
+
+Started GET "/mentors/3" for 127.0.0.1 at Mon Jan 17 13:02:36 -1000 2011
+  Processing by MentorsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mMentor Load (0.2ms)[0m  SELECT "mentors".* FROM "mentors" WHERE ("mentors"."id" = 3) LIMIT 1
+Rendered mentors/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 37ms (Views: 12.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Jan 17 13:02:38 -1000 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mMentor Load (0.7ms)[0m  [1mSELECT "mentors".* FROM "mentors"[0m
+Rendered mentors/index.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 38ms (Views: 14.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/mentors/new" for 127.0.0.1 at Mon Jan 17 13:02:40 -1000 2011
+  Processing by MentorsController#new as HTML
+Rendered mentors/_form.html.erb (4.7ms)
+Rendered mentors/new.html.erb within layouts/application (15.8ms)
+Completed 200 OK in 47ms (Views: 25.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/mentors" for 127.0.0.1 at Mon Jan 17 13:02:44 -1000 2011
+  Processing by MentorsController#create as HTML
+  Parameters: {"commit"=>"Create Mentor", "mentor"=>{"user_id"=>"5"}, "authenticity_token"=>"FiU/MR9m+whPUSFjPN8rVWFOI1G7WRurstJFaSnj604=", "utf8"=>"✓"}
+  [1m[35mAREL (0.6ms)[0m  INSERT INTO "mentors" ("created_at", "user_id", "updated_at") VALUES ('2011-01-17 23:02:44.532534', 5, '2011-01-17 23:02:44.532534')
+Redirected to http://localhost:3000/mentors/4
+Completed 302 Found in 63ms
+
+
+Started GET "/mentors/4" for 127.0.0.1 at Mon Jan 17 13:02:44 -1000 2011
+  Processing by MentorsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mMentor Load (0.2ms)[0m  [1mSELECT "mentors".* FROM "mentors" WHERE ("mentors"."id" = 4) LIMIT 1[0m
+Rendered mentors/show.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 44ms (Views: 22.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Jan 17 13:02:46 -1000 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (0.7ms)[0m  SELECT "mentors".* FROM "mentors"
+Rendered mentors/index.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 42ms (Views: 26.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Jan 17 13:05:37 -1000 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mMentor Load (1.8ms)[0m  [1mSELECT "mentors".* FROM "mentors"[0m
+Rendered mentors/index.html.erb within layouts/application (33.7ms)
+Completed 200 OK in 147ms (Views: 40.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Jan 17 13:05:43 -1000 2011
+  Processing by MenteesController#index as HTML
+  [1m[35mMentee Load (0.7ms)[0m  SELECT "mentees".* FROM "mentees"
+Rendered mentees/index.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 39ms (Views: 19.2ms | ActiveRecord: 0.7ms)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Jan 17 13:09:59 -1000 2011
+  Processing by MenteesController#index as HTML
+  [1m[36mMentee Load (0.7ms)[0m  [1mSELECT "mentees".* FROM "mentees"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users".accountable_id = 5 AND "users".accountable_type = 'Mentee') LIMIT 1
+Rendered mentees/index.html.erb within layouts/application (67.2ms)
+Completed   in 92ms
+
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    14:   <tr>
+    15:     <td><%= mentee.id %></td>
+    16:     <td><%= mentee.user_id %></td>
+    17:     <td><%= mentee.user.email %></td>
+    18:     <td><%= link_to 'Show', mentee %></td>
+    19:     <td><%= link_to 'Edit', edit_mentee_path(mentee) %></td>
+    20:     <td><%= link_to 'Destroy', mentee, :confirm => 'Are you sure?', :method => :delete %></td>
+  app/views/mentees/index.html.erb:17:in `_app_views_mentees_index_html_erb__200227877__616674248_0'
+  app/views/mentees/index.html.erb:13:in `each'
+  app/views/mentees/index.html.erb:13:in `_app_views_mentees_index_html_erb__200227877__616674248_0'
+  app/controllers/mentees_controller.rb:7:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.6ms)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (1.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateMentorships (20110117015007)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.3ms)[0m  [1mDROP TABLE "mentorships"[0m
+  [1m[35mAREL (0.2ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20110117015007'
+  [1m[36mSQL (0.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("availability_calendars")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("availability_days")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("experiences")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("mentees")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("mentors")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("questions")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("requests")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("responses")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("surveys")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (1.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateAvailabilityDays (20110114051403)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.7ms)[0m  [1mDROP TABLE "availability_days"[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20110114051403'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("availability_calendars")
+  [1m[36mSQL (5.6ms)[0m  [1mPRAGMA index_list("experiences")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("mentees")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("mentors")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("questions")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("requests")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("responses")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("surveys")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (1.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateAvailabilityCalendars (20110114050838)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.7ms)[0m  [1mDROP TABLE "availability_calendars"[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20110114050838'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("experiences")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("mentees")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("mentors")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("questions")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("requests")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("responses")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("surveys")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateResponses (20110114050435)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.6ms)[0m  [1mDROP TABLE "responses"[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20110114050435'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("experiences")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("mentees")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("mentors")
+  [1m[36mSQL (1.1ms)[0m  [1mPRAGMA index_list("questions")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("requests")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("surveys")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (1.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateQuestions (20110114050409)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.7ms)[0m  [1mDROP TABLE "questions"[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20110114050409'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("experiences")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("mentees")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("mentors")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("requests")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("surveys")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateSurveys (20110114044601)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.7ms)[0m  [1mDROP TABLE "surveys"[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20110114044601'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("experiences")
+  [1m[36mSQL (2.5ms)[0m  [1mPRAGMA index_list("mentees")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("mentors")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("requests")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateExperiences (20110114042645)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (1.1ms)[0m  [1mDROP TABLE "experiences"[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20110114042645'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("mentees")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("mentors")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("requests")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (1.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateRequests (20110114042052)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.6ms)[0m  [1mDROP TABLE "requests"[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20110114042052'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("mentees")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("mentors")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (1.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateMentees (20110114041831)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.7ms)[0m  [1mDROP TABLE "mentees"[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20110114041831'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("mentors")
+  [1m[36mSQL (12.4ms)[0m  [1mPRAGMA index_list("users")[0m
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (1.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateMentors (20110114041808)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.6ms)[0m  [1mDROP TABLE "mentors"[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20110114041808'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (1.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20110107060307)
+Migrating to CreateMentors (20110114041808)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.7ms)[0m  [1mCREATE TABLE "mentors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110114041808')
+Migrating to CreateMentees (20110114041831)
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE TABLE "mentees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110114041831')
+Migrating to CreateRequests (20110114042052)
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE TABLE "requests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "reason" varchar(255), "estimatedLength" varchar(255), "mentee_id" integer, "mentor_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110114042052')
+Migrating to CreateExperiences (20110114042645)
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE TABLE "experiences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "lengthInYears" integer, "comfortLevel" integer, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110114042645')
+Migrating to CreateSurveys (20110114044601)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "surveys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110114044601')
+Migrating to CreateQuestions (20110114050409)
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE TABLE "questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "questionText" varchar(255), "survey_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110114050409')
+Migrating to CreateResponses (20110114050435)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "responses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "responseText" varchar(255), "question_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110114050435')
+Migrating to CreateAvailabilityCalendars (20110114050838)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "availability_calendars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "availabilityQuotient" integer, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110114050838')
+Migrating to CreateAvailabilityDays (20110114051403)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "availability_days" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "availabilityDay" date, "availability" varchar(255), "availability_calendar_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110114051403')
+Migrating to CreateMentorships (20110117015007)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "mentorships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mentee_id" integer, "mentor_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110117015007')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("availability_calendars")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("availability_days")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("experiences")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("mentees")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("mentors")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("mentorships")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("questions")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("requests")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("responses")
+  [1m[36mSQL (0.2ms)[0m  [1mPRAGMA index_list("surveys")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Jan 17 13:39:26 -1000 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mMentor Load (1.9ms)[0m  [1mSELECT "mentors".* FROM "mentors"[0m
+Rendered mentors/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 79ms (Views: 9.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Jan 17 13:39:30 -1000 2011
+  Processing by MenteesController#index as HTML
+  [1m[35mMentee Load (0.2ms)[0m  SELECT "mentees".* FROM "mentees"
+Rendered mentees/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 40ms (Views: 18.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mentees/new" for 127.0.0.1 at Mon Jan 17 13:39:32 -1000 2011
+  Processing by MenteesController#new as HTML
+Rendered mentees/_form.html.erb (11.8ms)
+Rendered mentees/new.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 50ms (Views: 38.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/mentees" for 127.0.0.1 at Mon Jan 17 13:39:36 -1000 2011
+  Processing by MenteesController#create as HTML
+  Parameters: {"commit"=>"Create Mentee", "authenticity_token"=>"FiU/MR9m+whPUSFjPN8rVWFOI1G7WRurstJFaSnj604=", "utf8"=>"✓", "mentee"=>{"user_id"=>"1"}}
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (0.9ms)[0m  INSERT INTO "mentees" ("updated_at", "user_id", "created_at") VALUES ('2011-01-17 23:39:36.934983', 1, '2011-01-17 23:39:36.934983')
+Redirected to http://localhost:3000/mentees/1
+Completed 302 Found in 64ms
+
+
+Started GET "/mentees/1" for 127.0.0.1 at Mon Jan 17 13:39:36 -1000 2011
+  Processing by MenteesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMentee Load (0.2ms)[0m  [1mSELECT "mentees".* FROM "mentees" WHERE ("mentees"."id" = 1) LIMIT 1[0m
+Rendered mentees/show.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 37ms (Views: 15.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Jan 17 13:39:42 -1000 2011
+  Processing by MenteesController#index as HTML
+  [1m[35mMentee Load (0.8ms)[0m  SELECT "mentees".* FROM "mentees"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users".accountable_id = 1 AND "users".accountable_type = 'Mentee') LIMIT 1[0m
+Rendered mentees/index.html.erb within layouts/application (30.2ms)
+Completed   in 60ms
+
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    14:   <tr>
+    15:     <td><%= mentee.id %></td>
+    16:     <td><%= mentee.user_id %></td>
+    17:     <td><%= mentee.user.email %></td>
+    18:     <td><%= link_to 'Show', mentee %></td>
+    19:     <td><%= link_to 'Edit', edit_mentee_path(mentee) %></td>
+    20:     <td><%= link_to 'Destroy', mentee, :confirm => 'Are you sure?', :method => :delete %></td>
+  app/views/mentees/index.html.erb:17:in `_app_views_mentees_index_html_erb__200227877__616856018_0'
+  app/views/mentees/index.html.erb:13:in `each'
+  app/views/mentees/index.html.erb:13:in `_app_views_mentees_index_html_erb__200227877__616856018_0'
+  app/controllers/mentees_controller.rb:7:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (20.4ms)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+
+
+Started GET "/" for 127.0.0.1 at Mon Jan 17 16:05:50 -1000 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 9ms (Views: 8.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at Mon Jan 17 16:05:55 -1000 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (103.6ms)
+Completed 200 OK in 210ms (Views: 112.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Jan 17 16:06:05 -1000 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (0.6ms)[0m  SELECT "mentors".* FROM "mentors"
+Rendered mentors/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 52ms (Views: 22.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Jan 17 16:07:17 -1000 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mMentor Load (0.7ms)[0m  [1mSELECT "mentors".* FROM "mentors"[0m
+Rendered mentors/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 44ms (Views: 14.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Jan 17 16:07:21 -1000 2011
+  Processing by MenteesController#index as HTML
+  [1m[35mMentee Load (0.7ms)[0m  SELECT "mentees".* FROM "mentees"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users".accountable_id = 1 AND "users".accountable_type = 'Mentee') LIMIT 1[0m
+Rendered mentees/index.html.erb within layouts/application (41.8ms)
+Completed   in 77ms
+
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    14:   <tr>
+    15:     <td><%= mentee.id %></td>
+    16:     <td><%= mentee.user_id %></td>
+    17:     <td><%= mentee.user.email %></td>
+    18:     <td><%= link_to 'Show', mentee %></td>
+    19:     <td><%= link_to 'Edit', edit_mentee_path(mentee) %></td>
+    20:     <td><%= link_to 'Destroy', mentee, :confirm => 'Are you sure?', :method => :delete %></td>
+  app/views/mentees/index.html.erb:17:in `_app_views_mentees_index_html_erb__200227877__617406388_0'
+  app/views/mentees/index.html.erb:13:in `each'
+  app/views/mentees/index.html.erb:13:in `_app_views_mentees_index_html_erb__200227877__617406388_0'
+  app/controllers/mentees_controller.rb:7:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (61.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (14.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (104.2ms)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Jan 17 16:08:54 -1000 2011
+  Processing by MenteesController#index as HTML
+  [1m[35mMentee Load (6.3ms)[0m  SELECT "mentees".* FROM "mentees"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users".accountable_id = 1 AND "users".accountable_type = 'Mentee') LIMIT 1[0m
+Rendered mentees/index.html.erb within layouts/application (23.2ms)
+Completed   in 58ms
+
+ActionView::Template::Error (undefined method `email' for nil:NilClass):
+    14:   <tr>
+    15:     <td><%= mentee.id %></td>
+    16:     <td><%= mentee.user_id %></td>
+    17:     <td><%= mentee.user.email %></td>
+    18:     <td><%= link_to 'Show', mentee %></td>
+    19:     <td><%= link_to 'Edit', edit_mentee_path(mentee) %></td>
+    20:     <td><%= link_to 'Destroy', mentee, :confirm => 'Are you sure?', :method => :delete %></td>
+  app/views/mentees/index.html.erb:17:in `_app_views_mentees_index_html_erb__200227877__617132898_0'
+  app/views/mentees/index.html.erb:13:in `each'
+  app/views/mentees/index.html.erb:13:in `_app_views_mentees_index_html_erb__200227877__617132898_0'
+  app/controllers/mentees_controller.rb:7:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.0ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Jan 17 16:09:00 -1000 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (0.9ms)[0m  SELECT "mentors".* FROM "mentors"
+Rendered mentors/index.html.erb within layouts/application (86.4ms)
+Completed 200 OK in 144ms (Views: 96.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at Mon Jan 17 16:09:05 -1000 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (7.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (25.5ms)
+Completed 200 OK in 53ms (Views: 32.5ms | ActiveRecord: 7.3ms)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (1.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("availability_calendars")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("availability_days")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("experiences")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("mentees")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("mentors")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("mentorships")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("questions")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("requests")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("responses")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("surveys")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (1.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("availability_calendars")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("availability_days")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("experiences")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("mentees")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("mentors")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("mentorships")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("questions")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("requests")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("responses")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("surveys")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (1.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("availability_calendars")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("availability_days")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("experiences")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("mentees")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("mentors")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("mentorships")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("questions")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("requests")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("responses")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("surveys")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (1.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("availability_calendars")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("availability_days")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("experiences")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("mentees")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("mentors")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("mentorships")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("questions")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("requests")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("responses")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("surveys")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (1.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("availability_calendars")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("availability_days")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("experiences")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("mentees")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("mentors")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("mentorships")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("questions")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("requests")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("responses")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("surveys")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (26.7ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("schema_migrations")
+  [1m[36mSQL (9.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+Migrating to CreateUsers (20110117234638)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "location" varchar(255), "current_position" varchar(255), "school" varchar(255), "major" varchar(255), "total_years_experience" integer, "email" varchar(255), "password" varchar(255), "phone" integer, "interests" text, "accountable_id" integer, "accountable_type" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110117234638')
+Migrating to CreateMentors (20110117235317)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "mentors" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110117235317')
+Migrating to CreateMentees (20110117235327)
+  [1m[36mSQL (1.6ms)[0m  [1mCREATE TABLE "mentees" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110117235327')
+Migrating to CreateMentorships (20110117235453)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "mentorships" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "mentor_id" integer, "mentee_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110117235453')
+Migrating to CreateRequests (20110117235537)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "requests" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "reason" varchar(255), "estimated_length" varchar(255), "mentor_id" integer, "mentee_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110117235537')
+Migrating to CreateExperiences (20110117235701)
+  [1m[36mSQL (0.6ms)[0m  [1mCREATE TABLE "experiences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "type" varchar(255), "length_in_years" integer, "comfort_level" integer, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110117235701')
+Migrating to CreateAvailabilityCalendars (20110117235820)
+  [1m[36mSQL (0.9ms)[0m  [1mCREATE TABLE "availability_calendars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "availability_quotient" integer, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110117235820')
+Migrating to CreateAvailabilityDays (20110117235928)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "availability_days" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "availability_day" date, "availability" varchar(255), "availability_calendar_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110117235928')
+Migrating to CreateSurveys (20110118000027)
+  [1m[36mSQL (0.4ms)[0m  [1mCREATE TABLE "surveys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110118000027')
+Migrating to CreateQuestions (20110118000156)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question_text" varchar(255), "survey_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110118000156')
+Migrating to CreateResponses (20110118000237)
+  [1m[36mSQL (7.3ms)[0m  [1mCREATE TABLE "responses" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "response_text" text, "question_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110118000237')
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (76.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("availability_calendars")
+  [1m[36mSQL (0.4ms)[0m  [1mPRAGMA index_list("availability_days")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("experiences")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("mentees")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("mentors")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("mentorships")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("questions")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("requests")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("responses")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("surveys")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+
+
+Started GET "/users" for 127.0.0.1 at Mon Jan 17 16:13:09 -1000 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (1.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 74ms (Views: 10.2ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Jan 17 16:13:48 -1000 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (0.3ms)[0m  SELECT "mentors".* FROM "mentors"
+Rendered mentors/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 136ms (Views: 18.6ms | ActiveRecord: 0.3ms)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Jan 17 16:29:18 -1000 2011
+  Processing by MenteesController#index as HTML
+  [1m[36mMentee Load (1.4ms)[0m  [1mSELECT "mentees".* FROM "mentees"[0m
+Rendered mentees/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 90ms (Views: 12.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/mentees/new" for 127.0.0.1 at Mon Jan 17 16:29:22 -1000 2011
+  Processing by MenteesController#new as HTML
+Rendered mentees/_form.html.erb (16.4ms)
+Rendered mentees/new.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 137ms (Views: 30.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentees/images/corporate_favicon.ico" for 127.0.0.1 at Mon Jan 17 16:29:23 -1000 2011
+
+ActionController::RoutingError (No route matches "/mentees/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/mentees/images/corporate_favicon.ico" for 127.0.0.1 at Mon Jan 17 16:29:26 -1000 2011
+
+ActionController::RoutingError (No route matches "/mentees/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Jan 17 16:29:27 -1000 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (0.8ms)[0m  SELECT "mentors".* FROM "mentors"
+Rendered mentors/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 49ms (Views: 16.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/mentors/new" for 127.0.0.1 at Mon Jan 17 16:29:29 -1000 2011
+  Processing by MentorsController#new as HTML
+Rendered mentors/_form.html.erb (13.0ms)
+Rendered mentors/new.html.erb within layouts/application (23.9ms)
+Completed   in 72ms
+
+ActionView::Template::Error (undefined method `user_id' for #<Mentor id: nil, created_at: nil, updated_at: nil>):
+    14:   <!--
+    15:   <div class="field">
+    16:     <%= f.label :user_id %><br />
+    17:     <%= f.text_field :user_id %>
+    18:   </div>
+    19:   -->
+    20:   <div class="actions">
+  app/views/mentors/_form.html.erb:17:in `_app_views_mentors__form_html_erb__656255951__616478158_533056'
+  app/views/mentors/_form.html.erb:1:in `_app_views_mentors__form_html_erb__656255951__616478158_533056'
+  app/views/mentors/new.html.erb:3:in `_app_views_mentors_new_html_erb__467274690__616473368_0'
+  app/controllers/mentors_controller.rb:29:in `new'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (13.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (21.3ms)
+
+
+Started GET "/mentors/new" for 127.0.0.1 at Mon Jan 17 16:30:38 -1000 2011
+  Processing by MentorsController#new as HTML
+Rendered mentors/_form.html.erb (13.1ms)
+Rendered mentors/new.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 87ms (Views: 34.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentors/images/corporate_favicon.ico" for 127.0.0.1 at Mon Jan 17 16:30:38 -1000 2011
+
+ActionController::RoutingError (No route matches "/mentors/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.2ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Jan 17 16:30:40 -1000 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mMentor Load (0.6ms)[0m  [1mSELECT "mentors".* FROM "mentors"[0m
+Rendered mentors/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 54ms (Views: 30.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/mentors/images/corporate_favicon.ico" for 127.0.0.1 at Mon Jan 17 16:30:43 -1000 2011
+
+ActionController::RoutingError (No route matches "/mentors/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
