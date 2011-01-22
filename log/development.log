@@ -5641,3 +5641,438 @@ ActionController::RoutingError (No route matches "/mentors/images/corporate_favi
   
 
 Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+
+
+Started GET "/" for 127.0.0.1 at Tue Jan 18 13:32:44 -0500 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 46ms (Views: 45.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Tue Jan 18 13:32:47 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Tue Jan 18 13:32:50 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/mentor_profiles/search" for 127.0.0.1 at Tue Jan 18 13:32:53 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentor_profiles/search"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (7.7ms)
+
+
+Started GET "/mentor_profiles/" for 127.0.0.1 at Tue Jan 18 13:32:57 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentor_profiles"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started GET "/mentor_profiles/read" for 127.0.0.1 at Tue Jan 18 13:33:00 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentor_profiles/read"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/mentor_profiles/search/1" for 127.0.0.1 at Tue Jan 18 13:33:04 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentor_profiles/search/1"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (10.4ms)
+
+
+Started GET "/mentor_profiles/1" for 127.0.0.1 at Tue Jan 18 13:33:13 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentor_profiles/1"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/mentor_profiles/create" for 127.0.0.1 at Tue Jan 18 13:33:15 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentor_profiles/create"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (8.1ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Tue Jan 18 13:43:07 -0500 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mMentor Load (6.8ms)[0m  [1mSELECT "mentors".* FROM "mentors"[0m
+Rendered mentors/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 177ms (Views: 9.7ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/mentors/new" for 127.0.0.1 at Tue Jan 18 13:43:11 -0500 2011
+  Processing by MentorsController#new as HTML
+Rendered mentors/_form.html.erb (95.7ms)
+Rendered mentors/new.html.erb within layouts/application (119.4ms)
+Completed 200 OK in 240ms (Views: 124.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentors/images/corporate_favicon.ico" for 127.0.0.1 at Tue Jan 18 13:43:11 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentors/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started POST "/mentors" for 127.0.0.1 at Tue Jan 18 13:43:13 -0500 2011
+  Processing by MentorsController#create as HTML
+  Parameters: {"commit"=>"Create Mentor", "authenticity_token"=>"peR7O7kp01tvC7f3/DEu+s1KcnA/1PimA2i4eQLtZ90=", "utf8"=>"✓"}
+  [1m[35mSQL (0.6ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mAREL (14.2ms)[0m  [1mINSERT INTO "mentors" ("created_at", "updated_at") VALUES ('2011-01-18 18:43:14.183605', '2011-01-18 18:43:14.183605')[0m
+Redirected to http://localhost:3000/mentors/1
+Completed 302 Found in 224ms
+
+
+Started GET "/mentors/1" for 127.0.0.1 at Tue Jan 18 13:43:14 -0500 2011
+  Processing by MentorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMentor Load (0.9ms)[0m  SELECT "mentors".* FROM "mentors" WHERE ("mentors"."id" = 1) LIMIT 1
+Rendered mentors/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 136ms (Views: 12.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/mentors/images/corporate_favicon.ico" for 127.0.0.1 at Tue Jan 18 13:43:14 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentors/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (4.4ms)
+
+
+Started GET "/mentors/images/corporate_favicon.ico" for 127.0.0.1 at Tue Jan 18 13:43:15 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentors/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/mentors/images/corporate_favicon.ico" for 127.0.0.1 at Tue Jan 18 13:43:15 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentors/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/mentors/1/edit" for 127.0.0.1 at Tue Jan 18 13:43:19 -0500 2011
+  Processing by MentorsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMentor Load (0.2ms)[0m  [1mSELECT "mentors".* FROM "mentors" WHERE ("mentors"."id" = 1) LIMIT 1[0m
+Rendered mentors/_form.html.erb (10.8ms)
+Rendered mentors/edit.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 66ms (Views: 37.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mentors/1/images/corporate_favicon.ico" for 127.0.0.1 at Tue Jan 18 13:43:20 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentors/1/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/mentors/1/images/corporate_favicon.ico" for 127.0.0.1 at Tue Jan 18 13:43:23 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentors/1/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started POST "/mentors/1" for 127.0.0.1 at Tue Jan 18 13:43:25 -0500 2011
+  Processing by MentorsController#update as HTML
+  Parameters: {"commit"=>"Update Mentor", "authenticity_token"=>"peR7O7kp01tvC7f3/DEu+s1KcnA/1PimA2i4eQLtZ90=", "utf8"=>"✓", "id"=>"1"}
+  [1m[35mMentor Load (0.2ms)[0m  SELECT "mentors".* FROM "mentors" WHERE ("mentors"."id" = 1) LIMIT 1
+Redirected to http://localhost:3000/mentors/1
+Completed 302 Found in 39ms
+
+
+Started GET "/mentors/1" for 127.0.0.1 at Tue Jan 18 13:43:25 -0500 2011
+  Processing by MentorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMentor Load (0.2ms)[0m  [1mSELECT "mentors".* FROM "mentors" WHERE ("mentors"."id" = 1) LIMIT 1[0m
+Rendered mentors/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 27ms (Views: 10.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mentor_profiles/search" for 127.0.0.1 at Tue Jan 18 13:43:29 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentor_profiles/search"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Tue Jan 18 15:34:01 -0500 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (1.0ms)[0m  SELECT "mentors".* FROM "mentors"
+Rendered mentors/index.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 58ms (Views: 31.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/mentors/1/edit" for 127.0.0.1 at Tue Jan 18 15:34:05 -0500 2011
+  Processing by MentorsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMentor Load (0.2ms)[0m  [1mSELECT "mentors".* FROM "mentors" WHERE ("mentors"."id" = 1) LIMIT 1[0m
+Rendered mentors/_form.html.erb (4.4ms)
+Rendered mentors/edit.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 63ms (Views: 32.8ms | ActiveRecord: 0.2ms)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+
+
+Started GET "/users" for 127.0.0.1 at Sat Jan 22 13:44:52 -0500 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (13.7ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (58.8ms)
+Completed 200 OK in 269ms (Views: 115.7ms | ActiveRecord: 13.7ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 13:44:53 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Sat Jan 22 13:44:58 -0500 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (105.1ms)
+Rendered users/new.html.erb within layouts/application (138.2ms)
+Completed 200 OK in 156ms (Views: 143.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 13:44:58 -0500 2011
+
+ActionController::RoutingError (No route matches "/users/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/mentor_profiles/search" for 127.0.0.1 at Sat Jan 22 13:53:40 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentor_profiles/search"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/users/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 13:53:41 -0500 2011
+
+ActionController::RoutingError (No route matches "/users/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/users/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 13:53:44 -0500 2011
+
+ActionController::RoutingError (No route matches "/users/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (2.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to AddUserTypeCol (20110122191751)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.9ms)[0m  [1mALTER TABLE "users" ADD "type" varchar(255)[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110122191751')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (1.0ms)[0m  PRAGMA index_list("availability_calendars")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("availability_days")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("experiences")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("mentees")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("mentors")
+  [1m[36mSQL (0.6ms)[0m  [1mPRAGMA index_list("mentorships")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("questions")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("requests")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("responses")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("surveys")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (2.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to AddUserTypeCol (20110122191751)
+Migrating to RemoveUserPolymorphism (20110122192122)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (2.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to AddUserTypeCol (20110122191751)
+Migrating to RemoveUserPolymorphism (20110122192122)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.7ms)[0m  [1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "location" varchar(255), "current_position" varchar(255), "school" varchar(255), "major" varchar(255), "total_years_experience" integer, "email" varchar(255), "password" varchar(255), "phone" integer, "interests" text, "accountable_id" integer, "accountable_type" varchar(255), "created_at" datetime, "updated_at" datetime, "type" varchar(255)) [0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.6ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35mSQL (0.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "location" varchar(255), "current_position" varchar(255), "school" varchar(255), "major" varchar(255), "total_years_experience" integer, "email" varchar(255), "password" varchar(255), "phone" integer, "interests" text, "accountable_type" varchar(255), "created_at" datetime, "updated_at" datetime, "type" varchar(255)) 
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("altered_users")[0m
+  [1m[35mSQL (0.1ms)[0m  DROP TABLE "altered_users"
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "location" varchar(255), "current_position" varchar(255), "school" varchar(255), "major" varchar(255), "total_years_experience" integer, "email" varchar(255), "password" varchar(255), "phone" integer, "interests" text, "accountable_type" varchar(255), "created_at" datetime, "updated_at" datetime, "type" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.2ms)[0m  [1mDROP TABLE "users"[0m
+  [1m[35mSQL (0.2ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "location" varchar(255), "current_position" varchar(255), "school" varchar(255), "major" varchar(255), "total_years_experience" integer, "email" varchar(255), "password" varchar(255), "phone" integer, "interests" text, "created_at" datetime, "updated_at" datetime, "type" varchar(255)) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("altered_users")[0m
+  [1m[35mSQL (0.1ms)[0m  DROP TABLE "altered_users"
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110122192122')[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("availability_calendars")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("availability_days")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("experiences")[0m
+  [1m[35mSQL (0.2ms)[0m  PRAGMA index_list("mentees")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("mentors")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("mentorships")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("questions")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("requests")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("responses")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("surveys")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+
+
+Started GET "/users/new" for 127.0.0.1 at Sat Jan 22 15:59:10 -0500 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (20.8ms)
+Rendered users/new.html.erb within layouts/application (27.2ms)
+Completed 200 OK in 97ms (Views: 32.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 15:59:11 -0500 2011
+
+ActionController::RoutingError (No route matches "/users/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.4ms)
+
+
+Started GET "/mentor_profiles/search" for 127.0.0.1 at Sat Jan 22 15:59:54 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentor_profiles/search"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Sat Jan 22 15:59:59 -0500 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mSQL (0.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mMentor Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')[0m
+Rendered mentors/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 57ms (Views: 23.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 15:59:59 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/mentors/new" for 127.0.0.1 at Sat Jan 22 16:00:02 -0500 2011
+  Processing by MentorsController#new as HTML
+Rendered mentors/_form.html.erb (20.9ms)
+Rendered mentors/new.html.erb within layouts/application (136.9ms)
+Completed 200 OK in 255ms (Views: 163.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentors/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 16:00:02 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentors/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started POST "/mentors" for 127.0.0.1 at Sat Jan 22 16:00:07 -0500 2011
+  Processing by MentorsController#create as HTML
+  Parameters: {"commit"=>"Create Mentor", "authenticity_token"=>"Vrf6tbdan2NFLQ+3klnoLzeFW2cVjtnGIfk7Wenqyi8=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" IS NULL) LIMIT 1
+Rendered mentors/_form.html.erb (8.3ms)
+Rendered mentors/new.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 88ms (Views: 17.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 16:00:07 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/mentors/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 16:00:11 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentors/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.5ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 16:00:12 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)

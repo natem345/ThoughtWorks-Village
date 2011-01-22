@@ -1,7 +1,3 @@
-class Mentor < ActiveRecord::Base
+class Mentor < User
   has_one :availability_calendar
-  has_many :mentorships
-  has_many :mentees, :through => :mentorships
-  has_many :requests
-  has_one :user, :as => :accountable
 end
