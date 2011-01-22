@@ -6076,3 +6076,533 @@ ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"
   
 
 Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Sat Jan 22 16:05:27 -0500 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mMentor Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')[0m
+Rendered mentors/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 34ms (Views: 7.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 16:05:28 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/mentors/new" for 127.0.0.1 at Sat Jan 22 16:05:30 -0500 2011
+  Processing by MentorsController#new as HTML
+Rendered mentors/_form.html.erb (77.2ms)
+Rendered mentors/new.html.erb within layouts/application (82.8ms)
+Completed 200 OK in 106ms (Views: 87.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentors/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 16:05:30 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentors/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.6ms)
+
+
+Started POST "/mentors" for 127.0.0.1 at Sat Jan 22 16:12:35 -0500 2011
+  Processing by MentorsController#create as HTML
+  Parameters: {"commit"=>"Create Mentor", "mentor"=>{"interests"=>"I don't have time", "school"=>"JHS", "name"=>"Mentor J", "location"=>"J", "current_position"=>"J", "major"=>"SE", "phone"=>"513", "total_years_experience"=>"5", "password"=>"[FILTERED]", "email"=>"J"}, "authenticity_token"=>"Vrf6tbdan2NFLQ+3klnoLzeFW2cVjtnGIfk7Wenqyi8=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('J')) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."phone" = 513) LIMIT 1[0m
+Rendered mentors/_form.html.erb (12.9ms)
+Rendered mentors/new.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 77ms (Views: 24.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 16:12:36 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started POST "/mentors" for 127.0.0.1 at Sat Jan 22 16:12:39 -0500 2011
+  Processing by MentorsController#create as HTML
+  Parameters: {"commit"=>"Create Mentor", "mentor"=>{"interests"=>"I don't have time", "school"=>"JHS", "name"=>"Mentor J", "location"=>"J", "current_position"=>"J", "major"=>"SE", "phone"=>"513", "total_years_experience"=>"5", "password"=>"[FILTERED]", "email"=>"J"}, "authenticity_token"=>"Vrf6tbdan2NFLQ+3klnoLzeFW2cVjtnGIfk7Wenqyi8=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('J')) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."phone" = 513) LIMIT 1[0m
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO "users" ("total_years_experience", "phone", "updated_at", "school", "major", "email", "location", "created_at", "name", "password", "type", "current_position", "interests") VALUES (5, 513, '2011-01-22 21:12:39.991304', 'JHS', 'SE', 'J', 'J', '2011-01-22 21:12:39.991304', 'Mentor J', 'password', 'Mentor', 'J', 'I don''t have time')
+Redirected to http://localhost:3000/mentors/1
+Completed 302 Found in 156ms
+
+
+Started GET "/mentors/1" for 127.0.0.1 at Sat Jan 22 16:12:40 -0500 2011
+  Processing by MentorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMentor Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 1) LIMIT 1[0m
+Rendered mentors/show.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 37ms (Views: 16.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mentors/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 16:12:40 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentors/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Sat Jan 22 16:12:42 -0500 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')
+Rendered mentors/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 109ms (Views: 20.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 16:12:43 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at Sat Jan 22 16:12:51 -0500 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 42ms (Views: 20.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 16:12:51 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Sat Jan 22 16:12:57 -0500 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')
+Rendered mentors/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 106ms (Views: 19.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 16:12:57 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Sat Jan 22 16:17:18 -0500 2011
+  Processing by MenteesController#index as HTML
+  [1m[36mMentee Load (4.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee')[0m
+Rendered mentees/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 33ms (Views: 7.5ms | ActiveRecord: 4.7ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 16:17:18 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/mentees/new" for 127.0.0.1 at Sat Jan 22 16:17:19 -0500 2011
+  Processing by MenteesController#new as HTML
+Rendered mentees/_form.html.erb (12.4ms)
+Rendered mentees/new.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 106ms (Views: 23.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentees/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 16:17:20 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentees/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started POST "/mentees" for 127.0.0.1 at Sat Jan 22 16:17:20 -0500 2011
+  Processing by MenteesController#create as HTML
+  Parameters: {"commit"=>"Create Mentee", "authenticity_token"=>"Vrf6tbdan2NFLQ+3klnoLzeFW2cVjtnGIfk7Wenqyi8=", "utf8"=>"✓"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."email" IS NULL) LIMIT 1
+Rendered mentees/_form.html.erb (12.3ms)
+Rendered mentees/new.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 61ms (Views: 20.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 16:17:21 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/mentees/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 16:17:22 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentees/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/mentees/new" for 127.0.0.1 at Sat Jan 22 16:17:25 -0500 2011
+  Processing by MenteesController#new as HTML
+Rendered mentees/_form.html.erb (18.4ms)
+Rendered mentees/new.html.erb within layouts/application (23.2ms)
+Completed 200 OK in 116ms (Views: 29.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentees/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 16:17:26 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentees/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started POST "/mentees" for 127.0.0.1 at Sat Jan 22 16:20:09 -0500 2011
+  Processing by MenteesController#create as HTML
+  Parameters: {"commit"=>"Create Mentee", "authenticity_token"=>"Vrf6tbdan2NFLQ+3klnoLzeFW2cVjtnGIfk7Wenqyi8=", "utf8"=>"✓", "mentee"=>{"interests"=>"I have no life.", "school"=>"HIT", "name"=>"Mentee H", "location"=>"H", "current_position"=>"Student", "major"=>"SE/CS/Math", "phone"=>"512", "total_years_experience"=>"1", "password"=>"[FILTERED]", "email"=>"H"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('H')) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."phone" = 512) LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "users" ("phone", "created_at", "email", "type", "updated_at", "major", "current_position", "school", "location", "interests", "password", "total_years_experience", "name") VALUES (512, '2011-01-22 21:20:09.251240', 'H', 'Mentee', '2011-01-22 21:20:09.251240', 'SE/CS/Math', 'Student', 'HIT', 'H', 'I have no life.', 'password', 1, 'Mentee H')[0m
+Redirected to http://localhost:3000/mentees/2
+Completed 302 Found in 57ms
+
+
+Started GET "/mentees/2" for 127.0.0.1 at Sat Jan 22 16:20:09 -0500 2011
+  Processing by MenteesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mMentee Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 2) LIMIT 1
+Rendered mentees/show.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 59ms (Views: 25.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mentees/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 16:20:09 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentees/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Sat Jan 22 16:46:22 -0500 2011
+  Processing by MenteesController#index as HTML
+  [1m[36mMentee Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee')[0m
+Rendered mentees/index.html.erb within layouts/application (29.0ms)
+Completed   in 55ms
+
+ActionView::Template::Error (undefined method `user' for #<Mentee:0xb64acb60>):
+    12: <% @mentees.each do |mentee| %>
+    13:   <tr>
+    14:     <td><%= mentee.id %></td>
+    15:     <!--<td><%= mentee.user.email %></td>-->
+    16:     <td><%= link_to 'Show', mentee %></td>
+    17:     <td><%= link_to 'Edit', edit_mentee_path(mentee) %></td>
+    18:     <td><%= link_to 'Destroy', mentee, :confirm => 'Are you sure?', :method => :delete %></td>
+  app/views/mentees/index.html.erb:15:in `_app_views_mentees_index_html_erb__200227877__618313788_0'
+  app/views/mentees/index.html.erb:12:in `each'
+  app/views/mentees/index.html.erb:12:in `_app_views_mentees_index_html_erb__200227877__618313788_0'
+  app/controllers/mentees_controller.rb:7:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (16.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (31.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at Sat Jan 22 16:53:22 -0500 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (2.8ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 58ms (Views: 32.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 16:53:23 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Sat Jan 22 16:53:29 -0500 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mMentor Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')[0m
+Rendered mentors/index.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 41ms (Views: 16.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 16:53:29 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/mentors/1" for 127.0.0.1 at Sat Jan 22 16:53:35 -0500 2011
+  Processing by MentorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMentor Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 1) LIMIT 1
+Rendered mentors/show.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 37ms (Views: 14.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mentors/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 16:53:35 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentors/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (6.8ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Sat Jan 22 16:53:38 -0500 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mMentor Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')[0m
+Rendered mentors/index.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 122ms (Views: 16.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 16:53:38 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.7ms)
+
+
+Started GET "/mentors/1/edit" for 127.0.0.1 at Sat Jan 22 16:53:42 -0500 2011
+  Processing by MentorsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMentor Load (1.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 1) LIMIT 1
+Rendered mentors/_form.html.erb (23.1ms)
+Rendered mentors/edit.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 62ms (Views: 39.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/mentors/1/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 16:53:43 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentors/1/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started POST "/mentors/1" for 127.0.0.1 at Sat Jan 22 16:53:48 -0500 2011
+  Processing by MentorsController#update as HTML
+  Parameters: {"commit"=>"Update Mentor", "mentor"=>{"interests"=>"I don't have time!!!", "school"=>"JHS", "name"=>"Mentor J", "location"=>"J", "current_position"=>"J", "major"=>"SE", "phone"=>"513", "total_years_experience"=>"5", "password"=>"[FILTERED]", "email"=>"J"}, "authenticity_token"=>"Vrf6tbdan2NFLQ+3klnoLzeFW2cVjtnGIfk7Wenqyi8=", "utf8"=>"✓", "id"=>"1"}
+  [1m[36mMentor Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('J')) AND ("users".id <> 1) LIMIT 1
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE ("users"."phone" = 513) AND ("users".id <> 1) LIMIT 1[0m
+  [1m[35mAREL (0.6ms)[0m  UPDATE "users" SET "interests" = 'I don''t have time!!!', "updated_at" = '2011-01-22 21:53:49.050321' WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 1)
+Redirected to http://localhost:3000/mentors/1
+Completed 302 Found in 147ms
+
+
+Started GET "/mentors/1" for 127.0.0.1 at Sat Jan 22 16:53:49 -0500 2011
+  Processing by MentorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMentor Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 1) LIMIT 1[0m
+Rendered mentors/show.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 37ms (Views: 14.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mentors/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 16:53:49 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentors/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/mentor_profiles/search" for 127.0.0.1 at Sat Jan 22 16:53:54 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentor_profiles/search"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Sat Jan 22 16:53:59 -0500 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')
+Rendered mentors/index.html.erb within layouts/application (11.2ms)
+Completed 200 OK in 41ms (Views: 16.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 16:53:59 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/mentors/new" for 127.0.0.1 at Sat Jan 22 17:16:23 -0500 2011
+  Processing by MentorsController#new as HTML
+Rendered mentors/_form.html.erb (23.7ms)
+Rendered mentors/new.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 53ms (Views: 32.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentors/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 17:16:24 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentors/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 17:16:24 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/mentors/1" for 127.0.0.1 at Sat Jan 22 17:16:26 -0500 2011
+  Processing by MentorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMentor Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 1) LIMIT 1[0m
+Rendered mentors/show.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 55ms (Views: 18.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mentors/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 17:16:26 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentors/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 17:16:27 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at Sat Jan 22 18:00:27 -0500 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 53ms (Views: 29.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 18:00:27 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.8ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at Sat Jan 22 18:00:28 -0500 2011
+  Processing by UsersController#new as HTML
+Rendered users/_form.html.erb (17.7ms)
+Rendered users/new.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 42ms (Views: 26.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 18:00:28 -0500 2011
+
+ActionController::RoutingError (No route matches "/users/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at Sat Jan 22 18:01:10 -0500 2011
+  Processing by UsersController#create as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"Vrf6tbdan2NFLQ+3klnoLzeFW2cVjtnGIfk7Wenqyi8=", "utf8"=>"✓", "user"=>{"interests"=>"using", "school"=>"U of U", "name"=>"User Johnny", "location"=>"U", "current_position"=>"U", "major"=>"US", "phone"=>"555", "total_years_experience"=>"100", "password"=>"[FILTERED]", "email"=>"user@user.com"}}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('user@user.com')) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."phone" = 555) LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "users" ("major", "interests", "created_at", "updated_at", "school", "password", "total_years_experience", "phone", "current_position", "location", "name", "email", "type") VALUES ('US', 'using', '2011-01-22 23:01:10.613744', '2011-01-22 23:01:10.613744', 'U of U', 'password', 100, 555, 'U', 'U', 'User Johnny', 'user@user.com', NULL)[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 127ms
+
+
+Started GET "/users/3" for 127.0.0.1 at Sat Jan 22 18:01:10 -0500 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 3) LIMIT 1
+Rendered users/show.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 92ms (Views: 20.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/users/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 18:01:11 -0500 2011
+
+ActionController::RoutingError (No route matches "/users/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at Sat Jan 22 18:01:33 -0500 2011
+  Processing by UsersController#index as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered users/index.html.erb within layouts/application (26.9ms)
+Completed 200 OK in 60ms (Views: 31.0ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 18:01:33 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/users" for 127.0.0.1 at Sat Jan 22 18:05:58 -0500 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (33.2ms)
+Completed 200 OK in 62ms (Views: 38.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 18:05:58 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Sat Jan 22 18:05:59 -0500 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mMentor Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')[0m
+Rendered mentors/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 37ms (Views: 15.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 18:06:00 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Sat Jan 22 18:06:01 -0500 2011
+  Processing by MenteesController#index as HTML
+  [1m[35mMentee Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee')
+Rendered mentees/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 34ms (Views: 15.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Sat Jan 22 18:06:01 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)

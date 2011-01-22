@@ -14,14 +14,15 @@
 <a href="/"><img id="navbarLogo" src="/images/corporate_logo.png" /></a>
 <ul>
 <li><a href="/">Home</a></li>
-<li><a href="/mentor_profiles/search">Browse All</a></li>
+<li><a href="/mentors">Browse Mentors</a></li>
+<li><a href="/mentees">Browse Mentees</a></li>
 
 <% if ! session[:usertype] %>
 <li><a href="/accounts/register">Register</a></li>
 <li><a href="/accounts/login">Login</a></li>
 <% else %>
   <% if session[:usertype] == :mentor %>
-  <li><a href="/mentor_profiles/read">My Profile</a></li>
+  <li><a href="/mentors/read">My Profile</a></li>
   <li><a href="/mentor_profiles/update_general">Edit Profile</a></li>
   <li><a href="/mentor_profiles/update_availability">Update Availability</a></li>
   <li><a href="/requests/view">Mentorship Requests</a></li>

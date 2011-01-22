@@ -1,7 +1,7 @@
 <%= form_for(@mentor) do |f| %>
   <% if @mentor.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@mentor.errors.count, "error") %> prohibited this mentor from being saved:</h2>
+      <h2><%= pluralize(@mentor.errors.count, "error") %> prohibited this user from being saved:</h2>
 
       <ul>
       <% @mentor.errors.full_messages.each do |msg| %>
@@ -11,6 +11,46 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :current_position %><br />
+    <%= f.text_field :current_position %>
+  </div>
+  <div class="field">
+    <%= f.label :school %><br />
+    <%= f.text_field :school %>
+  </div>
+  <div class="field">
+    <%= f.label :major %><br />
+    <%= f.text_field :major %>
+  </div>
+  <div class="field">
+    <%= f.label :total_years_experience %><br />
+    <%= f.text_field :total_years_experience %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :interests %><br />
+    <%= f.text_area :interests %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
