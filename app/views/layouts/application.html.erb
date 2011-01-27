@@ -18,8 +18,8 @@
 <li><a href="/mentees">Browse Mentees</a></li>
 
 <% if ! session[:usertype] %>
-<li><a href="/accounts/register">Register</a></li>
-<li><a href="/accounts/login">Login</a></li>
+<li><a href="/mentors/create">Register</a></li>
+<li><a href="/users/login">Login</a></li>
 <% else %>
   <% if session[:usertype] == :mentor %>
   <li><a href="/mentors/read">My Profile</a></li>
@@ -31,8 +31,9 @@
   <li><a href="/mentee_profiles/read">My Profile</a></li>
   <li><a href="/mentee_profiles/update_general">Edit Profile</a></li>
   <% end %>
-  <li><a href="/accounts/logout">Logout</a></li>
+  <li><a href="/users/logout">Logout</a></li>
   <% end %>
+<li>Usertype: <%= session[:usertype] %>. User_id: <%= session[:id] %></li>
 </ul>
 
 

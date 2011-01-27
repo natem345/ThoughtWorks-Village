@@ -7602,3 +7602,833 @@ ActionController::RoutingError (No route matches "/mentors/images/corporate_favi
   
 
 Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mMentor Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')
+  [1m[36mMentor Load (1.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')[0m
+  [1m[35mMentor Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')
+  [1m[36mRequest Load (0.4ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE ("requests".mentor_id = 1)[0m
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+
+
+Started GET "/mentors" for 127.0.0.1 at Thu Jan 27 15:21:13 -0500 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mMentor Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')
+Rendered mentors/index.html.erb within layouts/application (76.3ms)
+Completed 200 OK in 229ms (Views: 84.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Thu Jan 27 15:21:15 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/accounts/login" for 127.0.0.1 at Thu Jan 27 15:21:18 -0500 2011
+
+ActionController::RoutingError (No route matches "/accounts/login"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/accounts/login" for 127.0.0.1 at Thu Jan 27 15:22:03 -0500 2011
+
+AbstractController::ActionNotFound (The action 'show' could not be found for AccountsController):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.6ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 15:56:15 -0500 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"login"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 0) LIMIT 1[0m
+Completed   in 12ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=login):
+  app/controllers/users_controller.rb:16:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (25.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (40.5ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 15:57:34 -0500 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"login"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 0) LIMIT 1
+Completed   in 10ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=login):
+  app/controllers/users_controller.rb:40:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (9.6ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 15:57:35 -0500 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"login"}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 0) LIMIT 1[0m
+Completed   in 17ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=login):
+  app/controllers/users_controller.rb:40:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.9ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 15:57:52 -0500 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 0) LIMIT 1
+Completed   in 11ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=login):
+  app/controllers/users_controller.rb:40:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.5ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 15:59:03 -0500 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"login"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 0) LIMIT 1[0m
+Completed   in 20ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=login):
+  app/controllers/users_controller.rb:40:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (44.2ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 15:59:06 -0500 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 0) LIMIT 1
+Completed   in 71ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=login):
+  app/controllers/users_controller.rb:40:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.1ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 16:00:11 -0500 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"login"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 0) LIMIT 1[0m
+Completed   in 42ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=login):
+  app/controllers/users_controller.rb:40:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (9.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (28.8ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 16:00:13 -0500 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 0) LIMIT 1
+Completed   in 10ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=login):
+  app/controllers/users_controller.rb:40:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.8ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 16:00:51 -0500 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"login"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 0) LIMIT 1[0m
+Completed   in 12ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=login):
+  app/controllers/users_controller.rb:40:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.5ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 16:00:52 -0500 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"login"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 0) LIMIT 1
+Completed   in 19ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=login):
+  app/controllers/users_controller.rb:40:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.6ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 16:00:53 -0500 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"login"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 0) LIMIT 1[0m
+Completed   in 12ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=login):
+  app/controllers/users_controller.rb:40:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.5ms)
+
+
+Started GET "/users" for 127.0.0.1 at Thu Jan 27 16:01:07 -0500 2011
+  Processing by UsersController#index as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users"
+Rendered users/index.html.erb within layouts/application (28.8ms)
+Completed 200 OK in 70ms (Views: 33.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Thu Jan 27 16:01:08 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 16:01:11 -0500 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"login"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 0) LIMIT 1[0m
+Completed   in 75ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with ID=login):
+  app/controllers/users_controller.rb:40:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.6ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 16:02:07 -0500 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (24.0ms)
+Completed   in 74ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+    1:   <% if @flash[:message] %><div><%= @flash[:message] %></div><% end %>
+    2:   <% if @flash[:error] %><div><%= @flash[:error] %></div><% end %>
+    3: 
+    4:   <%= form_tag :action => 'process_login'
+  app/views/users/login.html.erb:1:in `_app_views_users_login_html_erb___912661068__618497758_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (106.9ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 16:02:53 -0500 2011
+
+ActionController::RoutingError (uninitialized constant UserController):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 16:03:02 -0500 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (1.1ms)
+Completed   in 25ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+    1:   <% if @flash[:message] %><div><%= @flash[:message] %></div><% end %>
+    2:   <% if @flash[:error] %><div><%= @flash[:error] %></div><% end %>
+    3: 
+    4:   <%= form_tag :action => 'process_login'
+  app/views/users/login.html.erb:1:in `_app_views_users_login_html_erb___912661068__617230388_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.5ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 16:04:43 -0500 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (0.6ms)
+Completed   in 17ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+    1:   <% if @flash[:message] %><div><%= @flash[:message] %></div><% end %>
+    2:   <% if @flash[:error] %><div><%= @flash[:error] %></div><% end %>
+    3: 
+    4:   <%= form_tag :action => 'process_login'
+  app/views/users/login.html.erb:1:in `_app_views_users_login_html_erb___912661068__617847498_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.5ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 16:04:44 -0500 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (0.8ms)
+Completed   in 19ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+    1:   <% if @flash[:message] %><div><%= @flash[:message] %></div><% end %>
+    2:   <% if @flash[:error] %><div><%= @flash[:error] %></div><% end %>
+    3: 
+    4:   <%= form_tag :action => 'process_login'
+  app/views/users/login.html.erb:1:in `_app_views_users_login_html_erb___912661068__616497718_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.0ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 16:04:46 -0500 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (1.0ms)
+Completed   in 16ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+    1:   <% if @flash[:message] %><div><%= @flash[:message] %></div><% end %>
+    2:   <% if @flash[:error] %><div><%= @flash[:error] %></div><% end %>
+    3: 
+    4:   <%= form_tag :action => 'process_login'
+  app/views/users/login.html.erb:1:in `_app_views_users_login_html_erb___912661068__617098088_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.9ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 16:04:49 -0500 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (0.9ms)
+Completed   in 80ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]):
+    1:   <% if @flash[:message] %><div><%= @flash[:message] %></div><% end %>
+    2:   <% if @flash[:error] %><div><%= @flash[:error] %></div><% end %>
+    3: 
+    4:   <%= form_tag :action => 'process_login'
+  app/views/users/login.html.erb:1:in `_app_views_users_login_html_erb___912661068__616092438_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.3ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 16:05:34 -0500 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (1.2ms)
+Completed   in 19ms
+
+ActionView::Template::Error (No route matches {:controller=>"users", :action=>"process_login"}):
+    1: 
+    2:   <%= form_tag :action => 'process_login'
+    3: %>
+    4:    Username: <%= text_field "user", "email" %>&#x00A;
+    5:     Password: <%= password_field "user", "password" %>&#x00A;
+  app/views/users/login.html.erb:2:in `_app_views_users_login_html_erb___912661068__616835718_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.1ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 16:06:12 -0500 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (16.1ms)
+Completed   in 34ms
+
+ActionView::Template::Error (undefined local variable or method `end_form_tag' for #<#<Class:0xb671e68c>:0xb671d6b0>):
+    4:    Username: <%= text_field "user", "email" %>&#x00A;
+    5:     Password: <%= password_field "user", "password" %>&#x00A;
+    6:     <%= submit_tag %> 
+    7:   <%= end_form_tag %>
+  app/views/users/login.html.erb:7:in `_app_views_users_login_html_erb___912661068__617028308_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.3ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 16:08:41 -0500 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (15.0ms)
+Completed   in 39ms
+
+ActionView::Template::Error (undefined local variable or method `end_form_tag' for #<#<Class:0xb658f6f4>:0xb658e4ac>):
+    4:    Username: <%= text_field "user", "email" %>&#x00A;
+    5:     Password: <%= password_field "user", "password" %>&#x00A;
+    6:     <%= submit_tag %> 
+    7:   <%= end_form_tag %>
+    8: 
+    9: <%= form_for(@user, :url => process_login(@user)) do |f| %>
+    10:   <% if @user.errors.any? %>
+  app/views/users/login.html.erb:7:in `_app_views_users_login_html_erb___912661068__617847228_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (75.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (83.5ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 16:08:47 -0500 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (9.1ms)
+Completed   in 25ms
+
+ActionView::Template::Error (undefined method `process_login' for #<#<Class:0xb6815ab8>:0xb6814ac8>):
+    1: 
+    2: <%= form_for(@user, :url => process_login(@user)) do |f| %>
+    3:   <% if @user.errors.any? %>
+    4:     <div id="error_explanation">
+    5:       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+  app/views/users/login.html.erb:2:in `_app_views_users_login_html_erb___912661068__616521928_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.9ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 16:08:56 -0500 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (8.8ms)
+Completed   in 27ms
+
+ActionView::Template::Error (undefined method `process_login_path' for #<#<Class:0xb66e0634>:0xb66df3d8>):
+    1: 
+    2: <%= form_for(@user, :url => process_login_path(@user)) do |f| %>
+    3:   <% if @user.errors.any? %>
+    4:     <div id="error_explanation">
+    5:       <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+  app/views/users/login.html.erb:2:in `_app_views_users_login_html_erb___912661068__617155778_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (4.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.2ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 16:09:11 -0500 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (85.5ms)
+Completed 200 OK in 163ms (Views: 102.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/images/corporate_favicon.ico" for 127.0.0.1 at Thu Jan 27 16:09:12 -0500 2011
+
+ActionController::RoutingError (No route matches "/users/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/users/process_login" for 127.0.0.1 at Thu Jan 27 16:09:35 -0500 2011
+  Processing by UsersController#process_login as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"mBSke6+wV/Uq75xIYVxcZ5mI+cPoZNg2hoHI9WaYffk=", "utf8"=>"✓", "user"=>{"password"=>"[FILTERED]", "email"=>"qew"}}
+Redirected to http://localhost:3000/
+Completed 302 Found in 41ms
+
+
+Started GET "/" for 127.0.0.1 at Thu Jan 27 16:09:35 -0500 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Thu Jan 27 16:09:36 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/users/images/corporate_favicon.ico" for 127.0.0.1 at Thu Jan 27 16:10:06 -0500 2011
+
+ActionController::RoutingError (No route matches "/users/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/users/process_login" for 127.0.0.1 at Thu Jan 27 16:10:09 -0500 2011
+  Processing by UsersController#process_login as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"mBSke6+wV/Uq75xIYVxcZ5mI+cPoZNg2hoHI9WaYffk=", "utf8"=>"✓", "user"=>{"password"=>"[FILTERED]", "email"=>"qew"}}
+Redirected to http://localhost:3000/
+Completed 302 Found in 10ms
+
+
+Started GET "/" for 127.0.0.1 at Thu Jan 27 16:10:09 -0500 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Thu Jan 27 16:10:09 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (6.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."password" IS NULL) AND ("users"."email" IS NULL)
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."password" = '') AND ("users"."email" = 'n')[0m
+  [1m[35mUser Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."password" = 'password') AND ("users"."email" = 'n')
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."password" = 'password') AND ("users"."email" = 'user@user.com')[0m
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."password" = 'password') AND ("users"."email" = 'user@user.com')
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" LIMIT 1
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[35mUser Load (11.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."password" = 'password') AND ("users"."email" = 'user@user.com')
+  [1m[36mUser Load (24.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."password" = 'password') AND ("users"."email" = 'user@user.com')[0m
+
+
+Started GET "/accounts/login" for 127.0.0.1 at Thu Jan 27 17:06:23 -0500 2011
+
+AbstractController::ActionNotFound (The action 'show' could not be found for AccountsController):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/unknown_action.erb within rescues/layout (0.9ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 17:06:27 -0500 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 30ms (Views: 19.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/images/corporate_favicon.ico" for 127.0.0.1 at Thu Jan 27 17:06:27 -0500 2011
+
+ActionController::RoutingError (No route matches "/users/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/users/process_login" for 127.0.0.1 at Thu Jan 27 17:06:36 -0500 2011
+  Processing by UsersController#process_login as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"mBSke6+wV/Uq75xIYVxcZ5mI+cPoZNg2hoHI9WaYffk=", "utf8"=>"✓", "user"=>{"password"=>"[FILTERED]", "email"=>"user"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."password" = '') AND ("users"."email" = 'user') LIMIT 1
+Redirected to http://localhost:3000/users/login
+Completed 302 Found in 73ms
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 17:06:36 -0500 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 34ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/images/corporate_favicon.ico" for 127.0.0.1 at Thu Jan 27 17:06:36 -0500 2011
+
+ActionController::RoutingError (No route matches "/users/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started POST "/users/process_login" for 127.0.0.1 at Thu Jan 27 17:06:40 -0500 2011
+  Processing by UsersController#process_login as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"mBSke6+wV/Uq75xIYVxcZ5mI+cPoZNg2hoHI9WaYffk=", "utf8"=>"✓", "user"=>{"password"=>"[FILTERED]", "email"=>"user@user.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."password" = 'pass') AND ("users"."email" = 'user@user.com') LIMIT 1[0m
+Redirected to http://localhost:3000/users/login
+Completed 302 Found in 11ms
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 17:06:40 -0500 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 29ms (Views: 15.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/images/corporate_favicon.ico" for 127.0.0.1 at Thu Jan 27 17:06:41 -0500 2011
+
+ActionController::RoutingError (No route matches "/users/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/users/process_login" for 127.0.0.1 at Thu Jan 27 17:06:44 -0500 2011
+  Processing by UsersController#process_login as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"mBSke6+wV/Uq75xIYVxcZ5mI+cPoZNg2hoHI9WaYffk=", "utf8"=>"✓", "user"=>{"password"=>"[FILTERED]", "email"=>"user@user.com"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."password" = 'password') AND ("users"."email" = 'user@user.com') LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 19ms
+
+
+Started GET "/" for 127.0.0.1 at Thu Jan 27 17:06:44 -0500 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Thu Jan 27 17:06:44 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Jan 27 17:08:32 -0500 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 18ms (Views: 13.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Thu Jan 27 17:08:33 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Jan 27 17:09:11 -0500 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Thu Jan 27 17:09:11 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 17:09:14 -0500 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 36ms (Views: 17.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/images/corporate_favicon.ico" for 127.0.0.1 at Thu Jan 27 17:09:14 -0500 2011
+
+ActionController::RoutingError (No route matches "/users/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started POST "/users/process_login" for 127.0.0.1 at Thu Jan 27 17:09:18 -0500 2011
+  Processing by UsersController#process_login as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"mBSke6+wV/Uq75xIYVxcZ5mI+cPoZNg2hoHI9WaYffk=", "utf8"=>"✓", "user"=>{"password"=>"[FILTERED]", "email"=>"user@user.com"}}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."password" = 'password') AND ("users"."email" = 'user@user.com') LIMIT 1[0m
+Completed   in 31ms
+
+NameError (undefined local variable or method `requests' for #<UsersController:0xb66ea904>):
+  app/controllers/users_controller.rb:22:in `process_login'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.6ms)
+
+
+Started POST "/users/process_login" for 127.0.0.1 at Thu Jan 27 17:09:46 -0500 2011
+  Processing by UsersController#process_login as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"mBSke6+wV/Uq75xIYVxcZ5mI+cPoZNg2hoHI9WaYffk=", "utf8"=>"✓", "user"=>{"password"=>"[FILTERED]", "email"=>"user@user.com"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."password" = 'password') AND ("users"."email" = 'user@user.com') LIMIT 1
+Completed   in 21ms
+
+NameError (undefined local variable or method `requests' for #<UsersController:0xb655e1bc>):
+  app/controllers/users_controller.rb:22:in `process_login'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.9ms)
+
+
+Started POST "/users/process_login" for 127.0.0.1 at Thu Jan 27 17:10:05 -0500 2011
+  Processing by UsersController#process_login as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"mBSke6+wV/Uq75xIYVxcZ5mI+cPoZNg2hoHI9WaYffk=", "utf8"=>"✓", "user"=>{"password"=>"[FILTERED]", "email"=>"user@user.com"}}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."password" = 'password') AND ("users"."email" = 'user@user.com') LIMIT 1[0m
+Completed   in 21ms
+
+NameError (undefined local variable or method `show_requests' for #<UsersController:0xb6754c14>):
+  app/controllers/users_controller.rb:22:in `process_login'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.7ms)
+
+
+Started POST "/users/process_login" for 127.0.0.1 at Thu Jan 27 17:10:25 -0500 2011
+  Processing by UsersController#process_login as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"mBSke6+wV/Uq75xIYVxcZ5mI+cPoZNg2hoHI9WaYffk=", "utf8"=>"✓", "user"=>{"password"=>"[FILTERED]", "email"=>"user@user.com"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."password" = 'password') AND ("users"."email" = 'user@user.com') LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 18ms
+
+
+Started GET "/" for 127.0.0.1 at Thu Jan 27 17:10:25 -0500 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Thu Jan 27 17:10:25 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Jan 27 17:11:37 -0500 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 7ms (Views: 7.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Thu Jan 27 17:11:38 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Jan 27 17:11:39 -0500 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 28ms (Views: 17.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/images/corporate_favicon.ico" for 127.0.0.1 at Thu Jan 27 17:11:40 -0500 2011
+
+ActionController::RoutingError (No route matches "/users/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started POST "/users/process_login" for 127.0.0.1 at Thu Jan 27 17:11:45 -0500 2011
+  Processing by UsersController#process_login as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"mBSke6+wV/Uq75xIYVxcZ5mI+cPoZNg2hoHI9WaYffk=", "utf8"=>"✓", "user"=>{"password"=>"[FILTERED]", "email"=>"user@user.com"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."password" = 'password') AND ("users"."email" = 'user@user.com') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 16ms
+
+
+Started GET "/" for 127.0.0.1 at Thu Jan 27 17:11:45 -0500 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 10ms (Views: 9.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Thu Jan 27 17:11:45 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+  [1m[35mUser Load (1.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."password" = 'password') AND ("users"."email" = 'user@user.com')
+  [1m[36mUser Load (3.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."password" = 'password') AND ("users"."email" = 'user@user.com')[0m
+  [1m[35mUser Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."password" = 'password') AND ("users"."email" = 'user@user.com')
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (10.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."password" = 'password') AND ("users"."email" = 'user@user.com') LIMIT 1
+
+
+Started GET "/" for 127.0.0.1 at Thu Jan 27 17:14:10 -0500 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Thu Jan 27 17:14:11 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/mentee_profiles/read" for 127.0.0.1 at Thu Jan 27 17:14:18 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentee_profiles/read"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (4.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Jan 27 17:15:08 -0500 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/corporate_favicon.ico" for 127.0.0.1 at Thu Jan 27 17:15:09 -0500 2011
+
+ActionController::RoutingError (No route matches "/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/users/logout" for 127.0.0.1 at Thu Jan 27 17:15:12 -0500 2011
+  Processing by UsersController#logout as HTML
+Redirected to http://localhost:3000/users/login?notice=Logged+out.
+Completed 302 Found in 1ms
+
+
+Started GET "/users/login?notice=Logged+out." for 127.0.0.1 at Thu Jan 27 17:15:12 -0500 2011
+  Processing by UsersController#login as HTML
+  Parameters: {"notice"=>"Logged out."}
+Rendered users/login.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 29ms (Views: 17.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/images/corporate_favicon.ico" for 127.0.0.1 at Thu Jan 27 17:15:12 -0500 2011
+
+ActionController::RoutingError (No route matches "/users/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)

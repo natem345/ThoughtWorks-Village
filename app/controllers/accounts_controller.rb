@@ -3,12 +3,12 @@ class AccountsController < ApplicationController
     if params[:user]
       if params[:user][:email]=="jsmith@thoughtworks.com"
         session[:usertype]=:mentor
-        redirect_to "/requests/view"
+        redirect_to requests
         
       end
       if params[:user][:email]=="jdoe@aol.com"
         session[:usertype]=:mentee
-        redirect_to "/mentor_profiles/search"
+        redirect_to mentors
       end      
     end
   end

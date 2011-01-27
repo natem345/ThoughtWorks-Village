@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+
+
   # GET /users
   # GET /users.xml
   def index
@@ -9,7 +11,32 @@ class UsersController < ApplicationController
       format.xml  { render :xml => @users }
     end
   end
+    def login
+      @user = User.new
+      #@user.email = params[:email]
+    end
 
+    def process_login
+      if user = User.authenticate(params[:user])
+        session[:id] = user.id # Remember the user's id during this session 
+		if user.type=="Mentor"
+		  session[:usertype]=:mentor
+		else
+		  session[:usertype]=:mentee
+		end
+        redirect_to session[:return_to] || '/', :notice => "Logged in."
+      else
+        redirect_to :action => 'login', :username => params[:user][:username], :notice => "Invalid login."
+      end
+    end
+
+    def logout
+      reset_session
+      redirect_to :action => 'login' , :notice => "Logged out."
+    end
+
+    def my_account
+    end
   # GET /users/1
   # GET /users/1.xml
   def show

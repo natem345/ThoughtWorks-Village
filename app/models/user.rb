@@ -9,5 +9,12 @@ class User < ActiveRecord::Base
   
 
   has_many :experiences
+
+	# If a user matching the credentials is found, returns the User object.
+    # If no matching user is found, returns nil.
+    def self.authenticate(user_info)
+     	User.where(:email => user_info[:email], :password => user_info[:password]).first
+    end
+
 end
 

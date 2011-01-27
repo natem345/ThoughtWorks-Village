@@ -24,7 +24,10 @@ ThoughtWorksVillage::Application.routes.draw do
   resources :mentees do
     resources :requests
   end
-
+  resources :accounts
+  match 'users/login' => 'users#login'
+  match 'users/process_login' => 'users#process_login'
+  match 'users/logout' => 'users#logout'
   resources :users
 
   # The priority is based upon order of creation:
