@@ -52,6 +52,20 @@
   <%= @mentor.interests %>
 </p>
 
+<h2>Request a mentorship:</h2>
+<%= form_for([@mentor, @mentor.requests.build]) do |f| %>
+  <div class="field">
+    <%= f.label :reason %><br />
+    <%= f.text_field :reason %>
+  </div>
+  <div class="field">
+    <%= f.label :estimated_length %><br />
+    <%= f.text_field :estimated_length %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
 
 <%= link_to 'Edit', edit_mentor_path(@mentor) %> |
 <%= link_to 'Back', mentors_path %>

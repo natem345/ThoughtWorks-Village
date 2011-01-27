@@ -7,9 +7,6 @@ class User < ActiveRecord::Base
   validates_numericality_of :phone, :only_integer => true, :greater_than => 0
   validates_uniqueness_of :phone, :allow_blank => true
   
-  has_many :mentorships
-  has_many :mentees, :through => :mentorships
-  has_many :requests
 
   has_many :experiences
 end

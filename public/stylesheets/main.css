@@ -6,6 +6,11 @@ background-repeat: no-repeat;
 color: white;
 font:arial,helvetica,clean,sans-serif;
 }
+
+#notice {
+	font-size:large;
+	font-weight:bold;
+}
 #MainBody {
 	width: 960px;
 	left:50%;

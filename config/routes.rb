@@ -13,13 +13,17 @@ ThoughtWorksVillage::Application.routes.draw do
 
   resources :experiences
 
-  resources :requests
+
 
   get "home/index"
+  resources :requests
+  resources :mentors do
+    resources :requests
+  end
 
-  resources :mentors
-
-  resources :mentees
+  resources :mentees do
+    resources :requests
+  end
 
   resources :users
 
