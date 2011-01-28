@@ -42,7 +42,7 @@ class ResponsesController < ApplicationController
   def create
     @response = Response.new(params[:response])
 
-    respond_to do |format|
+   respond_to do |format|
       if @response.save
         format.html { redirect_to(@response, :notice => 'Response was successfully created.') }
         format.xml  { render :xml => @response, :status => :created, :location => @response }
@@ -50,7 +50,7 @@ class ResponsesController < ApplicationController
         format.html { render :action => "new" }
         format.xml  { render :xml => @response.errors, :status => :unprocessable_entity }
       end
-    end
+    end 
   end
 
   # PUT /responses/1

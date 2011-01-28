@@ -3,6 +3,7 @@
 <table>
   <tr>
     <th>Response Text</th>
+    <th>Question ID</th>
     <th></th>
     <th></th>
     <th></th>
@@ -11,6 +12,7 @@
 <% @responses.each do |response| %>
   <tr>
     <td><%= response.response_text %></td>
+    <td><%= response.question_id %></td>
     <td><%= link_to 'Show', response %></td>
     <td><%= link_to 'Edit', edit_response_path(response) %></td>
     <td><%= link_to 'Destroy', response, :confirm => 'Are you sure?', :method => :delete %></td>
