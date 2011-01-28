@@ -43,7 +43,13 @@ class RequestsController < ApplicationController
   # accepts request
   def update
     @request = Request.find(params[:id])
-	redirect_to(@request.mentor, :notice => "Meet your new mentor");
+	@mentorship=Mentorship.new
+	@mentorship.mentor=@request.mentor
+	@mentorship.mentee=@request.mentee
+	@mentorship.save
+
+	redirect_to(@mentorship.mentor, :notice => "Meet your new mentor")
+    @request.destroy
   end
 
   # DELETE /requests/1

@@ -42,21 +42,21 @@
    </p>
 -->
 
-<p>
-   <b>Experiences</b>
-   <%= @mentee.experiences %>
-</p>
 
 <p>
   <b>Phone:</b>
   <%= @mentor.phone %>
+</p>
+<p>
+   <b>Experience:</b>
+   <%= @mentor.experiences %>
 </p>
 
 <p>
   <b>Interests:</b>
   <%= @mentor.interests %>
 </p>
-
+<% if session[:usertype]==:mentee %>
 <h2>Request a mentorship:</h2>
 <%= form_for([@mentor, @mentor.requests.build]) do |f| %>
   <div class="field">
@@ -71,6 +71,6 @@
     <%= f.submit %>
   </div>
 <% end %>
-
+<% end %>
 <%= link_to 'Edit', edit_mentor_path(@mentor) %> |
 <%= link_to 'Back', mentors_path %>
