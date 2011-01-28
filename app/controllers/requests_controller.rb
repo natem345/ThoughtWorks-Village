@@ -1,4 +1,12 @@
 class RequestsController < ApplicationController
+
+  before_filter :authenticate
+
+  def authenticate
+	if session[:id]==nil
+	  redirect_to '/users/login'
+	end
+  end
   # GET /requests
   # GET /requests.xml
   def index

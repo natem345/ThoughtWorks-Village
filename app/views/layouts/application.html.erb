@@ -18,18 +18,18 @@
 <li><a href="/mentees">Browse Mentees</a></li>
 
 <% if ! session[:usertype] %>
-<li><a href="/mentors/create">Register</a></li>
+<li><a href="/mentors/new">Register</a></li>
 <li><a href="/users/login">Login</a></li>
 <% else %>
   <% if session[:usertype] == :mentor %>
-  <li><a href="/mentors/read">My Profile</a></li>
-  <li><a href="/mentor_profiles/update_general">Edit Profile</a></li>
+  <li><a href="/mentors/<%= session[:id] %>">My Profile</a></li>
+  <li><a href="/mentors/<%= session[:id] %>/edit">Edit Profile</a></li>
   <li><a href="/mentor_profiles/update_availability">Update Availability</a></li>
-  <li><a href="/requests/view">Mentorship Requests</a></li>
+  <li><a href="/requests/">Mentorship Requests</a></li>
   <% end %>
   <% if session[:usertype] == :mentee %>
-  <li><a href="/mentee_profiles/read">My Profile</a></li>
-  <li><a href="/mentee_profiles/update_general">Edit Profile</a></li>
+  <li><a href="/mentees/<%= session[:id] %>">My Profile</a></li>
+  <li><a href="/mentees/<%= session[:id] %>/edit">Edit Profile</a></li>
   <% end %>
   <li><a href="/users/logout">Logout</a></li>
   <% end %>
