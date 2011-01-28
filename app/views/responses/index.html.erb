@@ -2,7 +2,7 @@
 
 <table>
   <tr>
-    <th>Responsetext</th>
+    <th>Response Text</th>
     <th></th>
     <th></th>
     <th></th>
@@ -10,7 +10,7 @@
 
 <% @responses.each do |response| %>
   <tr>
-    <td><%= response.responseText %></td>
+    <td><%= response.response_text %></td>
     <td><%= link_to 'Show', response %></td>
     <td><%= link_to 'Edit', edit_response_path(response) %></td>
     <td><%= link_to 'Destroy', response, :confirm => 'Are you sure?', :method => :delete %></td>
