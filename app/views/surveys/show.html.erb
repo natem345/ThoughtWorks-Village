@@ -5,6 +5,17 @@
   <%= @survey.description %>
 </p>
 
+<table>  
+  <%@survey.questions.each do |question|%>
+  <tr>
+    <td><%=question.question_text%></td>
+  </tr>  
+  <%end%>
+</table>
 
+
+<p>
 <%= link_to 'Edit', edit_survey_path(@survey) %> |
 <%= link_to 'Back', surveys_path %>
+</p>
+

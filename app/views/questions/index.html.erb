@@ -2,15 +2,16 @@
 
 <table>
   <tr>
-    <th>Questiontext</th>
-    <th></th>
+    <th>Question Text</th>
+    <th>Survey ID</th>
     <th></th>
     <th></th>
   </tr>
 
 <% @questions.each do |question| %>
   <tr>
-    <td><%= question.questionText %></td>
+    <td><%= question.question_text %></td>
+    <td><%= question.survey_id %></td>
     <td><%= link_to 'Show', question %></td>
     <td><%= link_to 'Edit', edit_question_path(question) %></td>
     <td><%= link_to 'Destroy', question, :confirm => 'Are you sure?', :method => :delete %></td>

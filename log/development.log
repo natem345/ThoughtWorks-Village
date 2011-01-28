@@ -8432,3 +8432,58 @@ ActionController::RoutingError (No route matches "/users/images/corporate_favico
   
 
 Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mQuestion Load (9.8ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mSurvey Load (1.5ms)[0m  SELECT "surveys".* FROM "surveys"
+  [1m[36mSQL (3.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSurvey Load (0.4ms)[0m  SELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1
+  [1m[36mSurvey Load (1.1ms)[0m  [1mSELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (0.7ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions".survey_id = 1)
+  [1m[36mSurvey Load (1.0ms)[0m  [1mSELECT "surveys".* FROM "surveys"[0m
+  [1m[35mSurvey Load (1.2ms)[0m  SELECT "surveys".* FROM "surveys"
+  [1m[36mSurvey Load (1.0ms)[0m  [1mSELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1[0m
+  [1m[35mSurvey Load (1.1ms)[0m  SELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions".survey_id = 1)[0m
+  [1m[35mSurvey Load (3.7ms)[0m  SELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 2) LIMIT 1
+  [1m[36mSurvey Load (1.2ms)[0m  [1mSELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (0.7ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions".survey_id = 1)
+  [1m[36mSurvey Load (2.3ms)[0m  [1mSELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1[0m
+  [1m[35mSQL (22.5ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSurvey Load (1.2ms)[0m  [1mSELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (29.5ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions".survey_id = 1)
+  [1m[36mSurvey Load (0.8ms)[0m  [1mSELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (0.5ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions".survey_id = 1)
+  [1m[36mSurvey Load (14.4ms)[0m  [1mSELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (0.6ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions".survey_id = 1)
+  [1m[36mSurvey Load (0.5ms)[0m  [1mSELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (1.1ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions".survey_id = 1)
+  [1m[36mSurvey Load (25.8ms)[0m  [1mSELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (4.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions".survey_id = 1) AND ("questions"."id" = 1) LIMIT 1
+  [1m[36mResponse Load (0.5ms)[0m  [1mSELECT "responses".* FROM "responses" WHERE ("responses".question_id = 1)[0m
+  [1m[35mRequest Load (1.1ms)[0m  SELECT "requests".* FROM "requests"
+  [1m[36mMentor Load (1.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')[0m
+  [1m[35mMentor Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 1) LIMIT 1
+  [1m[36mMentor Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mMentor Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 1) LIMIT 1
+  [1m[36mMentor Load (2.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mMentor Load (1.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 1) LIMIT 1
+  [1m[36mSurvey Load (15.2ms)[0m  [1mSELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (1.4ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions".survey_id = 1)
+  [1m[36mResponse Load (1.1ms)[0m  [1mSELECT "responses".* FROM "responses"[0m
+  [1m[35mResponse Load (1.7ms)[0m  SELECT "responses".* FROM "responses"
+  [1m[36mSQL (2.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (3.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mResponse Load (5.0ms)[0m  [1mSELECT "responses".* FROM "responses"[0m
