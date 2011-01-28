@@ -1,0 +1,19 @@
+<h1>Listing your mentorships</h1>
+
+<table>
+  <tr>
+	<th>With</th>
+    <th></th>
+  </tr>
+
+<% @mentorships.each do |mentorship| %>
+  <tr>
+    <td><%= link_to mentorship.mentee.name, mentorship.mentee %></td>
+    <td><%= link_to 'Delete', mentorship, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+
