@@ -7,11 +7,21 @@
 
 <table>  
   <%@survey.questions.each do |question|%>
+  
   <tr>
-    <td><%=question.question_text%></td>
-  </tr>  
+    <%= form_for(@response) do |f| %>
+      <div class="field">
+        <%= f.label question.question_text %><br />
+        <%= f.text_field :response_text %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+   <% end %>
+  </tr>
   <%end%>
 </table>
+
 
 
 <p>
