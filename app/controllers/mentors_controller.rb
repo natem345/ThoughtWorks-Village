@@ -1,4 +1,11 @@
 class MentorsController < ApplicationController
+  before_filter :authenticate, :except => [:index, :show, :new, :create]
+
+  def authenticate
+	if session[:id]==nil
+	  redirect_to '/users/login'
+	end
+  end
   # GET /mentors
   # GET /mentors.xml
   def index

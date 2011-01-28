@@ -21,8 +21,10 @@ class UsersController < ApplicationController
         session[:id] = user.id # Remember the user's id during this session 
 		if user.type=="Mentor"
 		  session[:usertype]=:mentor
-		else
+		elsif user.type=="Mentee"
 		  session[:usertype]=:mentee
+		else
+		  session[:usertype]=:unknown
 		end
         redirect_to session[:return_to] || '/', :notice => "Logged in."
       else

@@ -1,4 +1,12 @@
 class MenteesController < ApplicationController
+
+  before_filter :authenticate, :except => [:index, :show, :new, :create]
+
+  def authenticate
+	if session[:id]==nil
+	  redirect_to '/users/login'
+	end
+  end
   # GET /mentees
   # GET /mentees.xml
   def index
