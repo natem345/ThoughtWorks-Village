@@ -9,7 +9,8 @@
   <%@survey.questions.each do |question|%>
   
   <tr>
-    <%= form_for(@response) do |f| %>
+    <% r = Response.new%>
+    <%= form_for(r) do |f| %>
       <div class="field">
         <%= f.label question.question_text %><br />
         <%= f.text_field :response_text %>

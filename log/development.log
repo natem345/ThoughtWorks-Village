@@ -8487,3 +8487,4 @@ DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecate
  FROM sqlite_master
  WHERE type = 'table' AND NOT name = 'sqlite_sequence'
   [1m[36mResponse Load (5.0ms)[0m  [1mSELECT "responses".* FROM "responses"[0m
+  [1m[35mResponse Load (2.7ms)[0m  SELECT "responses".* FROM "responses"
