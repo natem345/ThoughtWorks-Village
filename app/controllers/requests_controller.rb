@@ -46,6 +46,9 @@ class RequestsController < ApplicationController
   # accepts request
   def update
     @request = Request.find(params[:id])
+
+	Notifier.mentorship_accepted_email(@request).deliver
+
 	redirect_to(@request.mentor, :notice => "Meet your new mentor");
   end
 
@@ -54,6 +57,8 @@ class RequestsController < ApplicationController
   def destroy
     @request = Request.find(params[:id])
     @request.destroy
+
+	Notifier.mentorship_rejected_email(@request).deliver
 
     respond_to do |format|
       format.html { redirect_to(requests_url) }
