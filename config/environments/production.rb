@@ -46,4 +46,17 @@ ThoughtWorksVillage::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+
+  # ActionMailer configuration
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+	:address => 'smtp.gmail.com',
+	:tls => 'true',
+	:port => '587',
+	:domain => 'gmail.com',
+	:authentication => :plain,
+	:enable_starttls_auto => 'true',
+	:user_name => 'thoughtworksvillage',
+	:password => 'takesavillage',
+  }
 end

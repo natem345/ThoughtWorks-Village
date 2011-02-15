@@ -2,9 +2,9 @@
 
 <table>
   <tr>
-    <th>Type</th>
-    <th>Lengthinyears</th>
-    <th>Comfortlevel</th>
+    <th>Experience/Ability</th>
+    <th>Years of Experience</th>
+    <th>Comfort Level</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,9 +12,9 @@
 
 <% @experiences.each do |experience| %>
   <tr>
-    <td><%= experience.type %></td>
-    <td><%= experience.lengthInYears %></td>
-    <td><%= experience.comfortLevel %></td>
+    <td><%= experience.ability %></td>
+    <td><%= experience.length_in_years %></td>
+    <td><%= experience.comfort_level %></td>
     <td><%= link_to 'Show', experience %></td>
     <td><%= link_to 'Edit', edit_experience_path(experience) %></td>
     <td><%= link_to 'Destroy', experience, :confirm => 'Are you sure?', :method => :delete %></td>

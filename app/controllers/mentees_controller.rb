@@ -52,6 +52,10 @@ class MenteesController < ApplicationController
 
     respond_to do |format|
       if @mentee.save
+
+        @newuser = User.where(:id => @mentee.id).first
+        Notifier.welcome_email(@newuser).deliver
+
         format.html { redirect_to(@mentee, :notice => 'Mentee was successfully created.') }
         format.xml  { render :xml => @mentee, :status => :created, :location => @mentee }
       else

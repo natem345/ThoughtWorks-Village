@@ -36,6 +36,9 @@ class RequestsController < ApplicationController
     @request = @mentor.requests.create(params[:request])
 	@request.mentee=Mentee.find(2)
 	@request.save
+
+    Notifier.mentorship_request_email(@request).deliver
+
     redirect_to(@mentor, :notice => "Request was sent.")
   end
 

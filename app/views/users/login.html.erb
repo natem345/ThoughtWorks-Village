@@ -12,6 +12,8 @@
     </div>
   <% end %>
 
+
+  <h1>Login</h1>
   <div class="field">
     <%= f.label :email %><br />
     <%= f.text_field :email %>
@@ -20,7 +22,13 @@
     <%= f.label :password %><br />
     <%= f.password_field :password %>
   </div>
+  <br/>
   <div class="actions">
     <%= f.submit %>
   </div>
+  <br/>
+  <a href="/mentees/new">Don't have an account? Register here!</a>
+  <br/>
+  <br/>
+  <a href="/mentors/new">ThoughtWorkers: Register using this link.</a>
 <% end %>

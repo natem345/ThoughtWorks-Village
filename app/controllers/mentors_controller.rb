@@ -51,6 +51,10 @@ class MentorsController < ApplicationController
 
     respond_to do |format|
       if @mentor.save
+
+        @newuser = User.where(:id => @mentor.id).first
+        Notifier.welcome_email(@newuser).deliver
+
         format.html { redirect_to(@mentor, :notice => 'Mentor was successfully created.') }
         format.xml  { render :xml => @mentor, :status => :created, :location => @mentor }
       else
