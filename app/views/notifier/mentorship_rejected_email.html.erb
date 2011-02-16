@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Mentorship Request: Rejected</h1>
+    <p>
+      Hello, <%= @request.mentee.name %>. Unfortunately, <%= @request.mentor.name %> cannot mentor you at this time.</br>
+    </p>
+    <p>
+      We encourage you to try contacting another mentor. Start a new search <a href="<%= @url %>mentors">here</a>.</br>
+    </p>
+    <p>ThoughtWorks Village - "It Takes a Village"</p>
+  </body>
+</html>

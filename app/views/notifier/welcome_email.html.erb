@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Welcome to ThoughtWorks Village, <%= @user.name %>!</h1>
+    <p>
+      Congratulations on creating your new profile! Here is your login information:
+    </p>
+    <p>
+      Username: <%= @user.email %><br>
+    </p>
+    <p>
+      You can login to your profile at <a href="<%= @url %>login"><%= @url %>login</a>. Thanks for signing up, and enjoy the site!
+    </p>
+    <p>ThoughtWorks Village - "It Takes a Village"</p>
+  </body>
+</html>

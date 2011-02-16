@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  mentor_id: 1
+  mentee_id: 1
+
+two:
+  mentor_id: 1
+  mentee_id: 1

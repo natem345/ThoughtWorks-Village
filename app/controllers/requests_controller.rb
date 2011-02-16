@@ -36,20 +36,25 @@ class RequestsController < ApplicationController
     @request = @mentor.requests.create(params[:request])
 	@request.mentee=Mentee.find(2)
 	@request.save
+
+    Notifier.mentorship_request_email(@request).deliver
+
     redirect_to(@mentor, :notice => "Request was sent.")
   end
 
   # PUT /requests/1
   # accepts request
   def update
-    @request = Request.find(params[:id])
 	@mentorship=Mentorship.new
 	@mentorship.mentor=@request.mentor
 	@mentorship.mentee=@request.mentee
 	@mentorship.save
 
+	Notifier.mentorship_accepted_email(@request).deliver
+
 	redirect_to(@mentorship.mentor, :notice => "Meet your new mentor")
     @request.destroy
+
   end
 
   # DELETE /requests/1
@@ -57,6 +62,8 @@ class RequestsController < ApplicationController
   def destroy
     @request = Request.find(params[:id])
     @request.destroy
+
+	Notifier.mentorship_rejected_email(@request).deliver
 
     respond_to do |format|
       format.html { redirect_to(requests_url) }

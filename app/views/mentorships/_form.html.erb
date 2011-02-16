@@ -1,10 +1,11 @@
-<%= form_for(@request) do |f| %>
-  <% if @request.errors.any? %>
+
+<%= form_for(@mentorship) do |f| %>
+  <% if @mentorship.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@request.errors.count, "error") %> prohibited this request from being saved:</h2>
+      <h2><%= pluralize(@mentorship.errors.count, "error") %> prohibited this mentorship from being saved:</h2>
 
       <ul>
-      <% @request.errors.full_messages.each do |msg| %>
+      <% @mentorship.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -12,12 +13,12 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :reason %><br />
-    <%= f.text_field :reason %>
+    <%= f.label :mentor_id %><br />
+    <%= f.text_field :mentor_id %>
   </div>
   <div class="field">
-    <%= f.label :estimated_length %><br />
-    <%= f.text_field :estimated_length %>
+    <%= f.label :mentee_id %><br />
+    <%= f.text_field :mentee_id %>
   </div>
   <div class="actions">
     <%= f.submit %>

@@ -1,15 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Reason:</b>
-  <%= @request.reason %>
+  <b>Mentor:</b>
+  <%= @mentorship.mentor_id %>
 </p>
 
 <p>
-  <b>Estimatedlength:</b>
-  <%= @request.estimatedLength %>
+  <b>Mentee:</b>
+  <%= @mentorship.mentee_id %>
 </p>
 
 
-<%= link_to 'Edit', edit_request_path(@request) %> |
-<%= link_to 'Back', requests_path %>
+<%= link_to 'Edit', edit_mentorship_path(@mentorship) %> |
+<%= link_to 'Back', mentorships_path %>
+>>>>>>> 1939877c0728ecb0249992ef41c6cdfae6cbe954

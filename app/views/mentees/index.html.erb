@@ -1,10 +1,8 @@
-<h1>Listing mentees</h1>
-
+<h1>Mentees</h1>
 
 <table>
   <tr>
-    <th>ID</th>
-    <th>Name</th>
+    <th>First Name</th>
     <th>Location</th>
     <th>Current Position</th>
     <th>School</th>
@@ -18,8 +16,7 @@
 
 <% @mentees.each do |mentee| %>
   <tr>
-    <td><%= mentee.id %></td>
-    <td><%= mentee.name %></td>
+    <td><%= mentee.name.split[0] %></td>
     <td><%= mentee.location %></td>
     <td><%= mentee.current_position %></td>
     <td><%= mentee.school %></td>

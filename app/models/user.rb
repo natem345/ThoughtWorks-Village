@@ -7,14 +7,12 @@ class User < ActiveRecord::Base
   validates_numericality_of :phone, :only_integer => true, :greater_than => 0
   validates_uniqueness_of :phone, :allow_blank => true
   
-
   has_many :experiences
 
-	# If a user matching the credentials is found, returns the User object.
-    # If no matching user is found, returns nil.
-    def self.authenticate(user_info)
-     	User.where(:email => user_info[:email], :password => user_info[:password]).first
-    end
-
+  # If a user matching the credentials is found, returns the User object.
+  # If no matching user is found, returns nil.
+  def self.authenticate(user_info)
+    User.where(:email => user_info[:email], :password => user_info[:password]).first
+  end
 end
 

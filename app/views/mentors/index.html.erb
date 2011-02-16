@@ -1,9 +1,7 @@
-<h1>Listing mentors</h1>
-
+<h1>Mentors</h1>
 
 <table>
   <tr>
-    <th>ID</th>
     <th>First Name</th>
     <th>Location</th>
     <th>Current Position</th>
@@ -18,7 +16,6 @@
 
 <% @mentors.each do |mentor| %>
   <tr>
-    <td><%= mentor.id %></td>
     <td><%= mentor.name.split[0] %></td>
     <td><%= mentor.location %></td>
     <td><%= mentor.current_position %></td>
@@ -32,7 +29,6 @@
   </tr>
 <% end %>
 </table>
-
 <br />
 
 <%= link_to 'New Mentor', new_mentor_path %>
