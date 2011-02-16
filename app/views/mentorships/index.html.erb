@@ -1,42 +1,19 @@
-<<<<<<< HEAD
+
 <h1>Listing your mentorships</h1>
 
 <table>
   <tr>
 	<th>With</th>
-=======
-<h1>Listing mentorships</h1>
-
-<table>
-  <tr>
-    <th>Mentor</th>
-    <th>Mentee</th>
-    <th></th>
-    <th></th>
->>>>>>> 1939877c0728ecb0249992ef41c6cdfae6cbe954
     <th></th>
   </tr>
 
 <% @mentorships.each do |mentorship| %>
   <tr>
-<<<<<<< HEAD
     <td><%= link_to mentorship.mentee.name, mentorship.mentee %></td>
     <td><%= link_to 'Delete', mentorship, :confirm => 'Are you sure?', :method => :delete %></td>
-=======
-    <td><%= mentorship.mentor_id %></td>
-    <td><%= mentorship.mentee_id %></td>
-    <td><%= link_to 'Show', mentorship %></td>
-    <td><%= link_to 'Edit', edit_mentorship_path(mentorship) %></td>
-    <td><%= link_to 'Destroy', mentorship, :confirm => 'Are you sure?', :method => :delete %></td>
->>>>>>> 1939877c0728ecb0249992ef41c6cdfae6cbe954
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<<<<<<< HEAD
-
-=======
-<%= link_to 'New Mentorship', new_mentorship_path %>
->>>>>>> 1939877c0728ecb0249992ef41c6cdfae6cbe954

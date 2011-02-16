@@ -12960,3 +12960,120 @@ Started GET "/users/login?notice=Logged+out." for 127.0.0.1 at Mon Feb 14 19:52:
 Rendered users/login.html.erb within layouts/application (17.4ms)
 Completed 200 OK in 124ms (Views: 111.3ms | ActiveRecord: 0.0ms)
 >>>>>>> 1939877c0728ecb0249992ef41c6cdfae6cbe954
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+
+
+Started GET "/" for 127.0.0.1 at Tue Feb 15 20:23:12 -0500 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Tue Feb 15 20:23:15 -0500 2011
+  Processing by MenteesController#index as HTML
+  [1m[36mSQL (2.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mMentee Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee')
+Rendered mentees/index.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 154ms (Views: 28.8ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/mentees/2" for 127.0.0.1 at Tue Feb 15 20:23:18 -0500 2011
+  Processing by MenteesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMentee Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mExperience Load (0.2ms)[0m  SELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 2)
+Rendered mentees/show.html.erb within layouts/application (37.5ms)
+Completed 200 OK in 87ms (Views: 46.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mentees/images/corporate_favicon.ico" for 127.0.0.1 at Tue Feb 15 20:23:18 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentees/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/mentees/images/corporate_favicon.ico" for 127.0.0.1 at Tue Feb 15 20:23:21 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentees/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.4ms)
+
+
+Started GET "/mentees/2/edit" for 127.0.0.1 at Tue Feb 15 20:27:37 -0500 2011
+  Processing by MenteesController#edit as HTML
+  Parameters: {"id"=>"2"}
+Redirected to http://localhost:3000/users/login
+Completed 302 Found in 1ms
+
+
+Started GET "/users/login" for 127.0.0.1 at Tue Feb 15 20:27:38 -0500 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 33ms (Views: 21.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/images/corporate_favicon.ico" for 127.0.0.1 at Tue Feb 15 20:27:38 -0500 2011
+
+ActionController::RoutingError (No route matches "/users/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/users/images/corporate_favicon.ico" for 127.0.0.1 at Tue Feb 15 20:27:41 -0500 2011
+
+ActionController::RoutingError (No route matches "/users/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/mentees/2" for 127.0.0.1 at Tue Feb 15 20:27:53 -0500 2011
+  Processing by MenteesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMentee Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mExperience Load (9.3ms)[0m  SELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 2)
+Rendered mentees/show.html.erb within layouts/application (118.2ms)
+Completed 200 OK in 182ms (Views: 122.0ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/mentees/2/edit" for 127.0.0.1 at Tue Feb 15 20:27:56 -0500 2011
+  Processing by MenteesController#edit as HTML
+  Parameters: {"id"=>"2"}
+Redirected to http://localhost:3000/users/login
+Completed 302 Found in 1ms
+
+
+Started GET "/users/login" for 127.0.0.1 at Tue Feb 15 20:27:56 -0500 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (25.9ms)
+Completed 200 OK in 60ms (Views: 35.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentors/new" for 127.0.0.1 at Tue Feb 15 20:27:59 -0500 2011
+  Processing by MentorsController#new as HTML
+Rendered mentors/_form.html.erb (21.8ms)
+Rendered mentors/new.html.erb within layouts/application (26.6ms)
+Completed 200 OK in 58ms (Views: 31.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentors/images/corporate_favicon.ico" for 127.0.0.1 at Tue Feb 15 20:28:00 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentors/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/mentors/images/corporate_favicon.ico" for 127.0.0.1 at Tue Feb 15 20:28:03 -0500 2011
+
+ActionController::RoutingError (No route matches "/mentors/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
