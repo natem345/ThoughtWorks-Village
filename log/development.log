@@ -13077,3 +13077,1022 @@ ActionController::RoutingError (No route matches "/mentors/images/corporate_favi
   
 
 Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+
+
+Started GET "/surveys/1" for 127.0.0.1 at Tue Feb 15 16:10:27 -1000 2011
+  Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSQL (3.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSurvey Load (0.2ms)[0m  SELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions".survey_id = 1)[0m
+  [1m[35mSQL (0.4ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+Rendered surveys/show.html.erb within layouts/application (63.1ms)
+Completed   in 268ms
+
+ActionView::Template::Error (undefined method `to_key' for #<Class:0xb6e53ca4>):
+    11:   <tr>
+    12:     #<% r = Response.new%>
+    13:     
+    14:     <%= form_for(Response) do |f| %>
+    15:       <% r.question_id = question.id%>
+    16:       <div class="field">
+    17:         <%= f.label question.question_text %><br />
+  app/views/surveys/show.html.erb:14:in `_app_views_surveys_show_html_erb__1016882997__612853708_0'
+  app/views/surveys/show.html.erb:9:in `_app_views_surveys_show_html_erb__1016882997__612853708_0'
+  app/controllers/surveys_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (18.4ms)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (10.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mResponse Load (0.3ms)[0m  SELECT "responses".* FROM "responses" WHERE ("responses"."id" = 1) LIMIT 1
+  [1m[36mResponse Load (0.9ms)[0m  [1mSELECT "responses".* FROM "responses" WHERE ("responses"."id" = 14) LIMIT 1[0m
+  [1m[35mResponse Load (0.0ms)[0m  SELECT "responses".* FROM "responses" WHERE ("responses"."id" = 12) LIMIT 1
+  [1m[36mResponse Load (0.7ms)[0m  [1mSELECT "responses".* FROM "responses" WHERE ("responses"."id" = 5) LIMIT 1[0m
+  [1m[35mResponse Load (0.5ms)[0m  SELECT "responses".* FROM "responses"
+  [1m[36mQuestion Load (1.3ms)[0m  [1mSELECT "questions".* FROM "questions"[0m
+  [1m[35mAREL (45.1ms)[0m  INSERT INTO "responses" ("response_text", "updated_at", "created_at", "question_id") VALUES (NULL, '2011-02-16 02:13:57.153994', '2011-02-16 02:13:57.153994', NULL)
+  [1m[36mResponse Load (1.0ms)[0m  [1mSELECT "responses".* FROM "responses" WHERE ("responses"."id" = 8) LIMIT 1[0m
+  [1m[35mResponse Load (1.1ms)[0m  SELECT "responses".* FROM "responses"
+
+
+Started GET "/surveys/1" for 127.0.0.1 at Tue Feb 15 16:17:34 -1000 2011
+  Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSurvey Load (0.2ms)[0m  [1mSELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions".survey_id = 1)
+Rendered surveys/show.html.erb within layouts/application (272.7ms)
+Completed   in 330ms
+
+ActionView::Template::Error (undefined method `question_id=' for #<ActionView::Helpers::FormBuilder:0xb6f6d090>):
+    12:     <% r = Response.new%>
+    13:     
+    14:     <%= form_for(r) do |f| %>
+    15:       <% f.question_id = question.id%>
+    16:       <div class="field">
+    17:         <%= f.label question.question_text %><br />
+    18:         <%= f.text_field :response_text %>        
+  app/views/surveys/show.html.erb:15:in `_app_views_surveys_show_html_erb__1016882997__614403288_0'
+  app/views/surveys/show.html.erb:14:in `_app_views_surveys_show_html_erb__1016882997__614403288_0'
+  app/views/surveys/show.html.erb:9:in `_app_views_surveys_show_html_erb__1016882997__614403288_0'
+  app/controllers/surveys_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (22.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (71.3ms)
+
+
+Started GET "/surveys/1" for 127.0.0.1 at Tue Feb 15 16:18:42 -1000 2011
+  Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSurvey Load (0.7ms)[0m  [1mSELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (1.0ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions".survey_id = 1)
+Rendered surveys/show.html.erb within layouts/application (221.8ms)
+Completed   in 292ms
+
+ActionView::Template::Error (undefined method `question_id=' for #<ActionView::Helpers::FormBuilder:0xb6c2e6a4>):
+    12:     <% r = Response.new%>
+    13:     
+    14:     <%= form_for(r) do |f| %>
+    15:       <%= f.question_id = question.id%>
+    16:       <div class="field">
+    17:         <%= f.label question.question_text %><br />
+    18:         <%= f.text_field :response_text %>        
+  app/views/surveys/show.html.erb:15:in `_app_views_surveys_show_html_erb__1016882997__613972118_0'
+  app/views/surveys/show.html.erb:14:in `_app_views_surveys_show_html_erb__1016882997__613972118_0'
+  app/views/surveys/show.html.erb:9:in `_app_views_surveys_show_html_erb__1016882997__613972118_0'
+  app/controllers/surveys_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (142.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (19.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (176.3ms)
+
+
+Started GET "/surveys/1" for 127.0.0.1 at Tue Feb 15 16:19:05 -1000 2011
+  Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSurvey Load (0.3ms)[0m  [1mSELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1[0m
+ERROR: compiling _app_views_surveys_show_html_erb__1016882997__613326598_0 RAISED compile error
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:15: syntax error, unexpected tASSOC, expecting kEND
+');       f.question_id => question.id
+                          ^
+Function body:           def _app_views_surveys_show_html_erb__1016882997__613326598_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "surveys/show";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<p id="notice">');@output_buffer.append= ( notice );@output_buffer.safe_concat('</p>
+
+<p>
+  <b>Description:</b>
+  ');@output_buffer.append= ( @survey.description );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</p>
+
+<table>  
+');@output_buffer.append_if_string=   @survey.questions.each do |question|
+@output_buffer.safe_concat('  
+  <tr>
+');     r = Response.new
+@output_buffer.safe_concat('    
+    ');@output_buffer.append=  form_for(r) do |f| @output_buffer.safe_concat('
+');       f.question_id => question.id
+@output_buffer.safe_concat('      <div class="field">
+        ');@output_buffer.append= ( f.label question.question_text );@output_buffer.safe_concat('<br />
+        ');@output_buffer.append= ( f.text_field :response_text );@output_buffer.safe_concat('        
+');@output_buffer.safe_concat('      </div>
+      <div class="actions">
+        ');@output_buffer.append= ( f.submit );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('      </div>
+');    end 
+@output_buffer.safe_concat('  </tr>
+');  end
+@output_buffer.safe_concat('</table>
+
+
+
+<p>
+');@output_buffer.append= ( link_to 'Edit', edit_survey_path(@survey) );@output_buffer.safe_concat(' |
+');@output_buffer.append= ( link_to 'Back', surveys_path );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</p>
+
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:38:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:59:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/home/gouser/Documents/ThoughtWorks-Village/app/controllers/surveys_controller.rb:18:in `show'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:430:in `_run__518833604__process_action__453433196__callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:82:in `optimized_each'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `send'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands/server.rb:65:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:30
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27:in `tap'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered surveys/show.html.erb within layouts/application (22.8ms)
+Completed   in 216ms
+
+ActionView::Template::Error (compile error
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:15: syntax error, unexpected tASSOC, expecting kEND
+');       f.question_id => question.id
+                          ^):
+    12:     <% r = Response.new%>
+    13:     
+    14:     <%= form_for(r) do |f| %>
+    15:       <% f.question_id => question.id%>
+    16:       <div class="field">
+    17:         <%= f.label question.question_text %><br />
+    18:         <%= f.text_field :response_text %>        
+  app/views/surveys/show.html.erb:38:in `compile'
+  app/controllers/surveys_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (48.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (79.5ms)
+
+
+Started GET "/surveys/1" for 127.0.0.1 at Tue Feb 15 16:19:27 -1000 2011
+  Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSurvey Load (0.6ms)[0m  SELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions".survey_id = 1)[0m
+Rendered surveys/show.html.erb within layouts/application (1097.3ms)
+Completed   in 1224ms
+
+ActionView::Template::Error (undefined method `question_id' for #<ActionView::Helpers::FormBuilder:0xb6f76910>):
+    12:     <% r = Response.new%>
+    13:     
+    14:     <%= form_for(r) do |f| %>
+    15:       <% f.question_id  :question.id%>
+    16:       <div class="field">
+    17:         <%= f.label question.question_text %><br />
+    18:         <%= f.text_field :response_text %>        
+  app/views/surveys/show.html.erb:15:in `_app_views_surveys_show_html_erb__1016882997__614476648_0'
+  app/views/surveys/show.html.erb:14:in `_app_views_surveys_show_html_erb__1016882997__614476648_0'
+  app/views/surveys/show.html.erb:9:in `_app_views_surveys_show_html_erb__1016882997__614476648_0'
+  app/controllers/surveys_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (11.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (63.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (99.9ms)
+  [1m[36mResponse Load (1.4ms)[0m  [1mSELECT "responses".* FROM "responses"[0m
+
+
+Started GET "/surveys/1" for 127.0.0.1 at Tue Feb 15 16:20:51 -1000 2011
+  Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSurvey Load (0.6ms)[0m  SELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (0.3ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions".survey_id = 1)[0m
+Rendered surveys/show.html.erb within layouts/application (140.6ms)
+Completed 200 OK in 197ms (Views: 163.7ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/responses" for 127.0.0.1 at Tue Feb 15 16:21:01 -1000 2011
+  Processing by ResponsesController#create as HTML
+  Parameters: {"commit"=>"Create Response", "response"=>{"response_text"=>"not very well"}, "authenticity_token"=>"wBxTLRjpuDgBeRwA10lFCT7WB93wNo99XViFI3CEP0U=", "utf8"=>"✓"}
+  [1m[35mAREL (7.9ms)[0m  INSERT INTO "responses" ("updated_at", "question_id", "response_text", "created_at") VALUES ('2011-02-16 02:21:02.066342', NULL, 'not very well', '2011-02-16 02:21:02.066342')
+Redirected to http://localhost:3000/responses/9
+Completed 302 Found in 91ms
+
+
+Started GET "/responses/9" for 127.0.0.1 at Tue Feb 15 16:21:02 -1000 2011
+  Processing by ResponsesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mResponse Load (0.3ms)[0m  [1mSELECT "responses".* FROM "responses" WHERE ("responses"."id" = 9) LIMIT 1[0m
+Rendered responses/show.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 48ms (Views: 30.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/responses" for 127.0.0.1 at Tue Feb 15 16:21:06 -1000 2011
+  Processing by ResponsesController#index as HTML
+  [1m[35mResponse Load (1.6ms)[0m  SELECT "responses".* FROM "responses"
+Rendered responses/index.html.erb within layouts/application (74.3ms)
+Completed 200 OK in 249ms (Views: 119.5ms | ActiveRecord: 1.6ms)
+  [1m[35mResponse Load (6.8ms)[0m  SELECT "responses".* FROM "responses"
+
+
+Started GET "/responses" for 127.0.0.1 at Tue Feb 15 16:21:47 -1000 2011
+  Processing by ResponsesController#index as HTML
+  [1m[36mResponse Load (1.3ms)[0m  [1mSELECT "responses".* FROM "responses"[0m
+Rendered responses/index.html.erb within layouts/application (119.1ms)
+Completed 200 OK in 207ms (Views: 170.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/surveys" for 127.0.0.1 at Tue Feb 15 16:21:54 -1000 2011
+  Processing by SurveysController#index as HTML
+  [1m[35mSurvey Load (11.6ms)[0m  SELECT "surveys".* FROM "surveys"
+Rendered surveys/index.html.erb within layouts/application (72.0ms)
+Completed 200 OK in 243ms (Views: 170.2ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/surveys/1" for 127.0.0.1 at Tue Feb 15 16:21:59 -1000 2011
+  Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSurvey Load (0.4ms)[0m  [1mSELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions".survey_id = 1)
+Rendered surveys/show.html.erb within layouts/application (927.3ms)
+Completed   in 1186ms
+
+ActionView::Template::Error (undefined method `question_id=' for #<ActionView::Helpers::FormBuilder:0xb6bdc64c>):
+    17:         <%= f.label question.question_text %><br />
+    18:         <%= f.text_field :response_text %>        
+    19:       </div>
+    20:       <%f.question_id = question.id%>
+    21:       <div class="actions">
+    22:         <%= f.submit %>
+    23:       </div>
+  app/views/surveys/show.html.erb:20:in `_app_views_surveys_show_html_erb__1016882997__614053738_0'
+  app/views/surveys/show.html.erb:14:in `_app_views_surveys_show_html_erb__1016882997__614053738_0'
+  app/views/surveys/show.html.erb:9:in `_app_views_surveys_show_html_erb__1016882997__614053738_0'
+  app/controllers/surveys_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (11.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (54.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (86.9ms)
+
+
+Started GET "/surveys/1" for 127.0.0.1 at Tue Feb 15 16:22:22 -1000 2011
+  Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSurvey Load (0.3ms)[0m  [1mSELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (0.4ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions".survey_id = 1)
+Rendered surveys/show.html.erb within layouts/application (395.4ms)
+Completed   in 534ms
+
+ActionView::Template::Error (undefined method `[]=' for #<ActionView::Helpers::FormBuilder:0xb6c15258>):
+    17:         <%= f.label question.question_text %><br />
+    18:         <%= f.text_field :response_text %>        
+    19:       </div>
+    20:       <%f[:question_id] = question.id%>
+    21:       <div class="actions">
+    22:         <%= f.submit %>
+    23:       </div>
+  app/views/surveys/show.html.erb:20:in `_app_views_surveys_show_html_erb__1016882997__613874478_0'
+  app/views/surveys/show.html.erb:14:in `_app_views_surveys_show_html_erb__1016882997__613874478_0'
+  app/views/surveys/show.html.erb:9:in `_app_views_surveys_show_html_erb__1016882997__613874478_0'
+  app/controllers/surveys_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (12.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (173.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (229.0ms)
+
+
+Started GET "/surveys/1" for 127.0.0.1 at Tue Feb 15 16:22:42 -1000 2011
+  Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSurvey Load (0.2ms)[0m  [1mSELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1[0m
+  [1m[35mQuestion Load (0.3ms)[0m  SELECT "questions".* FROM "questions" WHERE ("questions".survey_id = 1)
+Rendered surveys/show.html.erb within layouts/application (282.8ms)
+Completed   in 383ms
+
+ActionView::Template::Error (undefined method `[]=' for #<ActionView::Helpers::FormBuilder:0xb6d77a24>):
+    17:         <%= f.label question.question_text %><br />
+    18:         <%= f.text_field :response_text %>        
+    19:       </div>
+    20:       <%=f[:question_id] = question.id%>
+    21:       <div class="actions">
+    22:         <%= f.submit %>
+    23:       </div>
+  app/views/surveys/show.html.erb:20:in `_app_views_surveys_show_html_erb__1016882997__613220728_0'
+  app/views/surveys/show.html.erb:14:in `_app_views_surveys_show_html_erb__1016882997__613220728_0'
+  app/views/surveys/show.html.erb:9:in `_app_views_surveys_show_html_erb__1016882997__613220728_0'
+  app/controllers/surveys_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (25.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (66.7ms)
+
+
+Started GET "/surveys/1" for 127.0.0.1 at Tue Feb 15 16:23:33 -1000 2011
+  Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSurvey Load (0.3ms)[0m  [1mSELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1[0m
+ERROR: compiling _app_views_surveys_show_html_erb__1016882997__612554488_0 RAISED compile error
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:12: syntax error, unexpected tIDENTIFIER, expecting ']'
+');     r = Response.new[:question_id question.id]
+                                              ^
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:12: syntax error, unexpected ']', expecting kEND
+Function body:           def _app_views_surveys_show_html_erb__1016882997__612554488_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "surveys/show";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<p id="notice">');@output_buffer.append= ( notice );@output_buffer.safe_concat('</p>
+
+<p>
+  <b>Description:</b>
+  ');@output_buffer.append= ( @survey.description );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</p>
+
+<table>  
+');@output_buffer.append_if_string=   @survey.questions.each do |question|
+@output_buffer.safe_concat('  
+  <tr>
+');     r = Response.new[:question_id question.id]
+@output_buffer.safe_concat('    ');@output_buffer.append=  form_for(r) do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('     
+      <div class="field">
+        ');@output_buffer.append= ( f.label question.question_text );@output_buffer.safe_concat('<br />
+        ');@output_buffer.append= ( f.text_field :response_text );@output_buffer.safe_concat('        
+');@output_buffer.safe_concat('      </div>      
+      <div class="actions">
+        ');@output_buffer.append= ( f.submit );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('      </div>
+');    end 
+@output_buffer.safe_concat('  </tr>
+');  end
+@output_buffer.safe_concat('</table>
+
+
+
+<p>
+');@output_buffer.append= ( link_to 'Edit', edit_survey_path(@survey) );@output_buffer.safe_concat(' |
+');@output_buffer.append= ( link_to 'Back', surveys_path );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</p>
+
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:37:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:59:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/home/gouser/Documents/ThoughtWorks-Village/app/controllers/surveys_controller.rb:18:in `show'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:430:in `_run__518833604__process_action__453433196__callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:82:in `optimized_each'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `send'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands/server.rb:65:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:30
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27:in `tap'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered surveys/show.html.erb within layouts/application (21.0ms)
+Completed   in 666ms
+
+ActionView::Template::Error (compile error
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:12: syntax error, unexpected tIDENTIFIER, expecting ']'
+');     r = Response.new[:question_id question.id]
+                                              ^
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:12: syntax error, unexpected ']', expecting kEND):
+    9:   <%@survey.questions.each do |question|%>
+    10:   
+    11:   <tr>
+    12:     <% r = Response.new[:question_id question.id]%>
+    13:     <%= form_for(r) do |f| %>
+    14:      
+    15:       <div class="field">
+  app/views/surveys/show.html.erb:37:in `compile'
+  app/controllers/surveys_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (16.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (87.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (152.3ms)
+
+
+Started GET "/surveys/1" for 127.0.0.1 at Tue Feb 15 16:24:47 -1000 2011
+  Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSurvey Load (0.3ms)[0m  SELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (0.5ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions".survey_id = 1)[0m
+Rendered surveys/show.html.erb within layouts/application (207.8ms)
+Completed 200 OK in 340ms (Views: 252.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/responses" for 127.0.0.1 at Tue Feb 15 16:24:56 -1000 2011
+  Processing by ResponsesController#create as HTML
+  Parameters: {"commit"=>"Create Response", "response"=>{"response_text"=>" better maybe"}, "authenticity_token"=>"wBxTLRjpuDgBeRwA10lFCT7WB93wNo99XViFI3CEP0U=", "utf8"=>"✓"}
+  [1m[35mAREL (0.8ms)[0m  INSERT INTO "responses" ("response_text", "updated_at", "created_at", "question_id") VALUES (' better maybe', '2011-02-16 02:24:57.362721', '2011-02-16 02:24:57.362721', NULL)
+Redirected to http://localhost:3000/responses/10
+Completed 302 Found in 133ms
+
+
+Started GET "/responses/10" for 127.0.0.1 at Tue Feb 15 16:24:57 -1000 2011
+  Processing by ResponsesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mResponse Load (0.3ms)[0m  [1mSELECT "responses".* FROM "responses" WHERE ("responses"."id" = 10) LIMIT 1[0m
+Rendered responses/show.html.erb within layouts/application (74.6ms)
+Completed 200 OK in 241ms (Views: 125.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/responses" for 127.0.0.1 at Tue Feb 15 16:25:02 -1000 2011
+  Processing by ResponsesController#index as HTML
+  [1m[35mResponse Load (1.2ms)[0m  SELECT "responses".* FROM "responses"
+Rendered responses/index.html.erb within layouts/application (30.3ms)
+Completed 200 OK in 241ms (Views: 222.1ms | ActiveRecord: 1.2ms)
+  [1m[36mResponse Load (2.3ms)[0m  [1mSELECT "responses".* FROM "responses"[0m
+
+
+Started GET "/surveys/1" for 127.0.0.1 at Tue Feb 15 16:26:13 -1000 2011
+  Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSurvey Load (0.3ms)[0m  [1mSELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1[0m
+ERROR: compiling _app_views_surveys_show_html_erb__1016882997__613641468_0 RAISED compile error
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:12: syntax error, unexpected '<'
+    <p>The question ID is');@output_buffer.append= (question.id ></p>
+                                                                  ^
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:17: unmatched ): /p>
+    <% r = Response.new(:question_id => question.id));@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append=  form_for(r) do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('     
+      <div class="field">
+        ');@output_buffer.append= ( f.label question.question_text );@output_buffer.safe_concat('<br /
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:22: unknown regexp options - dv
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:22: unmatched ): /div>      
+      <div class="actions">
+        ');@output_buffer.append= ( f.submit );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('      </
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:26: unknown regexp options - tabl
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:26: unmatched ): /tr>
+');  end
+@output_buffer.safe_concat('</
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:30: syntax error, unexpected '<'
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:31: syntax error, unexpected tCONSTANT, expecting ')'
+...buffer.append= ( link_to 'Edit', edit_survey_path(@survey) )...
+                              ^
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:32: syntax error, unexpected tCONSTANT, expecting ')'
+...buffer.append= ( link_to 'Back', surveys_path );@output_buff...
+                              ^
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:33: unterminated string meets end of file
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:33: syntax error, unexpected tSTRING_END, expecting tSTRING_CONTENT or tREGEXP_END or tSTRING_DBEG or tSTRING_DVAR
+Function body:           def _app_views_surveys_show_html_erb__1016882997__613641468_0(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "surveys/show";_old_output_buffer = @output_buffer;;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.safe_concat('<p id="notice">');@output_buffer.append= ( notice );@output_buffer.safe_concat('</p>
+
+<p>
+  <b>Description:</b>
+  ');@output_buffer.append= ( @survey.description );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</p>
+
+<table>  
+');@output_buffer.append_if_string=   @survey.questions.each do |question|
+@output_buffer.safe_concat('  
+  <tr>
+    <p>The question ID is');@output_buffer.append= (question.id ></p>
+    <% r = Response.new(:question_id => question.id));@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append=  form_for(r) do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('     
+      <div class="field">
+        ');@output_buffer.append= ( f.label question.question_text );@output_buffer.safe_concat('<br />
+        ');@output_buffer.append= ( f.text_field :response_text );@output_buffer.safe_concat('        
+');@output_buffer.safe_concat('      </div>      
+      <div class="actions">
+        ');@output_buffer.append= ( f.submit );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('      </div>
+');    end 
+@output_buffer.safe_concat('  </tr>
+');  end
+@output_buffer.safe_concat('</table>
+
+
+
+<p>
+');@output_buffer.append= ( link_to 'Edit', edit_survey_path(@survey) );@output_buffer.safe_concat(' |
+');@output_buffer.append= ( link_to 'Back', surveys_path );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('</p>
+
+');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:33:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:59:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:261:in `retrieve_response_from_mimes'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/mime_responds.rb:192:in `respond_to'
+/home/gouser/Documents/ThoughtWorks-Village/app/controllers/surveys_controller.rb:18:in `show'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:430:in `_run__518833604__process_action__453433196__callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `send'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:82:in `optimized_each'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/usr/lib/ruby/gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `send'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands/server.rb:65:in `start'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:30
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27:in `tap'
+/usr/lib/ruby/gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered surveys/show.html.erb within layouts/application (7.3ms)
+Completed   in 62ms
+
+ActionView::Template::Error (compile error
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:12: syntax error, unexpected '<'
+    <p>The question ID is');@output_buffer.append= (question.id ></p>
+                                                                  ^
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:17: unmatched ): /p>
+    <% r = Response.new(:question_id => question.id));@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append=  form_for(r) do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('     
+      <div class="field">
+        ');@output_buffer.append= ( f.label question.question_text );@output_buffer.safe_concat('<br /
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:22: unknown regexp options - dv
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:22: unmatched ): /div>      
+      <div class="actions">
+        ');@output_buffer.append= ( f.submit );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('      </
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:26: unknown regexp options - tabl
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:26: unmatched ): /tr>
+');  end
+@output_buffer.safe_concat('</
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:30: syntax error, unexpected '<'
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:31: syntax error, unexpected tCONSTANT, expecting ')'
+...buffer.append= ( link_to 'Edit', edit_survey_path(@survey) )...
+                              ^
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:32: syntax error, unexpected tCONSTANT, expecting ')'
+...buffer.append= ( link_to 'Back', surveys_path );@output_buff...
+                              ^
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:33: unterminated string meets end of file
+/home/gouser/Documents/ThoughtWorks-Village/app/views/surveys/show.html.erb:33: syntax error, unexpected tSTRING_END, expecting tSTRING_CONTENT or tREGEXP_END or tSTRING_DBEG or tSTRING_DVAR):
+    9:   <%@survey.questions.each do |question|%>
+    10:   
+    11:   <tr>
+    12:     <p>The question ID is<%=question.id ></p>
+    13:     <% r = Response.new(:question_id => question.id)%>
+    14:     <%= form_for(r) do |f| %>
+    15:      
+  app/views/surveys/show.html.erb:33:in `compile'
+  app/controllers/surveys_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (38.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (70.1ms)
+
+
+Started GET "/surveys/1" for 127.0.0.1 at Tue Feb 15 16:26:33 -1000 2011
+  Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSurvey Load (1.1ms)[0m  SELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (15.4ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions".survey_id = 1)[0m
+Rendered surveys/show.html.erb within layouts/application (731.7ms)
+Completed 200 OK in 882ms (Views: 793.1ms | ActiveRecord: 16.5ms)
+
+
+Started GET "/surveys/1" for 127.0.0.1 at Tue Feb 15 16:28:57 -1000 2011
+  Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSurvey Load (0.5ms)[0m  SELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (0.6ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions".survey_id = 1)[0m
+Rendered surveys/show.html.erb within layouts/application (210.1ms)
+Completed   in 427ms
+
+ActionView::Template::Error (undefined method `response_attributes=' for #<Question:0xb6c6b34c>):
+    11:   <tr>
+    12:     
+    13:     
+    14:     <% r = question.response_attributes = [ {:question_id => question.id}] %>
+    15:     <%= form_for(r) do |f| %>
+    16:      
+    17:       <div class="field">
+  app/views/surveys/show.html.erb:14:in `_app_views_surveys_show_html_erb__1016882997__614018128_0'
+  app/views/surveys/show.html.erb:9:in `_app_views_surveys_show_html_erb__1016882997__614018128_0'
+  app/controllers/surveys_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (22.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1046.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (1162.8ms)
+
+
+Started GET "/surveys/1" for 127.0.0.1 at Tue Feb 15 16:29:31 -1000 2011
+  Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSurvey Load (0.4ms)[0m  SELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (4.7ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions".survey_id = 1)[0m
+Rendered surveys/show.html.erb within layouts/application (293.1ms)
+Completed   in 471ms
+
+ActionView::Template::Error (undefined method `response=' for #<Question:0xb6db4f8c>):
+    11:   <tr>
+    12:     
+    13:     
+    14:     <% r = question.response = [ {:question_id => question.id}] %>
+    15:     <%= form_for(r) do |f| %>
+    16:      
+    17:       <div class="field">
+  app/views/surveys/show.html.erb:14:in `_app_views_surveys_show_html_erb__1016882997__613286868_0'
+  app/views/surveys/show.html.erb:9:in `_app_views_surveys_show_html_erb__1016882997__613286868_0'
+  app/controllers/surveys_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (217.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (290.4ms)
+
+
+Started GET "/surveys/1" for 127.0.0.1 at Tue Feb 15 16:29:45 -1000 2011
+  Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSurvey Load (0.3ms)[0m  SELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (0.4ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions".survey_id = 1)[0m
+Rendered surveys/show.html.erb within layouts/application (232.3ms)
+Completed   in 304ms
+
+ActionView::Template::Error (undefined method `response_attributes=' for #<Question:0xb6b533ec>):
+    11:   <tr>
+    12:     
+    13:     
+    14:     <% r = question.response_attributes = [ {:question_id => question.id}] %>
+    15:     <%= form_for(r) do |f| %>
+    16:      
+    17:       <div class="field">
+  app/views/surveys/show.html.erb:14:in `_app_views_surveys_show_html_erb__1016882997__614722968_0'
+  app/views/surveys/show.html.erb:9:in `_app_views_surveys_show_html_erb__1016882997__614722968_0'
+  app/controllers/surveys_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (42.5ms)
+
+
+Started GET "/surveys/1" for 127.0.0.1 at Tue Feb 15 16:38:31 -1000 2011
+  Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSurvey Load (0.3ms)[0m  SELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (0.1ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions".survey_id = 1)[0m
+Rendered surveys/show.html.erb within layouts/application (165.0ms)
+Completed   in 283ms
+
+ActionView::Template::Error (undefined method `response_attributes=' for #<Question:0xb6caa2cc>):
+    11:   <tr>
+    12:     
+    13:     
+    14:     <% r = question.response_attributes = [ {:question_id => question.id}] %>
+    15:     <%= form_for(r) do |f| %>
+    16:      
+    17:       <div class="field">
+  app/views/surveys/show.html.erb:14:in `_app_views_surveys_show_html_erb__1016882997__613875788_0'
+  app/views/surveys/show.html.erb:9:in `_app_views_surveys_show_html_erb__1016882997__613875788_0'
+  app/controllers/surveys_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (32.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (72.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (196.4ms)
+
+
+Started GET "/surveys/1" for 127.0.0.1 at Tue Feb 15 16:38:47 -1000 2011
+  Processing by SurveysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSurvey Load (0.3ms)[0m  SELECT "surveys".* FROM "surveys" WHERE ("surveys"."id" = 1) LIMIT 1
+  [1m[36mQuestion Load (0.0ms)[0m  [1mSELECT "questions".* FROM "questions" WHERE ("questions".survey_id = 1)[0m
+Rendered surveys/show.html.erb within layouts/application (648.6ms)
+Completed 200 OK in 720ms (Views: 661.2ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/responses" for 127.0.0.1 at Tue Feb 15 16:38:55 -1000 2011
+  Processing by ResponsesController#create as HTML
+  Parameters: {"commit"=>"Create Response", "response"=>{"response_text"=>" better maybe"}, "authenticity_token"=>"wBxTLRjpuDgBeRwA10lFCT7WB93wNo99XViFI3CEP0U=", "utf8"=>"✓"}
+  [1m[35mAREL (6.1ms)[0m  INSERT INTO "responses" ("created_at", "response_text", "question_id", "updated_at") VALUES ('2011-02-16 02:38:55.668543', ' better maybe', NULL, '2011-02-16 02:38:55.668543')
+Redirected to http://localhost:3000/responses/11
+Completed 302 Found in 153ms
+
+
+Started GET "/responses/11" for 127.0.0.1 at Tue Feb 15 16:38:55 -1000 2011
+  Processing by ResponsesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mResponse Load (0.3ms)[0m  [1mSELECT "responses".* FROM "responses" WHERE ("responses"."id" = 11) LIMIT 1[0m
+Rendered responses/show.html.erb within layouts/application (48.0ms)
+Completed 200 OK in 490ms (Views: 82.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/responses" for 127.0.0.1 at Tue Feb 15 16:39:00 -1000 2011
+  Processing by ResponsesController#index as HTML
+  [1m[35mResponse Load (2.0ms)[0m  SELECT "responses".* FROM "responses"
+Rendered responses/index.html.erb within layouts/application (39.4ms)
+Completed 200 OK in 74ms (Views: 50.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/responses/11" for 127.0.0.1 at Tue Feb 15 16:39:04 -1000 2011
+  Processing by ResponsesController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mResponse Load (0.6ms)[0m  [1mSELECT "responses".* FROM "responses" WHERE ("responses"."id" = 11) LIMIT 1[0m
+Rendered responses/show.html.erb within layouts/application (107.7ms)
+Completed 200 OK in 347ms (Views: 239.7ms | ActiveRecord: 0.6ms)

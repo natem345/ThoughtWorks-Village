@@ -9,14 +9,14 @@
   <%@survey.questions.each do |question|%>
   
   <tr>
-    <% r = Response.new%>
     
+    <% r = Response.new(:question_id => question.id)%>
     <%= form_for(r) do |f| %>
-      <% r.question_id = question.id%>
+     
       <div class="field">
         <%= f.label question.question_text %><br />
         <%= f.text_field :response_text %>        
-      </div>
+      </div>      
       <div class="actions">
         <%= f.submit %>
       </div>
