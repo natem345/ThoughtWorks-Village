@@ -14,7 +14,7 @@ class AvailabilityCalendarsController < ApplicationController
   # GET /availability_calendars/1.xml
   def show
     @availability_calendar = AvailabilityCalendar.find(params[:id])
-
+	
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @availability_calendar }
@@ -35,6 +35,11 @@ class AvailabilityCalendarsController < ApplicationController
   # GET /availability_calendars/1/edit
   def edit
     @availability_calendar = AvailabilityCalendar.find(params[:id])
+	3.times { |i|
+	ad=@availability_calendar.availability_days.build 
+	ad.availability_day=DateTime.now
+	ad.availability_day+=i}  
+	
   end
 
   # POST /availability_calendars

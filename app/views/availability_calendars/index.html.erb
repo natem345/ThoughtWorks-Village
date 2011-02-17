@@ -10,7 +10,7 @@
 
 <% @availability_calendars.each do |availability_calendar| %>
   <tr>
-    <td><%= availability_calendar.availabilityQuotient %></td>
+    <td><%= availability_calendar.availability_quotient %></td>
     <td><%= link_to 'Show', availability_calendar %></td>
     <td><%= link_to 'Edit', edit_availability_calendar_path(availability_calendar) %></td>
     <td><%= link_to 'Destroy', availability_calendar, :confirm => 'Are you sure?', :method => :delete %></td>

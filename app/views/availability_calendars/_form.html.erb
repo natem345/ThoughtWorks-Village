@@ -1,3 +1,5 @@
+
+
 <%= form_for(@availability_calendar) do |f| %>
   <% if @availability_calendar.errors.any? %>
     <div id="error_explanation">
@@ -12,8 +14,21 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :availabilityQuotient %><br />
-    <%= f.text_field :availabilityQuotient %>
+    <%= f.label :availability_quotient %><br />
+    <%= f.text_field :availability_quotient %>
+  </div>
+
+  <div class="field">
+  <% f.fields_for :availability_days do |child_form| %>
+	field:
+    <%= child_form.label :availability %>
+    <%= child_form.text_field :availability %>
+
+    <% unless child_form.object.nil? %>
+		Date: <%= child_form.object.availability_day %>
+    <% end %>
+
+  <% end %>
   </div>
   <div class="actions">
     <%= f.submit %>

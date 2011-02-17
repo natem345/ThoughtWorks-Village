@@ -1,4 +1,4 @@
-<%= form_for(@availability_day) do |f| %>
+<%= form_for(@availability_day, :remote => true) do |f| %>
   <% if @availability_day.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@availability_day.errors.count, "error") %> prohibited this availability_day from being saved:</h2>
@@ -12,8 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :availabilityDay %><br />
-    <%= f.date_select :availabilityDay %>
+    <%= f.label :availability_day %><br />
+    <%= f.date_select :availability_day %>
   </div>
   <div class="field">
     <%= f.label :availability %><br />
