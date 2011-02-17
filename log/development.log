@@ -13077,3 +13077,612 @@ ActionController::RoutingError (No route matches "/mentors/images/corporate_favi
   
 
 Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (0.4ms)[0m  [1mSELECT COUNT(*) FROM "availability_days"[0m
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+
+
+Started GET "/availability_calendars" for 127.0.0.1 at Tue Feb 15 20:46:14 -0500 2011
+  Processing by AvailabilityCalendarsController#index as HTML
+  [1m[36mAvailabilityCalendar Load (2.3ms)[0m  [1mSELECT "availability_calendars".* FROM "availability_calendars"[0m
+Rendered availability_calendars/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 131ms (Views: 11.2ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/availability_calendars/new" for 127.0.0.1 at Tue Feb 15 20:46:17 -0500 2011
+  Processing by AvailabilityCalendarsController#new as HTML
+Rendered availability_calendars/_form.html.erb (58.5ms)
+Rendered availability_calendars/new.html.erb within layouts/application (64.4ms)
+Completed   in 84ms
+
+ActionView::Template::Error (undefined method `name' for #<AvailabilityCalendar:0xb6d9770c>):
+    1: <% form_for @availability_calendar do |person_form| %>
+    2: 
+    3:   <%= person_form.label :name %>
+    4:   <%= person_form.text_field :name %>
+    5: 
+    6:   <% person_form.fields_for :children do |child_form| %>
+    7: 
+  app/views/availability_calendars/_form.html.erb:4:in `_app_views_availability_calendars__form_html_erb___798324792__613658808_531376'
+  app/views/availability_calendars/_form.html.erb:1:in `_app_views_availability_calendars__form_html_erb___798324792__613658808_531376'
+  app/views/availability_calendars/new.html.erb:3:in `_app_views_availability_calendars_new_html_erb__258316702__613653518_0'
+  app/controllers/availability_calendars_controller.rb:29:in `new'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (24.4ms)
+
+
+Started GET "/availability_calendars/new" for 127.0.0.1 at Tue Feb 15 20:46:43 -0500 2011
+  Processing by AvailabilityCalendarsController#new as HTML
+Rendered availability_calendars/_form.html.erb (8.1ms)
+Rendered availability_calendars/new.html.erb within layouts/application (10.7ms)
+Completed   in 28ms
+
+ActionView::Template::Error (undefined method `availabilityQuotient' for #<AvailabilityCalendar:0xb6f0c268>):
+    15: 
+    16:   <div class="field">
+    17:     <%= f.label :availabilityQuotient %><br />
+    18:     <%= f.text_field :availabilityQuotient %>
+    19:   </div>
+    20:   <% f.fields_for :availability_days do |child_form| %>
+    21: 	
+  app/views/availability_calendars/_form.html.erb:18:in `_app_views_availability_calendars__form_html_erb___798324792__612911018_531376'
+  app/views/availability_calendars/_form.html.erb:3:in `_app_views_availability_calendars__form_html_erb___798324792__612911018_531376'
+  app/views/availability_calendars/new.html.erb:3:in `_app_views_availability_calendars_new_html_erb__258316702__612892258_0'
+  app/controllers/availability_calendars_controller.rb:29:in `new'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.4ms)
+
+
+Started GET "/availability_calendars/new" for 127.0.0.1 at Tue Feb 15 20:46:55 -0500 2011
+  Processing by AvailabilityCalendarsController#new as HTML
+Rendered availability_calendars/_form.html.erb (6.1ms)
+Rendered availability_calendars/new.html.erb within layouts/application (7.6ms)
+Completed   in 37ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.new_record?):
+    22:     <%= child_form.label :availability %>
+    23:     <%= child_form.text_field :availability %>
+    24: 
+    25:     <% unless child_form.object.new_record? %>
+    26: 		Date: <%= child_form.object.availability_day %>
+    27:     <% end %>
+    28: 
+  app/views/availability_calendars/_form.html.erb:25:in `_app_views_availability_calendars__form_html_erb___798324792__614217778_531376'
+  app/views/availability_calendars/_form.html.erb:20:in `_app_views_availability_calendars__form_html_erb___798324792__614217778_531376'
+  app/views/availability_calendars/_form.html.erb:3:in `_app_views_availability_calendars__form_html_erb___798324792__614217778_531376'
+  app/views/availability_calendars/new.html.erb:3:in `_app_views_availability_calendars_new_html_erb__258316702__614199728_0'
+  app/controllers/availability_calendars_controller.rb:29:in `new'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (11.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (21.9ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[35mUser Load (1.5ms)[0m  SELECT "users".* FROM "users" LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (1.9ms)[0m  INSERT INTO "availability_calendars" ("user_id", "updated_at", "availability_quotient", "created_at") VALUES (1, '2011-02-16 01:49:46.420041', NULL, '2011-02-16 01:49:46.420041')
+
+
+Started GET "/availability_calendars" for 127.0.0.1 at Tue Feb 15 20:49:51 -0500 2011
+  Processing by AvailabilityCalendarsController#index as HTML
+  [1m[35mAvailabilityCalendar Load (0.8ms)[0m  SELECT "availability_calendars".* FROM "availability_calendars"
+Rendered availability_calendars/index.html.erb within layouts/application (4.5ms)
+Completed   in 22ms
+
+ActionView::Template::Error (undefined method `availabilityQuotient' for #<AvailabilityCalendar:0xb6f16ec0>):
+    10: 
+    11: <% @availability_calendars.each do |availability_calendar| %>
+    12:   <tr>
+    13:     <td><%= availability_calendar.availabilityQuotient %></td>
+    14:     <td><%= link_to 'Show', availability_calendar %></td>
+    15:     <td><%= link_to 'Edit', edit_availability_calendar_path(availability_calendar) %></td>
+    16:     <td><%= link_to 'Destroy', availability_calendar, :confirm => 'Are you sure?', :method => :delete %></td>
+  app/views/availability_calendars/index.html.erb:13:in `_app_views_availability_calendars_index_html_erb__69583445__612856338_0'
+  app/views/availability_calendars/index.html.erb:11:in `each'
+  app/views/availability_calendars/index.html.erb:11:in `_app_views_availability_calendars_index_html_erb__69583445__612856338_0'
+  app/controllers/availability_calendars_controller.rb:7:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.6ms)
+
+
+Started GET "/availability_calendars" for 127.0.0.1 at Tue Feb 15 20:50:22 -0500 2011
+  Processing by AvailabilityCalendarsController#index as HTML
+  [1m[36mAvailabilityCalendar Load (0.8ms)[0m  [1mSELECT "availability_calendars".* FROM "availability_calendars"[0m
+Rendered availability_calendars/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 28ms (Views: 18.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/availability_calendars/1" for 127.0.0.1 at Tue Feb 15 20:50:25 -0500 2011
+  Processing by AvailabilityCalendarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSQL (0.9ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mAvailabilityCalendar Load (0.2ms)[0m  [1mSELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars"."id" = 1) LIMIT 1[0m
+Rendered availability_calendars/show.html.erb within layouts/application (13.6ms)
+Completed   in 50ms
+
+ActionView::Template::Error (undefined method `availabilityQuotient' for #<AvailabilityCalendar:0xb6f0faa8>):
+    2: 
+    3: <p>
+    4:   <b>Availabilityquotient:</b>
+    5:   <%= @availability_calendar.availabilityQuotient %>
+    6: </p>
+    7: 
+    8: 
+  app/views/availability_calendars/show.html.erb:5:in `_app_views_availability_calendars_show_html_erb__679436846__612885858_0'
+  app/controllers/availability_calendars_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (6.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (13.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (24.2ms)
+
+
+Started GET "/availability_calendars/1/edit" for 127.0.0.1 at Tue Feb 15 20:50:28 -0500 2011
+  Processing by AvailabilityCalendarsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAvailabilityCalendar Load (0.3ms)[0m  SELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars"."id" = 1) LIMIT 1
+Rendered availability_calendars/_form.html.erb (7.7ms)
+Rendered availability_calendars/edit.html.erb within layouts/application (9.6ms)
+Completed   in 32ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.new_record?):
+    22:     <%= child_form.label :availability %>
+    23:     <%= child_form.text_field :availability %>
+    24: 
+    25:     <% unless child_form.object.new_record? %>
+    26: 		Date: <%= child_form.object.availability_day %>
+    27:     <% end %>
+    28: 
+  app/views/availability_calendars/_form.html.erb:25:in `_app_views_availability_calendars__form_html_erb___798324792__614184438_531376'
+  app/views/availability_calendars/_form.html.erb:20:in `_app_views_availability_calendars__form_html_erb___798324792__614184438_531376'
+  app/views/availability_calendars/_form.html.erb:3:in `_app_views_availability_calendars__form_html_erb___798324792__614184438_531376'
+  app/views/availability_calendars/edit.html.erb:3:in `_app_views_availability_calendars_edit_html_erb___905272934__614174118_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.3ms)
+  [1m[36mAREL (1.6ms)[0m  [1mINSERT INTO "availability_days" ("availability", "availability_calendar_id", "updated_at", "created_at", "availability_day") VALUES (NULL, 1, '2011-02-16 01:52:22.495832', '2011-02-16 01:52:22.495832', NULL)[0m
+
+
+Started GET "/availability_calendars/1/edit" for 127.0.0.1 at Tue Feb 15 20:52:25 -0500 2011
+  Processing by AvailabilityCalendarsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAvailabilityCalendar Load (0.3ms)[0m  [1mSELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars"."id" = 1) LIMIT 1[0m
+Rendered availability_calendars/_form.html.erb (11.1ms)
+Rendered availability_calendars/edit.html.erb within layouts/application (13.1ms)
+Completed   in 29ms
+
+ActionView::Template::Error (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.new_record?):
+    22:     <%= child_form.label :availability %>
+    23:     <%= child_form.text_field :availability %>
+    24: 
+    25:     <% unless child_form.object.new_record? %>
+    26: 		Date: <%= child_form.object.availability_day %>
+    27:     <% end %>
+    28: 
+  app/views/availability_calendars/_form.html.erb:25:in `_app_views_availability_calendars__form_html_erb___798324792__612741478_531376'
+  app/views/availability_calendars/_form.html.erb:20:in `_app_views_availability_calendars__form_html_erb___798324792__612741478_531376'
+  app/views/availability_calendars/_form.html.erb:3:in `_app_views_availability_calendars__form_html_erb___798324792__612741478_531376'
+  app/views/availability_calendars/edit.html.erb:3:in `_app_views_availability_calendars_edit_html_erb___905272934__612733428_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (14.3ms)
+
+
+Started GET "/availability_calendars/1/edit" for 127.0.0.1 at Tue Feb 15 20:52:44 -0500 2011
+  Processing by AvailabilityCalendarsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAvailabilityCalendar Load (0.2ms)[0m  SELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars"."id" = 1) LIMIT 1
+Rendered availability_calendars/_form.html.erb (14.4ms)
+Rendered availability_calendars/edit.html.erb within layouts/application (15.9ms)
+Completed   in 54ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 0)):
+    22:     <%= child_form.label :availability %>
+    23:     <%= child_form.text_field :availability %>
+    24: 
+    25:     <% unless nil? child_form.object %>
+    26: 		Date: <%= child_form.object.availability_day %>
+    27:     <% end %>
+    28: 
+  app/views/availability_calendars/_form.html.erb:25:in `nil?'
+  app/views/availability_calendars/_form.html.erb:25:in `_app_views_availability_calendars__form_html_erb___798324792__614064618_531376'
+  app/views/availability_calendars/_form.html.erb:20:in `_app_views_availability_calendars__form_html_erb___798324792__614064618_531376'
+  app/views/availability_calendars/_form.html.erb:3:in `_app_views_availability_calendars__form_html_erb___798324792__614064618_531376'
+  app/views/availability_calendars/edit.html.erb:3:in `_app_views_availability_calendars_edit_html_erb___905272934__614056858_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (35.4ms)
+
+
+Started GET "/availability_calendars/1/edit" for 127.0.0.1 at Tue Feb 15 20:52:56 -0500 2011
+  Processing by AvailabilityCalendarsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAvailabilityCalendar Load (0.2ms)[0m  [1mSELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars"."id" = 1) LIMIT 1[0m
+Rendered availability_calendars/_form.html.erb (8.9ms)
+Rendered availability_calendars/edit.html.erb within layouts/application (11.2ms)
+Completed   in 27ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 0)):
+    22:     <%= child_form.label :availability %>
+    23:     <%= child_form.text_field :availability %>
+    24: 
+    25:     <% unless nil?(child_form.object) %>
+    26: 		Date: <%= child_form.object.availability_day %>
+    27:     <% end %>
+    28: 
+  app/views/availability_calendars/_form.html.erb:25:in `nil?'
+  app/views/availability_calendars/_form.html.erb:25:in `_app_views_availability_calendars__form_html_erb___798324792__612638028_531376'
+  app/views/availability_calendars/_form.html.erb:20:in `_app_views_availability_calendars__form_html_erb___798324792__612638028_531376'
+  app/views/availability_calendars/_form.html.erb:3:in `_app_views_availability_calendars__form_html_erb___798324792__612638028_531376'
+  app/views/availability_calendars/edit.html.erb:3:in `_app_views_availability_calendars_edit_html_erb___905272934__612622708_0'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.5ms)
+
+
+Started GET "/availability_calendars/1/edit" for 127.0.0.1 at Tue Feb 15 20:53:06 -0500 2011
+  Processing by AvailabilityCalendarsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAvailabilityCalendar Load (0.2ms)[0m  SELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars"."id" = 1) LIMIT 1
+Rendered availability_calendars/_form.html.erb (17.8ms)
+Rendered availability_calendars/edit.html.erb within layouts/application (30.7ms)
+Completed 200 OK in 58ms (Views: 48.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/availability_calendars/1/images/corporate_favicon.ico" for 127.0.0.1 at Tue Feb 15 20:53:07 -0500 2011
+
+ActionController::RoutingError (No route matches "/availability_calendars/1/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/availability_calendars/1/images/corporate_favicon.ico" for 127.0.0.1 at Tue Feb 15 20:53:10 -0500 2011
+
+ActionController::RoutingError (No route matches "/availability_calendars/1/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/availability_calendars/1/edit" for 127.0.0.1 at Tue Feb 15 20:53:32 -0500 2011
+  Processing by AvailabilityCalendarsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAvailabilityCalendar Load (0.2ms)[0m  [1mSELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars"."id" = 1) LIMIT 1[0m
+Rendered availability_calendars/_form.html.erb (8.7ms)
+Rendered availability_calendars/edit.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 32ms (Views: 18.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/availability_calendars/1/edit" for 127.0.0.1 at Tue Feb 15 20:53:35 -0500 2011
+  Processing by AvailabilityCalendarsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAvailabilityCalendar Load (0.4ms)[0m  SELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars"."id" = 1) LIMIT 1
+Rendered availability_calendars/_form.html.erb (9.5ms)
+Rendered availability_calendars/edit.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 32ms (Views: 20.0ms | ActiveRecord: 0.4ms)
+  [1m[35mAvailabilityDay Load (0.5ms)[0m  SELECT "availability_days".* FROM "availability_days" WHERE ("availability_days".availability_calendar_id = 1)
+
+
+Started GET "/availability_calendars/1/edit" for 127.0.0.1 at Tue Feb 15 20:54:10 -0500 2011
+  Processing by AvailabilityCalendarsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAvailabilityCalendar Load (0.2ms)[0m  [1mSELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars"."id" = 1) LIMIT 1[0m
+Rendered availability_calendars/_form.html.erb (18.3ms)
+Rendered availability_calendars/edit.html.erb within layouts/application (28.8ms)
+Completed 200 OK in 60ms (Views: 43.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/availability_calendars/1/edit" for 127.0.0.1 at Tue Feb 15 20:54:11 -0500 2011
+  Processing by AvailabilityCalendarsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAvailabilityCalendar Load (0.1ms)[0m  SELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars"."id" = 1) LIMIT 1
+Rendered availability_calendars/_form.html.erb (9.5ms)
+Rendered availability_calendars/edit.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 33ms (Views: 21.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/availability_calendars/1/edit" for 127.0.0.1 at Tue Feb 15 20:55:12 -0500 2011
+  Processing by AvailabilityCalendarsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAvailabilityCalendar Load (1.8ms)[0m  [1mSELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars"."id" = 1) LIMIT 1[0m
+  [1m[35mAvailabilityDay Load (0.3ms)[0m  SELECT "availability_days".* FROM "availability_days" WHERE ("availability_days".availability_calendar_id = 1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_availability_calendars__form_html_erb___798324792__613272978_531376 at /home/gouser/Documents/ThoughtWorks-Village/app/views/availability_calendars/_form.html.erb:22)
+Rendered availability_calendars/_form.html.erb (37.5ms)
+Rendered availability_calendars/edit.html.erb within layouts/application (48.7ms)
+Completed 200 OK in 74ms (Views: 53.3ms | ActiveRecord: 2.1ms)
+  [1m[36mAREL (1.7ms)[0m  [1mUPDATE "availability_days" SET "updated_at" = '2011-02-16 01:56:38.105413', "availability_day" = '2011-02-16' WHERE ("availability_days"."id" = 1)[0m
+
+
+Started GET "/availability_calendars/1/edit" for 127.0.0.1 at Tue Feb 15 20:56:40 -0500 2011
+  Processing by AvailabilityCalendarsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAvailabilityCalendar Load (0.2ms)[0m  [1mSELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars"."id" = 1) LIMIT 1[0m
+  [1m[35mAvailabilityDay Load (1.0ms)[0m  SELECT "availability_days".* FROM "availability_days" WHERE ("availability_days".availability_calendar_id = 1)
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_availability_calendars__form_html_erb___798324792__612932308_531376 at /home/gouser/Documents/ThoughtWorks-Village/app/views/availability_calendars/_form.html.erb:22)
+Rendered availability_calendars/_form.html.erb (28.9ms)
+Rendered availability_calendars/edit.html.erb within layouts/application (34.8ms)
+Completed 200 OK in 57ms (Views: 39.8ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/availability_calendars/1" for 127.0.0.1 at Tue Feb 15 20:56:46 -0500 2011
+  Processing by AvailabilityCalendarsController#update as HTML
+  Parameters: {"commit"=>"Update Availability calendar", "availability_calendar"=>{"availability_quotient"=>"", "availability_days_attributes"=>{"0"=>{"id"=>"1", "availability"=>"greenyo"}}}, "authenticity_token"=>"t/0f7VnKXOKUrKPq7J25HppPDQDPwcw1Rex6+ctVe7s=", "utf8"=>"✓", "id"=>"1"}
+  [1m[36mAvailabilityCalendar Load (1.5ms)[0m  [1mSELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars"."id" = 1) LIMIT 1[0m
+  [1m[35mAvailabilityDay Load (0.5ms)[0m  SELECT "availability_days".* FROM "availability_days" WHERE ("availability_days".availability_calendar_id = 1) AND ("availability_days"."id" IN (1))
+  [1m[36mAREL (0.8ms)[0m  [1mUPDATE "availability_days" SET "availability" = 'greenyo', "updated_at" = '2011-02-16 01:56:46.928538' WHERE ("availability_days"."id" = 1)[0m
+Redirected to http://localhost:3000/availability_calendars/1
+Completed 302 Found in 55ms
+
+
+Started GET "/availability_calendars/1" for 127.0.0.1 at Tue Feb 15 20:56:46 -0500 2011
+  Processing by AvailabilityCalendarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAvailabilityCalendar Load (0.2ms)[0m  SELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars"."id" = 1) LIMIT 1
+Rendered availability_calendars/show.html.erb within layouts/application (3.9ms)
+Completed   in 23ms
+
+ActionView::Template::Error (undefined method `availabilityQuotient' for #<AvailabilityCalendar:0xb6ec8c0c>):
+    2: 
+    3: <p>
+    4:   <b>Availabilityquotient:</b>
+    5:   <%= @availability_calendar.availabilityQuotient %>
+    6: </p>
+    7: 
+    8: 
+  app/views/availability_calendars/show.html.erb:5:in `_app_views_availability_calendars_show_html_erb__679436846__613018248_0'
+  app/controllers/availability_calendars_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.6ms)
+
+
+Started GET "/availability_calendars/1" for 127.0.0.1 at Tue Feb 15 20:57:07 -0500 2011
+  Processing by AvailabilityCalendarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAvailabilityCalendar Load (0.3ms)[0m  [1mSELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars"."id" = 1) LIMIT 1[0m
+Rendered availability_calendars/show.html.erb within layouts/application (4.2ms)
+Completed   in 22ms
+
+ActionView::Template::Error (undefined method `availabilityQuotient' for #<AvailabilityCalendar:0xb6c471b8>):
+    2: 
+    3: <p>
+    4:   <b>Availabilityquotient:</b>
+    5:   <%= @availability_calendar.availabilityQuotient %>
+    6: </p>
+    7: 
+    8: 
+  app/views/availability_calendars/show.html.erb:5:in `_app_views_availability_calendars_show_html_erb__679436846__614344068_0'
+  app/controllers/availability_calendars_controller.rb:18:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.1ms)
+
+
+Started GET "/availability_calendars/1" for 127.0.0.1 at Tue Feb 15 20:57:22 -0500 2011
+  Processing by AvailabilityCalendarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAvailabilityCalendar Load (0.2ms)[0m  SELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars"."id" = 1) LIMIT 1
+Rendered availability_calendars/show.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 33ms (Views: 17.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/availability_calendars/images/corporate_favicon.ico" for 127.0.0.1 at Tue Feb 15 20:57:22 -0500 2011
+
+ActionController::RoutingError (No route matches "/availability_calendars/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/availability_calendars/images/corporate_favicon.ico" for 127.0.0.1 at Tue Feb 15 20:57:25 -0500 2011
+
+ActionController::RoutingError (No route matches "/availability_calendars/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/availability_calendars/1" for 127.0.0.1 at Tue Feb 15 20:59:05 -0500 2011
+  Processing by AvailabilityCalendarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAvailabilityCalendar Load (0.2ms)[0m  [1mSELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars"."id" = 1) LIMIT 1[0m
+Rendered availability_calendars/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 23ms (Views: 13.5ms | ActiveRecord: 0.2ms)
+  [1m[35mAvailabilityDay Load (1.4ms)[0m  SELECT "availability_days".* FROM "availability_days"
+  [1m[36mAvailabilityDay Load (3.7ms)[0m  [1mSELECT "availability_days".* FROM "availability_days" LIMIT 1[0m
+
+
+Started GET "/availability_calendars/1" for 127.0.0.1 at Tue Feb 15 23:53:07 -0500 2011
+  Processing by AvailabilityCalendarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAvailabilityCalendar Load (0.2ms)[0m  SELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars"."id" = 1) LIMIT 1
+Rendered availability_calendars/show.html.erb within layouts/application (22.5ms)
+Completed 200 OK in 57ms (Views: 35.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/availability_calendars/1/edit" for 127.0.0.1 at Tue Feb 15 23:53:10 -0500 2011
+  Processing by AvailabilityCalendarsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAvailabilityCalendar Load (0.2ms)[0m  [1mSELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars"."id" = 1) LIMIT 1[0m
+Completed   in 27ms
+
+NoMethodError (undefined method `day=' for Tue, 15 Feb 2011 23:53:10 -0500:DateTime):
+  app/controllers/availability_calendars_controller.rb:41:in `edit'
+  app/controllers/availability_calendars_controller.rb:38:in `times'
+  app/controllers/availability_calendars_controller.rb:38:in `edit'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (8.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (14.2ms)
+
+
+Started GET "/availability_calendars/1/edit" for 127.0.0.1 at Tue Feb 15 23:54:55 -0500 2011
+  Processing by AvailabilityCalendarsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAvailabilityCalendar Load (0.2ms)[0m  SELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars"."id" = 1) LIMIT 1
+  [1m[36mAvailabilityDay Load (0.3ms)[0m  [1mSELECT "availability_days".* FROM "availability_days" WHERE ("availability_days".availability_calendar_id = 1)[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_availability_calendars__form_html_erb___798324792__613892268_531376 at /home/gouser/Documents/ThoughtWorks-Village/app/views/availability_calendars/_form.html.erb:22)
+Rendered availability_calendars/_form.html.erb (26.8ms)
+Rendered availability_calendars/edit.html.erb within layouts/application (36.5ms)
+Completed 200 OK in 115ms (Views: 48.9ms | ActiveRecord: 0.5ms)
+  [1m[35mAvailabilityDay Load (2.1ms)[0m  SELECT "availability_days".* FROM "availability_days" LIMIT 1
+  [1m[36mAvailabilityCalendar Load (1.4ms)[0m  [1mSELECT "availability_calendars".* FROM "availability_calendars" LIMIT 1[0m
+  [1m[35mAvailabilityCalendar Load (1.0ms)[0m  SELECT "availability_calendars".* FROM "availability_calendars" LIMIT 1
+  [1m[36mAvailabilityDay Load (5.9ms)[0m  [1mSELECT "availability_days".* FROM "availability_days" WHERE ("availability_days".availability_calendar_id = 1)[0m
+  [1m[35mAvailabilityCalendar Load (3.9ms)[0m  SELECT "availability_calendars".* FROM "availability_calendars" LIMIT 1
+  [1m[36mSQL (0.7ms)[0m  [1mSELECT COUNT(*) FROM "availability_days" WHERE ("availability_days".availability_calendar_id = 1)[0m
+
+
+Started POST "/availability_calendars/1" for 127.0.0.1 at Tue Feb 15 23:55:41 -0500 2011
+  Processing by AvailabilityCalendarsController#update as HTML
+  Parameters: {"commit"=>"Update Availability calendar", "availability_calendar"=>{"availability_quotient"=>"", "availability_days_attributes"=>{"0"=>{"id"=>"1", "availability"=>"greenyo"}, "1"=>{"availability"=>"blue"}, "2"=>{"availability"=>"red"}, "3"=>{"availability"=>"blue"}}}, "authenticity_token"=>"t/0f7VnKXOKUrKPq7J25HppPDQDPwcw1Rex6+ctVe7s=", "utf8"=>"✓", "id"=>"1"}
+  [1m[35mAvailabilityCalendar Load (0.2ms)[0m  SELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars"."id" = 1) LIMIT 1
+  [1m[36mAvailabilityDay Load (0.3ms)[0m  [1mSELECT "availability_days".* FROM "availability_days" WHERE ("availability_days".availability_calendar_id = 1) AND ("availability_days"."id" IN (1))[0m
+  [1m[35mAREL (0.5ms)[0m  INSERT INTO "availability_days" ("created_at", "availability_day", "availability", "availability_calendar_id", "updated_at") VALUES ('2011-02-16 04:55:41.875369', NULL, 'blue', 1, '2011-02-16 04:55:41.875369')
+  [1m[36mAREL (0.1ms)[0m  [1mINSERT INTO "availability_days" ("created_at", "availability_day", "availability", "availability_calendar_id", "updated_at") VALUES ('2011-02-16 04:55:41.877723', NULL, 'red', 1, '2011-02-16 04:55:41.877723')[0m
+  [1m[35mAREL (0.1ms)[0m  INSERT INTO "availability_days" ("created_at", "availability_day", "availability", "availability_calendar_id", "updated_at") VALUES ('2011-02-16 04:55:41.878883', NULL, 'blue', 1, '2011-02-16 04:55:41.878883')
+Redirected to http://localhost:3000/availability_calendars/1
+Completed 302 Found in 53ms
+
+
+Started GET "/availability_calendars/1" for 127.0.0.1 at Tue Feb 15 23:55:41 -0500 2011
+  Processing by AvailabilityCalendarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mAvailabilityCalendar Load (0.1ms)[0m  [1mSELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars"."id" = 1) LIMIT 1[0m
+Rendered availability_calendars/show.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 24ms (Views: 13.3ms | ActiveRecord: 1.2ms)
+  [1m[35mAvailabilityCalendar Load (0.0ms)[0m  SELECT "availability_calendars".* FROM "availability_calendars" LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "availability_days" WHERE ("availability_days".availability_calendar_id = 1)[0m
+  [1m[35mAvailabilityCalendar Load (0.0ms)[0m  SELECT "availability_calendars".* FROM "availability_calendars" LIMIT 1
+  [1m[36mAvailabilityDay Load (0.0ms)[0m  [1mSELECT "availability_days".* FROM "availability_days" WHERE ("availability_days".availability_calendar_id = 1)[0m
+
+
+Started GET "/mentors" for 127.0.0.1 at Tue Feb 15 23:56:27 -0500 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')
+Rendered mentors/index.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 202ms (Views: 28.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/availability_days" for 127.0.0.1 at Wed Feb 16 00:07:56 -0500 2011
+  Processing by AvailabilityDaysController#index as HTML
+  [1m[36mAvailabilityDay Load (1.3ms)[0m  [1mSELECT "availability_days".* FROM "availability_days"[0m
+Rendered availability_days/index.html.erb within layouts/application (5.0ms)
+Completed   in 23ms
+
+ActionView::Template::Error (undefined method `availabilityDay' for #<AvailabilityDay:0xb6cea124>):
+    11: 
+    12: <% @availability_days.each do |availability_day| %>
+    13:   <tr>
+    14:     <td><%= availability_day.availabilityDay %></td>
+    15:     <td><%= availability_day.availability %></td>
+    16:     <td><%= link_to 'Show', availability_day %></td>
+    17:     <td><%= link_to 'Edit', edit_availability_day_path(availability_day) %></td>
+  app/views/availability_days/index.html.erb:14:in `_app_views_availability_days_index_html_erb__95846097__614006868_0'
+  app/views/availability_days/index.html.erb:12:in `each'
+  app/views/availability_days/index.html.erb:12:in `_app_views_availability_days_index_html_erb__95846097__614006868_0'
+  app/controllers/availability_days_controller.rb:7:in `index'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (13.7ms)
+
+
+Started GET "/availability_days/create" for 127.0.0.1 at Wed Feb 16 00:08:02 -0500 2011
+  Processing by AvailabilityDaysController#show as HTML
+  Parameters: {"id"=>"create"}
+  [1m[35mAvailabilityDay Load (0.2ms)[0m  SELECT "availability_days".* FROM "availability_days" WHERE ("availability_days"."id" = 0) LIMIT 1
+Completed   in 9ms
+
+ActiveRecord::RecordNotFound (Couldn't find AvailabilityDay with ID=create):
+  app/controllers/availability_days_controller.rb:16:in `show'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (11.8ms)
+
+
+Started GET "/availability_days/new" for 127.0.0.1 at Wed Feb 16 00:08:13 -0500 2011
+  Processing by AvailabilityDaysController#new as HTML
+Rendered availability_days/_form.html.erb (5.1ms)
+Rendered availability_days/new.html.erb within layouts/application (7.6ms)
+Completed   in 21ms
+
+ActionView::Template::Error (undefined method `availabilityDay' for #<AvailabilityDay:0xb6d179e4>):
+    13: 
+    14:   <div class="field">
+    15:     <%= f.label :availabilityDay %><br />
+    16:     <%= f.date_select :availabilityDay %>
+    17:   </div>
+    18:   <div class="field">
+    19:     <%= f.label :availability %><br />
+  app/views/availability_days/_form.html.erb:16:in `_app_views_availability_days__form_html_erb___772062140__613916168_531376'
+  app/views/availability_days/_form.html.erb:1:in `_app_views_availability_days__form_html_erb___772062140__613916168_531376'
+  app/views/availability_days/new.html.erb:3:in `_app_views_availability_days_new_html_erb__788181266__613905498_0'
+  app/controllers/availability_days_controller.rb:29:in `new'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (17.7ms)
+
+
+Started GET "/availability_days/new" for 127.0.0.1 at Wed Feb 16 00:08:26 -0500 2011
+  Processing by AvailabilityDaysController#new as HTML
+Rendered availability_days/_form.html.erb (162.8ms)
+Rendered availability_days/new.html.erb within layouts/application (167.1ms)
+Completed 200 OK in 191ms (Views: 175.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/availability_days/images/corporate_favicon.ico" for 127.0.0.1 at Wed Feb 16 00:08:27 -0500 2011
+
+ActionController::RoutingError (No route matches "/availability_days/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (6.9ms)
+
+
+Started GET "/availability_days/images/corporate_favicon.ico" for 127.0.0.1 at Wed Feb 16 00:08:30 -0500 2011
+
+ActionController::RoutingError (No route matches "/availability_days/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/availability_calendars" for 127.0.0.1 at Wed Feb 16 00:22:01 -0500 2011
+  Processing by AvailabilityCalendarsController#index as HTML
+  [1m[36mAvailabilityCalendar Load (0.9ms)[0m  [1mSELECT "availability_calendars".* FROM "availability_calendars"[0m
+Rendered availability_calendars/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 27ms (Views: 14.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/availability_calendars/1" for 127.0.0.1 at Wed Feb 16 00:22:06 -0500 2011
+  Processing by AvailabilityCalendarsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mAvailabilityCalendar Load (0.2ms)[0m  SELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars"."id" = 1) LIMIT 1
+  [1m[36mAvailabilityDay Load (0.4ms)[0m  [1mSELECT "availability_days".* FROM "availability_days" WHERE ("availability_days".availability_calendar_id = 1)[0m
+Rendered availability_calendars/show.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 41ms (Views: 29.2ms | ActiveRecord: 0.6ms)
