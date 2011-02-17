@@ -14715,3 +14715,64 @@ DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecate
   [1m[36mResponse Load (2.0ms)[0m  [1mSELECT "responses".* FROM "responses"[0m
 DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
   [1m[36mResponse Load (6.0ms)[0m  [1mSELECT "responses".* FROM "responses"[0m
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (2.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20110117234638)
+Migrating to CreateMentors (20110117235317)
+Migrating to CreateMentees (20110117235327)
+Migrating to CreateMentorships (20110117235453)
+Migrating to CreateRequests (20110117235537)
+Migrating to CreateExperiences (20110117235701)
+Migrating to CreateAvailabilityCalendars (20110117235820)
+Migrating to CreateAvailabilityDays (20110117235928)
+Migrating to CreateSurveys (20110118000027)
+Migrating to CreateQuestions (20110118000156)
+Migrating to CreateResponses (20110118000237)
+Migrating to AddUserTypeCol (20110122191751)
+Migrating to RemoveUserPolymorphism (20110122192122)
+Migrating to RenameExperienceTypeToExperienceAbility (20110215021254)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.7ms)[0m  [1mCREATE TEMPORARY TABLE "altered_experiences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ability" varchar(255), "length_in_years" integer, "comfort_level" integer, "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("experiences")
+  [1m[36mSQL (0.5ms)[0m  [1mDROP TABLE "experiences"[0m
+  [1m[35mSQL (0.4ms)[0m  CREATE TABLE "experiences" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "ability" varchar(255), "length_in_years" integer, "comfort_level" integer, "user_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("altered_experiences")[0m
+  [1m[35mSQL (0.2ms)[0m  DROP TABLE "altered_experiences"
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110215021254')[0m
+Migrating to RenameAvailComun (20110217152217)
+  [1m[35mSQL (0.2ms)[0m  CREATE TEMPORARY TABLE "altered_availability_calendars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "availability_quotient" integer, "mentor_id" integer, "created_at" datetime, "updated_at" datetime) 
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("availability_calendars")[0m
+  [1m[35mSQL (6.0ms)[0m  DROP TABLE "availability_calendars"
+  [1m[36mSQL (0.3ms)[0m  [1mCREATE TABLE "availability_calendars" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "availability_quotient" integer, "mentor_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("altered_availability_calendars")
+  [1m[36mSQL (0.1ms)[0m  [1mDROP TABLE "altered_availability_calendars"[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110217152217')
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("availability_calendars")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("availability_days")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("experiences")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("mentees")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("mentors")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("mentorships")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("questions")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("requests")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("responses")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("surveys")[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)

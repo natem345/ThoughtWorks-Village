@@ -21,7 +21,7 @@ class MentorsController < ApplicationController
   # GET /mentors/1.xml
   def show
     @mentor = Mentor.find(params[:id])
-
+	@availability_calendar=@mentor.availability_calendar
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @mentor }

@@ -1,4 +1,13 @@
+require 'date'
+
 class AvailabilityCalendarsController < ApplicationController
+  before_filter :authenticate, :except => [:index, :show ]
+
+  def authenticate
+	if session[:id]==nil
+	  redirect_to '/users/login'
+	end
+  end
   # GET /availability_calendars
   # GET /availability_calendars.xml
   def index
@@ -24,23 +33,26 @@ class AvailabilityCalendarsController < ApplicationController
   # GET /availability_calendars/new
   # GET /availability_calendars/new.xml
   def new
-    @availability_calendar = AvailabilityCalendar.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @availability_calendar }
-    end
+	@availability_calendar = User.find(session[:id]).availability_calendar
+	if User.find(session[:id]).availability_calendar.nil?:
+	  User.find(session[:id]).availability_calendar=AvailabilityCalendar.create
+	  if User.find(session[:id]).availability_calendar.nil?:
+		redirect_to "http://google.com"
+	  end
+	  @availability_calendar = User.find(session[:id]).availability_calendar
+	  14.times {	|i|
+		@availability_calendar.availability_days.build(:availability_day => Date.today+i.days)
+	  }
+	  User.find(session[:id]).availability_calendar.save
+	end
+    #@availability_calendar = User.find(session[:id]).availability_calendar
+	#redirect_to (:action => 'edit', :id => @availability_calendar.id)# edit_availability_calendar @availability_calendar
   end
 
   # GET /availability_calendars/1/edit
   def edit
 	#if this user doesn't have calendar, create one and days for 21 days into future
     @availability_calendar = AvailabilityCalendar.find(params[:id])
-	3.times { |i|
-	ad=@availability_calendar.availability_days.build 
-	ad.availability_day=DateTime.now
-	ad.availability_day+=i #note doesn't get saved
-	}  
 	
   end
 

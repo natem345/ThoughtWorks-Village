@@ -55,6 +55,13 @@
   <b>Interests:</b>
   <%= @mentor.interests %>
 </p>
+<p>
+  <b>See availability:</b>
+  <% if @availability_calendar.nil? %> Unknown
+  <% else %>
+	<%=link_to :availibility, @availability_calendar %>
+  <%end%>
+</p>
 <% if session[:usertype]==:mentee %>
 <h2>Request a mentorship:</h2>
 <%= form_for([@mentor, @mentor.requests.build]) do |f| %>

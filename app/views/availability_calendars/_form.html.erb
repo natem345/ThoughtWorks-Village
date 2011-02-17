@@ -20,13 +20,11 @@
 
   <div class="field">
   <% f.fields_for :availability_days do |child_form| %>
-	field:
-    <%= child_form.label :availability %>
+	Date: <%= child_form.object.availability_day %>
+    <%= child_form.label :availability %>: 
     <%= child_form.text_field :availability %>
-
-    <% unless child_form.object.nil? %>
-		Date: <%= child_form.object.availability_day %>
-    <% end %>
+	<%= child_form.hidden_field :availability_day, :value => child_form.object.availability_day %>
+    <br />
 
   <% end %>
   </div>
