@@ -41,7 +41,7 @@ class ExperiencesController < ApplicationController
   # POST /experiences.xml
   def create
     @experience = Experience.new(params[:experience])
-
+	@experience.user_id = session[:id]
     respond_to do |format|
       if @experience.save
         format.html { redirect_to(@experience, :notice => 'Experience was successfully created.') }
