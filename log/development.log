@@ -14707,3 +14707,11 @@ Started GET "/responses/11" for 127.0.0.1 at Tue Feb 15 16:39:04 -1000 2011
 Rendered responses/show.html.erb within layouts/application (107.7ms)
 Completed 200 OK in 347ms (Views: 239.7ms | ActiveRecord: 0.6ms)
 >>>>>>> 9dc1e5a154bf9523adf8ab96f5c80151b1fd4f6a
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mResponse Load (6.5ms)[0m  [1mSELECT "responses".* FROM "responses"[0m
+  [1m[35mSQL (4.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mResponse Load (2.0ms)[0m  [1mSELECT "responses".* FROM "responses"[0m
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mResponse Load (6.0ms)[0m  [1mSELECT "responses".* FROM "responses"[0m

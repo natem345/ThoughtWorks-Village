@@ -6,23 +6,29 @@
 </p>
 
 <table>  
-  <%@survey.questions.each do |question|%>
+<% form_for(@survey) do |f| %>
+  <%=@survey.questions.count %>
+   @survey.questions.each do |question|
   
   <tr>
     
-    <% r = Response.new(:question_id => question.id)%>
-    <%= form_for(r) do |f| %>
-     
-      <div class="field">
-        <%= f.label question.question_text %><br />
-        <%= f.text_field :response_text %>        
-      </div>      
-      <div class="actions">
-        <%= f.submit %>
-      </div>
+    
+    <% f.fields_for :questions do |question_form| %>
+	  <% r = Response.new(:question_id => question_form.object.id)%>
+	  id: <%=r.id%>
+      <% question_form.fields_for :responses, r do |child_form| %>
+	      <div class="field">
+    	    <%= child_form.label question_form.object.question_text %><br />
+    	    <%= child_form.text_field :response_text %>        
+   	      </div>      
+    	  <div class="actions">
+    	    child_form.submit
+    	  </div>
+	  <%end%>
    <% end %>
   </tr>
-  <%end%>
+<%= f.submit %>
+<% end %>
 </table>
 
 

@@ -34,11 +34,13 @@ class AvailabilityCalendarsController < ApplicationController
 
   # GET /availability_calendars/1/edit
   def edit
+	#if this user doesn't have calendar, create one and days for 21 days into future
     @availability_calendar = AvailabilityCalendar.find(params[:id])
 	3.times { |i|
 	ad=@availability_calendar.availability_days.build 
 	ad.availability_day=DateTime.now
-	ad.availability_day+=i}  
+	ad.availability_day+=i #note doesn't get saved
+	}  
 	
   end
 
