@@ -14,6 +14,7 @@ ThoughtWorksVillage::Application.routes.draw do
   resources :experiences
 
 
+  match 'mentors/search' => 'mentors#search'
 
   get "home/index"
   resources :requests
@@ -30,6 +31,8 @@ ThoughtWorksVillage::Application.routes.draw do
   match 'users/logout' => 'users#logout'
   match 'mentor_profiles/update_availability' => 'mentor_profiles#update_availability'
   resources :users
+  
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

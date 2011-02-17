@@ -91,4 +91,27 @@ class MentorsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def search
+    @query = params[:q]
+    #@mentors = Mentor.where("name = ?",@query)
+    #cond_text   = @query.split.map{|w| "name LIKE ? "}.join(" OR ")
+    #cond_values = @query.split.map{|w| "%#{w}%"}
+    #@mentors = Mentor.all(:conditions =>  (@query ? [cond_text, *cond_values] : []))
+
+    @mentors = Mentor.where("name = ?", @query)
+    @mentors = @mentors | Mentor.where("location = ?", @query)
+    @mentors = @mentors | Mentor.where("current_position = ?", @query)
+    @mentors = @mentors | Mentor.where("school = ?", @query)
+    @mentors = @mentors | Mentor.where("major = ?", @query)
+    @mentors = @mentors | Mentor.where("total_years_experience = ?", @query)
+    @mentors = @mentors | Mentor.where("interests = ?", @query)
+                
+
+    respond_to do |format|
+      format.html # search.html.erb
+      format.xml  { render :xml => @mentor }
+    end
+  end
+  
 end
