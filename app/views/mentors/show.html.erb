@@ -47,8 +47,10 @@
   <%= @mentor.phone %>
 </p>
 <p>
-   <b>Experience:</b>
-   <%= @mentor.experiences %>
+  <b>Experiences:</b>
+  <% @mentor.experiences.each do |e| %>
+	<br /><%=e.ability%> for <%=e.length_in_years%> years, comfort level <%=e.comfort_level%>/10
+  <%end%>
 </p>
 
 <p>
