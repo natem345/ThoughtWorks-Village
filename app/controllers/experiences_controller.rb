@@ -1,8 +1,14 @@
 class ExperiencesController < ApplicationController
+  before_filter :authenticate
+  def authenticate
+	if session[:id]==nil
+	  redirect_to '/users/login'
+	end
+  end
   # GET /experiences
   # GET /experiences.xml
   def index
-    @experiences = Experience.all
+    @experiences = Experience.where(:user_id=>session[:id])
 
     respond_to do |format|
       format.html # index.html.erb
