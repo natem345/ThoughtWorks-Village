@@ -1,5 +1,5 @@
 class MentorsController < ApplicationController
-  before_filter :authenticate, :except => [:index, :show, :new, :create]
+  before_filter :authenticate, :except => [:index, :show, :new, :create, :search]
 
   def authenticate
 	if session[:id]==nil
@@ -104,7 +104,7 @@ class MentorsController < ApplicationController
     @mentors = @mentors | Mentor.where("current_position = ?", @query)
     @mentors = @mentors | Mentor.where("school = ?", @query)
     @mentors = @mentors | Mentor.where("major = ?", @query)
-    @mentors = @mentors | Mentor.where("total_years_experience = ?", @query)
+    #@mentors = @mentors | Mentor.where("total_years_experience = ?", @query)
     @mentors = @mentors | Mentor.where("interests = ?", @query)
                 
 
