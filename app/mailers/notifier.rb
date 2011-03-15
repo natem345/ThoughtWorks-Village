@@ -2,7 +2,7 @@ class Notifier < ActionMailer::Base
   default :from => "village@thoughtworks.com"
   
   def welcome_email(user)
-	@user = user
+    @user = user
     @url  = "http://thoughtworks-village.heroku.com/"
     mail(:to => @user.email,
          :subject => "Welcome to ThoughtWorks Village")

@@ -9,6 +9,10 @@
       Hello, <%= @request.mentor.name %>. You have a new mentorship request from <%= @request.mentee.name %>.</br>
     </p>
     <p>
+      Reason: <%= @request.reason %></br>
+      Estimated mentorship length: <%= @request.estimated_length %>
+    </p>
+    <p>
       <a href="<%= @url %>mentees/<%= @request.mentee.id %>">View <%= @request.mentee.name %>'s profile</a></br>
     </p>
     <p>

@@ -3,10 +3,11 @@ class RequestsController < ApplicationController
   before_filter :authenticate
 
   def authenticate
-	if session[:id]==nil
-	  redirect_to '/users/login'
-	end
+    if session[:id]==nil
+      redirect_to '/users/login'
+    end
   end
+
   # GET /requests
   # GET /requests.xml
   def index
@@ -32,39 +33,45 @@ class RequestsController < ApplicationController
   # POST /requests
   # POST /requests.xml
   def create
-    @mentor = Mentor.find(params[:mentor_id])
-    @request = @mentor.requests.create(params[:request])
-	@request.mentee=Mentee.find(2)
-	@request.save
+    @request = Request.new
+    @request.mentor = Mentor.find(params[:mentor_id]).first
+    @request.mentee = Mentee.find(params[:mentee_id]).first
+    @request.reason = params[:reason]
+    @request.estimated_length = params[:estimated_length]
 
-    Notifier.mentorship_request_email(@request).deliver
-
-    redirect_to(@mentor, :notice => "Request was sent.")
+    if @request.save
+      Notifier.mentorship_request_email(@request).deliver
+      redirect_to(@mentor, :notice => "Request was sent.")
+    else
+      redirect_to(@mentor, :notice => "The request could not be made.")
+    end
   end
 
   # PUT /requests/1
-  # accepts request
+  # Accepted Request
   def update
-	@mentorship=Mentorship.new
-	@mentorship.mentor=@request.mentor
-	@mentorship.mentee=@request.mentee
-	@mentorship.save
-
-	Notifier.mentorship_accepted_email(@request).deliver
-
-	redirect_to(@mentorship.mentor, :notice => "Meet your new mentor")
-    @request.destroy
-
+    @mentorship = Mentorship.new
+    @mentorship.mentor = @request.mentor
+    @mentorship.mentee = @request.mentee
+    
+    if @mentorship.save
+      Notifier.mentorship_accepted_email(@request).deliver
+      redirect_to(@mentorship.mentee, :notice => "Meet your new mentee")
+      @request.destroy
+    else
+      redirect_to(@mentorship.mentee, :notice => "The mentorship could not be confirmed.")
+    end
   end
 
   # DELETE /requests/1
   # DELETE /requests/1.xml
+  # Rejected Request
   def destroy
     @request = Request.find(params[:id])
     @request.destroy
-
-	Notifier.mentorship_rejected_email(@request).deliver
-
+    
+    Notifier.mentorship_rejected_email(@request).deliver
+    
     respond_to do |format|
       format.html { redirect_to(requests_url) }
       format.xml  { head :ok }

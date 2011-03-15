@@ -2,10 +2,11 @@ class MentorsController < ApplicationController
   before_filter :authenticate, :except => [:index, :show, :new, :create, :search]
 
   def authenticate
-	if session[:id]==nil
-	  redirect_to '/users/login'
-	end
+    if session[:id]==nil
+      redirect_to '/users/login'
+    end
   end
+
   # GET /mentors
   # GET /mentors.xml
   def index
@@ -21,7 +22,7 @@ class MentorsController < ApplicationController
   # GET /mentors/1.xml
   def show
     @mentor = Mentor.find(params[:id])
-	@availability_calendar=@mentor.availability_calendar
+    @availability_calendar = @mentor.availability_calendar
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @mentor }
@@ -51,7 +52,7 @@ class MentorsController < ApplicationController
 
     respond_to do |format|
       if @mentor.save
-
+        
         @newuser = User.where(:id => @mentor.id).first
         Notifier.welcome_email(@newuser).deliver
 

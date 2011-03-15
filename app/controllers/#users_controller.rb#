@@ -26,7 +26,7 @@ class UsersController < ApplicationController
         session[:usertype] = :unknown
       end
       redirect_to session[:return_to] || '/', :notice => "Logged in."
-    else
+    elsex
       redirect_to :action => 'login', :username => params[:user][:username], :notice => "Invalid login information."
     end
   end

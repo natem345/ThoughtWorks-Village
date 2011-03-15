@@ -80,5 +80,6 @@
   </div>
 <% end %>
 <% end %>
-<%= link_to 'Edit', edit_mentor_path(@mentor) %> |
+<%= link_to 'Edit Profile', edit_mentor_path(@mentor) %> |
+<%= link_to 'Delete Account', @mentor, :confirm => 'Are you sure?', :method => :delete %> |
 <%= link_to 'Back', mentors_path %>
