@@ -16641,3 +16641,1852 @@ Migrating to ExperienceAbilityType (20110218151416)
   [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("responses")[0m
   [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("surveys")
   [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_list("users")[0m
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mMentor Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 2) LIMIT 1
+  [1m[36mMentor Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mRequest Load (0.3ms)[0m  SELECT "requests".* FROM "requests" WHERE ("requests".mentor_id = 1)
+  [1m[36mSQL (6.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mMentor Load (9.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')
+  [1m[36mMentor Load (2.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')[0m
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mUser Load (8.4ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[35mUser Load (2.7ms)[0m  SELECT "users".* FROM "users" LIMIT 1
+  [1m[36mSQL (0.6ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.7ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (1.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mMentor Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mMentor Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')
+  [1m[36mMentor Load (1.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')[0m
+  [1m[35mMentor Load (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')
+  [1m[36mMentor Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') LIMIT 1[0m
+  [1m[35mRequest Load (0.8ms)[0m  SELECT "requests".* FROM "requests" WHERE ("requests".mentor_id = 1)
+  [1m[36mSQL (1.0ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mAREL (1.0ms)[0m  INSERT INTO "requests" ("updated_at", "mentor_id", "estimated_length", "created_at", "mentee_id", "reason") VALUES ('2011-03-10 17:14:36.348523', 1, 'For a while.', '2011-03-10 17:14:36.348523', 2, 'No reason at all.')
+  [1m[36mMentor Load (3.9ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') LIMIT 1[0m
+  [1m[35mRequest Load (0.8ms)[0m  SELECT "requests".* FROM "requests" WHERE ("requests".mentor_id = 1)
+  [1m[36mAREL (0.6ms)[0m  [1mINSERT INTO "requests" ("updated_at", "mentor_id", "estimated_length", "created_at", "mentee_id", "reason") VALUES ('2011-03-10 17:21:23.961457', 1, 'For a while.', '2011-03-10 17:21:23.961457', 2, 'No reason at all.')[0m
+  [1m[35mMentor Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') LIMIT 1
+  [1m[36mRequest Load (1.2ms)[0m  [1mSELECT "requests".* FROM "requests" WHERE ("requests".mentor_id = 1)[0m
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 10 07:25:37 -1000 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 66ms (Views: 65.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Mar 10 07:25:41 -1000 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (70.5ms)
+Completed 200 OK in 135ms (Views: 109.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/images/corporate_favicon.ico" for 127.0.0.1 at Thu Mar 10 07:25:42 -1000 2011
+
+ActionController::RoutingError (No route matches "/users/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.0ms)
+
+
+Started POST "/users/process_login" for 127.0.0.1 at Thu Mar 10 07:25:48 -1000 2011
+  Processing by UsersController#process_login as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"R6yZQfdOOtOdhTlBleX4HaF8CU1y8QHI7+P4jRkdFSc=", "utf8"=>"✓", "user"=>{"password"=>"[FILTERED]", "email"=>"haffnedm@rose-hulman.edu"}}
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."password" = 'password') AND ("users"."email" = 'haffnedm@rose-hulman.edu') LIMIT 1
+Redirected to http://localhost:3000/users/login?notice=Invalid+login+information.
+Completed 302 Found in 124ms
+
+
+Started GET "/users/login?notice=Invalid+login+information." for 127.0.0.1 at Thu Mar 10 07:25:48 -1000 2011
+  Processing by UsersController#login as HTML
+  Parameters: {"notice"=>"Invalid login information."}
+Rendered users/login.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 29ms (Views: 16.4ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+  [1m[36mSQL (2.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."name" = 'Darren Haffner')
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."email" = 'haffnedm@rose-hulman.edu')[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."email" = 'haffnedm@rose-hulman.edu') LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT "users".* FROM "users"[0m
+
+
+Started GET "/mentors/new" for 127.0.0.1 at Thu Mar 10 07:27:28 -1000 2011
+  Processing by MentorsController#new as HTML
+Rendered mentors/_form.html.erb (18.9ms)
+Rendered mentors/new.html.erb within layouts/application (37.5ms)
+Completed 200 OK in 168ms (Views: 64.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentors/images/corporate_favicon.ico" for 127.0.0.1 at Thu Mar 10 07:27:32 -1000 2011
+
+ActionController::RoutingError (No route matches "/mentors/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started POST "/mentors" for 127.0.0.1 at Thu Mar 10 07:30:58 -1000 2011
+  Processing by MentorsController#create as HTML
+  Parameters: {"commit"=>"Create Mentor", "mentor"=>{"interests"=>"Being a mentor.", "school"=>"RHIT", "name"=>"Mentor Haffner", "location"=>"RHIT", "current_position"=>"Tester", "major"=>"Testing", "phone"=>"1112223333", "total_years_experience"=>"32", "password"=>"[FILTERED]", "email"=>"haffnedm@rose-hulman.edu"}, "authenticity_token"=>"R6yZQfdOOtOdhTlBleX4HaF8CU1y8QHI7+P4jRkdFSc=", "utf8"=>"✓"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('haffnedm@rose-hulman.edu')) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."phone" = 1112223333) LIMIT 1
+  [1m[36mAREL (2.2ms)[0m  [1mINSERT INTO "users" ("email", "major", "password", "phone", "current_position", "interests", "total_years_experience", "type", "created_at", "name", "location", "updated_at", "school") VALUES ('haffnedm@rose-hulman.edu', 'Testing', 'password', 1112223333, 'Tester', 'Being a mentor.', 32, 'Mentor', '2011-03-10 17:30:59.036131', 'Mentor Haffner', 'RHIT', '2011-03-10 17:30:59.036131', 'RHIT')[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 8) LIMIT 1
+Rendered notifier/welcome_email.html.erb (0.0ms)
+Rendered notifier/welcome_email.text.erb (0.0ms)
+
+Sent mail to haffnedm@rose-hulman.edu (5423ms)
+Date: Thu, 10 Mar 2011 07:30:59 -1000
+From: village@thoughtworks.com
+To: haffnedm@rose-hulman.edu
+Message-ID: <4d790ad35b974_1cd6248e542e205fc@plp-go-virtualbox.mail>
+Subject: Welcome to ThoughtWorks Village
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_4d790ad336c27_1cd6248e542e20281";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+
+----==_mimepart_4d790ad336c27_1cd6248e542e20281
+Date: Thu, 10 Mar 2011 07:30:59 -1000
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Content-ID: <4d790ad354986_1cd6248e542e20375@plp-go-virtualbox.mail>
+
+Welcome to ThoughtWorks Village, Mentor Haffner!
+
+Congratulations on creating your new profile! Here is your login information:
+
+Username: haffnedm@rose-hulman.edu
+
+You can login to your profile at http://thoughtworks-village.heroku.com/login. Thanks for signing up, and enjoy the site!
+
+ThoughtWorks Village - "It Takes a Village"
+
+
+----==_mimepart_4d790ad336c27_1cd6248e542e20281
+Date: Thu, 10 Mar 2011 07:30:59 -1000
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Content-ID: <4d790ad3571f3_1cd6248e542e204d6@plp-go-virtualbox.mail>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Welcome to ThoughtWorks Village, Mentor Haffner!</h1>
+    <p>
+      Congratulations on creating your new profile! Here is your login information:
+    </p>
+    <p>
+      Username: haffnedm@rose-hulman.edu<br>
+    </p>
+    <p>
+      You can login to your profile at <a href="http://thoughtworks-village.heroku.com/login">http://thoughtworks-village.heroku.com/login</a>. Thanks for signing up, and enjoy the site!
+    </p>
+    <p>ThoughtWorks Village - "It Takes a Village"</p>
+  </body>
+</html>
+
+
+----==_mimepart_4d790ad336c27_1cd6248e542e20281--
+Redirected to http://localhost:3000/mentors/8
+Completed 302 Found in 5774ms
+
+
+Started GET "/mentors/8" for 127.0.0.1 at Thu Mar 10 07:31:04 -1000 2011
+  Processing by MentorsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mMentor Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 8) LIMIT 1[0m
+  [1m[35mAvailabilityCalendar Load (0.2ms)[0m  SELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars".mentor_id = 8) LIMIT 1
+  [1m[36mExperience Load (0.2ms)[0m  [1mSELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 8)[0m
+Rendered mentors/show.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 150ms (Views: 81.7ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/mentors/new" for 127.0.0.1 at Thu Mar 10 07:31:10 -1000 2011
+  Processing by MentorsController#new as HTML
+Rendered mentors/_form.html.erb (39.2ms)
+Rendered mentors/new.html.erb within layouts/application (50.8ms)
+Completed 200 OK in 102ms (Views: 55.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Thu Mar 10 07:31:15 -1000 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (78.6ms)
+Completed 200 OK in 93ms (Views: 84.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentors/new" for 127.0.0.1 at Thu Mar 10 07:31:17 -1000 2011
+  Processing by MentorsController#new as HTML
+Rendered mentors/_form.html.erb (17.1ms)
+Rendered mentors/new.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 51ms (Views: 29.2ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+
+
+Started GET "/" for 127.0.0.1 at Mon Mar 14 06:53:23 -0900 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (55.8ms)
+Completed 200 OK in 118ms (Views: 117.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Mar 14 06:53:27 -0900 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mMentor Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')
+Rendered mentors/index.html.erb within layouts/application (16.9ms)
+Completed 200 OK in 314ms (Views: 47.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/mentors/1" for 127.0.0.1 at Mon Mar 14 06:53:30 -0900 2011
+  Processing by MentorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMentor Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mAvailabilityCalendar Load (9.7ms)[0m  SELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars".mentor_id = 1) LIMIT 1
+  [1m[36mExperience Load (0.3ms)[0m  [1mSELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 1)[0m
+Rendered mentors/show.html.erb within layouts/application (166.7ms)
+Completed 200 OK in 460ms (Views: 257.6ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/mentors/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 06:53:34 -0900 2011
+
+ActionController::RoutingError (No route matches "/mentors/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/mentors/1/edit" for 127.0.0.1 at Mon Mar 14 06:55:36 -0900 2011
+  Processing by MentorsController#edit as HTML
+  Parameters: {"id"=>"1"}
+Redirected to http://localhost:3000/users/login
+Completed 302 Found in 1ms
+
+
+Started GET "/users/login" for 127.0.0.1 at Mon Mar 14 06:55:36 -0900 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (70.3ms)
+Completed 200 OK in 170ms (Views: 152.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 06:55:41 -0900 2011
+
+ActionController::RoutingError (No route matches "/users/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/mentors/8" for 127.0.0.1 at Mon Mar 14 06:55:48 -0900 2011
+  Processing by MentorsController#destroy as HTML
+  Parameters: {"id"=>"8"}
+Completed   in 0ms
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (16.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (45.8ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Mar 14 06:55:52 -0900 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')
+Rendered mentors/index.html.erb within layouts/application (32.1ms)
+Completed 200 OK in 83ms (Views: 46.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Mar 14 06:58:40 -0900 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mMentor Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')[0m
+Rendered mentors/index.html.erb within layouts/application (131.4ms)
+Completed 200 OK in 182ms (Views: 152.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Mar 14 06:59:10 -0900 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')
+Rendered mentors/index.html.erb within layouts/application (21.8ms)
+Completed 200 OK in 59ms (Views: 27.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Mar 14 06:59:16 -0900 2011
+  Processing by MenteesController#index as HTML
+  [1m[36mMentee Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee')[0m
+Rendered mentees/index.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 118ms (Views: 50.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mentees/4" for 127.0.0.1 at Mon Mar 14 06:59:26 -0900 2011
+  Processing by MenteesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mMentee Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 4) LIMIT 1
+  [1m[36mExperience Load (0.2ms)[0m  [1mSELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 4)[0m
+Rendered mentees/show.html.erb within layouts/application (119.2ms)
+Completed 200 OK in 194ms (Views: 167.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mentees/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 06:59:29 -0900 2011
+
+ActionController::RoutingError (No route matches "/mentees/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/mentees/4/edit" for 127.0.0.1 at Mon Mar 14 06:59:37 -0900 2011
+  Processing by MenteesController#edit as HTML
+  Parameters: {"id"=>"4"}
+Redirected to http://localhost:3000/users/login
+Completed 302 Found in 1ms
+
+
+Started GET "/users/login" for 127.0.0.1 at Mon Mar 14 06:59:37 -0900 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 38ms (Views: 20.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/mentees/4" for 127.0.0.1 at Mon Mar 14 06:59:52 -0900 2011
+  Processing by MenteesController#destroy as HTML
+  Parameters: {"id"=>"4"}
+Completed   in 0ms
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (10.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (17.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (81.8ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Mar 14 06:59:56 -0900 2011
+  Processing by MenteesController#index as HTML
+  [1m[35mMentee Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee')
+Rendered mentees/index.html.erb within layouts/application (18.2ms)
+Completed 200 OK in 64ms (Views: 34.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mentees/new" for 127.0.0.1 at Mon Mar 14 07:03:45 -0900 2011
+  Processing by MenteesController#new as HTML
+Rendered mentees/_form.html.erb (32.1ms)
+Rendered mentees/new.html.erb within layouts/application (72.6ms)
+Completed 200 OK in 125ms (Views: 98.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/mentees" for 127.0.0.1 at Mon Mar 14 07:04:54 -0900 2011
+  Processing by MenteesController#create as HTML
+  Parameters: {"commit"=>"Create Mentee", "authenticity_token"=>"F3TzHXl8K9Vi3betFIJvMEF2KB93uonq08gy+v7Nnio=", "utf8"=>"✓", "mentee"=>{"interests"=>"None", "school"=>"Nowhere", "name"=>"RemoveMe", "location"=>"Nowhere", "current_position"=>"Nothing", "major"=>"CS", "phone"=>"112", "total_years_experience"=>"0", "password"=>"[FILTERED]", "email"=>"a"}}
+  [1m[36mUser Load (0.0ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('a')) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."phone" = 112) LIMIT 1
+Rendered mentees/_form.html.erb (22.1ms)
+Rendered mentees/new.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 217ms (Views: 40.6ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/mentees" for 127.0.0.1 at Mon Mar 14 07:05:04 -0900 2011
+  Processing by MenteesController#create as HTML
+  Parameters: {"commit"=>"Create Mentee", "authenticity_token"=>"F3TzHXl8K9Vi3betFIJvMEF2KB93uonq08gy+v7Nnio=", "utf8"=>"✓", "mentee"=>{"interests"=>"None", "school"=>"Nowhere", "name"=>"RemoveMe", "location"=>"Nowhere", "current_position"=>"Nothing", "major"=>"CS", "phone"=>"112", "total_years_experience"=>"0", "password"=>"[FILTERED]", "email"=>"abc"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('abc')) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."phone" = 112) LIMIT 1
+  [1m[36mAREL (0.9ms)[0m  [1mINSERT INTO "users" ("password", "email", "location", "current_position", "phone", "created_at", "school", "interests", "updated_at", "total_years_experience", "type", "major", "name") VALUES ('password', 'abc', 'Nowhere', 'Nothing', 112, '2011-03-14 16:05:04.135933', 'Nowhere', 'None', '2011-03-14 16:05:04.135933', 0, 'Mentee', 'CS', 'RemoveMe')[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 9) LIMIT 1
+Rendered notifier/welcome_email.html.erb (0.4ms)
+Rendered notifier/welcome_email.text.erb (0.3ms)
+
+Sent mail to abc (2955ms)
+Date: Mon, 14 Mar 2011 07:05:04 -0900
+From: village@thoughtworks.com
+To: abc
+Message-ID: <4d7e3cb07d118_636248efe60249d1@plp-go-virtualbox.mail>
+Subject: Welcome to ThoughtWorks Village
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_4d7e3cb057e14_636248efe60246e5";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+
+----==_mimepart_4d7e3cb057e14_636248efe60246e5
+Date: Mon, 14 Mar 2011 07:05:04 -0900
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Content-ID: <4d7e3cb075e41_636248efe60247f3@plp-go-virtualbox.mail>
+
+Welcome to ThoughtWorks Village, RemoveMe!
+
+Congratulations on creating your new profile! Here is your login information:
+
+Username: abc
+
+You can login to your profile at http://thoughtworks-village.heroku.com/login. Thanks for signing up, and enjoy the site!
+
+ThoughtWorks Village - "It Takes a Village"
+
+
+----==_mimepart_4d7e3cb057e14_636248efe60246e5
+Date: Mon, 14 Mar 2011 07:05:04 -0900
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Content-ID: <4d7e3cb07a8ab_636248efe602488a@plp-go-virtualbox.mail>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Welcome to ThoughtWorks Village, RemoveMe!</h1>
+    <p>
+      Congratulations on creating your new profile! Here is your login information:
+    </p>
+    <p>
+      Username: abc<br>
+    </p>
+    <p>
+      You can login to your profile at <a href="http://thoughtworks-village.heroku.com/login">http://thoughtworks-village.heroku.com/login</a>. Thanks for signing up, and enjoy the site!
+    </p>
+    <p>ThoughtWorks Village - "It Takes a Village"</p>
+  </body>
+</html>
+
+
+----==_mimepart_4d7e3cb057e14_636248efe60246e5--
+Completed   in 3328ms
+
+Net::SMTPFatalError (553-5.1.2 We weren't able to find the recipient domain. Please check for any
+):
+  app/controllers/mentees_controller.rb:57:in `create'
+  app/controllers/mentees_controller.rb:53:in `create'
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (10.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (16.4ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Mar 14 07:05:12 -0900 2011
+  Processing by MenteesController#index as HTML
+  [1m[36mMentee Load (6.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee')[0m
+Rendered mentees/index.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 52ms (Views: 18.5ms | ActiveRecord: 6.5ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Mon Mar 14 07:05:23 -0900 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 51ms (Views: 26.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/process_login" for 127.0.0.1 at Mon Mar 14 07:05:34 -0900 2011
+  Processing by UsersController#process_login as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"F3TzHXl8K9Vi3betFIJvMEF2KB93uonq08gy+v7Nnio=", "utf8"=>"✓", "user"=>{"password"=>"[FILTERED]", "email"=>"abc"}}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."password" = 'password') AND ("users"."email" = 'abc') LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 42ms
+
+
+Started GET "/" for 127.0.0.1 at Mon Mar 14 07:05:35 -0900 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 15ms (Views: 14.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Mar 14 07:05:38 -0900 2011
+  Processing by MenteesController#index as HTML
+  [1m[36mMentee Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee')[0m
+Rendered mentees/index.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 52ms (Views: 26.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/mentees/2" for 127.0.0.1 at Mon Mar 14 07:05:55 -0900 2011
+  Processing by MenteesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mMentee Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 2) LIMIT 1
+  [1m[36mExperience Load (0.2ms)[0m  [1mSELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 2)[0m
+Rendered mentees/show.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 62ms (Views: 30.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/mentees/4" for 127.0.0.1 at Mon Mar 14 07:05:57 -0900 2011
+  Processing by MenteesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mMentee Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 4) LIMIT 1
+  [1m[36mExperience Load (0.2ms)[0m  [1mSELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 4)[0m
+Rendered mentees/show.html.erb within layouts/application (51.1ms)
+Completed 200 OK in 192ms (Views: 58.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mentees/9" for 127.0.0.1 at Mon Mar 14 07:06:00 -0900 2011
+  Processing by MenteesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mMentee Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 9) LIMIT 1
+  [1m[36mExperience Load (0.2ms)[0m  [1mSELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 9)[0m
+Rendered mentees/show.html.erb within layouts/application (31.7ms)
+Completed 200 OK in 71ms (Views: 43.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mentees/2/edit" for 127.0.0.1 at Mon Mar 14 07:06:02 -0900 2011
+  Processing by MenteesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mMentee Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 2) LIMIT 1
+Rendered mentees/_form.html.erb (53.3ms)
+Rendered mentees/edit.html.erb within layouts/application (59.9ms)
+Completed 200 OK in 140ms (Views: 104.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mentees/2/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 07:06:04 -0900 2011
+
+ActionController::RoutingError (No route matches "/mentees/2/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/mentees/4/edit" for 127.0.0.1 at Mon Mar 14 07:06:10 -0900 2011
+  Processing by MenteesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mMentee Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 4) LIMIT 1[0m
+Rendered mentees/_form.html.erb (28.6ms)
+Rendered mentees/edit.html.erb within layouts/application (34.2ms)
+Completed 200 OK in 163ms (Views: 38.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mentees/9/edit" for 127.0.0.1 at Mon Mar 14 07:06:13 -0900 2011
+  Processing by MenteesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mMentee Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 9) LIMIT 1
+Rendered mentees/_form.html.erb (39.2ms)
+Rendered mentees/edit.html.erb within layouts/application (44.6ms)
+Completed 200 OK in 92ms (Views: 59.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/mentees/9/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 07:06:14 -0900 2011
+
+ActionController::RoutingError (No route matches "/mentees/9/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/mentees/4/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 07:06:15 -0900 2011
+
+ActionController::RoutingError (No route matches "/mentees/4/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/mentees/9/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 07:06:15 -0900 2011
+
+ActionController::RoutingError (No route matches "/mentees/9/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (14.4ms)
+
+
+Started GET "/mentees/new" for 127.0.0.1 at Mon Mar 14 07:06:43 -0900 2011
+  Processing by MenteesController#new as HTML
+Rendered mentees/_form.html.erb (26.9ms)
+Rendered mentees/new.html.erb within layouts/application (32.1ms)
+Completed 200 OK in 68ms (Views: 37.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/mentees" for 127.0.0.1 at Mon Mar 14 07:07:46 -0900 2011
+  Processing by MenteesController#create as HTML
+  Parameters: {"commit"=>"Create Mentee", "authenticity_token"=>"F3TzHXl8K9Vi3betFIJvMEF2KB93uonq08gy+v7Nnio=", "utf8"=>"✓", "mentee"=>{"interests"=>"Everything", "school"=>"RHIT", "name"=>"Darren Haffner", "location"=>"Terre Haute", "current_position"=>"Student", "major"=>"SE", "phone"=>"10274", "total_years_experience"=>"5", "password"=>"[FILTERED]", "email"=>"haffnedm@rose-hulman.edu"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('haffnedm@rose-hulman.edu')) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."phone" = 10274) LIMIT 1
+Rendered mentees/_form.html.erb (26.9ms)
+Rendered mentees/new.html.erb within layouts/application (31.2ms)
+Completed 200 OK in 88ms (Views: 36.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/mentees" for 127.0.0.1 at Mon Mar 14 07:07:59 -0900 2011
+  Processing by MenteesController#create as HTML
+  Parameters: {"commit"=>"Create Mentee", "authenticity_token"=>"F3TzHXl8K9Vi3betFIJvMEF2KB93uonq08gy+v7Nnio=", "utf8"=>"✓", "mentee"=>{"interests"=>"Everything", "school"=>"RHIT", "name"=>"Darren Haffner", "location"=>"Terre Haute", "current_position"=>"Student", "major"=>"SE", "phone"=>"10274", "total_years_experience"=>"5", "password"=>"[FILTERED]", "email"=>"dmhaffner@gmail.com"}}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('dmhaffner@gmail.com')) LIMIT 1[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE ("users"."phone" = 10274) LIMIT 1
+  [1m[36mAREL (0.4ms)[0m  [1mINSERT INTO "users" ("school", "updated_at", "email", "location", "interests", "current_position", "type", "major", "created_at", "name", "password", "total_years_experience", "phone") VALUES ('RHIT', '2011-03-14 16:07:59.652179', 'dmhaffner@gmail.com', 'Terre Haute', 'Everything', 'Student', 'Mentee', 'SE', '2011-03-14 16:07:59.652179', 'Darren Haffner', 'greywolf', 5, 10274)[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 10) LIMIT 1
+Rendered notifier/welcome_email.html.erb (1.1ms)
+Rendered notifier/welcome_email.text.erb (0.4ms)
+
+Sent mail to dmhaffner@gmail.com (4640ms)
+Date: Mon, 14 Mar 2011 07:07:59 -0900
+From: village@thoughtworks.com
+To: dmhaffner@gmail.com
+Message-ID: <4d7e3d5fb61a6_636249993982532b@plp-go-virtualbox.mail>
+Subject: Welcome to ThoughtWorks Village
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_4d7e3d5faea74_636249993982503c";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+
+----==_mimepart_4d7e3d5faea74_636249993982503c
+Date: Mon, 14 Mar 2011 07:07:59 -0900
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Content-ID: <4d7e3d5fb22e9_63624999398251bf@plp-go-virtualbox.mail>
+
+Welcome to ThoughtWorks Village, Darren Haffner!
+
+Congratulations on creating your new profile! Here is your login information:
+
+Username: dmhaffner@gmail.com
+
+You can login to your profile at http://thoughtworks-village.heroku.com/login. Thanks for signing up, and enjoy the site!
+
+ThoughtWorks Village - "It Takes a Village"
+
+
+----==_mimepart_4d7e3d5faea74_636249993982503c
+Date: Mon, 14 Mar 2011 07:07:59 -0900
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+Content-ID: <4d7e3d5fb361e_63624999398252b5@plp-go-virtualbox.mail>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+  </head>
+  <body>
+    <h1>Welcome to ThoughtWorks Village, Darren Haffner!</h1>
+    <p>
+      Congratulations on creating your new profile! Here is your login information:
+    </p>
+    <p>
+      Username: dmhaffner@gmail.com<br>
+    </p>
+    <p>
+      You can login to your profile at <a href="http://thoughtworks-village.heroku.com/login">http://thoughtworks-village.heroku.com/login</a>. Thanks for signing up, and enjoy the site!
+    </p>
+    <p>ThoughtWorks Village - "It Takes a Village"</p>
+  </body>
+</html>
+
+
+----==_mimepart_4d7e3d5faea74_636249993982503c--
+Redirected to http://localhost:3000/mentees/10
+Completed 302 Found in 4868ms
+
+
+Started GET "/mentees/10" for 127.0.0.1 at Mon Mar 14 07:08:04 -0900 2011
+  Processing by MenteesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mMentee Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 10) LIMIT 1[0m
+  [1m[35mExperience Load (0.2ms)[0m  SELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 10)
+Rendered mentees/show.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 46ms (Views: 20.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Mar 14 07:10:01 -0900 2011
+  Processing by MenteesController#index as HTML
+  [1m[36mMentee Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee')[0m
+Rendered mentees/index.html.erb within layouts/application (92.7ms)
+Completed 200 OK in 211ms (Views: 114.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/mentees/10" for 127.0.0.1 at Mon Mar 14 07:10:06 -0900 2011
+  Processing by MenteesController#destroy as HTML
+  Parameters: {"id"=>"10"}
+Completed   in 0ms
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (11.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (49.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (444.0ms)
+
+
+Started GET "/mentees/" for 127.0.0.1 at Mon Mar 14 07:10:12 -0900 2011
+  Processing by MenteesController#index as HTML
+  [1m[35mMentee Load (0.7ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee')
+Rendered mentees/index.html.erb within layouts/application (42.1ms)
+Completed 200 OK in 141ms (Views: 53.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Mar 14 07:12:33 -0900 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mMentor Load (0.6ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')[0m
+Rendered mentors/index.html.erb within layouts/application (75.8ms)
+Completed 200 OK in 222ms (Views: 82.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/mentors/8" for 127.0.0.1 at Mon Mar 14 07:12:37 -0900 2011
+  Processing by MentorsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mMentor Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 8) LIMIT 1
+  [1m[36mAvailabilityCalendar Load (0.1ms)[0m  [1mSELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars".mentor_id = 8) LIMIT 1[0m
+  [1m[35mExperience Load (0.2ms)[0m  SELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 8)
+Rendered mentors/show.html.erb within layouts/application (182.2ms)
+Completed 200 OK in 285ms (Views: 194.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/mentors/8/edit" for 127.0.0.1 at Mon Mar 14 07:12:41 -0900 2011
+  Processing by MentorsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mMentor Load (1.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 8) LIMIT 1[0m
+Rendered mentors/_form.html.erb (28.1ms)
+Rendered mentors/edit.html.erb within layouts/application (38.7ms)
+Completed 200 OK in 139ms (Views: 96.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/mentors/8/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 07:12:42 -0900 2011
+
+ActionController::RoutingError (No route matches "/mentors/8/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.9ms)
+
+
+Started GET "/mentors/8/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 07:12:43 -0900 2011
+
+ActionController::RoutingError (No route matches "/mentors/8/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.5ms)
+
+
+Started POST "/mentors/8" for 127.0.0.1 at Mon Mar 14 07:12:47 -0900 2011
+  Processing by MentorsController#destroy as HTML
+  Parameters: {"id"=>"8"}
+Completed   in 7ms
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (20.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (50.0ms)
+
+
+Started GET "/mentors/" for 127.0.0.1 at Mon Mar 14 07:12:52 -0900 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')
+Rendered mentors/index.html.erb within layouts/application (49.0ms)
+Completed 200 OK in 153ms (Views: 79.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/mentors/1" for 127.0.0.1 at Mon Mar 14 07:17:19 -0900 2011
+  Processing by MentorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMentor Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mAvailabilityCalendar Load (0.3ms)[0m  SELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars".mentor_id = 1) LIMIT 1
+  [1m[36mExperience Load (0.3ms)[0m  [1mSELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 1)[0m
+Rendered mentors/show.html.erb within layouts/application (41.7ms)
+Completed 200 OK in 104ms (Views: 47.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/requests/" for 127.0.0.1 at Mon Mar 14 07:19:11 -0900 2011
+  Processing by RequestsController#index as HTML
+  [1m[35mRequest Load (0.8ms)[0m  SELECT "requests".* FROM "requests"
+  [1m[36mMentee Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 2) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 2) LIMIT 1
+Rendered requests/index.html.erb within layouts/application (81.5ms)
+Completed 200 OK in 119ms (Views: 109.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/requests/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 07:19:15 -0900 2011
+
+ActionController::RoutingError (No route matches "/requests/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/mentees/9" for 127.0.0.1 at Mon Mar 14 07:23:52 -0900 2011
+  Processing by MenteesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mMentee Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 9) LIMIT 1[0m
+  [1m[35mExperience Load (0.2ms)[0m  SELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 9)
+Rendered mentees/show.html.erb within layouts/application (38.2ms)
+Completed 200 OK in 91ms (Views: 59.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Mar 14 07:24:09 -0900 2011
+  Processing by MenteesController#index as HTML
+  [1m[36mMentee Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee')[0m
+Rendered mentees/index.html.erb within layouts/application (104.3ms)
+Completed 200 OK in 145ms (Views: 115.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/mentees/10" for 127.0.0.1 at Mon Mar 14 07:24:12 -0900 2011
+  Processing by MenteesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mMentee Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 10) LIMIT 1
+  [1m[36mExperience Load (0.3ms)[0m  [1mSELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 10)[0m
+Rendered mentees/show.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 60ms (Views: 31.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/mentees/10/edit" for 127.0.0.1 at Mon Mar 14 07:24:14 -0900 2011
+  Processing by MenteesController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[35mMentee Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 10) LIMIT 1
+Rendered mentees/_form.html.erb (24.8ms)
+Rendered mentees/edit.html.erb within layouts/application (31.3ms)
+Completed 200 OK in 70ms (Views: 37.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mentees/10/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 07:24:15 -0900 2011
+
+ActionController::RoutingError (No route matches "/mentees/10/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/mentees/10/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 07:24:18 -0900 2011
+
+ActionController::RoutingError (No route matches "/mentees/10/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/mentees/9" for 127.0.0.1 at Mon Mar 14 07:24:21 -0900 2011
+  Processing by MenteesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mMentee Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 9) LIMIT 1[0m
+  [1m[35mExperience Load (0.2ms)[0m  SELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 9)
+Rendered mentees/show.html.erb within layouts/application (41.7ms)
+Completed 200 OK in 188ms (Views: 48.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mentees/9/edit" for 127.0.0.1 at Mon Mar 14 07:24:23 -0900 2011
+  Processing by MenteesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mMentee Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 9) LIMIT 1[0m
+Rendered mentees/_form.html.erb (23.8ms)
+Rendered mentees/edit.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 69ms (Views: 41.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/mentees/9" for 127.0.0.1 at Mon Mar 14 07:24:28 -0900 2011
+  Processing by MenteesController#destroy as HTML
+  Parameters: {"id"=>"9"}
+Completed   in 1ms
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (27.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (49.2ms)
+
+
+Started GET "/mentees/" for 127.0.0.1 at Mon Mar 14 07:24:31 -0900 2011
+  Processing by MenteesController#index as HTML
+  [1m[35mMentee Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee')
+Rendered mentees/index.html.erb within layouts/application (27.0ms)
+Completed 200 OK in 77ms (Views: 32.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/mentees/9" for 127.0.0.1 at Mon Mar 14 07:26:24 -0900 2011
+  Processing by MenteesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mMentee Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 9) LIMIT 1[0m
+  [1m[35mExperience Load (0.2ms)[0m  SELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 9)
+Rendered mentees/show.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 57ms (Views: 29.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mentees/9/edit" for 127.0.0.1 at Mon Mar 14 07:26:26 -0900 2011
+  Processing by MenteesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mMentee Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 9) LIMIT 1[0m
+Rendered mentees/_form.html.erb (59.4ms)
+Rendered mentees/edit.html.erb within layouts/application (88.0ms)
+Completed 200 OK in 387ms (Views: 114.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/mentees/9" for 127.0.0.1 at Mon Mar 14 07:26:31 -0900 2011
+  Processing by MenteesController#destroy as HTML
+  Parameters: {"id"=>"9"}
+Completed   in 1ms
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (7.6ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (12.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (29.4ms)
+
+
+Started GET "/users/logout" for 127.0.0.1 at Mon Mar 14 07:26:44 -0900 2011
+  Processing by UsersController#logout as HTML
+Redirected to http://localhost:3000/users/login?notice=Logged+out.
+Completed 302 Found in 1ms
+
+
+Started GET "/users/login?notice=Logged+out." for 127.0.0.1 at Mon Mar 14 07:26:44 -0900 2011
+  Processing by UsersController#login as HTML
+  Parameters: {"notice"=>"Logged out."}
+Rendered users/login.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 80ms (Views: 68.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Mar 14 07:26:48 -0900 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (0.9ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')
+Rendered mentors/index.html.erb within layouts/application (22.0ms)
+Completed 200 OK in 66ms (Views: 27.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Mon Mar 14 07:27:03 -0900 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 52ms (Views: 25.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/process_login" for 127.0.0.1 at Mon Mar 14 07:27:16 -0900 2011
+  Processing by UsersController#process_login as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"3dvOdzu1xrH7XmHZ0WETFi195FrPBdWT/vHCFHE+5Rg=", "utf8"=>"✓", "user"=>{"password"=>"[FILTERED]", "email"=>"haffnedm@rose-hulman.edu"}}
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."password" = 'password') AND ("users"."email" = 'haffnedm@rose-hulman.edu') LIMIT 1[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 122ms
+
+
+Started GET "/" for 127.0.0.1 at Mon Mar 14 07:27:16 -0900 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Mar 14 07:27:19 -0900 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')
+Rendered mentors/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 52ms (Views: 27.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Mar 14 07:27:22 -0900 2011
+  Processing by MenteesController#index as HTML
+  [1m[36mMentee Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee')[0m
+Rendered mentees/index.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 57ms (Views: 28.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/mentees/9" for 127.0.0.1 at Mon Mar 14 07:27:25 -0900 2011
+  Processing by MenteesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mMentee Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 9) LIMIT 1
+  [1m[36mExperience Load (0.3ms)[0m  [1mSELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 9)[0m
+Rendered mentees/show.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 154ms (Views: 32.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/mentees/9/edit" for 127.0.0.1 at Mon Mar 14 07:27:27 -0900 2011
+  Processing by MenteesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mMentee Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 9) LIMIT 1
+Rendered mentees/_form.html.erb (25.0ms)
+Rendered mentees/edit.html.erb within layouts/application (30.8ms)
+Completed 200 OK in 68ms (Views: 42.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/mentees/9" for 127.0.0.1 at Mon Mar 14 07:27:31 -0900 2011
+  Processing by MenteesController#destroy as HTML
+  Parameters: {"id"=>"9"}
+Completed   in 1ms
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (17.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (46.5ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Mar 14 07:27:35 -0900 2011
+  Processing by MenteesController#index as HTML
+  [1m[36mMentee Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee')[0m
+Rendered mentees/index.html.erb within layouts/application (33.4ms)
+Completed 200 OK in 91ms (Views: 43.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Mar 14 07:27:52 -0900 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')
+Rendered mentors/index.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 59ms (Views: 28.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mentors/7" for 127.0.0.1 at Mon Mar 14 07:27:54 -0900 2011
+  Processing by MentorsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMentor Load (1.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 7) LIMIT 1[0m
+  [1m[35mAvailabilityCalendar Load (0.2ms)[0m  SELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars".mentor_id = 7) LIMIT 1
+  [1m[36mExperience Load (0.2ms)[0m  [1mSELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 7)[0m
+Rendered mentors/show.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 212ms (Views: 30.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/mentors/7/edit" for 127.0.0.1 at Mon Mar 14 07:27:57 -0900 2011
+  Processing by MentorsController#edit as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mMentor Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 7) LIMIT 1
+Rendered mentors/_form.html.erb (28.4ms)
+Rendered mentors/edit.html.erb within layouts/application (166.4ms)
+Completed 200 OK in 202ms (Views: 172.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mentors/7/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 07:27:57 -0900 2011
+
+ActionController::RoutingError (No route matches "/mentors/7/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/mentors/7/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 07:28:00 -0900 2011
+
+ActionController::RoutingError (No route matches "/mentors/7/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.9ms)
+
+
+Started POST "/mentors/7" for 127.0.0.1 at Mon Mar 14 07:28:01 -0900 2011
+  Processing by MentorsController#destroy as HTML
+  Parameters: {"id"=>"7"}
+Completed   in 0ms
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.7ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (32.5ms)
+
+
+Started GET "/mentors/" for 127.0.0.1 at Mon Mar 14 07:28:05 -0900 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mMentor Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')[0m
+Rendered mentors/index.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 147ms (Views: 108.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mentors/8" for 127.0.0.1 at Mon Mar 14 07:28:08 -0900 2011
+  Processing by MentorsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mMentor Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 8) LIMIT 1
+  [1m[36mAvailabilityCalendar Load (0.2ms)[0m  [1mSELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars".mentor_id = 8) LIMIT 1[0m
+  [1m[35mExperience Load (0.2ms)[0m  SELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 8)
+Rendered mentors/show.html.erb within layouts/application (18.8ms)
+Completed 200 OK in 76ms (Views: 24.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/mentors/8/edit" for 127.0.0.1 at Mon Mar 14 07:28:10 -0900 2011
+  Processing by MentorsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mMentor Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 8) LIMIT 1[0m
+Rendered mentors/_form.html.erb (26.2ms)
+Rendered mentors/edit.html.erb within layouts/application (32.8ms)
+Completed 200 OK in 77ms (Views: 38.6ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/mentors/8" for 127.0.0.1 at Mon Mar 14 07:28:14 -0900 2011
+  Processing by MentorsController#destroy as HTML
+  Parameters: {"id"=>"8"}
+Completed   in 0ms
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (33.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (231.9ms)
+
+
+Started GET "/mentors/" for 127.0.0.1 at Mon Mar 14 07:28:18 -0900 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')
+Rendered mentors/index.html.erb within layouts/application (25.2ms)
+Completed 200 OK in 73ms (Views: 32.1ms | ActiveRecord: 0.5ms)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+
+
+Started GET "/mentors/" for 127.0.0.1 at Mon Mar 14 08:29:20 -0900 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mSQL (0.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mMentor Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')
+Rendered mentors/index.html.erb within layouts/application (41.1ms)
+Completed 200 OK in 398ms (Views: 106.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/mentors/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 08:29:22 -0900 2011
+
+ActionController::RoutingError (No route matches "/mentors/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/mentors/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 08:29:25 -0900 2011
+
+ActionController::RoutingError (No route matches "/mentors/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/mentors/" for 127.0.0.1 at Mon Mar 14 08:42:36 -0900 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mMentor Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')[0m
+Rendered mentors/index.html.erb within layouts/application (111.7ms)
+Completed 200 OK in 147ms (Views: 118.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/mentors/" for 127.0.0.1 at Mon Mar 14 08:42:37 -0900 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')
+Rendered mentors/index.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 65ms (Views: 29.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/logout" for 127.0.0.1 at Mon Mar 14 08:42:50 -0900 2011
+  Processing by UsersController#logout as HTML
+Redirected to http://localhost:3000/users/login?notice=Logged+out.
+Completed 302 Found in 1ms
+
+
+Started GET "/users/login?notice=Logged+out." for 127.0.0.1 at Mon Mar 14 08:42:50 -0900 2011
+  Processing by UsersController#login as HTML
+  Parameters: {"notice"=>"Logged out."}
+Rendered users/login.html.erb within layouts/application (73.8ms)
+Completed 200 OK in 114ms (Views: 101.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 08:42:51 -0900 2011
+
+ActionController::RoutingError (No route matches "/users/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/users/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 08:42:51 -0900 2011
+
+ActionController::RoutingError (No route matches "/users/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/users/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 08:42:54 -0900 2011
+
+ActionController::RoutingError (No route matches "/users/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Mar 14 08:49:47 -0900 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mMentor Load (0.8ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')[0m
+Rendered mentors/index.html.erb within layouts/application (25.4ms)
+Completed 200 OK in 162ms (Views: 34.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/mentors/1" for 127.0.0.1 at Mon Mar 14 08:49:50 -0900 2011
+  Processing by MentorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMentor Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 1) LIMIT 1
+  [1m[36mAvailabilityCalendar Load (0.3ms)[0m  [1mSELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars".mentor_id = 1) LIMIT 1[0m
+  [1m[35mExperience Load (0.3ms)[0m  SELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 1)
+Rendered mentors/show.html.erb within layouts/application (39.3ms)
+Completed 200 OK in 277ms (Views: 154.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Mar 14 08:50:02 -0900 2011
+  Processing by MenteesController#index as HTML
+  [1m[36mMentee Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee')[0m
+Rendered mentees/index.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 120ms (Views: 55.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mentees/9" for 127.0.0.1 at Mon Mar 14 08:50:15 -0900 2011
+  Processing by MenteesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mMentee Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 9) LIMIT 1
+  [1m[36mExperience Load (0.2ms)[0m  [1mSELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 9)[0m
+Rendered mentees/show.html.erb within layouts/application (28.3ms)
+Completed 200 OK in 108ms (Views: 77.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mentees/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 08:50:15 -0900 2011
+
+ActionController::RoutingError (No route matches "/mentees/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/mentees/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 08:50:15 -0900 2011
+
+ActionController::RoutingError (No route matches "/mentees/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/mentees/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 08:50:18 -0900 2011
+
+ActionController::RoutingError (No route matches "/mentees/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Mon Mar 14 08:50:20 -0900 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 39ms (Views: 27.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/process_login" for 127.0.0.1 at Mon Mar 14 08:50:26 -0900 2011
+  Processing by UsersController#process_login as HTML
+  Parameters: {"commit"=>"Create User", "authenticity_token"=>"0eySBAEZuHx8PYqS6Vu/eDZEVdnW+/X0G5SZPO3dSKI=", "utf8"=>"✓", "user"=>{"password"=>"[FILTERED]", "email"=>"haffnedm@rose-hulman.edu"}}
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."password" = 'password') AND ("users"."email" = 'haffnedm@rose-hulman.edu') LIMIT 1
+Redirected to http://localhost:3000/
+Completed 302 Found in 45ms
+
+
+Started GET "/" for 127.0.0.1 at Mon Mar 14 08:50:26 -0900 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 16ms (Views: 15.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentors/8" for 127.0.0.1 at Mon Mar 14 08:50:28 -0900 2011
+  Processing by MentorsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mMentor Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 8) LIMIT 1[0m
+  [1m[35mAvailabilityCalendar Load (0.3ms)[0m  SELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars".mentor_id = 8) LIMIT 1
+  [1m[36mExperience Load (0.2ms)[0m  [1mSELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 8)[0m
+Rendered mentors/show.html.erb within layouts/application (20.2ms)
+Completed 200 OK in 84ms (Views: 25.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/mentors/8/edit" for 127.0.0.1 at Mon Mar 14 08:50:32 -0900 2011
+  Processing by MentorsController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mMentor Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 8) LIMIT 1
+Rendered mentors/_form.html.erb (26.7ms)
+Rendered mentors/edit.html.erb within layouts/application (37.2ms)
+Completed 200 OK in 125ms (Views: 93.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/mentors/8/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 08:50:32 -0900 2011
+
+ActionController::RoutingError (No route matches "/mentors/8/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/mentors/8/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 08:50:33 -0900 2011
+
+ActionController::RoutingError (No route matches "/mentors/8/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/mentors/8/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 08:50:35 -0900 2011
+
+ActionController::RoutingError (No route matches "/mentors/8/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/mentors/8" for 127.0.0.1 at Mon Mar 14 09:00:47 -0900 2011
+  Processing by MentorsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mMentor Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 8) LIMIT 1[0m
+  [1m[35mAvailabilityCalendar Load (0.2ms)[0m  SELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars".mentor_id = 8) LIMIT 1
+  [1m[36mExperience Load (0.3ms)[0m  [1mSELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 8)[0m
+Rendered mentors/show.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 84ms (Views: 28.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/mentors/8" for 127.0.0.1 at Mon Mar 14 09:00:51 -0900 2011
+  Processing by MentorsController#destroy as HTML
+  Parameters: {"id"=>"8"}
+Completed   in 0ms
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (15.3ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (71.7ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Mar 14 09:02:07 -0900 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (0.6ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')
+Rendered mentors/index.html.erb within layouts/application (23.8ms)
+Completed 200 OK in 63ms (Views: 30.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Mar 14 09:02:10 -0900 2011
+  Processing by MenteesController#index as HTML
+  [1m[36mMentee Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee')[0m
+Rendered mentees/index.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 162ms (Views: 31.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Mar 14 09:02:12 -0900 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (5.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')
+Rendered mentors/index.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 55ms (Views: 23.4ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/mentors/1" for 127.0.0.1 at Mon Mar 14 09:02:14 -0900 2011
+  Processing by MentorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMentor Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mAvailabilityCalendar Load (0.3ms)[0m  SELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars".mentor_id = 1) LIMIT 1
+  [1m[36mExperience Load (0.3ms)[0m  [1mSELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 1)[0m
+Rendered mentors/show.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 104ms (Views: 44.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/mentors/1" for 127.0.0.1 at Mon Mar 14 09:02:47 -0900 2011
+  Processing by MentorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMentor Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 1) LIMIT 1
+  [1m[36mAvailabilityCalendar Load (0.3ms)[0m  [1mSELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars".mentor_id = 1) LIMIT 1[0m
+  [1m[35mExperience Load (0.3ms)[0m  SELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 1)
+Rendered mentors/show.html.erb within layouts/application (28.6ms)
+Completed 200 OK in 89ms (Views: 34.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/availability_calendars/14" for 127.0.0.1 at Mon Mar 14 09:02:51 -0900 2011
+  Processing by AvailabilityCalendarsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mAvailabilityCalendar Load (0.2ms)[0m  [1mSELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars"."id" = 14) LIMIT 1[0m
+  [1m[35mAvailabilityDay Load (0.3ms)[0m  SELECT "availability_days".* FROM "availability_days" WHERE ("availability_days".availability_calendar_id = 14)
+Rendered availability_calendars/show.html.erb within layouts/application (119.4ms)
+Completed 200 OK in 199ms (Views: 179.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/availability_calendars/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 09:02:52 -0900 2011
+
+ActionController::RoutingError (No route matches "/availability_calendars/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (9.6ms)
+
+
+Started GET "/availability_calendars/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 09:02:52 -0900 2011
+
+ActionController::RoutingError (No route matches "/availability_calendars/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.0ms)
+
+
+Started GET "/availability_calendars/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 09:02:55 -0900 2011
+
+ActionController::RoutingError (No route matches "/availability_calendars/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/mentors/8" for 127.0.0.1 at Mon Mar 14 09:02:57 -0900 2011
+  Processing by MentorsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mMentor Load (1.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 8) LIMIT 1[0m
+  [1m[35mAvailabilityCalendar Load (0.2ms)[0m  SELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars".mentor_id = 8) LIMIT 1
+  [1m[36mExperience Load (0.3ms)[0m  [1mSELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 8)[0m
+Rendered mentors/show.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 90ms (Views: 33.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/mentors/8" for 127.0.0.1 at Mon Mar 14 09:03:53 -0900 2011
+  Processing by MentorsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mMentor Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 8) LIMIT 1
+  [1m[36mAvailabilityCalendar Load (0.2ms)[0m  [1mSELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars".mentor_id = 8) LIMIT 1[0m
+  [1m[35mExperience Load (0.2ms)[0m  SELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 8)
+Rendered mentors/show.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 80ms (Views: 26.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Mar 14 09:04:28 -0900 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mMentor Load (1.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')[0m
+Rendered mentors/index.html.erb within layouts/application (26.5ms)
+Completed 200 OK in 64ms (Views: 31.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Mar 14 09:04:34 -0900 2011
+  Processing by MenteesController#index as HTML
+  [1m[35mMentee Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee')
+Rendered mentees/index.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 145ms (Views: 32.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mentees/2" for 127.0.0.1 at Mon Mar 14 09:04:36 -0900 2011
+  Processing by MenteesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMentee Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mExperience Load (0.2ms)[0m  SELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 2)
+Rendered mentees/show.html.erb within layouts/application (24.8ms)
+Completed 200 OK in 65ms (Views: 37.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/mentees/2/edit" for 127.0.0.1 at Mon Mar 14 09:04:39 -0900 2011
+  Processing by MenteesController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMentee Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 2) LIMIT 1[0m
+Rendered mentees/_form.html.erb (19.4ms)
+Rendered mentees/edit.html.erb within layouts/application (56.5ms)
+Completed 200 OK in 139ms (Views: 101.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/mentees/2/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 09:04:39 -0900 2011
+
+ActionController::RoutingError (No route matches "/mentees/2/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/mentees/2/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 09:04:39 -0900 2011
+
+ActionController::RoutingError (No route matches "/mentees/2/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (13.7ms)
+
+
+Started GET "/mentees/2/images/corporate_favicon.ico" for 127.0.0.1 at Mon Mar 14 09:04:42 -0900 2011
+
+ActionController::RoutingError (No route matches "/mentees/2/images/corporate_favicon.ico"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started POST "/mentees/2" for 127.0.0.1 at Mon Mar 14 09:04:44 -0900 2011
+  Processing by MenteesController#destroy as HTML
+  Parameters: {"id"=>"2"}
+Completed   in 1ms
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (14.8ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (25.9ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Mar 14 09:06:00 -0900 2011
+  Processing by MenteesController#index as HTML
+  [1m[35mMentee Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee')
+Rendered mentees/index.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 56ms (Views: 26.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/mentees/2" for 127.0.0.1 at Mon Mar 14 09:06:04 -0900 2011
+  Processing by MenteesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMentee Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mExperience Load (0.2ms)[0m  SELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 2)
+Rendered mentees/show.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 67ms (Views: 33.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/logout" for 127.0.0.1 at Mon Mar 14 09:06:38 -0900 2011
+  Processing by UsersController#logout as HTML
+Redirected to http://localhost:3000/users/login?notice=Logged+out.
+Completed 302 Found in 1ms
+
+
+Started GET "/users/login?notice=Logged+out." for 127.0.0.1 at Mon Mar 14 09:06:39 -0900 2011
+  Processing by UsersController#login as HTML
+  Parameters: {"notice"=>"Logged out."}
+Rendered users/login.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 136ms (Views: 18.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentors/new" for 127.0.0.1 at Mon Mar 14 09:06:40 -0900 2011
+  Processing by MentorsController#new as HTML
+Rendered mentors/_form.html.erb (20.5ms)
+Rendered mentors/new.html.erb within layouts/application (25.1ms)
+Completed 200 OK in 58ms (Views: 31.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentors/new" for 127.0.0.1 at Mon Mar 14 09:07:22 -0900 2011
+  Processing by MentorsController#new as HTML
+Rendered mentors/_form.html.erb (23.6ms)
+Rendered mentors/new.html.erb within layouts/application (30.5ms)
+Completed 200 OK in 79ms (Views: 39.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentors/new" for 127.0.0.1 at Mon Mar 14 09:08:00 -0900 2011
+  Processing by MentorsController#new as HTML
+Rendered mentors/_form.html.erb (25.6ms)
+Rendered mentors/new.html.erb within layouts/application (31.5ms)
+Completed 200 OK in 159ms (Views: 37.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/login?notice=Logged+out." for 127.0.0.1 at Mon Mar 14 09:08:14 -0900 2011
+  Processing by UsersController#login as HTML
+  Parameters: {"notice"=>"Logged out."}
+Rendered users/login.html.erb within layouts/application (20.5ms)
+Completed 200 OK in 46ms (Views: 36.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentees/new" for 127.0.0.1 at Mon Mar 14 09:08:16 -0900 2011
+  Processing by MenteesController#new as HTML
+Rendered mentees/_form.html.erb (26.8ms)
+Rendered mentees/new.html.erb within layouts/application (31.5ms)
+Completed 200 OK in 66ms (Views: 38.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Mar 14 09:08:53 -0900 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mMentor Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')[0m
+Rendered mentors/index.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 159ms (Views: 33.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Mar 14 09:08:55 -0900 2011
+  Processing by MenteesController#index as HTML
+  [1m[35mMentee Load (0.8ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee')
+Rendered mentees/index.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 56ms (Views: 28.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Mar 14 09:09:04 -0900 2011
+  Processing by MenteesController#index as HTML
+  [1m[36mMentee Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee')[0m
+Rendered mentees/index.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 62ms (Views: 30.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Mar 14 09:09:06 -0900 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (1.1ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')
+Rendered mentors/index.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 161ms (Views: 33.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Mar 14 09:09:14 -0900 2011
+  Processing by MenteesController#index as HTML
+  [1m[36mMentee Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee')[0m
+Rendered mentees/index.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 58ms (Views: 27.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/mentees/new" for 127.0.0.1 at Mon Mar 14 09:09:19 -0900 2011
+  Processing by MenteesController#new as HTML
+Rendered mentees/_form.html.erb (28.9ms)
+Rendered mentees/new.html.erb within layouts/application (38.8ms)
+Completed 200 OK in 80ms (Views: 50.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Mar 14 09:09:21 -0900 2011
+  Processing by MenteesController#index as HTML
+  [1m[35mMentee Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee')
+Rendered mentees/index.html.erb within layouts/application (25.3ms)
+Completed 200 OK in 225ms (Views: 38.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Mon Mar 14 09:09:25 -0900 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (12.7ms)
+Completed 200 OK in 37ms (Views: 20.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentees/new" for 127.0.0.1 at Mon Mar 14 09:09:27 -0900 2011
+  Processing by MenteesController#new as HTML
+Rendered mentees/_form.html.erb (26.5ms)
+Rendered mentees/new.html.erb within layouts/application (31.5ms)
+Completed 200 OK in 67ms (Views: 37.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Mon Mar 14 09:09:29 -0900 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (19.0ms)
+Completed 200 OK in 41ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentors/new" for 127.0.0.1 at Mon Mar 14 09:09:49 -0900 2011
+  Processing by MentorsController#new as HTML
+Rendered mentors/_form.html.erb (28.9ms)
+Rendered mentors/new.html.erb within layouts/application (39.6ms)
+Completed 200 OK in 78ms (Views: 45.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentees/new" for 127.0.0.1 at Mon Mar 14 09:09:54 -0900 2011
+  Processing by MenteesController#new as HTML
+Rendered mentees/_form.html.erb (27.4ms)
+Rendered mentees/new.html.erb within layouts/application (33.8ms)
+Completed 200 OK in 76ms (Views: 46.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Mar 14 09:11:25 -0900 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mMentor Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')[0m
+Rendered mentors/index.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 59ms (Views: 29.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Mar 14 09:11:27 -0900 2011
+  Processing by MenteesController#index as HTML
+  [1m[35mMentee Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee')
+Rendered mentees/index.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 59ms (Views: 28.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/mentees/new" for 127.0.0.1 at Mon Mar 14 09:11:30 -0900 2011
+  Processing by MenteesController#new as HTML
+Rendered mentees/_form.html.erb (27.0ms)
+Rendered mentees/new.html.erb within layouts/application (32.2ms)
+Completed 200 OK in 78ms (Views: 46.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Mar 14 09:11:44 -0900 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (10.6ms)
+Completed 200 OK in 16ms (Views: 15.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Mon Mar 14 09:11:49 -0900 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (13.7ms)
+Completed 200 OK in 61ms (Views: 32.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Mar 14 09:11:52 -0900 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 17ms (Views: 16.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/about.html" for 127.0.0.1 at Mon Mar 14 09:14:01 -0900 2011
+
+ActionController::RoutingError (No route matches "/about.html"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/about" for 127.0.0.1 at Mon Mar 14 09:14:04 -0900 2011
+
+ActionController::RoutingError (No route matches "/about"):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Mon Mar 14 09:14:09 -0900 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 14ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Mar 14 09:14:12 -0900 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mMentor Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')[0m
+Rendered mentors/index.html.erb within layouts/application (24.6ms)
+Completed 200 OK in 60ms (Views: 29.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Mar 14 09:14:14 -0900 2011
+  Processing by MenteesController#index as HTML
+  [1m[35mMentee Load (1.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee')
+Rendered mentees/index.html.erb within layouts/application (22.2ms)
+Completed 200 OK in 77ms (Views: 27.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/mentees/10" for 127.0.0.1 at Mon Mar 14 09:14:26 -0900 2011
+  Processing by MenteesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mMentee Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 10) LIMIT 1[0m
+  [1m[35mExperience Load (0.2ms)[0m  SELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 10)
+Rendered mentees/show.html.erb within layouts/application (51.1ms)
+Completed 200 OK in 176ms (Views: 56.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mentees/10/edit" for 127.0.0.1 at Mon Mar 14 09:14:29 -0900 2011
+  Processing by MenteesController#edit as HTML
+  Parameters: {"id"=>"10"}
+Redirected to http://localhost:3000/users/login
+Completed 302 Found in 0ms
+
+
+Started GET "/users/login" for 127.0.0.1 at Mon Mar 14 09:14:29 -0900 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 45ms (Views: 26.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/mentees/10" for 127.0.0.1 at Mon Mar 14 09:14:35 -0900 2011
+  Processing by MenteesController#destroy as HTML
+  Parameters: {"id"=>"10"}
+Completed   in 1ms
+
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (20.0ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (29.9ms)
+Rendered /usr/lib/ruby/gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (56.5ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Mar 14 09:15:04 -0900 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mMentor Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')[0m
+Rendered mentors/index.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 60ms (Views: 28.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Mon Mar 14 09:15:06 -0900 2011
+  Processing by MenteesController#index as HTML
+  [1m[35mMentee Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee')
+Rendered mentees/index.html.erb within layouts/application (39.8ms)
+Completed 200 OK in 77ms (Views: 45.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mentees/2" for 127.0.0.1 at Mon Mar 14 09:15:09 -0900 2011
+  Processing by MenteesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mMentee Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee') AND ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mExperience Load (0.3ms)[0m  SELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 2)
+Rendered mentees/show.html.erb within layouts/application (28.1ms)
+Completed 200 OK in 158ms (Views: 34.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Mon Mar 14 09:15:12 -0900 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mMentor Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')[0m
+Rendered mentors/index.html.erb within layouts/application (22.6ms)
+Completed 200 OK in 56ms (Views: 27.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/mentors/1" for 127.0.0.1 at Mon Mar 14 09:15:14 -0900 2011
+  Processing by MentorsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mMentor Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor') AND ("users"."id" = 1) LIMIT 1
+  [1m[36mAvailabilityCalendar Load (0.3ms)[0m  [1mSELECT "availability_calendars".* FROM "availability_calendars" WHERE ("availability_calendars".mentor_id = 1) LIMIT 1[0m
+  [1m[35mExperience Load (0.2ms)[0m  SELECT "experiences".* FROM "experiences" WHERE ("experiences".user_id = 1)
+Rendered mentors/show.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 88ms (Views: 42.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/login" for 127.0.0.1 at Mon Mar 14 09:17:20 -0900 2011
+  Processing by UsersController#login as HTML
+Rendered users/login.html.erb within layouts/application (17.9ms)
+Completed 200 OK in 41ms (Views: 25.8ms | ActiveRecord: 0.0ms)
+DEPRECATION WARNING: ActionController::Base.cookie_verifier_secret= is deprecated. Please configure it on your application with config.secret_token=. (called from /home/gouser/Documents/ThoughtWorks-Village/config/initializers/cookie_verification_secret.rb:7)
+
+
+Started GET "/" for 127.0.0.1 at Tue Mar 15 07:03:52 -0900 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 122ms (Views: 121.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Tue Mar 15 07:03:56 -0900 2011
+  Processing by MentorsController#index as HTML
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mMentor Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')
+Rendered mentors/index.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 273ms (Views: 60.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/mentees" for 127.0.0.1 at Tue Mar 15 07:03:58 -0900 2011
+  Processing by MenteesController#index as HTML
+  [1m[36mMentee Load (2.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentee')[0m
+Rendered mentees/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 153ms (Views: 53.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/mentors" for 127.0.0.1 at Tue Mar 15 07:04:00 -0900 2011
+  Processing by MentorsController#index as HTML
+  [1m[35mMentor Load (0.5ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."type" = 'Mentor')
+Rendered mentors/index.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 86ms (Views: 50.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Mar 15 07:04:02 -0900 2011
+  Processing by HomeController#index as HTML
+Rendered home/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 10ms (Views: 9.7ms | ActiveRecord: 0.0ms)

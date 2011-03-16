@@ -57,6 +57,6 @@
   <%= @mentee.interests %>
 </p>
 
-
-<%= link_to 'Edit', edit_mentee_path(@mentee) %> |
+<%= link_to 'Edit Profile', edit_mentee_path(@mentee) %> |
+<%= link_to 'Delete Account', @mentee, :confirm => 'Are you sure?', :method => :delete %> |
 <%= link_to 'Back', mentees_path %>
