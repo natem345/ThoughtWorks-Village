@@ -61,7 +61,76 @@
   <b>See availability:</b>
   <% if @availability_calendar.nil? %> Unknown
   <% else %>
-	<%=link_to :availibility, @availability_calendar %>
+
+
+
+
+<%= javascript_include_tag "jquery.datePicker.js" %>
+<%= javascript_include_tag "date.js" %>
+<%= stylesheet_link_tag("datePicker.css") %>
+
+
+
+<script>
+
+$(function()
+{
+	$('#datepicker')
+	.datePicker(
+		{	inline:true,
+			selectMultiple:true, //disallow selection
+			numSelectable:0,
+			renderCallback:function($td, thisDate, month, year)
+			{	//note: to allow changing months, must get this list from server again or keep a local copy of all changes. this will get called again on month change
+				dstr=thisDate.toDateString();
+				//loops through each already-set day
+				<% @availability_calendar.availability_days.find(:all, :order => 'availability_day').each do |day| %>
+					if (dstr==new Date(<%= day.availability_day.year %>,<%= day.availability_day.month %>-1,<%= day.availability_day.mday %>).toDateString()) {
+					$td.addClass('<%=day.availability %>');
+				} else 
+				<% end %>
+				{}
+			}
+		}
+	)
+	.bind('dpMonthChanged',function(event, displayedMonth, displayedYear) {
+		alert("Changing month is currently not supported");
+		location.reload();
+	});
+});
+
+
+</script>
+<style>
+.red {
+background-color: red !important;
+background-image:none !important;
+color:black !important;
+}
+.yellow {
+background-color: yellow !important;
+background-image:none !important;
+color:black !important;
+}
+.green { 
+background-color: green !important;
+background-image:none !important;
+color:black !important;
+}
+.availGray availWeek { 
+background-color: gray;
+}
+</style>
+<p>Red=unavailable, Yellow=somewhat available, Green=available.</p>
+
+<div id="datepicker"></div>
+<br />
+
+
+
+
+
+
   <%end%>
 </p>
 <% if session[:usertype]==:mentee %>

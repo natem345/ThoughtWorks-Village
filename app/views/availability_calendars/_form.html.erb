@@ -1,44 +1,43 @@
 <%= javascript_include_tag "jquery.datePicker.js" %>
 <%= javascript_include_tag "date.js" %>
 <%= stylesheet_link_tag("datePicker.css") %>
+
 <script>
 
 $(function()
 {
 	$('#datepicker')
-		.datePicker(
-			{	inline:true,
-				selectMultiple:true,
-				renderCallback:function($td, thisDate, month, year)
-				{	//note: to allow changing months, must get this list from server again or keep a local copy of all changes. this will get called again on month change
-					dstr=thisDate.toDateString();
-					if (dstr==new Date(2011,3-1,20).toDateString()) {
-						$td.addClass('red');
-					} else 
-					if (dstr==new Date(2011,4-1,20).toDateString()) {
-						$td.addClass('red');
-					} else 
-					if (dstr==new Date(2011,3-1,31).toDateString()) {
-						$td.addClass('red');
-					} else 
-					{}
-				}
+	.datePicker(
+		{	inline:true,
+			selectMultiple:true,
+			renderCallback:function($td, thisDate, month, year)
+			{	//note: to allow changing months, must get this list from server again or keep a local copy of all changes. this will get called again on month change
+				dstr=thisDate.toDateString();
+				//loops through each already-set day
+				<% @availability_calendar.availability_days.find(:all, :order => 'availability_day').each do |day| %>
+					if (dstr==new Date(<%= day.availability_day.year %>,<%= day.availability_day.month %>-1,<%= day.availability_day.mday %>).toDateString()) {
+					$td.addClass('<%=day.availability %>');
+				} else 
+				<% end %>
+				{}
 			}
-		)
-		/*.bind('click',
-			function()
-			{
-				$(this).dpDisplay();
-				this.blur();
-				return false;
-			}
-		)*/
-		.bind('dateSelected',cycleDay
-		)
-		.bind('dpMonthChanged',function(event, displayedMonth, displayedYear) {
-			alert("Changing month is currently not supported");
-			location.reload();
-		});
+		}
+	)
+	/*.bind('click',
+		function()
+		{
+			$(this).dpDisplay();
+			this.blur();
+			return false;
+		}
+	)*/
+	.bind('dateSelected',cycleDay
+	)
+	.bind('dpMonthChanged',function(event, displayedMonth, displayedYear) {
+		alert("Changing month is currently not supported");
+		location.reload();
+	});
+	disableSelection(document.getElementById('datepicker'));
 });
 function cycleDay(e, selectedDate, $td) {
 	if ($td.hasClass('green')) {
@@ -67,6 +66,17 @@ function updateDayServer(selectedDate,colorText) {
 	  	$("#results").html(data);
 	});
 }
+function disableSelection(target){
+	if (typeof target.onselectstart!="undefined") //IE route
+		target.onselectstart=function(){return false}
+	else if (typeof target.style.MozUserSelect!="undefined") //Firefox route
+		target.style.MozUserSelect="none"
+	else //All other route (ie: Opera)
+		target.onmousedown=function(){return false}
+	target.style.cursor = "default"
+}
+
+
 </script>
 <style>
 .red {
@@ -88,41 +98,10 @@ color:black !important;
 background-color: gray;
 }
 </style>
-Use the calendar below. Red=unavailable, Yellow=somewhat available, Green=available. Changes are saved immediately. 
+<p>Click dates on the calendar below to change your availability. Red=unavailable, Yellow=somewhat available, Green=available. Changes are saved immediately.</p>
 
 <div id="datepicker"></div>
+<br />
 <div id="results"></div>
+<br />
 
-
-<%= form_for(@availability_calendar) do |f| %>
-  <% if @availability_calendar.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@availability_calendar.errors.count, "error") %> prohibited this availability_calendar from being saved:</h2>
-
-      <ul>
-      <% @availability_calendar.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :availability_quotient %><br />
-    <%= f.text_field :availability_quotient %>
-  </div>
-
-  <div class="field">
-  <% f.fields_for :availability_days do |child_form| %>
-	Date: <%= child_form.object.availability_day %>
-    <%= child_form.label :availability %>: 
-    <%= child_form.text_field :availability %>
-	<%= child_form.hidden_field :availability_day, :value => child_form.object.availability_day %>
-    <br />
-
-  <% end %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>

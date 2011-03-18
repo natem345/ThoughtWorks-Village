@@ -21,9 +21,9 @@ class AvailabilityCalendarsController < ApplicationController
 		currentDay.save
 	end
 	if User.find(session[:id]).availability_calendar.save
-		render :text => "Successo date " + availDate.to_s() + " " + params[:color]
+		render :text => "Updated availability for date " + availDate.to_s() + " to " + params[:color]
 	else
-		render :text => "Failure date " + availDate.to_s() + " " + params[:color]
+		render :text => "<strong>Failure</strong> updating date " + availDate.to_s() + " to " + params[:color]
 	end
   end
 

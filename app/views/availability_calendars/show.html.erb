@@ -2,7 +2,7 @@
 
 <p>
   
-  <% @availability_calendar.availability_days.each do |day| %>
+  <% @availability_calendar.availability_days.find(:all, :order => 'availability_day').each do |day| %>
 	<%= day.availability_day %>: <%=day.availability %><br />
   <% end %>
 </p>
