@@ -11,8 +11,20 @@ class AvailabilityCalendarsController < ApplicationController
 
 
   def update_day
-
-	render :text => "Successo date " + params[:date] + " " + Date.parse(params[:date]).to_s() + " " + params[:color]
+	availDate=Date.parse(params[:date])
+	@availability_calendar = User.find(session[:id]).availability_calendar
+	currentDay = @availability_calendar.availability_days.where(:availability_day => availDate).first
+	if currentDay.nil? #day doesn't exist yet
+		@availability_calendar.availability_days.build(:availability_day => availDate, :availability => params[:color]).save
+	else
+		currentDay.availability=params[:color]
+		currentDay.save
+	end
+	if User.find(session[:id]).availability_calendar.save
+		render :text => "Successo date " + availDate.to_s() + " " + params[:color]
+	else
+		render :text => "Failure date " + availDate.to_s() + " " + params[:color]
+	end
   end
 
 
@@ -49,10 +61,10 @@ class AvailabilityCalendarsController < ApplicationController
 	  if User.find(session[:id]).availability_calendar.nil?:
 		redirect_to "http://google.com"
 	  end
-	  @availability_calendar = User.find(session[:id]).availability_calendar
-	  14.times {	|i|
-		@availability_calendar.availability_days.build(:availability_day => Date.today+i.days)
-	  }
+	  #@availability_calendar = User.find(session[:id]).availability_calendar
+	  #14.times {	|i|
+		#@availability_calendar.availability_days.build(:availability_day => Date.today+i.days)
+	  #}
 	  User.find(session[:id]).availability_calendar.save
 	end
     #@availability_calendar = User.find(session[:id]).availability_calendar
@@ -62,7 +74,6 @@ class AvailabilityCalendarsController < ApplicationController
 
   # GET /availability_calendars/1/edit
   def edit
-	#if this user doesn't have calendar, create one and days for 21 days into future
     @availability_calendar = AvailabilityCalendar.find(params[:id])
 	
   end

@@ -10,11 +10,18 @@ $(function()
 			{	inline:true,
 				selectMultiple:true,
 				renderCallback:function($td, thisDate, month, year)
-				{
+				{	//note: to allow changing months, must get this list from server again or keep a local copy of all changes. this will get called again on month change
 					dstr=thisDate.toDateString();
 					if (dstr==new Date(2011,3-1,20).toDateString()) {
 						$td.addClass('red');
-					}
+					} else 
+					if (dstr==new Date(2011,4-1,20).toDateString()) {
+						$td.addClass('red');
+					} else 
+					if (dstr==new Date(2011,3-1,31).toDateString()) {
+						$td.addClass('red');
+					} else 
+					{}
 				}
 			}
 		)
@@ -27,7 +34,11 @@ $(function()
 			}
 		)*/
 		.bind('dateSelected',cycleDay
-		);
+		)
+		.bind('dpMonthChanged',function(event, displayedMonth, displayedYear) {
+			alert("Changing month is currently not supported");
+			location.reload();
+		});
 });
 function cycleDay(e, selectedDate, $td) {
 	if ($td.hasClass('green')) {
