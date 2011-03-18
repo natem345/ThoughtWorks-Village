@@ -1,4 +1,5 @@
 class MentorsController < ApplicationController
+
   before_filter :authenticate, :except => [:index, :show, :new, :create, :search]
 
   def authenticate
@@ -42,7 +43,11 @@ class MentorsController < ApplicationController
 
   # GET /mentors/1/edit
   def edit
-    @mentor = Mentor.find(params[:id])
+    if session[:id].to_s == params[:id].to_s
+      @mentor = Mentor.find(params[:id])
+    #else
+      #redirect_to '/mentors', :notice => 'You may only edit your own profile.'
+    end
   end
 
   # POST /mentors
@@ -69,7 +74,7 @@ class MentorsController < ApplicationController
   # PUT /mentors/1.xml
   def update
     @mentor = Mentor.find(params[:id])
-
+    
     respond_to do |format|
       if @mentor.update_attributes(params[:mentor])
         format.html { redirect_to(@mentor, :notice => 'Mentor was successfully updated.') }
@@ -84,12 +89,14 @@ class MentorsController < ApplicationController
   # DELETE /mentors/1
   # DELETE /mentors/1.xml
   def destroy
-    @mentor = Mentor.find(params[:id])
-    @mentor.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(mentors_url) }
-      format.xml  { head :ok }
+    if session[:id].to_s == params[:id].to_s
+      @mentor = Mentor.find(params[:id])
+      @mentor.destroy
+      
+      respond_to do |format|
+        format.html { redirect_to(mentors_url) }
+        format.xml  { head :ok }
+      end
     end
   end
   

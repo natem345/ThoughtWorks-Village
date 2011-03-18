@@ -35,5 +35,8 @@ ThoughtWorksVillage::Application.configure do
 	:user_name => 'thoughtworksvillage',
 	:password => 'takesavillage',
   }
+
+  # Disable Authenticity Tokens
+  config.action_controller.allow_forgery_protection = false
 end
 

@@ -16,4 +16,3 @@ class User < ActiveRecord::Base
                :password => user_info[:password]).first
   end
 end
-

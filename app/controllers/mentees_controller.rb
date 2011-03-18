@@ -3,10 +3,11 @@ class MenteesController < ApplicationController
   before_filter :authenticate, :except => [:index, :show, :new, :create]
 
   def authenticate
-	if session[:id]==nil
-	  redirect_to '/users/login'
-	end
+    if session[:id]==nil
+      redirect_to '/users/login'
+    end
   end
+
   # GET /mentees
   # GET /mentees.xml
   def index
@@ -42,7 +43,9 @@ class MenteesController < ApplicationController
 
   # GET /mentees/1/edit
   def edit
-    @mentee = Mentee.find(params[:id])
+    if session[:id].to_s == params[:id].to_s
+      @mentee = Mentee.find(params[:id])
+    end
   end
 
   # POST /mentees
@@ -69,7 +72,7 @@ class MenteesController < ApplicationController
   # PUT /mentees/1.xml
   def update
     @mentee = Mentee.find(params[:id])
-
+    
     respond_to do |format|
       if @mentee.update_attributes(params[:mentee])
         format.html { redirect_to(@mentee, :notice => 'Mentee was successfully updated.') }
@@ -84,12 +87,14 @@ class MenteesController < ApplicationController
   # DELETE /mentees/1
   # DELETE /mentees/1.xml
   def destroy
-    @mentee = Mentee.find(params[:id])
-    @mentee.destroy
-
-    respond_to do |format|
-      format.html { redirect_to(mentees_url) }
-      format.xml  { head :ok }
+    if session[:id].to_s == params[:id].to_s
+      @mentee = Mentee.find(params[:id])
+      @mentee.destroy
+      
+      respond_to do |format|
+        format.html { redirect_to(mentees_url) }
+        format.xml  { head :ok }
+      end
     end
   end
 end

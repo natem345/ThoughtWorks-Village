@@ -41,9 +41,9 @@ class RequestsController < ApplicationController
 
     if @request.save
       Notifier.mentorship_request_email(@request).deliver
-      redirect_to(@mentor, :notice => "Request was sent.")
+      redirect_to(@mentor, :notice => "Your request has been sent.")
     else
-      redirect_to(@mentor, :notice => "The request could not be made.")
+      redirect_to(@mentor, :notice => "The request could not be sent.")
     end
   end
 
@@ -56,10 +56,10 @@ class RequestsController < ApplicationController
     
     if @mentorship.save
       Notifier.mentorship_accepted_email(@request).deliver
-      redirect_to(@mentorship.mentee, :notice => "Meet your new mentee")
+      redirect_to(@mentorship.mentee, :notice => "Meet your new mentee.")
       @request.destroy
     else
-      redirect_to(@mentorship.mentee, :notice => "The mentorship could not be confirmed.")
+      redirect_to(@mentorship.mentee, :notice => "The request could not be confirmed.")
     end
   end
 
