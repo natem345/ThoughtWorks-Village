@@ -45,6 +45,8 @@ class MenteesController < ApplicationController
   def edit
     if session[:id].to_s == params[:id].to_s
       @mentee = Mentee.find(params[:id])
+    else
+      redirect_to '/mentees', :notice => 'You may only edit your own profile.'
     end
   end
 
@@ -95,6 +97,8 @@ class MenteesController < ApplicationController
         format.html { redirect_to(mentees_url) }
         format.xml  { head :ok }
       end
+    else
+      redirect_to '/mentors', :notice => 'You may only delete your own profile.'
     end
   end
 end
