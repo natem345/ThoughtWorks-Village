@@ -1,4 +1,7 @@
 ThoughtWorksVillage::Application.routes.draw do
+  match 'mentors/search' => 'mentors#search'
+  match 'availability_calendars/update_day' => 'availability_calendars#update_day'
+
   resources :mentorships
 
   resources :availability_days
@@ -14,7 +17,6 @@ ThoughtWorksVillage::Application.routes.draw do
   resources :experiences
 
 
-  match 'mentors/search' => 'mentors#search'
 
   get "home/index"
   resources :requests
@@ -30,6 +32,7 @@ ThoughtWorksVillage::Application.routes.draw do
   match 'users/process_login' => 'users#process_login'
   match 'users/logout' => 'users#logout'
   match 'mentor_profiles/update_availability' => 'mentor_profiles#update_availability'
+
   resources :users
   
   

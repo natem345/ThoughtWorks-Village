@@ -8,6 +8,14 @@ class AvailabilityCalendarsController < ApplicationController
 	  redirect_to '/users/login'
 	end
   end
+
+
+  def update_day
+
+	render :text => "Successo date " + params[:date] + " " + Date.parse(params[:date]) + " " + params[:color]
+  end
+
+
   # GET /availability_calendars
   # GET /availability_calendars.xml
   def index
@@ -18,7 +26,9 @@ class AvailabilityCalendarsController < ApplicationController
       format.xml  { render :xml => @availability_calendars }
     end
   end
-
+  def search
+	return "successs"
+  end
   # GET /availability_calendars/1
   # GET /availability_calendars/1.xml
   def show
@@ -48,6 +58,7 @@ class AvailabilityCalendarsController < ApplicationController
     #@availability_calendar = User.find(session[:id]).availability_calendar
 	#redirect_to (:action => 'edit', :id => @availability_calendar.id)# edit_availability_calendar @availability_calendar
   end
+
 
   # GET /availability_calendars/1/edit
   def edit

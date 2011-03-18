@@ -1,3 +1,85 @@
+<%= javascript_include_tag "jquery-ui.js" %>
+<%= stylesheet_link_tag("jquery-ui.css") %>
+<script>
+/*jQuery(function($) {
+  // when the #search field changes
+  $("#search").change(function() {
+    // make a POST call and replace the content
+    $.post("<%= url_for(:action => 'update_day', :controller => 'availability_calendars') %>",
+	{ q: $("#search").val() },//adds newline somehow?
+	function(data) {
+      $("#results").html(data);
+    });
+  });
+})*/
+
+$(function() {
+	$( "#datepicker" ).datepicker({
+	   beforeShowDay: calBeforeShowDay, 
+		onSelect: calOnSelect
+	});
+});
+
+
+function calOnSelect (dateText, inst) { 
+			alert(dateText);
+alert($(this).html());
+			//updateDayServer(dateText,newClass);
+			
+		}
+function calBeforeShowDay (date) { 
+			//[0] equal to true/false indicating whether or not this date is selectable, [1] equal to a CSS class name(s) or '' for the default presentation, and [2] an optional popup tooltip for this date.
+			ar=new Array();
+			ar[0]=true;
+			ar[1]='availGray';
+//alert(aday.toDateString());
+//alert(date);
+			if (date.toDateString()==new Date(2011,3-1,20).toDateString()) {
+				ar[1]='red';
+			} else
+			if (date.toDateString()==new Date(2011,3-1,22).toDateString()) {
+				ar[1]='yellow';
+			} else
+			if (date.toDateString()==new Date(2011,3-1,24).toDateString()) {
+				ar[1]='green';
+			} else
+
+{}
+			return ar;
+		}
+function updateDayServer(dateText,colorText) {
+	$.post("<%= url_for(:action => 'update_day', :controller => 'availability_calendars') %>",
+	{ date: dateText,
+	  color: "green" },//adds newline somehow?
+	function(data) {
+	  	$("#results").html(data);
+	});
+}
+</script>
+<style>
+.red a{
+background-color: red !important;
+background-image:none !important;
+}
+.yellow a {
+background-color: yellow !important;
+background-image:none !important;
+color: black;
+}
+.green a { 
+background-color: green !important;
+background-image:none !important;
+}
+.availGray availWeek { 
+background-color: gray;
+}
+</style>
+Use the calendar below. Red=unavailable, Yellow=somewhat available, Green=available. Changes are saved immediately. 
+
+<div id="datepicker"></div>
+<div id="results"></div>
+<input type="text" id="search" />
+<%= button_to('Update Thingy', {:action => 'search', :controller => 'mentors', :q => "J"}, :method => :post, :remote => true) %>
 
 
 <%= form_for(@availability_calendar) do |f| %>
