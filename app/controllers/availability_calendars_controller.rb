@@ -12,7 +12,7 @@ class AvailabilityCalendarsController < ApplicationController
 
   def update_day
 
-	render :text => "Successo date " + params[:date] + " " + Date.parse(params[:date]) + " " + params[:color]
+	render :text => "Successo date " + params[:date] + " " + Date.parse(params[:date]).to_s() + " " + params[:color]
   end
 
 
