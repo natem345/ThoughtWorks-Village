@@ -33,11 +33,10 @@ class RequestsController < ApplicationController
   # POST /requests
   # POST /requests.xml
   def create
-    @request = Request.new
-    @request.mentor = Mentor.find(params[:mentor_id]).first
-    @request.mentee = Mentee.find(params[:mentee_id]).first
-    @request.reason = params[:reason]
-    @request.estimated_length = params[:estimated_length]
+    @request = Request.new(params[:request])
+    @request.mentor = Mentor.find(params[:mentor_id])
+    @request.mentee = Mentee.find(session[:id])
+    @mentor = @request.mentor
 
     if @request.save
       Notifier.mentorship_request_email(@request).deliver
@@ -51,12 +50,13 @@ class RequestsController < ApplicationController
   # Accepted Request
   def update
     @mentorship = Mentorship.new
+    @request = Request.find(params[:id])
     @mentorship.mentor = @request.mentor
     @mentorship.mentee = @request.mentee
     
     if @mentorship.save
       Notifier.mentorship_accepted_email(@request).deliver
-      redirect_to(@mentorship.mentee, :notice => "Meet your new mentee.")
+      redirect_to(@mentorship.mentee, :notice => "Meet your new mentee!")
       @request.destroy
     else
       redirect_to(@mentorship.mentee, :notice => "The request could not be confirmed.")
