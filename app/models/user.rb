@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   validates_length_of :password, :minimum => 8
   validates_presence_of :password
   validates_length_of :phone, :minimum => 10
+  validates_presence_of :phone
   validates_uniqueness_of :phone, :allow_blank => true
   
   has_many :experiences
