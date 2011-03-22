@@ -104,20 +104,26 @@ class MentorsController < ApplicationController
   
   def search
     @query = params[:q]
-    #@mentors = Mentor.where("name = ?",@query)
-    #cond_text   = @query.split.map{|w| "name LIKE ? "}.join(" OR ")
-    #cond_values = @query.split.map{|w| "%#{w}%"}
-    #@mentors = Mentor.all(:conditions =>  (@query ? [cond_text, *cond_values] : []))
+    queryWords = @query.split
+    @mentors =[]
+   
+    queryWords.each do |q|
+      experiences = Experience.where("ability LIKE :query",{:query => "%#{q}%"})    
+      experiences.each do |e|
+        @mentors = Mentor.where("id = ?",e.user_id)
+      end      
+      
+      @mentors = @mentors | Mentor.where("interests LIKE :query",{:query => "%#{q}%"})      
+      @mentors = @mentors | Mentor.where("name LIKE :query",{:query => "%#{q}%"})
+      @mentors = @mentors | Mentor.where("major LIKE :query",{:query => "%#{q}%"})
+      @mentors = @mentors | Mentor.where("school LIKE :query",{:query => "%#{q}%"})
+      @mentors = @mentors | Mentor.where("location LIKE :query",{:query => "%#{q}%"})
 
-    @mentors = Mentor.where("name = ?", @query)
-    @mentors = @mentors | Mentor.where("location = ?", @query)
-    @mentors = @mentors | Mentor.where("current_position = ?", @query)
-    @mentors = @mentors | Mentor.where("school = ?", @query)
-    @mentors = @mentors | Mentor.where("major = ?", @query)
-    #@mentors = @mentors | Mentor.where("total_years_experience = ?", @query)
-    @mentors = @mentors | Mentor.where("interests = ?", @query)
-                
-
+    end
+    
+    #do something with availability
+    
+    
     respond_to do |format|
       format.html # search.html.erb
       format.xml  { render :xml => @mentor }
