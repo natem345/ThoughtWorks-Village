@@ -93,10 +93,8 @@ class MentorsController < ApplicationController
       @mentor = Mentor.find(params[:id])
       @mentor.destroy
       
-      respond_to do |format|
-        format.html { redirect_to(mentors_url) }
-        format.xml  { head :ok }
-      end
+      reset_session
+      redirect_to '/users/login', :notice => "Logged out."
     else
       redirect_to '/mentors', :notice => 'You may only delete your own profile.'
     end

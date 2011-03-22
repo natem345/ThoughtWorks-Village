@@ -93,12 +93,10 @@ class MenteesController < ApplicationController
       @mentee = Mentee.find(params[:id])
       @mentee.destroy
       
-      respond_to do |format|
-        format.html { redirect_to(mentees_url) }
-        format.xml  { head :ok }
-      end
+      reset_session
+      redirect_to '/users/login', :notice => "Logged out."
     else
-      redirect_to '/mentors', :notice => 'You may only delete your own profile.'
+      redirect_to '/mentees', :notice => 'You may only delete your own profile.'
     end
   end
 end
