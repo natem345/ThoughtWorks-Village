@@ -11,7 +11,13 @@ class MentorshipsController < ApplicationController
   # GET /mentorships
   # GET /mentorships.xml
   def index
-    @mentorships = Mentorship.all
+    if session[:usertype] == :mentor
+      @mentorships = Mentorship.where(:mentor_id => session[:id])
+    elsif session[:usertype] == :mentee
+      @mentorships = Mentorship.where(:mentee_id => session[:id])
+    else
+      @mentorships = Mentorship.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
