@@ -91,14 +91,40 @@ class MenteesController < ApplicationController
   def destroy
     if session[:id].to_s == params[:id].to_s
       @mentee = Mentee.find(params[:id])
-      @mentee.destroy
-      
-      respond_to do |format|
-        format.html { redirect_to(mentees_url) }
-        format.xml  { head :ok }
+
+      #Delete Requests
+      Request.where(:mentee_id => params[:id]).each do |r|
+        r.destroy
       end
+
+      #Delete Mentorships
+      Mentorship.where(:mentee_id => params[:id]).each do |m|
+        m.destroy
+      end
+
+      #Delete Experiences
+      Experience.where(:user_id => params[:id]).each do |e|
+        e.destroy
+      end
+
+#      # Disabled and untested, we might want to keep survey data
+#      #Delete Surveys, Questions and Responses
+#      Survey.where(:user_id => params[:id]).each do |s|
+#        Question.where(:survey_id => s.id).each do |q|
+#          Response.where(:question_id => q.id).each do |r|
+#            r.destroy
+#          end
+#          q.destroy
+#        end
+#        s.destroy
+#      end
+
+      @mentee.destroy
+      reset_session
+
+      redirect_to '/users/login', :notice => "Logged out."
     else
-      redirect_to '/mentors', :notice => 'You may only delete your own profile.'
+      redirect_to '/mentees', :notice => 'You may only delete your own profile.'
     end
   end
 end

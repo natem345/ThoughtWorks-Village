@@ -1,9 +1,0 @@
-<h1>Requests Mentorship from John Smith</h1>
-<form>
-<table>
-<tr><td>Why John Smith?</td><td><textarea></textarea></td></tr>
-<tr><td>When do you want this mentorship to start, and how long do you think it might last?</td><td><textarea></textarea></td></tr>
-<tr><td colspan="2"><input type="button" value="Submit" /></td></tr>
-</table>
-</form>
-

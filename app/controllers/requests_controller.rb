@@ -11,7 +11,13 @@ class RequestsController < ApplicationController
   # GET /requests
   # GET /requests.xml
   def index
-    @requests = Request.all
+    if session[:usertype] == :mentor
+      @requests = Request.where(:mentor_id => session[:id])
+    elsif session[:usertype] == :mentee
+      @requests = Request.where(:mentee_id => session[:id])
+    else
+      @requests = Request.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
