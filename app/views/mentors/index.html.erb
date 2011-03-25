@@ -1,4 +1,44 @@
-<h1>Mentors</h1>
+<style type="text/css">
+#FilterDiv {
+float: left; 
+width: 200px;
+}
+#FilterDiv label {
+display:block;
+}
+th a {
+color: white;
+}
+</style>
+
+<h1>Mentors </h1>
+Query was: <%= @query %><br /><br />
+Maj was: <%= @maj %>
+<div id="FilterDiv" style="">
+  <strong>Filter</strong>
+  <%= form_tag "/mentors", :method => "get" do %> 
+    Experiences: <br />
+    <% @experiences.each do |e| %>	  
+      <%= check_box_tag("Experiences:",e.ability) %>
+	  <%= e.ability %>
+      <br />  
+    <% end %> 
+    <% @filterables.each do |f| %>
+	  <p></p>
+      <%=f.first%>
+	  <br />
+      <% f.each do |str| %>	  
+	   <% if str == f.first then %>
+	     <% next %>
+	   <% end %>
+	    <%= check_box_tag(f.first,str) %>
+		<%= str %>
+        <br />
+      <% end %> 
+    <% end %>
+    <%= submit_tag("Filter") %>
+  <% end %> 
+</div>
 
 <table>
   <tr>

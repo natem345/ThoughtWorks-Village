@@ -11,7 +11,33 @@ class MentorsController < ApplicationController
   # GET /mentors
   # GET /mentors.xml
   def index
-    @mentors = Mentor.all
+    @query = params 
+    @maj = params["Majors:"]
+    @experiences = Experience.all
+    @locations = ["Locations:"]
+    @current_positions = ["Current Positions:"]
+    @majors = ["Majors:"]
+    @filterables = []
+
+    if params[:utf8] != nil
+      
+      
+    end
+      @mentors = Mentor.all
+   
+    
+    @mentors.each do |m|     
+
+      @locations << m.location
+      @current_positions << m.current_position
+      @majors << m.major
+      
+      @locations = @locations & @locations
+      @current_positions = @current_positions & @current_positions
+      @majors = @majors & @majors
+    end
+
+    @filterables << @locations << @current_positions << @majors
 
     respond_to do |format|
       format.html # index.html.erb

@@ -15,17 +15,17 @@ color: white;
 <tr>Your Query was: <%=@query%></tr>
 
 <tr>
-    <th>First Name</th>
-    <th>Location</th>
-    <th>Current Position</th>
-    <th>School</th>
-    <th>Major</th>
-    <th>Total Years of Experience</th>
-    <th>Interests</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+  <th>First Name </th>
+  <th>Location</th>
+  <th>Current Position</th>
+  <th>School</th>
+  <th>Major</th>
+  <th>Total Years of Experience</th>
+  <th>Interests</th>
+  <th></th>
+  <th></th>
+  <th></th>
+</tr>
 
 <% @mentors.each do |mentor| %>
   <tr>
@@ -38,6 +38,6 @@ color: white;
     <td><%= mentor.interests %></td>
     <td><%= link_to 'Show', mentor %></td>
   </tr>
-  <% end %>
+<% end %>
 </table>
 
