@@ -13,18 +13,81 @@ class MentorsController < ApplicationController
   def index
     @query = params 
     @maj = params["Majors:"]
-    @experiences = Experience.all
+    @experiences = []
+    @abilities = ["Abilities: "]
     @locations = ["Locations:"]
     @current_positions = ["Current Positions:"]
     @majors = ["Majors:"]
-    @filterables = []
+    @filterables = []    
+    @mentors = []
+    
 
-    if params[:utf8] != nil
-      
-      
+    if params[:utf8] != nil      
+      params.each do |p|
+        if p.first[0,3] == "Exp"
+          @abilities << p.second
+        elsif p.first[0,3] == "Loc"
+          @locations << p.second
+        elsif p.first[0,3] == "Cur"
+          @current_positions << p.second
+        elsif p.first[0,3] == "Maj"
+          @majors << p.second
+        else
+        end 
+        
+        @mentors1 = Mentor.where("location = ?", @locations.second)
+        @mentors2 = Mentor.where("current_position = ?", @current_positions.second)
+        @mentors3 = Mentor.where("major = ?", @majors.second)
+           
+        @abilities.each do |a|
+         @experiences = Experience.where("ability = ?", a)         
+        end
+
+        @experiences.each do |e|
+         @mentors4 = @mentors4 & Mentor.where("id = ?",e.user_id)
+        end
+        
+        if(@mentors1 != [])          
+            @mentors = @mentors1
+        end
+        
+         if(@mentors2 != [])
+          if(@mentors != [])
+            @mentors = @mentors & @mentors2
+          else
+            @mentors = @mentors2
+          end
+        end
+
+if(@mentors3 != [])
+          if(@mentors != [])
+            @mentors = @mentors & @mentors3
+          else
+            @mentors = @mentors3
+          end
+        end
+
+if(@mentors4 != [])
+          if(@mentors != [])
+            @mentors = @mentors & @mentors4
+          else
+            @mentors = @mentors4
+          end
+        end
+
+       
+               
+      end
+    else
+        @mentors = Mentor.all
+        @experiences = Experience.all
+        @experiences.each do |e|
+           @abilities << e.ability
+        end
+
+       # @abilities = @abilities & @abilities
     end
-      @mentors = Mentor.all
-   
+                    
     
     @mentors.each do |m|     
 
@@ -37,7 +100,7 @@ class MentorsController < ApplicationController
       @majors = @majors & @majors
     end
 
-    @filterables << @locations << @current_positions << @majors
+    @filterables << @abilities  << @locations << @current_positions << @majors 
 
     respond_to do |format|
       format.html # index.html.erb
@@ -117,47 +180,12 @@ class MentorsController < ApplicationController
   def destroy
     if session[:id].to_s == params[:id].to_s
       @mentor = Mentor.find(params[:id])
-      
-      #Delete Requests
-      Request.where(:mentor_id => params[:id]).each do |r|
-        r.destroy
-      end
-
-      #Delete Mentorships
-      Mentorship.where(:mentor_id => params[:id]).each do |m|
-        m.destroy
-      end
-
-      #Delete Experiences
-      Experience.where(:user_id => params[:id]).each do |e|
-        e.destroy
-      end
-
-#      # Disabled and untested, we might want to keep survey data
-#      #Delete Surveys, Questions and Responses
-#      Survey.where(:user_id => params[:id]).each do |s|
-#        Question.where(:survey_id => s.id).each do |q|
-#          Response.where(:question_id => q.id).each do |r|
-#            r.destroy
-#          end
-#          q.destroy
-#        end
-#        s.destroy
-#      end
-
-      #Delete AvailabilityCalendars
-      AvailabilityCalendar.where(:mentor_id => params[:id]).each do |c|
-        # Delete AvailabilityDays
-        AvailabilityDay.where(:availability_calendar_id => c.id).each do |d|
-          d.destroy
-        end
-        c.destroy
-      end
-
       @mentor.destroy
-      reset_session
-
-      redirect_to '/users/login', :notice => "Logged out."
+      
+      respond_to do |format|
+        format.html { redirect_to(mentors_url) }
+        format.xml  { head :ok }
+      end
     else
       redirect_to '/mentors', :notice => 'You may only delete your own profile.'
     end

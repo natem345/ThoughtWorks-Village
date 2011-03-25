@@ -12,17 +12,11 @@ color: white;
 </style>
 
 <h1>Mentors </h1>
-Query was: <%= @query %><br /><br />
-Maj was: <%= @maj %>
+Query was: <%= @p %><br /><br />
+Location was: <%= @locations %>
 <div id="FilterDiv" style="">
   <strong>Filter</strong>
-  <%= form_tag "/mentors", :method => "get" do %> 
-    Experiences: <br />
-    <% @experiences.each do |e| %>	  
-      <%= check_box_tag("Experiences:",e.ability) %>
-	  <%= e.ability %>
-      <br />  
-    <% end %> 
+  <%= form_tag "/mentors", :method => "get" do %>     
     <% @filterables.each do |f| %>
 	  <p></p>
       <%=f.first%>
@@ -31,7 +25,7 @@ Maj was: <%= @maj %>
 	   <% if str == f.first then %>
 	     <% next %>
 	   <% end %>
-	    <%= check_box_tag(f.first,str) %>
+	    <%= check_box_tag(f.first+str,str) %>
 		<%= str %>
         <br />
       <% end %> 
