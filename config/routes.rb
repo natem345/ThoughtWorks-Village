@@ -31,6 +31,7 @@ ThoughtWorksVillage::Application.routes.draw do
   match 'users/login' => 'users#login'
   match 'users/process_login' => 'users#process_login'
   match 'users/logout' => 'users#logout'
+  match 'users/register' => 'users#register'
   match 'mentor_profiles/update_availability' => 'mentor_profiles#update_availability'
 
   resources :users
