@@ -180,12 +180,47 @@ if(@mentors4 != [])
   def destroy
     if session[:id].to_s == params[:id].to_s
       @mentor = Mentor.find(params[:id])
-      @mentor.destroy
       
-      respond_to do |format|
-        format.html { redirect_to(mentors_url) }
-        format.xml  { head :ok }
+      #Delete Requests
+      Request.where(:mentor_id => params[:id]).each do |r|
+        r.destroy
       end
+      
+      #Delete Mentorships
+      Mentorship.where(:mentor_id => params[:id]).each do |m|
+        m.destroy
+      end
+      
+      #Delete Experiences
+      Experience.where(:user_id => params[:id]).each do |e|
+        e.destroy
+      end
+
+      # Disabled and untested, we might want to keep survey data
+      #Delete Surveys, Questions and Responses
+      #Survey.where(:user_id => params[:id]).each do |s|
+        #Question.where(:survey_id => s.id).each do |q|
+          #Response.where(:question_id => q.id).each do |r|
+            #r.destroy
+          #end
+          #q.destroy
+        #end
+        #s.destroy
+      #end
+
+      #Delete AvailabilityCalendars
+      AvailabilityCalendar.where(:mentor_id => params[:id]).each do |c|
+        #Delete AvailabilityDays
+        AvailabilityDay.where(:availability_calendar_id => c.id).each do |d|
+          d.destroy
+        end
+        c.destroy
+      end
+      
+      @mentor.destroy
+      reset_session
+      
+      redirect_to '/users/login', :notice => "Logged out."
     else
       redirect_to '/mentors', :notice => 'You may only delete your own profile.'
     end
