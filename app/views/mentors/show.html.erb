@@ -50,7 +50,7 @@
   <b>Experiences:</b>
   <% @mentor.experiences.each do |e| %>
 	<br /><%=e.ability%> for <%=e.length_in_years%> years, comfort level <%=e.comfort_level%>/10
-  <%end%>
+  <% end %>
 </p>
 
 <p>
@@ -59,19 +59,14 @@
 </p>
 <p>
   <b>See availability:</b>
-  <% if @availability_calendar.nil? %> Unknown
+  <% if @availability_calendar.nil? %>
+  No availability information
   <% else %>
 
-
-
-
-<%= javascript_include_tag "jquery.datePicker.js" %>
-<%= javascript_include_tag "date.js" %>
-<%= stylesheet_link_tag("datePicker.css") %>
-
-
-
-<script>
+  <%= javascript_include_tag "jquery.datePicker.js" %>
+  <%= javascript_include_tag "date.js" %>
+  <%= stylesheet_link_tag("datePicker.css") %>
+  <script>
 
 $(function()
 {
@@ -100,39 +95,38 @@ $(function()
 });
 
 
-</script>
-<style>
-.red {
-background-color: red !important;
-background-image:none !important;
-color:black !important;
-}
-.yellow {
-background-color: yellow !important;
-background-image:none !important;
-color:black !important;
-}
-.green { 
-background-color: green !important;
-background-image:none !important;
-color:black !important;
-}
-.availGray availWeek { 
-background-color: gray;
-}
-</style>
-<p>Red=unavailable, Yellow=somewhat available, Green=available.</p>
+  </script>
+  <style>
+    .red {
+    background-color: red !important;
+    background-image:none !important;
+    color:black !important;
+    }
+    .yellow {
+    background-color: yellow !important;
+    background-image:none !important;
+    color:black !important;
+    }
+    .green { 
+    background-color: green !important;
+    background-image:none !important;
+    color:black !important;
+    }
+    .availGray availWeek { 
+    background-color: gray;
+    }
+  </style>
+<p>
+  Red: Unavailable<br/>
+  Yellow: Possibly Available<br/>
+  Green: Available
+</p>
 
 <div id="datepicker"></div>
-<br />
-
-
-
-
-
-
-  <%end%>
+<br/>
+<%end%>
 </p>
+
 <% if session[:usertype]==:mentee %>
 <h2>Request a mentorship:</h2>
 <%= form_for([@mentor, @mentor.requests.build]) do |f| %>
@@ -149,6 +143,7 @@ background-color: gray;
   </div>
 <% end %>
 <% end %>
+
 <% if session[:id].to_s == @mentor.id.to_s %>
 <%= link_to 'Edit Profile', edit_mentor_path(@mentor) %> |
 <%= link_to 'Delete Account', @mentor, :confirm => 'Are you sure?', :method => :delete %> |

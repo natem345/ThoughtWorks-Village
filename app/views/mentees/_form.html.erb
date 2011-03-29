@@ -11,8 +11,50 @@
     </div>
   <% end %>
 
+  <table cellspacing=5>
+    <tr>
+      <td align="left" valign="top"><%= f.label :name %></td>
+      <td align="center"><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <td align="left" valign="top"><%= f.label :location %></td>
+      <td align="center"><%= f.text_field :location %></td>
+    </tr>
+    <tr>
+      <td align="left" valign="top"><%= f.label :current_position %></td>
+      <td align="center"><%= f.text_field :current_position %></td>
+    </tr>
+    <tr>
+      <td align="left" valign="top"><%= f.label :school %></td>
+      <td align="center"><%= f.text_field :school %></td>
+    </tr>
+    <tr>
+      <td align="left" valign="top"><%= f.label :major %></td>
+      <td align="center"><%= f.text_field :major %></td>
+    </tr>
+    <tr>
+      <td align="left" valign="top"><%= f.label :total_years_experience %></td>
+      <td align="center"><%= f.text_field :total_years_experience %></td>
+    </tr>
+    <tr>
+      <td align="left" valign="top"><%= f.label :email %></td>
+      <td align="center"><%= f.text_field :email %></td>
+    </tr>
+    <tr>
+      <td align="left" valign="top"><%= f.label :password %></td>
+      <td align="center"><%= f.password_field :password %></td>
+    </tr>
+    <tr>
+      <td align="left" valign="top"><%= f.label :phone %></td>
+      <td align="center"><%= f.text_field :phone %></td>
+    </tr>
+    <tr>
+      <td align="left" valign="top"><%= f.label :interests %></td>
+      <td align="center"><%= f.text_area :interests %></td>
+    </tr>
+  </table>
 
-  <div class="field">
+  <!-- <div class="field">
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
@@ -51,10 +93,15 @@
   <div class="field">
     <%= f.label :interests %><br />
     <%= f.text_area :interests %>
-  </div>
+  </div> -->
+
+  <% if session[:id] != nil %>
   <div class = "links">
     <%= link_to 'Experiences', experiences_path %>
   </div>
+  <% end %>
+
+  <br/>
   <div class="actions">
     <%= f.submit %>
   </div>
