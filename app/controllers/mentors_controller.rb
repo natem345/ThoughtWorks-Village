@@ -12,12 +12,12 @@ class MentorsController < ApplicationController
   # GET /mentors.xml
   def index
     @query = params 
-    @maj = params["Majors:"]
+    # @maj = params["Majors:"]
     @experiences = []
     @abilities = ["Abilities: "]
     @locations = ["Locations:"]
     @current_positions = ["Current Positions:"]
-    @majors = ["Majors:"]
+    # @majors = ["Majors:"]
     @filterables = []    
     @mentors = []
     
@@ -30,14 +30,14 @@ class MentorsController < ApplicationController
           @locations << p.second
         elsif p.first[0,3] == "Cur"
           @current_positions << p.second
-        elsif p.first[0,3] == "Maj"
-          @majors << p.second
+        # elsif p.first[0,3] == "Maj"
+          # @majors << p.second
         else
         end 
         
         @mentors1 = Mentor.where("location = ?", @locations.second)
         @mentors2 = Mentor.where("current_position = ?", @current_positions.second)
-        @mentors3 = Mentor.where("major = ?", @majors.second)
+        # @mentors3 = Mentor.where("major = ?", @majors.second)
            
         @abilities.each do |a|
          @experiences = Experience.where("ability = ?", a)         
@@ -59,31 +59,28 @@ class MentorsController < ApplicationController
           end
         end
 
-if(@mentors3 != [])
-          if(@mentors != [])
-            @mentors = @mentors & @mentors3
-          else
-            @mentors = @mentors3
-          end
-        end
+# if(@mentors3 != [])
+          # if(@mentors != [])
+            # @mentors = @mentors & @mentors3
+          # else
+            # @mentors = @mentors3
+          # end
+        # end
 
-if(@mentors4 != [])
+        if(@mentors4 != [])
           if(@mentors != [])
             @mentors = @mentors & @mentors4
           else
             @mentors = @mentors4
           end
-        end
-
-       
-               
+        end    
       end
     else
-        @mentors = Mentor.all
-        @experiences = Experience.all
-        @experiences.each do |e|
-           @abilities << e.ability
-        end
+      @mentors = Mentor.all
+      @experiences = Experience.all
+      @experiences.each do |e|
+        @abilities << e.ability
+      end
 
        # @abilities = @abilities & @abilities
     end
@@ -93,14 +90,14 @@ if(@mentors4 != [])
 
       @locations << m.location
       @current_positions << m.current_position
-      @majors << m.major
+      # @majors << m.major
       
       @locations = @locations & @locations
       @current_positions = @current_positions & @current_positions
-      @majors = @majors & @majors
+      # @majors = @majors & @majors
     end
 
-    @filterables << @abilities  << @locations << @current_positions << @majors 
+    @filterables << @abilities  << @locations << @current_positions #<< @majors 
 
     respond_to do |format|
       format.html # index.html.erb
@@ -239,19 +236,17 @@ if(@mentors4 != [])
       
       @mentors = @mentors | Mentor.where("interests LIKE :query",{:query => "%#{q}%"})      
       @mentors = @mentors | Mentor.where("name LIKE :query",{:query => "%#{q}%"})
-      @mentors = @mentors | Mentor.where("major LIKE :query",{:query => "%#{q}%"})
-      @mentors = @mentors | Mentor.where("school LIKE :query",{:query => "%#{q}%"})
+      # @mentors = @mentors | Mentor.where("major LIKE :query",{:query => "%#{q}%"})
+      # @mentors = @mentors | Mentor.where("school LIKE :query",{:query => "%#{q}%"})
       @mentors = @mentors | Mentor.where("location LIKE :query",{:query => "%#{q}%"})
 
     end
     
     #do something with availability
     
-    
     respond_to do |format|
       format.html # search.html.erb
       format.xml  { render :xml => @mentor }
     end
   end
-  
 end

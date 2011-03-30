@@ -34,7 +34,8 @@ ThoughtWorksVillage::Application.routes.draw do
   match 'users/register' => 'users#register'
   match 'mentor_profiles/update_availability' => 'mentor_profiles#update_availability'
 
-  resources :users
+  # Block access to the users index view
+  #resources :users
   
   
 

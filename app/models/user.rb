@@ -1,12 +1,23 @@
 class User < ActiveRecord::Base
   validates_presence_of :name
-  validates_presence_of :email
-  validates_uniqueness_of :email, :case_sensitive => false
-  validates_length_of :password, :minimum => 8
-  validates_presence_of :password
-  validates_length_of :phone, :minimum => 10
-  validates_presence_of :phone
+
+  validates_uniqueness_of :email,
+  :case_sensitive => false,
+  :allow_nil => false,
+  :allow_blank => false
+  validates_format_of :email,
+  :message => "must be a valid email address.",
+  :with => /\A[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}\z/
+
+  validates_length_of :password,
+  :minimum => 8,
+  :allow_nil => false,
+  :allow_blank => false
+
   validates_uniqueness_of :phone, :allow_blank => true
+  validates_format_of :phone,
+  :message => "must be a valid telephone number.",
+  :with => /^[\(\)0-9\- \+\.]{10,20} *[extension\.]{0,9} *[0-9]{0,5}$/i
   
   has_many :experiences
 

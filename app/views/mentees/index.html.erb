@@ -5,8 +5,6 @@
     <th>First Name</th>
     <th>Location</th>
     <th>Current Position</th>
-    <th>School</th>
-    <th>Major</th>
     <th>Total Years of Experience</th>
     <th>Interests</th>
     <th></th>
@@ -19,11 +17,9 @@
     <td><%= mentee.name.split[0] %></td>
     <td><%= mentee.location %></td>
     <td><%= mentee.current_position %></td>
-    <td><%= mentee.school %></td>
-    <td><%= mentee.major %></td>
     <td><%= mentee.total_years_experience %></td>
     <td><%= mentee.interests %></td>
-    <td><%= link_to 'Show', mentee %></td>
+    <td><%= link_to 'View Profile', mentee %></td>
     <!-- <td><%= link_to 'Edit', edit_mentee_path(mentee) %></td> -->
     <!-- <td><%= link_to 'Destroy', mentee, :confirm => 'Are you sure?', :method => :delete %></td> -->
   </tr>
