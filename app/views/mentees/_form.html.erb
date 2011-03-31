@@ -18,7 +18,7 @@
     </tr>
     <tr>
       <td align="left" valign="top"><%= f.label :location %></td>
-      <td align="center"><%= f.text_field :location %></td>
+      <td align="left" valign="top"><%= select "mentee", "location", Carmen::country_names, :selected => Carmen::country_name('US') %></td>
     </tr>
     <tr>
       <td align="left" valign="top"><%= f.label :current_position %></td>
