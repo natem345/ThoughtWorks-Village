@@ -14,17 +14,17 @@ class MentorsController < ApplicationController
     @query = params 
     @maj = params["Majors:"]
     @experiences = []
-    @abilities = ["Abilities: "]
+    @abilities = ["Abilities:"]
     @locations = ["Locations:"]
     @current_positions = ["Current Positions:"]
     @majors = ["Majors:"]
     @filterables = []    
     @mentors = []
-    
+    @mentors4 = []
 
     if params[:utf8] != nil      
       params.each do |p|
-        if p.first[0,3] == "Exp"
+        if p.first[0,3] == "Abi"
           @abilities << p.second
         elsif p.first[0,3] == "Loc"
           @locations << p.second
@@ -44,7 +44,7 @@ class MentorsController < ApplicationController
         end
 
         @experiences.each do |e|
-         @mentors4 = @mentors4 & Mentor.where("id = ?",e.user_id)
+         @mentors4 = Mentor.where("id = ?",e.user_id)
         end
         
         if(@mentors1 != [])          
@@ -88,8 +88,8 @@ if(@mentors4 != [])
        # @abilities = @abilities & @abilities
     end
                     
-    
-    @mentors.each do |m|     
+    if(@mentors != [] )
+      @mentors.each do |m|     
 
       @locations << m.location
       @current_positions << m.current_position
@@ -98,8 +98,8 @@ if(@mentors4 != [])
       @locations = @locations & @locations
       @current_positions = @current_positions & @current_positions
       @majors = @majors & @majors
+      end
     end
-
     @filterables << @abilities  << @locations << @current_positions << @majors 
 
     respond_to do |format|
