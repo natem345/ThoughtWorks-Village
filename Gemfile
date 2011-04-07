@@ -29,3 +29,6 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # group :development, :test do
 #   gem 'webrat'
 # end
+
+# List of countries and states for registration views
+gem 'carmen'

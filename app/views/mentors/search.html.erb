@@ -12,14 +12,12 @@ color: white;
 }
 </style>
 <table>
-<tr>Your Query was: <%=@query%></tr>
+<tr>You searched for: <%= @query %></tr>
 
 <tr>
   <th>First Name </th>
   <th>Location</th>
   <th>Current Position</th>
-  <th>School</th>
-  <th>Major</th>
   <th>Total Years of Experience</th>
   <th>Interests</th>
   <th></th>
@@ -32,11 +30,9 @@ color: white;
     <td><%= mentor.name.split[0] %></td>
     <td><%= mentor.location %></td>
     <td><%= mentor.current_position %></td>
-    <td><%= mentor.school %></td>
-    <td><%= mentor.major %></td>
     <td><%= mentor.total_years_experience %></td>
     <td><%= mentor.interests %></td>
-    <td><%= link_to 'Show', mentor %></td>
+    <td><%= link_to 'View Profile', mentor %></td>
   </tr>
 <% end %>
 </table>

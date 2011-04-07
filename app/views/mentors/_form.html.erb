@@ -11,49 +11,48 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :location %><br />
-    <%= f.text_field :location %>
-  </div>
-  <div class="field">
-    <%= f.label :current_position %><br />
-    <%= f.text_field :current_position %>
-  </div>
-  <div class="field">
-    <%= f.label :school %><br />
-    <%= f.text_field :school %>
-  </div>
-  <div class="field">
-    <%= f.label :major %><br />
-    <%= f.text_field :major %>
-  </div>
-  <div class="field">
-    <%= f.label :total_years_experience %><br />
-    <%= f.text_field :total_years_experience %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :interests %><br />
-    <%= f.text_area :interests %>
-  </div>
+  <table cellspacing=5>
+    <tr>
+      <td align="left" valign="top"><%= f.label :name %></td>
+      <td align="center"><%= f.text_field :name %></td>
+    </tr>
+    <tr>
+      <td align="left" valign="top"><%= f.label :location %></td>
+      <td align="left" valign="top"><%= select "mentor", "location", Carmen::country_names, :selected => Carmen::country_name('US') %></td>
+    </tr>
+    <tr>
+      <td align="left" valign="top"><%= f.label :current_position %></td>
+      <td align="center"><%= f.text_field :current_position %></td>
+    </tr>
+    <tr>
+      <td align="left" valign="top"><%= f.label :total_years_experience %></td>
+      <td align="center"><%= f.text_field :total_years_experience %></td>
+    </tr>
+    <tr>
+      <td align="left" valign="top"><%= f.label :email %></td>
+      <td align="center"><%= f.text_field :email %></td>
+    </tr>
+    <tr>
+      <td align="left" valign="top"><%= f.label :password %></td>
+      <td align="center"><%= f.password_field :password %></td>
+    </tr>
+    <tr>
+      <td align="left" valign="top"><%= f.label :phone %></td>
+      <td align="center"><%= f.text_field :phone %></td>
+    </tr>
+    <tr>
+      <td align="left" valign="top"><%= f.label :interests %></td>
+      <td align="center"><%= f.text_area :interests %></td>
+    </tr>
+  </table>
+
+  <% if session[:id] != nil %>
   <div class = "links">
     <%= link_to 'Experiences', experiences_path %>
   </div>
+  <% end %>
+
+  <br/>
   <div class="actions">
     <%= f.submit %>
   </div>

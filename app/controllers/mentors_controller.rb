@@ -12,12 +12,12 @@ class MentorsController < ApplicationController
   # GET /mentors.xml
   def index
     @query = params 
-    @maj = params["Majors:"]
+    # @maj = params["Majors:"]
     @experiences = []
     @abilities = ["Abilities:"]
     @locations = ["Locations:"]
     @current_positions = ["Current Positions:"]
-    @majors = ["Majors:"]
+    # @majors = ["Majors:"]
     @filterables = []    
     @mentors = []
     @mentors4 = []
@@ -30,14 +30,14 @@ class MentorsController < ApplicationController
           @locations << p.second
         elsif p.first[0,3] == "Cur"
           @current_positions << p.second
-        elsif p.first[0,3] == "Maj"
-          @majors << p.second
+        # elsif p.first[0,3] == "Maj"
+          # @majors << p.second
         else
         end 
         
         @mentors1 = Mentor.where("location = ?", @locations.second)
         @mentors2 = Mentor.where("current_position = ?", @current_positions.second)
-        @mentors3 = Mentor.where("major = ?", @majors.second)
+        # @mentors3 = Mentor.where("major = ?", @majors.second)
            
         @abilities.each do |a|
          @experiences = Experience.where("ability = ?", a)         
@@ -59,31 +59,28 @@ class MentorsController < ApplicationController
           end
         end
 
-if(@mentors3 != [])
-          if(@mentors != [])
-            @mentors = @mentors & @mentors3
-          else
-            @mentors = @mentors3
-          end
-        end
+# if(@mentors3 != [])
+          # if(@mentors != [])
+            # @mentors = @mentors & @mentors3
+          # else
+            # @mentors = @mentors3
+          # end
+        # end
 
-if(@mentors4 != [])
+        if(@mentors4 != [])
           if(@mentors != [])
             @mentors = @mentors & @mentors4
           else
             @mentors = @mentors4
           end
-        end
-
-       
-               
+        end    
       end
     else
-        @mentors = Mentor.all
-        @experiences = Experience.all
-        @experiences.each do |e|
-           @abilities << e.ability
-        end
+      @mentors = Mentor.all
+      @experiences = Experience.all
+      @experiences.each do |e|
+        @abilities << e.ability
+      end
 
        # @abilities = @abilities & @abilities
     end
@@ -93,14 +90,21 @@ if(@mentors4 != [])
 
       @locations << m.location
       @current_positions << m.current_position
-      @majors << m.major
+      # @majors << m.major
       
       @locations = @locations & @locations
       @current_positions = @current_positions & @current_positions
+<<<<<<< HEAD
       @majors = @majors & @majors
       end
     end
     @filterables << @abilities  << @locations << @current_positions << @majors 
+=======
+      # @majors = @majors & @majors
+    end
+
+    @filterables << @abilities  << @locations << @current_positions #<< @majors 
+>>>>>>> 7fb3059885680575a012a7b302b7853bc983a5c9
 
     respond_to do |format|
       format.html # index.html.erb
@@ -180,12 +184,47 @@ if(@mentors4 != [])
   def destroy
     if session[:id].to_s == params[:id].to_s
       @mentor = Mentor.find(params[:id])
-      @mentor.destroy
       
-      respond_to do |format|
-        format.html { redirect_to(mentors_url) }
-        format.xml  { head :ok }
+      #Delete Requests
+      Request.where(:mentor_id => params[:id]).each do |r|
+        r.destroy
       end
+      
+      #Delete Mentorships
+      Mentorship.where(:mentor_id => params[:id]).each do |m|
+        m.destroy
+      end
+      
+      #Delete Experiences
+      Experience.where(:user_id => params[:id]).each do |e|
+        e.destroy
+      end
+
+      # Disabled and untested, we might want to keep survey data
+      #Delete Surveys, Questions and Responses
+      #Survey.where(:user_id => params[:id]).each do |s|
+        #Question.where(:survey_id => s.id).each do |q|
+          #Response.where(:question_id => q.id).each do |r|
+            #r.destroy
+          #end
+          #q.destroy
+        #end
+        #s.destroy
+      #end
+
+      #Delete AvailabilityCalendars
+      AvailabilityCalendar.where(:mentor_id => params[:id]).each do |c|
+        #Delete AvailabilityDays
+        AvailabilityDay.where(:availability_calendar_id => c.id).each do |d|
+          d.destroy
+        end
+        c.destroy
+      end
+      
+      @mentor.destroy
+      reset_session
+      
+      redirect_to '/users/login', :notice => "Logged out."
     else
       redirect_to '/mentors', :notice => 'You may only delete your own profile.'
     end
@@ -204,19 +243,17 @@ if(@mentors4 != [])
       
       @mentors = @mentors | Mentor.where("interests LIKE :query",{:query => "%#{q}%"})      
       @mentors = @mentors | Mentor.where("name LIKE :query",{:query => "%#{q}%"})
-      @mentors = @mentors | Mentor.where("major LIKE :query",{:query => "%#{q}%"})
-      @mentors = @mentors | Mentor.where("school LIKE :query",{:query => "%#{q}%"})
+      # @mentors = @mentors | Mentor.where("major LIKE :query",{:query => "%#{q}%"})
+      # @mentors = @mentors | Mentor.where("school LIKE :query",{:query => "%#{q}%"})
       @mentors = @mentors | Mentor.where("location LIKE :query",{:query => "%#{q}%"})
 
     end
     
     #do something with availability
     
-    
     respond_to do |format|
       format.html # search.html.erb
       format.xml  { render :xml => @mentor }
     end
   end
-  
 end
