@@ -40,6 +40,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    nifty-generators (0.4.6)
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -54,6 +55,9 @@ GEM
       activesupport (= 3.0.3)
       bundler (~> 1.0)
       railties (= 3.0.3)
+    rails3-jquery-autocomplete (0.6.5)
+      rails (~> 3.0.0)
+      yajl-ruby
     railties (3.0.3)
       actionpack (= 3.0.3)
       activesupport (= 3.0.3)
@@ -65,11 +69,14 @@ GEM
     treetop (1.4.9)
       polyglot (>= 0.3.1)
     tzinfo (0.3.23)
+    yajl-ruby (0.8.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   carmen
+  nifty-generators
   rails (= 3.0.3)
+  rails3-jquery-autocomplete
   sqlite3-ruby

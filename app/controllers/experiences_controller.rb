@@ -1,7 +1,7 @@
 class ExperiencesController < ApplicationController
+autocomplete :experience, :ability
 
   before_filter :authenticate
-
   def authenticate
     if session[:id]==nil
       redirect_to '/users/login'

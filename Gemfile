@@ -32,3 +32,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 
 # List of countries and states for registration views
 gem 'carmen'
+
+# Autocomplete for registration
+gem 'rails3-jquery-autocomplete'
+gem 'nifty-generators'

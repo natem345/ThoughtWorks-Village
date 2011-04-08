@@ -14,8 +14,10 @@ ThoughtWorksVillage::Application.routes.draw do
 
   resources :surveys
 
-  resources :experiences
-
+  get 'experiences/autocomplete_experience_ability'
+  resources :experiences #do
+#	get :autocomplete_experience_ability, 
+#  end
 
 
   get "home/index"

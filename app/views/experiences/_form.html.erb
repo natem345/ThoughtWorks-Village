@@ -13,7 +13,15 @@
 
   <div class="field">
     <%= f.label :ability %><br />
-    <%= f.text_field :ability %>
+    <!--<%= f.text_field :ability %>
+	<%=text_field_tag 'ability', '', :autocomplete => experiences_autocomplete_experience_ability_path %>	
+
+
+<input data-autocomplete="/experiences/autocomplete_experience_ability" id="ability" name="ability" type="text" value="" />
+-->
+<%= f.autocomplete_field :ability, experiences_autocomplete_experience_ability_path %>
+
+
   </div>
   <div class="field">
     <%= f.label :length_in_years %><br />
