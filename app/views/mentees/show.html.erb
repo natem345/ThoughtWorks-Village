@@ -38,14 +38,12 @@
 </p>
 
 <p>
-   <b>Experiences</b>
-   <%= @mentee.experiences %>
+  <b>Skill Set:</b>
+  <% @mentee.skills.each do |e| %>
+	<br /><%=e.title%> for <%=e.length_in_years%> years, comfort level <%=e.comfort_level%>
+  <% end %>
 </p>
 
-<p>
-  <b>Interests:</b>
-  <%= @mentee.interests %>
-</p>
 
 <% if session[:id].to_s == @mentee.id.to_s %>
 <%= link_to 'Edit Profile', edit_mentee_path(@mentee) %> |

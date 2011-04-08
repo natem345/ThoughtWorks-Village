@@ -37,16 +37,12 @@
   <%= @mentor.phone %>
 </p>
 <p>
-  <b>Experiences:</b>
-  <% @mentor.experiences.each do |e| %>
-	<br /><%=e.ability%> for <%=e.length_in_years%> years, comfort level <%=e.comfort_level%>/10
+  <b>Skill Set:</b>
+  <% @mentor.skills.each do |e| %>
+	<br /><%=e.title%> for <%=e.length_in_years%> years, comfort level <%=e.comfort_level%>
   <% end %>
 </p>
 
-<p>
-  <b>Interests:</b>
-  <%= @mentor.interests %>
-</p>
 <p>
   <b>See availability:</b>
   <% if @availability_calendar.nil? %>
