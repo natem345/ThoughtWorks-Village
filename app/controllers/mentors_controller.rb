@@ -13,18 +13,18 @@ class MentorsController < ApplicationController
   def index
     @query = params 
     # @maj = params["Majors:"]
-    @skills = []
-    @abilities = ["Abilities: "]
+    @experiences = []
+    @abilities = ["Abilities:"]
     @locations = ["Locations:"]
     @current_positions = ["Current Positions:"]
     # @majors = ["Majors:"]
     @filterables = []    
     @mentors = []
-    
+    @mentors4 = []
 
     if params[:utf8] != nil      
       params.each do |p|
-        if p.first[0,3] == "Exp"
+        if p.first[0,3] == "Abi"
           @abilities << p.second
         elsif p.first[0,3] == "Loc"
           @locations << p.second
@@ -40,11 +40,11 @@ class MentorsController < ApplicationController
         # @mentors3 = Mentor.where("major = ?", @majors.second)
            
         @abilities.each do |a|
-         @skills = Skill.where("title = ?", a)         
+         @experiences = Experience.where("ability = ?", a)         
         end
 
-        @skills.each do |e|
-         @mentors4 = @mentors4 & Mentor.where("id = ?",e.user_id)
+        @experiences.each do |e|
+         @mentors4 = Mentor.where("id = ?",e.user_id)
         end
         
         if(@mentors1 != [])          
@@ -77,16 +77,16 @@ class MentorsController < ApplicationController
       end
     else
       @mentors = Mentor.all
-      @skills = Skill.all
-      @skills.each do |e|
-        @abilities << e.title
+      @experiences = Experience.all
+      @experiences.each do |e|
+        @abilities << e.ability
       end
 
        # @abilities = @abilities & @abilities
     end
                     
-    
-    @mentors.each do |m|     
+    if(@mentors != [] )
+      @mentors.each do |m|     
 
       @locations << m.location
       @current_positions << m.current_position
@@ -94,10 +94,17 @@ class MentorsController < ApplicationController
       
       @locations = @locations & @locations
       @current_positions = @current_positions & @current_positions
+<<<<<<< HEAD
+      @majors = @majors & @majors
+      end
+    end
+    @filterables << @abilities  << @locations << @current_positions << @majors 
+=======
       # @majors = @majors & @majors
     end
 
     @filterables << @abilities  << @locations << @current_positions #<< @majors 
+>>>>>>> 7fb3059885680575a012a7b302b7853bc983a5c9
 
     respond_to do |format|
       format.html # index.html.erb
@@ -188,8 +195,8 @@ class MentorsController < ApplicationController
         m.destroy
       end
       
-      #Delete Skills
-      Skill.where(:user_id => params[:id]).each do |e|
+      #Delete Experiences
+      Experience.where(:user_id => params[:id]).each do |e|
         e.destroy
       end
 
@@ -229,12 +236,12 @@ class MentorsController < ApplicationController
     @mentors =[]
    
     queryWords.each do |q|
-      skills = Skill.where("title LIKE :query",{:query => "%#{q}%"})    
-      skills.each do |e|
+      experiences = Experience.where("ability LIKE :query",{:query => "%#{q}%"})    
+      experiences.each do |e|
         @mentors = Mentor.where("id = ?",e.user_id)
       end      
       
-      #@mentors = @mentors | Mentor.where("interests LIKE :query",{:query => "%#{q}%"})      
+      @mentors = @mentors | Mentor.where("interests LIKE :query",{:query => "%#{q}%"})      
       @mentors = @mentors | Mentor.where("name LIKE :query",{:query => "%#{q}%"})
       # @mentors = @mentors | Mentor.where("major LIKE :query",{:query => "%#{q}%"})
       # @mentors = @mentors | Mentor.where("school LIKE :query",{:query => "%#{q}%"})

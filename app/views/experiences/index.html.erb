@@ -1,0 +1,27 @@
+<h1>Listing Skills</h1>
+
+<table>
+  <tr>
+    <th>Skill</th>
+    <th>Years of experience</th>
+    <th>Level of experience (scale of 1-10)</th>
+    <!-- <th></th> -->
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @experiences.each do |experience| %>
+  <tr>
+    <td><%= experience.ability %></td>
+    <td><%= experience.length_in_years %></td>
+    <td><%= experience.comfort_level %></td>
+    <!-- <td><%= link_to 'Show', experience %></td> -->
+    <td><%= link_to 'Edit', edit_experience_path(experience) %></td>
+    <td><%= link_to 'Remove', experience, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Add a Skill', new_experience_path %>
