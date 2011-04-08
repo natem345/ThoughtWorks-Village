@@ -149,7 +149,11 @@ class MentorsController < ApplicationController
         @newuser = User.where(:id => @mentor.id).first
         Notifier.welcome_email(@newuser).deliver
 
-        format.html { redirect_to(@mentor, :notice => 'Mentor was successfully created.') }
+		#login user so they can edit skills
+    	session[:id] = @mentor.id # Remember the user's id during this session 
+        session[:usertype] = :mentor
+
+        format.html { redirect_to(skills_path, :notice => 'Your mentor account was successfully created!') }
         format.xml  { render :xml => @mentor, :status => :created, :location => @mentor }
       else
         format.html { render :action => "new" }
@@ -165,7 +169,7 @@ class MentorsController < ApplicationController
     
     respond_to do |format|
       if @mentor.update_attributes(params[:mentor])
-        format.html { redirect_to(@mentor, :notice => 'Mentor was successfully updated.') }
+        format.html { redirect_to(skills_path, :notice => 'Profile was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

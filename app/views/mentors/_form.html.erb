@@ -42,14 +42,10 @@
     </tr>
   </table>
 
-  <% if session[:id] != nil %>
-  <div class = "links">
-    <%= link_to 'Skills', skills_path %>
-  </div>
-  <% end %>
+
 
   <br/>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :Save %>
   </div>
 <% end %>

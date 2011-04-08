@@ -61,7 +61,11 @@ class MenteesController < ApplicationController
         @newuser = User.where(:id => @mentee.id).first
         Notifier.welcome_email(@newuser).deliver
 
-        format.html { redirect_to(@mentee, :notice => 'Mentee was successfully created.') }
+		#login user so they can edit skills
+    	session[:id] = @mentee.id # Remember the user's id during this session 
+        session[:usertype] = :mentee
+
+        format.html { redirect_to(skills_path, :notice => 'Your mentee account was successfully created!') }
         format.xml  { render :xml => @mentee, :status => :created, :location => @mentee }
       else
         format.html { render :action => "new" }
@@ -77,7 +81,7 @@ class MenteesController < ApplicationController
     
     respond_to do |format|
       if @mentee.update_attributes(params[:mentee])
-        format.html { redirect_to(@mentee, :notice => 'Mentee was successfully updated.') }
+        format.html { redirect_to(skills_path, :notice => 'Profile was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
