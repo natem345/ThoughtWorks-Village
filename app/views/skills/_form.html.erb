@@ -1,0 +1,35 @@
+<%= form_for(@skill) do |f| %>
+  <% if @skill.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@skill.errors.count, "error") %> prohibited this skill from being saved:</h2>
+
+      <ul>
+      <% @skill.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <!--<%= f.text_field :title %>
+	<%=text_field_tag 'title', '', :autocomplete => skills_autocomplete_skill_title_path %>	
+
+-->
+<%= f.autocomplete_field :title, skills_autocomplete_skill_title_path %>
+
+
+  </div>
+  <div class="field">
+    <%= f.label :length_in_years %><br />
+    <%= f.text_field :length_in_years %>
+  </div>
+  <div class="field">
+    <%= f.label :comfort_level %><br />
+    <%= f.text_field :comfort_level %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

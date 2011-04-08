@@ -40,15 +40,11 @@
       <td align="left" valign="top"><%= f.label :phone %></td>
       <td align="center"><%= f.text_field :phone %></td>
     </tr>
-    <tr>
-      <td align="left" valign="top"><%= f.label :interests %></td>
-      <td align="center"><%= f.text_area :interests %></td>
-    </tr>
   </table>
 
   <% if session[:id] != nil %>
   <div class = "links">
-    <%= link_to 'Experiences', experiences_path %>
+    <%= link_to 'Skills', skills_path %>
   </div>
   <% end %>
 

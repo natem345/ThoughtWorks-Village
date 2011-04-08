@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110330213527) do
+ActiveRecord::Schema.define(:version => 20110408012955) do
 
   create_table "availability_calendars", :force => true do |t|
     t.integer  "availability_quotient"
@@ -23,15 +23,6 @@ ActiveRecord::Schema.define(:version => 20110330213527) do
     t.date     "availability_day"
     t.string   "availability"
     t.integer  "availability_calendar_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "experiences", :force => true do |t|
-    t.string   "ability"
-    t.integer  "length_in_years"
-    t.integer  "comfort_level"
-    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -76,6 +67,15 @@ ActiveRecord::Schema.define(:version => 20110330213527) do
     t.datetime "updated_at"
   end
 
+  create_table "skills", :force => true do |t|
+    t.string   "title"
+    t.integer  "length_in_years"
+    t.string   "comfort_level"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "surveys", :force => true do |t|
     t.string   "description"
     t.integer  "user_id"
@@ -91,7 +91,6 @@ ActiveRecord::Schema.define(:version => 20110330213527) do
     t.string   "email"
     t.string   "password"
     t.string   "phone"
-    t.text     "interests"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "type"

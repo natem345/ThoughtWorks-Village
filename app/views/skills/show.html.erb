@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @skill.title %>
+</p>
+
+<p>
+  <b>Years of Experience:</b>
+  <%= @skill.length_in_years %>
+</p>
+
+<p>
+  <b>Comfort Level:</b>
+  <%= @skill.comfort_level %>
+</p>
+
+
+<%= link_to 'Edit', edit_skill_path(@skill) %> |
+<%= link_to 'Back', skills_path %>

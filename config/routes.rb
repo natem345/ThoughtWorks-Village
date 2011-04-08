@@ -14,8 +14,8 @@ ThoughtWorksVillage::Application.routes.draw do
 
   resources :surveys
 
-  get 'experiences/autocomplete_experience_ability'
-  resources :experiences #do
+  get 'skills/autocomplete_skill_title'
+  resources :skills #do
 #	get :autocomplete_experience_ability, 
 #  end
 

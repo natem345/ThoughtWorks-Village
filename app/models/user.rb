@@ -19,7 +19,7 @@ class User < ActiveRecord::Base
   :message => "must be a valid telephone number.",
   :with => /^[\(\)0-9\- \+\.]{10,20} *[extension\.]{0,9} *[0-9]{0,5}$/i
   
-  has_many :experiences
+  has_many :skills
 
   # If a user matching the credentials is found, returns the User object.
   # If no matching user is found, returns nil.
