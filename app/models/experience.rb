@@ -17,7 +17,7 @@ class Experience < ActiveRecord::Base
     "4" => "4",
     "3" => "3",
     "2" => "2",
-    "1 - Unfamiliar" => "1", }
+    "1 - Unfamiliar" => "1"}
 
   belongs_to :user
 end

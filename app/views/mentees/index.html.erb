@@ -7,8 +7,6 @@
     <th>Current Position</th>
     <th>Total Years of Experience</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
 
 <% @mentees.each do |mentee| %>
@@ -18,11 +16,7 @@
     <td><%= mentee.current_position %></td>
     <td><%= mentee.total_years_experience %></td>
     <td><%= link_to 'View Profile', mentee %></td>
-    <!-- <td><%= link_to 'Edit', edit_mentee_path(mentee) %></td> -->
-    <!-- <td><%= link_to 'Destroy', mentee, :confirm => 'Are you sure?', :method => :delete %></td> -->
   </tr>
-<% end %>
+  <% end %>
 </table>
-<br />
-
-<!-- <%= link_to 'New Mentee', new_mentee_path %> -->
+<br/>

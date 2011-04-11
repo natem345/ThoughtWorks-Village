@@ -25,13 +25,6 @@
   <%= @mentor.email %>
 </p>
 
-<!--
-   <p>
-     <b>Password:</b>
-     <%= @mentor.password %>
-   </p>
--->
-
 <p>
   <b>Phone:</b>
   <%= @mentor.phone %>
@@ -39,7 +32,7 @@
 <p>
   <b>Skill Set:</b>
   <% @mentor.skills.each do |e| %>
-	<br /><%=e.title%> for <%=e.length_in_years%> years, comfort level <%=e.comfort_level%>
+  <br/><%=e.title%> (<%=e.comfort_level%>)
   <% end %>
 </p>
 

@@ -1,31 +1,30 @@
 <%= form_for(@skill) do |f| %>
-  <% if @skill.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@skill.errors.count, "error") %> prohibited this skill from being saved:</h2>
+<% if @skill.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@skill.errors.count, "error") %> prohibited this skill from being saved:</h2>
+  
+  <ul>
+    <% @skill.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-      <ul>
-      <% @skill.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <table>
-	<tr>
-	<td><%= f.label :title %></td>
-    <!--<%= f.text_field :title %>
-	<%=text_field_tag 'title', '', :autocomplete => skills_autocomplete_skill_title_path %>	
-
--->
-	<td><%= f.autocomplete_field :title, skills_autocomplete_skill_title_path %></td>
-  </tr><tr>
-    <td><%= f.label :length_in_years %></td>
-    <td><%= f.text_field :length_in_years %></td>
-  </tr><tr>
+<table>
+  <tr>
+    <td><%= f.label :title %></td>
+    <!-- <%= f.text_field :title %>
+	 <%=text_field_tag 'title', '', :autocomplete => skills_autocomplete_skill_title_path %> -->
+    <td><%= f.autocomplete_field :title, skills_autocomplete_skill_title_path %></td>
+  </tr>
+  <tr>
     <td><%= f.label :comfort_level %></td>
-    <td><%= f.text_field :comfort_level %></td>
-  </tr></table>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <td><%= select "skill", "comfort_level", Skill::COMFORT.sort %></td>
+  </tr>
+</table>
+
+<div class="actions">
+  <%= f.submit %>
+</div>
 <% end %>

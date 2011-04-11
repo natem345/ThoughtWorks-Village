@@ -5,9 +5,8 @@
 <table>
   <tr>
     <th>Title</th>
-    <th>Years of Experience</th>
     <th>Comfort Level</th>
-    <th></th>
+    <!-- <th></th> -->
     <th></th>
     <th></th>
   </tr>
@@ -15,11 +14,10 @@
 <% @skills.each do |skill| %>
   <tr>
     <td><%= skill.title %></td>
-    <td><%= skill.length_in_years %></td>
     <td><%= skill.comfort_level %></td>
-    <td><%= link_to 'Show', skill %></td>
+    <!-- <td><%= link_to 'Show', skill %></td> -->
     <td><%= link_to 'Edit', edit_skill_path(skill) %></td>
-    <td><%= link_to 'Destroy', skill, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Remove', skill, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
