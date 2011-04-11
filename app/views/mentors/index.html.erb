@@ -24,12 +24,15 @@ color: white;
 	   <% if str == f.first then %>
 	     <% next %>
 	   <% end %>
+	   <label>
 	   <% if @checked %>
-	    <%= check_box_tag(f.first+str,str,checked = true) %>
+	    <%= check_box_tag(f.first+str,str,checked = true) %>		
 		<% else %>
 		<%= check_box_tag(f.first+str,str,checked = false) %>
 		<% end %>
 		<%= str %>
+		</label>
+		
         <br />
       <% end %> 
     <% end %>
