@@ -12,8 +12,7 @@ color: white;
 </style>
 
 <h1>Mentors</h1>
-Query was: <%= @p %><br /><br />
-Location was: <%= @locations %>
+<br /><br />
 <div id="FilterDiv" style="">
   <strong>Filter</strong>
   <%= form_tag "/mentors", :method => "get" do %>     
@@ -25,13 +24,19 @@ Location was: <%= @locations %>
 	   <% if str == f.first then %>
 	     <% next %>
 	   <% end %>
-	    <%= check_box_tag(f.first+str,str) %>
+	   <% if @checked %>
+	    <%= check_box_tag(f.first+str,str,checked = true) %>
+		<% else %>
+		<%= check_box_tag(f.first+str,str,checked = false) %>
+		<% end %>
 		<%= str %>
         <br />
       <% end %> 
     <% end %>
+	<p></p>
     <%= submit_tag("Filter") %>
   <% end %> 
+<a href="/mentors">Clear Filter</a>
 </div>
 
 <table>

@@ -14,17 +14,17 @@ class MentorsController < ApplicationController
     @query = params 
     # @maj = params["Majors:"]
     @skills = []
-    @abilities = ["Abilities:"]
+    @abilities = ["Skills:"]
     @locations = ["Locations:"]
     @current_positions = ["Current Positions:"]
     # @majors = ["Majors:"]
     @filterables = []    
     @mentors = []
     @mentors4 = []
-
+    @checked = false
     if params[:utf8] != nil      
       params.each do |p|
-        if p.first[0,3] == "Abi"
+        if p.first[0,3] == "Ski"
           @abilities << p.second
         elsif p.first[0,3] == "Loc"
           @locations << p.second
@@ -40,11 +40,15 @@ class MentorsController < ApplicationController
         # @mentors3 = Mentor.where("major = ?", @majors.second)
            
         @abilities.each do |a|
-         @skills = Skill.where("title = ?", a)         
-        end
+         @skills = @skills + Skill.where("title = ?", a)         
+        end               
 
+        if(@skills.count > 1)
+          @mentors4 = Mentor.where("id = ?", @skills.second.user_id)
+        end
+                                   
         @skills.each do |e|
-         @mentors4 = Mentor.where("id = ?",e.user_id)
+         @mentors4 =  Mentor.where("id = ?",e.user_id)
         end
         
         if(@mentors1 != [])          
@@ -75,6 +79,7 @@ class MentorsController < ApplicationController
           end
         end    
       end
+      @checked = true
     else
       @mentors = Mentor.all
       @skills = Skill.all
@@ -240,7 +245,7 @@ class MentorsController < ApplicationController
         @mentors = Mentor.where("id = ?",e.user_id)
       end      
       
-      #@mentors = @mentors | Mentor.where("interests LIKE :query",{:query => "%#{q}%"})      
+      # @mentors = @mentors | Mentor.where("interests LIKE :query",{:query => "%#{q}%"})   
       @mentors = @mentors | Mentor.where("name LIKE :query",{:query => "%#{q}%"})
       # @mentors = @mentors | Mentor.where("major LIKE :query",{:query => "%#{q}%"})
       # @mentors = @mentors | Mentor.where("school LIKE :query",{:query => "%#{q}%"})
