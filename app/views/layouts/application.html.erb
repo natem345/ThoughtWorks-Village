@@ -17,22 +17,20 @@
 <a href="/"><img id="navbarLogo" src="/images/corporate_logo.png" /></a>
 <ul>
 <li><a href="/">Home</a></li>
-<li><a href="/mentors">Browse Mentors</a></li>
-<li><a href="/mentees">Browse Mentees</a></li>
 
 <% if ! session[:usertype] %>
+<li><a href="/mentors">Browse Mentors</a></li>
 <li><a href="/users/register">Sign Up</a></li>
 <li><a href="/users/login">Login</a></li>
 <% else %>
   <% if session[:usertype] == :mentor %>
-  <li><a href="/mentors/<%= session[:id] %>">My Profile</a></li>
+  <li><a href="/mentees">Browse Mentees</a></li>
   <li><a href="/mentors/<%= session[:id] %>/edit">Edit Profile</a></li>
-  <li><a href="/availability_calendars/new">Update Availability</a></li>
   <li><a href="/requests/">Mentorship Requests</a></li>
   <li><a href="/mentorships/">Mentorships</a></li>
   <% end %>
   <% if session[:usertype] == :mentee %>
-  <li><a href="/mentees/<%= session[:id] %>">My Profile</a></li>
+  <li><a href="/mentors">Browse Mentors</a></li>
   <li><a href="/mentees/<%= session[:id] %>/edit">Edit Profile</a></li>
   <% end %>
   <li><a href="/users/logout">Logout</a></li>
