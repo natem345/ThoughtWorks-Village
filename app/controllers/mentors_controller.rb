@@ -242,7 +242,7 @@ class MentorsController < ApplicationController
     queryWords.each do |q|
       skills = Skill.where("title LIKE :query",{:query => "%#{q}%"})    
       skills.each do |e|
-        @mentors = Mentor.where("id = ?",e.user_id)
+        @mentors = @mentors | Mentor.where("id = ?",e.user_id)
       end      
       
       # @mentors = @mentors | Mentor.where("interests LIKE :query",{:query => "%#{q}%"})   
