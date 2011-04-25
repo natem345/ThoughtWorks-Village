@@ -11,10 +11,12 @@ th a {
 color: white;
 }
 </style>
-<table>
+
 <tr>You searched for: <%= @query %></tr>
 
-<tr>
+<!--
+   <table>
+   <tr>
   <th>First Name </th>
   <th>Location</th>
   <th>Current Position</th>
@@ -32,4 +34,45 @@ color: white;
   </tr>
 <% end %>
 </table>
+-->
+<style>
+.mentorRowCol {
+	display: inline-block;
+	width:200px;
+	vertical-align:top;
+	padding:5px;
+}
+.mentorRowColFirst {
+	width:155px !important;
+}
+.mentorRow {
+	position:relative;
+	left:200px;
+	width:620px;	
+	border: 2px red solid;
+	padding:3px;
+	margin:12px 0px;
+}
+</style>
+<% @mentors.each do |mentor| %>
+<div class="mentorRow">
+	<div class="mentorRowCol mentorRowColFirst">
+		<%= link_to mentor.name, mentor %><br />
+		<a href="<%=url_for(mentor) %>"><img src="http://www.actionsportshub.com/uploads/profile/orig/default_profile.gif" width="50" /></a>
+	</div>
+	<div class="mentorRowCol">
+		Location: <%= mentor.location %><br />
+		Current Position: <%= mentor.current_position %><br />
+		Total Years Experience: <%= mentor.total_years_experience %>
+	</div>
+	<div class="mentorRowCol">
+		Skill Set:
+		  <% mentor.skills.each do |e| %>
+		  <br/><%=e.title%> (<%=e.comfort_level%>)
+		  <% end %>
+	</div>
+</div>
+<% end %>
+
+<br />
 

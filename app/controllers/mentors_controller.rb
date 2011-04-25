@@ -250,6 +250,7 @@ class MentorsController < ApplicationController
       # @mentors = @mentors | Mentor.where("major LIKE :query",{:query => "%#{q}%"})
       # @mentors = @mentors | Mentor.where("school LIKE :query",{:query => "%#{q}%"})
       @mentors = @mentors | Mentor.where("location LIKE :query",{:query => "%#{q}%"})
+       @mentors = @mentors | Mentor.where("current_position LIKE :query",{:query => "%#{q}%"})
 
     end
     
