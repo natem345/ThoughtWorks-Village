@@ -31,12 +31,7 @@ class AvailabilityCalendarsController < ApplicationController
   # GET /availability_calendars
   # GET /availability_calendars.xml
   def index
-    @availability_calendars = AvailabilityCalendar.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @availability_calendars }
-    end
+	redirect_to new_availability_calendar_path
   end
   def search
 	return "successs"
@@ -44,12 +39,7 @@ class AvailabilityCalendarsController < ApplicationController
   # GET /availability_calendars/1
   # GET /availability_calendars/1.xml
   def show
-    @availability_calendar = AvailabilityCalendar.find(params[:id])
-	
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @availability_calendar }
-    end
+	redirect_to new_availability_calendar_path
   end
 
   # GET /availability_calendars/new
