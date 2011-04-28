@@ -107,8 +107,8 @@ class MenteesController < ApplicationController
       end
 
       #Delete Experiences
-      Experience.where(:user_id => params[:id]).each do |e|
-        e.destroy
+      Skill.where(:user_id => params[:id]).each do |s|
+        s.destroy
       end
 
 #      # Disabled and untested, we might want to keep survey data
