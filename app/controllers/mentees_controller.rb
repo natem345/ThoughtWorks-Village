@@ -72,16 +72,14 @@ class MenteesController < ApplicationController
       
     end
                     
-    if(@mentees != [] )
-      @mentees.each do |m|     
+    #if(@mentees.size > 0)
+    #  @mentees.each do |m|  
 
-       # @locations << m.location
+    #    @locations << m.location
       
-       # @locations = @locations & @locationsns
-
-      
-     end
-	end
+    #    @locations = @locations & @locationsns      
+    # end
+	#end
 
     @filterables << @abilities  << @locations  
 
