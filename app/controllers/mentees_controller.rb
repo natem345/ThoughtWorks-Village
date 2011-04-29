@@ -8,16 +8,89 @@ class MenteesController < ApplicationController
     end
   end
 
-  # GET /mentees
-  # GET /mentees.xml
+ 
   def index
-    @mentees = Mentee.all
+    @query = params
+    @skills = []
+    @abilities = ["Skills:"]
+    @locations = ["Locations:"]
+    @filterables = []    
+    @mentees = []
+    @mentees4 = []
+    @checked = false
+    if params[:utf8] != nil      
+      params.each do |p|
+        if p.first[0,3] == "Ski"
+          @abilities << p.second
+        elsif p.first[0,3] == "Loc"
+          @locations << p.second
+        else
+        end 
+        
+        @mentees1 = Mentee.where("location = ?", @locations.second)
+       
+        @abilities.each do |a|
+         @skills = @skills + Skill.where("title = ?", a)         
+        end               
+
+        if(@skills.count > 1)
+          @mentees4 = Mentee.where("id = ?", @skills.second.user_id)
+        end
+                                   
+        @skills.each do |e|
+         @mentors4 =  Mentee.where("id = ?",e.user_id)
+        end
+        
+        if(@mentees1 != [])          
+            @mentees = @mentees1
+        end
+        
+         if(@mentees2 != [])
+          if(@mentees != [])
+            @mentees = @mentees & @mentees2
+          else
+            @mentees = @mentees2
+          end
+        end
+
+
+        if(@mentees4 != [])
+          if(@mentees != [])
+            @mentees = @mentees & @mentees4
+          else
+            @mentees = @mentees4
+          end
+        end    
+      end
+      @checked = true
+    else
+      @mentees = Mentee.all
+      @skills = Skill.all
+      @skills.each do |e|
+        @abilities << e.title
+      end
+      
+    end
+                    
+    if(@mentees != [] )
+      @mentees.each do |m|     
+
+       # @locations << m.location
+      
+       # @locations = @locations & @locationsns
+
+      
+     end
+	end
+
+    @filterables << @abilities  << @locations  
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @mentees }
-    end
+      format.xml  { render :xml => @mentors }
   end
+  end
+
 
   # GET /mentees/1
   # GET /mentees/1.xml

@@ -1,22 +1,90 @@
+
+
+<style type="text/css">
+#FilterDiv {
+/*float: left; */
+width: 200px;
+position:absolute;
+}
+#FilterDiv label {
+display:block;
+}
+th a {
+color: white;
+}
+</style>
+
 <h1>Mentees</h1>
+<div id="FilterDiv" style="">
+  <strong>Filter</strong>
+  <%= form_tag "/mentees", :method => "get" do %>     
+    <% @filterables.each do |f| %>
+	  <p></p>
+      <%=f.first%>
+	  <br />
+      <% f.each do |str| %>	  
+	   <% if str == f.first then %>
+	     <% next %>
+	   <% end %>
+	   <label>
+	   <% if @checked %>
+	    <%= check_box_tag(f.first+str,str,checked = true) %>		
+		<% else %>
+		<%= check_box_tag(f.first+str,str,checked = false) %>
+		<% end %>
+		<%= str %>
+		</label>
+      <% end %> 
+    <% end %>
+	<p></p>
+    <%= submit_tag("Filter") %>
+  <% end %> 
+<a href="/mentees">Clear Filter</a>
+</div>
 
-<table>
-  <tr>
-    <th>First Name</th>
-    <th>Location</th>
-    <th>Current Position</th>
-    <th>Total Years of Experience</th>
-    <th></th>
-  </tr>
 
+<style>
+.mentorRowCol {
+	display: inline-block;
+	width:200px;
+	vertical-align:top;
+	padding:5px;
+}
+.mentorRowColFirst {
+	width:155px !important;
+}
+.mentorRow {
+	position:relative;
+	left:200px;
+	width:620px;	
+	border: 2px red solid;
+	padding:3px;
+	margin:12px 0px;
+}
+</style>
 <% @mentees.each do |mentee| %>
-  <tr>
-    <td><%= mentee.name.split[0] %></td>
-    <td><%= mentee.location %></td>
-    <td><%= mentee.current_position %></td>
-    <td><%= mentee.total_years_experience %></td>
-    <td><%= link_to 'View Profile', mentee %></td>
-  </tr>
-  <% end %>
-</table>
-<br/>
+<div class="mentorRow">
+	<div class="mentorRowCol mentorRowColFirst">
+		<%= link_to mentee.name, mentee %><br />
+		<a href="<%=url_for(mentee) %>"><img src="http://www.actionsportshub.com/uploads/profile/orig/default_profile.gif" width="50" /></a>
+	</div>
+	<div class="mentorRowCol">
+		Location: <%= mentee.location %><br />
+		Current Position: <%= mentee.current_position %><br />
+		Total Years Experience: <%= mentee.total_years_experience %>
+	</div>
+	<div class="mentorRowCol">
+		Skill Set:
+		  <% mentee.skills.each do |e| %>
+		  <br/><%=e.title%> (<%=e.comfort_level%>)
+		  <% end %>
+	</div>
+</div>
+<% end %>
+
+<br />
+
+<!-- <%= link_to 'New Mentor', new_mentor_path %> -->
+
+
+
