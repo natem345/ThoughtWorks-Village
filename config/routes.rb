@@ -1,4 +1,6 @@
 ThoughtWorksVillage::Application.routes.draw do
+  resources :password_reset_links
+
   match 'mentors/search' => 'mentors#search'
   match 'availability_calendars/update_day' => 'availability_calendars#update_day'
 
