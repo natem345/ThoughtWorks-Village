@@ -1,8 +1,8 @@
 ThoughtWorksVillage::Application.routes.draw do
-  resources :password_reset_links
 
-  match 'mentors/search' => 'mentors#search'
-  match 'availability_calendars/update_day' => 'availability_calendars#update_day'
+  get 'home/index'
+
+  resources :password_resets
 
   resources :mentorships
 
@@ -21,9 +21,8 @@ ThoughtWorksVillage::Application.routes.draw do
 #	get :autocomplete_experience_ability, 
 #  end
 
-
-  get "home/index"
   resources :requests
+
   resources :mentors do
     resources :requests
   end
@@ -31,17 +30,16 @@ ThoughtWorksVillage::Application.routes.draw do
   resources :mentees do
     resources :requests
   end
-  resources :accounts
+
+  match 'mentors/search' => 'mentors#search'
+  match 'availability_calendars/update_day' => 'availability_calendars#update_day'
+
   match 'users/login' => 'users#login'
   match 'users/process_login' => 'users#process_login'
   match 'users/logout' => 'users#logout'
-  match 'users/register' => 'users#register'
-  match 'mentor_profiles/update_availability' => 'mentor_profiles#update_availability'
 
-  # Block access to the users index view
-  #resources :users
-  
-  
+  match 'users/register' => 'users#register'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -94,7 +92,6 @@ ThoughtWorksVillage::Application.routes.draw do
   # just remember to delete public/index.html.
   # root :to => "welcome#index"
   root :to => "home#index"
-  # root :to => "users#login"
 
   # See how all your routes lay out with "rake routes"
 

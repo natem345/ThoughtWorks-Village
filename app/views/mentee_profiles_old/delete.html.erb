@@ -1,9 +1,0 @@
-<h1>Delete Profile</h1>
-<div style="background-color: red; width: 500px; position:absolute; left:50%; margin-left:-250px; ">
-<p> Are you sure you want to delete all of your information?</p>
-<% form_for :delete, :url => {:action => 'delete'} do |f| %>
-<%= f.check_box :yes %> Yes <br/>
-<%= submit_tag("Delete") %>
-<% end %>
-
-</div>

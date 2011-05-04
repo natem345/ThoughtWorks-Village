@@ -12,7 +12,7 @@ class Notifier < ActionMailer::Base
     @request = request
     @url  = "http://thoughtworks-village.heroku.com/"
     mail(:to => @request.mentor.email,
-         :subject => "Pending Mentorship Request")
+         :subject => "Mentorship Request: Pending")
   end
   
   def mentorship_accepted_email(request)
@@ -27,5 +27,12 @@ class Notifier < ActionMailer::Base
     @url  = "http://thoughtworks-village.heroku.com/"
     mail(:to => @request.mentee.email,
          :subject => "Mentorship Request: Rejected")
+  end
+
+  def forgot_password_email(password_reset)
+    @password_reset = password_reset
+    @url = "http://thoughtworks-village.heroku.com/"
+    mail(:to => @password_reset.email,
+         :subject => "Password Reset Instructions")
   end
 end
