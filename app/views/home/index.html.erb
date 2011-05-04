@@ -17,13 +17,15 @@
 
   <tr>
     <td>
-      <h2>Meet one of our Mentors...</h2>
       <% @random = Mentor.first(:order => 'RANDOM()') %>
+      <% if @random != nil %>
+      <h2>Meet one of our Mentors...</h2>
       <%= link_to @random.name, @random %>, <%= @random.current_position %><br/>
       <%= @random.name.split(" ").first %> has <%= @random.total_years_experience %> years of experience.<br/>
       Some of <%= @random.name.split(" ").first %>'s skills:
       <% @random.skills.each do |e| %>
-      <br/><%=e.title%> (<%=e.comfort_level%>)
+      <br/><%= e.title %> (<%= e.comfort_level %>)
+      <% end %>
       <% end %>
     </td>
 

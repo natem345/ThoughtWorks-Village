@@ -2,8 +2,6 @@ ThoughtWorksVillage::Application.routes.draw do
 
   get 'home/index'
 
-  resources :password_resets
-
   resources :mentorships
 
   resources :availability_days
@@ -33,12 +31,15 @@ ThoughtWorksVillage::Application.routes.draw do
 
   match 'mentors/search' => 'mentors#search'
   match 'availability_calendars/update_day' => 'availability_calendars#update_day'
-
   match 'users/login' => 'users#login'
   match 'users/process_login' => 'users#process_login'
   match 'users/logout' => 'users#logout'
 
   match 'users/register' => 'users#register'
+
+  match 'users/forgot' => 'users#forgot'
+  match 'users/process_forgot' => 'users#process_forgot'
+  match 'users/reset' => 'users#reset'
 
 
   # The priority is based upon order of creation:

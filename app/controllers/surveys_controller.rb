@@ -80,9 +80,7 @@ class SurveysController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  
+
   def complete
-    
   end
-  
 end

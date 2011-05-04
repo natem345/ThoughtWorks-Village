@@ -1,4 +1,4 @@
-<h1>Listing your mentorship requests</h1>
+<h1>Your Mentorship Requests</h1>
 
 <table>
   <tr>
@@ -14,7 +14,7 @@
     <td><%= link_to request.mentee.name, request.mentee %></td>
     <td><%= request.reason %></td>
     <td><%= request.estimated_length %></td>
-	<td><%= link_to 'Accept', request, :confirm => 'Are you sure?', :method => :put %></td>
+    <td><%= link_to 'Accept', request, :confirm => 'Are you sure?', :method => :put %></td>
     <td><%= link_to 'Decline', request, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
