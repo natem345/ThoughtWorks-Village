@@ -1,5 +1,7 @@
 ThoughtWorksVillage::Application.routes.draw do
 
+  match 'mentors/search' => 'mentors#search'
+
   resources :password_reset_codes
 
   get 'home/index'
@@ -31,7 +33,7 @@ ThoughtWorksVillage::Application.routes.draw do
     resources :requests
   end
 
-  match 'mentors/search' => 'mentors#search'
+ 
   match 'availability_calendars/update_day' => 'availability_calendars#update_day'
   match 'users/login' => 'users#login'
   match 'users/process_login' => 'users#process_login'

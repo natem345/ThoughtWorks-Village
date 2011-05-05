@@ -215,7 +215,6 @@ class MentorsController < ApplicationController
         @mentors = @mentors | Mentor.where("id = ?",e.user_id)
       end      
       
-     
       @mentors = @mentors | Mentor.where("name LIKE :query",{:query => "%#{q}%"})     
       @mentors = @mentors | Mentor.where("location LIKE :query",{:query => "%#{q}%"})
       @mentors = @mentors | Mentor.where("current_position LIKE :query",{:query => "%#{q}%"})
