@@ -1,5 +1,7 @@
 ThoughtWorksVillage::Application.routes.draw do
 
+  resources :password_reset_codes
+
   get 'home/index'
 
   resources :mentorships
