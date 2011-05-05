@@ -36,3 +36,7 @@ gem 'carmen'
 # Autocomplete for registration
 gem 'rails3-jquery-autocomplete'
 gem 'nifty-generators'
+
+# Gravatar
+gem 'gravtastic'
+
