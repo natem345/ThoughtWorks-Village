@@ -12,16 +12,14 @@ class MentorsController < ApplicationController
   # GET /mentors.xml
   def index
     @query = params 
-    # @maj = params["Majors:"]
     @skills = []
     @abilities = ["Skills:"]
     @locations = ["Locations:"]
-    @current_positions = ["Current Positions:"]
-    # @majors = ["Majors:"]
-    @filterables = []    
-    @mentors = []
-    @mentors4 = []
-    @checked = false
+    @current_positions = ["Current Positions:"]   
+    @filterables = []
+    @checked=["this isn't nil"]
+   
+   
     if params[:utf8] != nil      
       params.each do |p|
         if p.first[0,3] == "Ski"
@@ -30,64 +28,38 @@ class MentorsController < ApplicationController
           @locations << p.second
         elsif p.first[0,3] == "Cur"
           @current_positions << p.second
-        # elsif p.first[0,3] == "Maj"
-          # @majors << p.second
-        else
-        end 
+        end
+      end
         
-        @mentors1 = Mentor.where("location = ?", @locations.second)
-        @mentors2 = Mentor.where("current_position = ?", @current_positions.second)
-        # @mentors3 = Mentor.where("major = ?", @majors.second)
-           
+        @checked = @locations + @abilities + @current_positions       
+       
         @abilities.each do |a|
          @skills = @skills + Skill.where("title = ?", a)         
         end               
 
-        if(@skills.count > 1)
-          @mentors4 = Mentor.where("id = ?", @skills.second.user_id)
-        end
-                                   
         @skills.each do |e|
-         @mentors4 =  Mentor.where("id = ?",e.user_id)
-        end
-        
-        if(@mentors1 != [])          
-            @mentors = @mentors1
-        end
-        
-         if(@mentors2 != [])
-          if(@mentors != [])
-            @mentors = @mentors & @mentors2
-          else
-            @mentors = @mentors2
-          end
+            if @mentors == nil
+              @mentors = Mentor.where("id = ?", e.user_id)
+            else
+              @mentors = @mentors & Mentor.where("id = ?", e.user_id)
+            end
         end
 
-# if(@mentors3 != [])
-          # if(@mentors != [])
-            # @mentors = @mentors & @mentors3
-          # else
-            # @mentors = @mentors3
-          # end
-        # end
+      if @locations.second != nil
+         @mentees = @mentees & Mentee.where("location = ?", @locations.second)
+       end
 
-        if(@mentors4 != [])
-          if(@mentors != [])
-            @mentors = @mentors & @mentors4
-          else
-            @mentors = @mentors4
-          end
-        end    
-      end
-      @checked = true
+      if @current_positions.second != nil
+         @mentees = @mentees & Mentee.where("current_position = ?", @current_positions.second)
+       end
+
+
     else
       @mentors = Mentor.all
       @skills = Skill.all
       @skills.each do |e|
         @abilities << e.title
-      end
-
-       # @abilities = @abilities & @abilities
+      end       
     end
                     
     if(@mentors != [] )
@@ -95,16 +67,14 @@ class MentorsController < ApplicationController
 
       @locations << m.location
       @current_positions << m.current_position
-      # @majors << m.major
-      
+            
       @locations = @locations & @locations
       @current_positions = @current_positions & @current_positions
-
-      # @majors = @majors & @majors
+      
      end
 	end
 
-    @filterables << @abilities  << @locations << @current_positions #<< @majors 
+    @filterables << @abilities  << @locations << @current_positions 
 
     respond_to do |format|
       format.html # index.html.erb
@@ -245,12 +215,10 @@ class MentorsController < ApplicationController
         @mentors = @mentors | Mentor.where("id = ?",e.user_id)
       end      
       
-      # @mentors = @mentors | Mentor.where("interests LIKE :query",{:query => "%#{q}%"})   
-      @mentors = @mentors | Mentor.where("name LIKE :query",{:query => "%#{q}%"})
-      # @mentors = @mentors | Mentor.where("major LIKE :query",{:query => "%#{q}%"})
-      # @mentors = @mentors | Mentor.where("school LIKE :query",{:query => "%#{q}%"})
+     
+      @mentors = @mentors | Mentor.where("name LIKE :query",{:query => "%#{q}%"})     
       @mentors = @mentors | Mentor.where("location LIKE :query",{:query => "%#{q}%"})
-       @mentors = @mentors | Mentor.where("current_position LIKE :query",{:query => "%#{q}%"})
+      @mentors = @mentors | Mentor.where("current_position LIKE :query",{:query => "%#{q}%"})
 
     end
     

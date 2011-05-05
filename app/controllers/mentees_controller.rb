@@ -45,7 +45,7 @@ class MenteesController < ApplicationController
          @mentees = @mentees & Mentee.where("location = ?", @locations.second)
        end
 
-     
+      
     else
       @mentees = Mentee.all
       @skills = Skill.all

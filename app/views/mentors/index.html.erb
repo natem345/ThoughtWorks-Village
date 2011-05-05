@@ -25,7 +25,7 @@ color: white;
 	     <% next %>
 	   <% end %>
 	   <label>
-	   <% if @checked %>
+	   <% if @checked.include?(str) %>
 	    <%= check_box_tag(f.first+str,str,checked = true) %>		
 		<% else %>
 		<%= check_box_tag(f.first+str,str,checked = false) %>
@@ -40,25 +40,7 @@ color: white;
 <a href="/mentors">Clear Filter</a>
 </div>
 
-<!--<table>
-  <tr>
-    <th>First Name</th>
-    <th>Location</th>
-    <th>Current Position</th>
-    <th>Total Years of Experience</th>
-    <th></th>
-  </tr>
 
-<% @mentors.each do |mentor| %>
-  <tr>
-    <td><%= mentor.name.split[0] %></td>
-    <td><%= mentor.location %></td>
-    <td><%= mentor.current_position %></td>
-    <td><%= mentor.total_years_experience %></td>
-    <td><%= link_to 'View Profile', mentor %></td>
-  </tr>
-  <% end %>
-</table>-->
 <style>
 .mentorRowCol {
 	display: inline-block;
@@ -78,6 +60,7 @@ color: white;
 	margin:12px 0px;
 }
 </style>
+<% if @mentors != false %>
 <% @mentors.each do |mentor| %>
 <div class="mentorRow">
 	<div class="mentorRowCol mentorRowColFirst">
@@ -96,6 +79,7 @@ color: white;
 		  <% end %>
 	</div>
 </div>
+<% end %>
 <% end %>
 
 <br />
