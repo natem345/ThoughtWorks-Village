@@ -33,6 +33,7 @@ GEM
     carmen (0.2.7)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    gravtastic (3.1.0)
     i18n (0.5.0)
     mail (2.2.14)
       activesupport (>= 2.3.6)
@@ -76,6 +77,7 @@ PLATFORMS
 
 DEPENDENCIES
   carmen
+  gravtastic
   nifty-generators
   rails (= 3.0.3)
   rails3-jquery-autocomplete

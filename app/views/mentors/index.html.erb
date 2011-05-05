@@ -82,7 +82,7 @@ color: white;
 <div class="mentorRow">
 	<div class="mentorRowCol mentorRowColFirst">
 		<%= link_to mentor.name, mentor %><br />
-		<a href="<%=url_for(mentor) %>"><img src="http://www.actionsportshub.com/uploads/profile/orig/default_profile.gif" width="50" /></a>
+		<a href="<%=url_for(mentor) %>"><%= image_tag mentor.gravatar_url(:size => 50,:default =>"wavatar") %></a>
 	</div>
 	<div class="mentorRowCol">
 		Location: <%= mentor.location %><br />
