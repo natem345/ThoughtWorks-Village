@@ -18,6 +18,12 @@ class User < ActiveRecord::Base
   validates_format_of :phone,
   :message => "must be a valid telephone number.",
   :with => /^[\(\)0-9\- \+\.]{10,20} *[extension\.]{0,9} *[0-9]{0,5}$/i
+
+  validates_confirmation_of :email
+  validates_presence_of :email_confirmation
+
+  validates_confirmation_of :password
+  validates_presence_of :password_confirmation
   
   has_many :skills
 
