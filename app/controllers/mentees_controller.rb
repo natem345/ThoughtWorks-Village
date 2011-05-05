@@ -14,10 +14,9 @@ class MenteesController < ApplicationController
     @skills = []
     @abilities = ["Skills:"]
     @locations = ["Locations:"]
-    @filterables = []    
-    @mentees = []
-    @mentees4 = []
-    @checked = false
+    @filterables = []
+    @checked = ["default"]
+    
 
     if params[:utf8] != nil     
       params.each do |p|
@@ -25,29 +24,28 @@ class MenteesController < ApplicationController
           @abilities << p.second
         elsif p.first[0,3] == "Loc"
           @locations << p.second
-        end 
+        end         
       end 
- 
-        @mentees1 = Mentee.where("location = ?", @locations.second)
-       
+    
+      @checked = @locations + @abilities
+
         @abilities.each do |a|
          @skills = @skills + Skill.where("title = ?", a)         
-        end               
+        end   
 
-                                           
         @skills.each do |e|
-          if Mentee.where("id = ?", e.user_id) == []
-            @mentees = []
-            break
-          elsif @mentees == []
-            @mentees4 =  Mentee.where("id = ?",e.user_id)
-          else
-            @mentees4 = @mentees4 & Mentee.where("id = ?", e.user_id)
-          end
+            if @mentees == nil
+              @mentees = Mentee.where("id = ?", e.user_id)
+            else
+              @mentees = @mentees & Mentee.where("id = ?", e.user_id)
+            end
         end
-            
-      @mentees = @mentees4
-      @checked = true
+
+       if @locations.second != nil
+         @mentees = @mentees & Mentee.where("location = ?", @locations.second)
+       end
+
+     
     else
       @mentees = Mentee.all
       @skills = Skill.all
@@ -56,7 +54,13 @@ class MenteesController < ApplicationController
       end
       
     end
-                    
+
+    if(@mentees != [] )
+      @mentees.each do |m| 
+        @locations << m.location        
+     end
+      @locations =@locations & @locations
+	end                 
   
 
     @filterables << @abilities  << @locations  

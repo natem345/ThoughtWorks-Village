@@ -27,7 +27,7 @@ color: white;
 	     <% next %>
 	   <% end %>
 	   <label>
-	   <% if @checked %>
+	   <% if @checked.include?(str) %>
 	    <%= check_box_tag(f.first+str,str,checked = true) %>		
 		<% else %>
 		<%= check_box_tag(f.first+str,str,checked = false) %>
