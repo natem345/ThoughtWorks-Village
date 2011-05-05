@@ -62,6 +62,7 @@ color: white;
 	margin:12px 0px;
 }
 </style>
+<% if @mentees != false %>
 <% @mentees.each do |mentee| %>
 <div class="mentorRow">
 	<div class="mentorRowCol mentorRowColFirst">
@@ -80,6 +81,8 @@ color: white;
 		  <% end %>
 	</div>
 </div>
+
+<% end %>
 <% end %>
 
 <br />

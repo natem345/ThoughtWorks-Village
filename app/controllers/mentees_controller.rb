@@ -18,50 +18,35 @@ class MenteesController < ApplicationController
     @mentees = []
     @mentees4 = []
     @checked = false
-    if params[:utf8] != nil      
+
+    if params[:utf8] != nil     
       params.each do |p|
         if p.first[0,3] == "Ski"
           @abilities << p.second
         elsif p.first[0,3] == "Loc"
           @locations << p.second
-        else
         end 
-        
+      end 
+ 
         @mentees1 = Mentee.where("location = ?", @locations.second)
        
         @abilities.each do |a|
          @skills = @skills + Skill.where("title = ?", a)         
         end               
 
-        if(@skills.count > 1)
-          @mentees4 = Mentee.where("id = ?", @skills.second.user_id)
-        end
-                                   
+                                           
         @skills.each do |e|
-         @mentors4 =  Mentee.where("id = ?",e.user_id)
-        end
-        
-        if(@mentees1 != [])          
-            @mentees = @mentees1
-        end
-        
-         if(@mentees2 != [])
-          if(@mentees != [])
-            @mentees = @mentees & @mentees2
+          if Mentee.where("id = ?", e.user_id) == []
+            @mentees = []
+            break
+          elsif @mentees == []
+            @mentees4 =  Mentee.where("id = ?",e.user_id)
           else
-            @mentees = @mentees2
+            @mentees4 = @mentees4 & Mentee.where("id = ?", e.user_id)
           end
         end
-
-
-        if(@mentees4 != [])
-          if(@mentees != [])
-            @mentees = @mentees & @mentees4
-          else
-            @mentees = @mentees4
-          end
-        end    
-      end
+            
+      @mentees = @mentees4
       @checked = true
     else
       @mentees = Mentee.all
@@ -72,14 +57,7 @@ class MenteesController < ApplicationController
       
     end
                     
-    #if(@mentees.size > 0)
-    #  @mentees.each do |m|  
-
-    #    @locations << m.location
-      
-    #    @locations = @locations & @locationsns      
-    # end
-	#end
+  
 
     @filterables << @abilities  << @locations  
 
