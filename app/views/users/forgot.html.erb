@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+<%= form_for(@user, :url => '/users/process_forgot') do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <h1>Recover your account password</h1>
+  To recover your password, enter your account's email address and click "Submit".<br/>
+  You will receive an email with further instructions on how to reset your password.<br/><br/>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <br/>
+  <div class="actions">
+    <%= f.submit "Recover Password" %>
+  </div>
+<% end %>

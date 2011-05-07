@@ -55,11 +55,13 @@ class UsersController < ApplicationController
 
     if (@user != nil)
       random = Digest::SHA1.hexdigest Time.now.to_s
-      @user.password = random[0..11]
-      @user.update_attributes(@user)
       
-      Notifier.new_password_email(@user).deliver
-      redirect_to '/users/login', :notice => 'Your password has been reset. Check your email for your new password.'
+      if (@user.update_attribute(:password, random[0..11]))
+        Notifier.new_password_email(@user).deliver
+        redirect_to '/users/login', :notice => 'Your password has been reset. Check your email for your new password.'
+      else
+        redirect_to '/users/forgot', :notice => 'Your password could not be reset. Try again, or contact an administrator for assistance.'
+      end
     else
       redirect_to '/users/forgot', :notice => 'Your password could not be reset. Try again, or contact an administrator for assistance.'
     end
