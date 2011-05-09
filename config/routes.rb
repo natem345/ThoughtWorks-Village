@@ -1,5 +1,7 @@
 ThoughtWorksVillage::Application.routes.draw do
 
+  resources :password_resets
+
   match 'mentors/search' => 'mentors#search'
 
   resources :password_reset_codes

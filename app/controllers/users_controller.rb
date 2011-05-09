@@ -40,30 +40,47 @@ class UsersController < ApplicationController
   end
 
   def process_forgot
+    # Match the given email address to the correct user
     @user = User.where(:email => params[:user][:email]).first
 
     if (@user != nil)
-      Notifier.forgot_password_email(@user).deliver
-      redirect_to '/users/forgot', :notice => 'Password reset email sent!'
+      # Create a new password reset request, remove old requests
+      random = Digest::SHA1.hexdigest Time.now.to_s
+      @passreset = PasswordReset.new(:user_id => @user.id, :code => random)
+      PasswordReset.destroy_all(:user_id => @user.id)
+
+      if (@passreset.save)
+        Notifier.forgot_password_email(@user, @passreset).deliver
+        redirect_to '/users/forgot', :notice => 'Password reset email sent!'
+      else
+        redirect_to '/users/forgot', :notice => 'You have already made a password reset request. Check your email, or contact an administrator for assistance.'
+      end
     else
       redirect_to '/users/forgot', :notice => 'An account with that email address could not be found.'
     end
   end
 
   def reset
-    @user = User.where(:email => params[:email]).first
-
-    if (@user != nil)
-      random = Digest::SHA1.hexdigest Time.now.to_s
+    @passreset = PasswordReset.where(:code => params[:code]).first
+    
+    if (@passreset != nil)
+      @user = User.where(:id => @passreset.user_id).first
       
-      if (@user.update_attribute(:password, random[0..11]))
-        Notifier.new_password_email(@user).deliver
-        redirect_to '/users/login', :notice => 'Your password has been reset. Check your email for your new password.'
+      if (@user != nil)
+        random = Digest::SHA1.hexdigest Time.now.to_s
+        
+        if (@user.update_attribute(:password, random[0..11]))
+          Notifier.new_password_email(@user).deliver
+          @passreset.delete
+          redirect_to '/users/login', :notice => 'Your password has been reset. Check your email for your new password.'
+        else
+          redirect_to '/users/forgot', :notice => 'Your password could not be reset.\nTry again, or contact an administrator for assistance.'
+        end
       else
-        redirect_to '/users/forgot', :notice => 'Your password could not be reset. Try again, or contact an administrator for assistance.'
+        redirect_to '/users/forgot', :notice => 'No reset request was made for your account.\nTry again, or contact an administrator for assistance.'
       end
     else
-      redirect_to '/users/forgot', :notice => 'Your password could not be reset. Try again, or contact an administrator for assistance.'
+      redirect_to '/users/forgot', :notice => 'No reset request was made for your account.\nTry again, or contact an administrator for assistance.'
     end
   end
 

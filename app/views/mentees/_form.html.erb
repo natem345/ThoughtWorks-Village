@@ -34,7 +34,7 @@
     </tr>
     <tr>
       <td align="left" valign="top"><%= f.label :email_confirmation %></td>
-      <td align="center"><%= f.text_field :email_confirmation %></td>
+      <td align="center"><%= f.text_field :email_confirmation, :value => @mentee.email %></td>
     </tr>
     <tr>
       <td align="left" valign="top"><%= f.label :password %></td>
@@ -42,7 +42,7 @@
     </tr>
     <tr>
       <td align="left" valign="top"><%= f.label :password_confirmation %></td>
-      <td align="center"><%= f.text_field :password_confirmation %></td>
+      <td align="center"><%= f.password_field :password_confirmation, :value => @mentee.password %></td>
     </tr>
     <tr>
       <td align="left" valign="top"><%= f.label :phone %></td>

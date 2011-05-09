@@ -29,8 +29,9 @@ class Notifier < ActionMailer::Base
          :subject => "Mentorship Request: Rejected")
   end
 
-  def forgot_password_email(user)
+  def forgot_password_email(user, passrequest)
     @user = user
+    @passrequest = passrequest
     @url = "http://thoughtworks-village.heroku.com/"
     mail(:to => @user.email,
          :subject => "ThoughtWorks Password Reset Request")
