@@ -17,7 +17,7 @@ class MentorsController < ApplicationController
     @locations = ["Locations:"]
     @current_positions = ["Current Positions:"]   
     @filterables = []
-    @checked=["this isn't nil"]
+    @checked=["this isn't nil"]    
    
    
     if params[:utf8] != nil      
@@ -31,47 +31,84 @@ class MentorsController < ApplicationController
         end
       end
         
-        @checked = @locations + @abilities + @current_positions       
-       
-        @abilities.each do |a|
-         @skills = @skills + Skill.where("title = ?", a)         
-        end               
-
-        @skills.each do |e|
-            if @mentors == nil
-              @mentors = Mentor.where("id = ?", e.user_id)
-            else
-              @mentors = @mentors & Mentor.where("id = ?", e.user_id)
-            end
+      @checked = @locations + @abilities + @current_positions
+      
+      @i = 0
+      @abilities.each do |a|         
+        if a != "Skills:"
+          toAdd = Skill.where("title = ?",a)
+          if toAdd != []
+            @skills[@i] = Skill.where("title = ?", a)
+            @i += 1
+          end
+        end          
+      end               
+      
+      #skills to mentors
+      @j =0
+      
+      @skills.each do |s|
+        replacement = []        
+        s.each do |e|
+          replacement = replacement + Mentor.where("id = ?", e.user_id)
         end
-
+        @skills[@j] = replacement
+        @j += 1       
+      end
+      
+      
+      @q = 0
+      @skills.each do |s|
+        if @mentors == nil
+          @mentors = @skills[@q]
+        else
+          @mentors = @mentors & @skills[@q]
+        end
+        @q +=1
+      end      
+      
+      
       if @locations.second != nil
-         @mentees = @mentees & Mentee.where("location = ?", @locations.second)
-       end
-
+        if @mentors != nil
+          @mentors = @mentors & Mentor.where("location = ?", @locations.second)
+        else
+          @mentors = Mentor.where("location = ?", @locations.second)
+        end
+      end
+      
       if @current_positions.second != nil
-         @mentees = @mentees & Mentee.where("current_position = ?", @current_positions.second)
-       end
-
-
+        if @mentors != nil
+          @mentors = @mentors & Mentor.where("current_position = ?", @current_positions.second)
+        else
+          @mentors = Mentor.where("current_position = ?",@current_positions.second)
+        end
+      end
+      
+      
     else
       @mentors = Mentor.all
       @skills = Skill.all
       @skills.each do |e|
         @abilities << e.title
-      end       
+      end
+      @abilities = @abilities & @abilities
+      
     end
                     
     if(@mentors != [] )
       @mentors.each do |m|     
 
-      @locations << m.location
-      @current_positions << m.current_position
+        @locations << m.location
+        @current_positions << m.current_position
             
-      @locations = @locations & @locations
-      @current_positions = @current_positions & @current_positions
+        @locations = @locations & @locations
+        @current_positions = @current_positions & @current_positions
+        Skill.where("user_id = ?", m.id).each do |t|
+          @abilities << t.title
+        end
+       @abilities = @abilities & @abilities 
       
-     end
+      end
 	end
 
     @filterables << @abilities  << @locations << @current_positions 

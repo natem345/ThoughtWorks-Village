@@ -17,6 +17,7 @@ class MenteesController < ApplicationController
     @filterables = []
     @checked = ["default"]
     
+    
 
     if params[:utf8] != nil     
       params.each do |p|
@@ -28,21 +29,48 @@ class MenteesController < ApplicationController
       end 
     
       @checked = @locations + @abilities
-
-        @abilities.each do |a|
-         @skills = @skills + Skill.where("title = ?", a)         
-        end   
-
-        @skills.each do |e|
-            if @mentees == nil
-              @mentees = Mentee.where("id = ?", e.user_id)
-            else
-              @mentees = @mentees & Mentee.where("id = ?", e.user_id)
+      
+        @i = 0
+         @abilities.each do |a|         
+          if a != "Skills:"
+            toAdd = Skill.where("title = ?",a)
+            if toAdd != []
+              @skills[@i] = Skill.where("title = ?", a)
+              @i += 1
             end
+          end          
+         end               
+        
+       #skills to mentees
+      @j =0
+      
+      @skills.each do |s|
+        replacement = []        
+        s.each do |e|
+          replacement = replacement + Mentee.where("id = ?", e.user_id)
         end
+        @skills[@j] = replacement
+        @j += 1       
+      end
+      
+
+      @q = 0
+      @skills.each do |s|
+        if @mentees == nil
+          @mentees = @skills[@q]
+        else
+          @mentees = @mentees & @skills[@q]
+        end
+        @q +=1
+      end      
+        
 
        if @locations.second != nil
+         if @mentees != nil
          @mentees = @mentees & Mentee.where("location = ?", @locations.second)
+         else
+           @mentees = Mentee.where("location = ?", @locations.second)
+         end
        end
 
       
@@ -52,13 +80,18 @@ class MenteesController < ApplicationController
       @skills.each do |e|
         @abilities << e.title
       end
+      @abilities = @abilities & @abilities
       
     end
 
-    if(@mentees != [] )
+    if(@mentees != nil )
       @mentees.each do |m| 
-        @locations << m.location        
+        @locations << m.location
+        Skill.where("user_id = ?", m.id).each do |t|
+          @abilities << t.title
+        end
      end
+      @abilities = @abilities & @abilities
       @locations =@locations & @locations
 	end                 
   
@@ -67,7 +100,7 @@ class MenteesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @mentors }
+      format.xml  { render :xml => @mentees }
   end
   end
 
