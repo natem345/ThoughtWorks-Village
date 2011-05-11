@@ -95,7 +95,7 @@ class MentorsController < ApplicationController
       
     end
                     
-    if(@mentors != [] )
+    if(@mentors != nil )
       @mentors.each do |m|     
 
         @locations << m.location
