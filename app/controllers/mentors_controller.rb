@@ -169,9 +169,13 @@ class MentorsController < ApplicationController
         @newuser = User.where(:id => @mentor.id).first
         Notifier.welcome_email(@newuser).deliver
 
-		#login user so they can edit skills
+        # Login user so they can edit skills
     	session[:id] = @mentor.id # Remember the user's id during this session 
         session[:usertype] = :mentor
+
+        # Create an AvailabilityCalendar for the new Mentor
+        @cal = AvailabilityCalendar.new(:mentor_id => @mentor.id)
+        @cal.save
 
         format.html { redirect_to(skills_path, :notice => 'Your mentor account was successfully created!') }
         format.xml  { render :xml => @mentor, :status => :created, :location => @mentor }
