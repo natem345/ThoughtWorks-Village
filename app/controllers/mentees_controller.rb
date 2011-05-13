@@ -7,7 +7,6 @@ class MenteesController < ApplicationController
       redirect_to '/users/login'
     end
   end
-
  
   def index
     @query = params
@@ -104,12 +103,18 @@ class MenteesController < ApplicationController
   end
   end
 
-
   # GET /mentees/1
   # GET /mentees/1.xml
   def show
+    # Mentees cannot view other mentees profiles
+    if (session[:usertype] == :mentee)
+      if (params[:id].to_s != session[:id].to_s)
+        redirect_to '/mentees', :notice => 'You cannot view the profiles of other mentees.'
+        return
+      end
+    end
+    
     @mentee = Mentee.find(params[:id])
-
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @mentee }

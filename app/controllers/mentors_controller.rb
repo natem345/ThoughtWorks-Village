@@ -122,6 +122,14 @@ class MentorsController < ApplicationController
   # GET /mentors/1
   # GET /mentors/1.xml
   def show
+    # Mentors cannot view other mentors profiles
+    if (session[:usertype] == :mentor)
+      if (params[:id].to_s != session[:id].to_s)
+        redirect_to '/mentors', :notice => 'You cannot view the profiles of other mentors.'
+        return
+      end
+    end
+
     @mentor = Mentor.find(params[:id])
     @availability_calendar = @mentor.availability_calendar
     respond_to do |format|
