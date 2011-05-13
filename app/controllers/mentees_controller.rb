@@ -1,6 +1,6 @@
 class MenteesController < ApplicationController
 
-  before_filter :authenticate, :except => [:index, :show, :new, :create]
+  before_filter :authenticate, :except => [:new, :create]
 
   def authenticate
     if session[:id]==nil
