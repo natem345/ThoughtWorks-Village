@@ -1,5 +1,7 @@
 <p id="notice"><%= notice %></p>
-
+<div style="float:right;">
+<%= image_tag @mentor.gravatar_url(:size => 250,:default =>"wavatar") %>
+</div>
 <p>
   <b>Name:</b>
   <%= @mentor.name %>
